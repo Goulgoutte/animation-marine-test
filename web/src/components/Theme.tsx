@@ -70,7 +70,7 @@ export function SelecteurTheme() {
       <p className="meta px-2.5 pb-1.5">Thème</p>
       <div className="segment w-full" role="group" aria-label="Thème de l’interface">
         {OPTIONS.map((o) => (
-          <button key={o.id} aria-pressed={choix === o.id} onClick={() => changer(o.id)} className="!flex-1 !justify-center" title={o.id === "auto" ? "Automatique (suit le système)" : o.label}>
+          <button key={o.id} aria-pressed={choix === o.id} onClick={() => changer(o.id)} className="!flex-1 !justify-center !gap-1.5 !px-2 min-w-0" title={o.id === "auto" ? "Automatique (suit le système)" : o.label}>
             <o.icone className="h-3.5 w-3.5" />
             {o.label}
           </button>

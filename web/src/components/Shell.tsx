@@ -164,7 +164,7 @@ function MenuProfil() {
         <ChevronsUpDown className="hidden h-3.5 w-3.5 text-muted md:block" />
       </button>
       {ouvert && (
-        <div role="menu" className="feuille absolute right-0 top-full z-40 mt-2 w-64 overflow-hidden rounded-2xl border border-line bg-surface p-1.5 shadow-[var(--ombre-forte)]" style={{ animationName: "entree" }}>
+        <div role="menu" className="feuille absolute right-0 top-full z-40 mt-2 w-72 overflow-hidden rounded-2xl border border-line bg-surface p-1.5 shadow-[var(--ombre-forte)]" style={{ animationName: "entree" }}>
           <div className="flex items-center gap-3 px-2.5 py-2.5">
             <Avatar nom={nom} url={profil?.avatar} taille={36} rond />
             <div className="min-w-0">
