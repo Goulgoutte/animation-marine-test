@@ -14,6 +14,7 @@ const CLE_DEMO = "veille-animation-demo-v1";
 const vide = (): Donnees => ({
   candidatures: [], relances: [], contacts: [], echanges: [], offres_manuelles: [],
   productions_manuelles: [], corrections: [], masquages: [], reglages: [], crm_colonnes: [], crm_groupes: [],
+  studios: [], contact_studios: [],
 });
 
 export interface Collecte {
@@ -43,7 +44,7 @@ interface Ctx {
   effacerDemo(): void;
 }
 
-export type Focus = { kind: "offre" | "production" | "candidature" | "contact"; id: string };
+export type Focus = { kind: "offre" | "production" | "candidature" | "contact" | "studio"; id: string };
 
 const PROFIL_DEMO: Profil = { email: null, nom: "Léa Démo", prenom: "Léa", avatar: null };
 
@@ -221,7 +222,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       // Suppressions en cascade (la base le fait aussi côté Supabase)
       if (t === "candidatures") suivant = { ...suivant, relances: suivant.relances.filter((r) => r.candidature_id !== id) };
       if (t === "crm_groupes") suivant = { ...suivant, contacts: suivant.contacts.map((k) => (k.groupe_id === id ? { ...k, groupe_id: null } : k)) };
-      if (t === "contacts") suivant = { ...suivant, echanges: suivant.echanges.filter((r) => r.contact_id !== id) };
+      if (t === "contacts") suivant = { ...suivant, echanges: suivant.echanges.filter((r) => r.contact_id !== id), contact_studios: suivant.contact_studios.filter((r) => r.contact_id !== id) };
+      if (t === "studios") suivant = { ...suivant, contact_studios: suivant.contact_studios.filter((r) => r.studio_id !== id) };
       dataRef.current = suivant;
       setData(suivant);
       if (sb) ecrire(() => sb.from(t).delete().eq("id", id));

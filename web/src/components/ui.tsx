@@ -6,7 +6,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 
 /** Panneau latéral (ordinateur) ou feuille du bas (mobile). */
-export function Sheet({ titre, sousTitre, onClose, children, large, pied }: { titre: string; sousTitre?: ReactNode; onClose: () => void; children: ReactNode; large?: boolean; pied?: ReactNode }) {
+export function Sheet({ titre, sousTitre, onClose, children, large, pied, pleinMobile }: { titre: string; sousTitre?: ReactNode; onClose: () => void; children: ReactNode; large?: boolean; pied?: ReactNode; pleinMobile?: boolean }) {
   useEffect(() => {
     const k = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", k);
@@ -22,7 +22,7 @@ export function Sheet({ titre, sousTitre, onClose, children, large, pied }: { ti
         role="dialog"
         aria-modal="true"
         aria-label={titre}
-        className={`feuille md:tiroir flex max-h-[92dvh] w-full flex-col rounded-t-3xl border border-line bg-surface shadow-[var(--ombre-forte)] md:max-h-none md:rounded-none md:border-y-0 md:border-r-0 ${large ? "md:max-w-[640px]" : "md:max-w-[480px]"}`}
+        className={`feuille md:tiroir flex w-full flex-col border border-line bg-surface shadow-[var(--ombre-forte)] md:max-h-none md:rounded-none md:border-y-0 md:border-r-0 ${pleinMobile ? "h-dvh max-h-dvh" : "max-h-[92dvh] rounded-t-3xl"} ${large ? "md:max-w-[640px]" : "md:max-w-[480px]"}`}
       >
         <div className="flex items-start justify-between gap-3 border-b border-line px-5 pb-3 pt-4">
           <div className="min-w-0">

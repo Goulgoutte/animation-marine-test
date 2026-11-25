@@ -1,6 +1,7 @@
 import { colonnesParDefaut, groupesParDefaut } from "@/lib/crm";
 import { addDays, today } from "@/lib/dates";
 import type { Donnees } from "@/lib/types";
+import { studioVide } from "@/lib/studios";
 import { REGLAGES_DEFAUT } from "@/lib/types";
 
 // Jeu de départ du mode démo (localStorage) : de quoi voir les trois pages remplies.
@@ -41,6 +42,9 @@ export function donneesDemo(): Donnees {
       { id: "demo-k4", nom: "Roussel", prenom: "Théo", structure: "Festival d’Annecy", fonction: "Bénévole accueil", ville: "Annecy", email: "theo@example.org", telephone: null, linkedin: "https://www.linkedin.com/in/exemple", rencontre: null, etiquettes: ["Annecy"], groupe_id: "demo-g1", ordre: 0, champs: { "demo-col-relation": "bon_contact" } },
       { id: "demo-k5", nom: "Benali", prenom: "Samia", structure: "Ancienne école", fonction: "Intervenante décor", ville: "Lyon", email: null, telephone: null, linkedin: null, rencontre: null, etiquettes: ["école"], groupe_id: "demo-g1", ordre: 1, champs: { "demo-col-relation": "contacte" } },
       { id: "demo-k6", nom: "Girard", prenom: "Julie", structure: "Mist Studio", fonction: "RH", ville: "Paris", email: "rh@example.org", telephone: "01 00 00 00 00", linkedin: null, rencontre: null, etiquettes: ["RH"], groupe_id: "demo-g2", ordre: 0, champs: { "demo-col-relation": "pas_de_suite" } },
+      { id: "demo-k7", nom: "Carré", prenom: "Inès", structure: "La Chouette Compagnie", fonction: "Cheffe décorateur", ville: "Paris", email: "ines@example.org", telephone: null, linkedin: null, rencontre: "Rencontrée à Annecy", etiquettes: ["décor"], groupe_id: "demo-g0", ordre: 3, champs: { "demo-col-relation": "bon_contact" } },
+      { id: "demo-k8", nom: "Vidal", prenom: "Camille", structure: null, fonction: "Décoratrice indépendante", ville: "Paris", email: null, telephone: null, linkedin: null, rencontre: "Ancienne de l’école", etiquettes: ["école"], groupe_id: "demo-g1", ordre: 2, champs: { "demo-col-relation": "bon_contact" } },
+      { id: "demo-k9", nom: "Hamon", prenom: "Nils", structure: null, fonction: "Animateur 2D", ville: "Montreuil", email: null, telephone: null, linkedin: null, rencontre: null, etiquettes: [], groupe_id: "demo-g1", ordre: 3, champs: { "demo-col-relation": "contacte" } },
     ],
     echanges: [
       { id: "demo-e1", contact_id: "demo-k1", date: addDays(t, -35), type: "cafe", lieu: "Paris 10e", sujets: "Série en développement, démarrage prévu à l’automne", promesses: "Elle me prévient quand le casting décor s’ouvre", prochaine_action: "Envoyer le portfolio", prochaine_date: addDays(t, -20) },
@@ -54,6 +58,20 @@ export function donneesDemo(): Donnees {
     masquages: [],
     crm_colonnes: colonnesParDefaut((cle) => `demo-col-${cle}`),
     crm_groupes: groupesParDefaut((i) => `demo-g${i}`),
+    studios: [
+      { ...studioVide("La Chouette Compagnie", "Paris"), id: "demo-s1", adresse: "14 rue des Vinaigriers, 75010 Paris", pays: "France", site: "https://example.org/la-chouette", email_recrutement: "recrutement@example.org", page_recrutement: "https://example.org/la-chouette/recrutement", description: "Studio de séries jeunesse en 2D. Équipe décor intégrée, ambiance familiale.", mode_travail: "mixte", techniques: ["2D"], taille: "30 à 50 personnes", notes: "Deux jours de présence par semaine pour le décor." },
+      { ...studioVide("Caribara", "Paris"), id: "demo-s2", adresse: "Paris 11e", pays: "France", site: "https://example.org/caribara", description: "Production de films et séries d’animation pour la jeunesse.", mode_travail: "presentiel", techniques: ["2D", "3D"], taille: "20 à 30 personnes" },
+      { ...studioVide("Blue Spirit", "Paris"), id: "demo-s3", pays: "France", description: "Studio de longs métrages et de séries.", mode_travail: "mixte", techniques: ["2D", "3D"], taille: "100 personnes et plus" },
+      { ...studioVide("Folimage", "Valence"), id: "demo-s4", pays: "France", description: "Studio historique, papier découpé et stop-motion.", mode_travail: "presentiel", techniques: ["2D", "stop-motion"], taille: "50 à 100 personnes", notes: "Résidence sur place indispensable." },
+    ],
+    contact_studios: [
+      { id: "demo-cs1", contact_id: "demo-k7", studio_id: "demo-s1", role: "contact", detail: "Cheffe décorateur, elle suit les recrutements décor" },
+      { id: "demo-cs2", contact_id: "demo-k5", studio_id: "demo-s1", role: "ami", detail: "Régulière en décor depuis 2023" },
+      { id: "demo-cs3", contact_id: "demo-k8", studio_id: "demo-s1", role: "ami", detail: "Fait des missions de fond de décor à la saison" },
+      { id: "demo-cs4", contact_id: "demo-k1", studio_id: "demo-s2", role: "contact", detail: "Chargée de production" },
+      { id: "demo-cs5", contact_id: "demo-k2", studio_id: "demo-s3", role: "contact", detail: "Superviseur décor" },
+      { id: "demo-cs6", contact_id: "demo-k9", studio_id: "demo-s3", role: "ami", detail: "Animateur régulier sur les séries" },
+    ],
     reglages: [{ id: "demo-reglages", ...REGLAGES_DEFAUT, derniere_visite: addDays(t, -3) + "T08:00:00.000Z" }],
   };
 }
