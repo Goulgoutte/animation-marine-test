@@ -4,6 +4,7 @@ import { Link2, Mail, MapPin, Phone, Plus, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { BadgeStatut } from "@/components/BadgeStatut";
 import { Avatar, Champ, Sheet } from "@/components/ui";
+import { LiensDuContact } from "@/components/LiensDuContact";
 import { StudiosDuContact } from "@/components/studios/StudiosDuContact";
 import { ChampFiche } from "@/components/crm/ChampFiche";
 import { tonFraicheur } from "@/lib/contacts";
@@ -132,6 +133,8 @@ export function FicheContact({ c, onClose }: { c: Contact; onClose: () => void }
       )}
 
       <StudiosDuContact c={c} onOuvrirStudio={(id) => { s.setFocus({ kind: "studio", id }); onClose(); }} />
+
+      <LiensDuContact c={c} />
 
       <h3 className="titre-section mb-3 mt-6">Coordonnées</h3>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">

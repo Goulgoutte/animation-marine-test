@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDownUp, BellRing, Building2, Check, CheckSquare, Eye, Filter, Plus, Search, Users, X } from "lucide-react";
+import { ArrowDownUp, BellRing, Building2, Check, CheckSquare, Eye, Filter, Plus, Search, Users, Waypoints, X } from "lucide-react";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { ListeMobile } from "@/components/crm/ListeMobile";
 import { Popover } from "@/components/crm/Popover";
@@ -9,6 +9,7 @@ import { AssistantMail } from "@/components/mail/AssistantMail";
 import { BarreSelection } from "@/components/mail/BarreSelection";
 import { useMail } from "@/components/mail/useMail";
 import { useCrm } from "@/components/crm/useCrm";
+import { Reseau } from "@/components/reseau/Reseau";
 import { ListeStudios } from "@/components/studios/ListeStudios";
 import { FicheContact } from "@/components/FicheContact";
 import { Champ, EnTete, Onglets, Sheet, Vide } from "@/components/ui";
@@ -31,7 +32,7 @@ export default function Contacts() {
   const mobile = useMobile();
   const [ouvert, setOuvert] = useState<string | null>(null);
   const [nouveau, setNouveau] = useState(false);
-  const [onglet, setOnglet] = useState<"personnes" | "studios">("personnes");
+  const [onglet, setOnglet] = useState<"personnes" | "studios" | "reseau">("personnes");
   const [studioOuvert, setStudioOuvert] = useState<string | null>(null);
   const [selection, setSelection] = useState<Set<string> | null>(null); // mode sélection (envoi groupé)
   const [assistant, setAssistant] = useState(false);
@@ -64,9 +65,11 @@ export default function Contacts() {
         description={contactsARecontacter.length > 0 ? <><strong className="font-semibold text-warn">{contactsARecontacter.length}</strong> à recontacter (plus de {s.reglages.delai_contact_mois} mois sans échange)</> : "Ton réseau professionnel"}
       />
       <div className="mb-4">
-        <Onglets valeur={onglet} onChange={setOnglet} options={[{ id: "personnes", label: <><Users className="h-3.5 w-3.5" />Personnes</> }, { id: "studios", label: <><Building2 className="h-3.5 w-3.5" />Studios</> }]} />
+        <Onglets valeur={onglet} onChange={setOnglet} options={[{ id: "personnes", label: <><Users className="h-3.5 w-3.5" />Personnes</> }, { id: "studios", label: <><Building2 className="h-3.5 w-3.5" />Studios</> }, { id: "reseau", label: <><Waypoints className="h-3.5 w-3.5" />Réseau</> }]} />
       </div>
-      {onglet === "studios" ? (
+      {onglet === "reseau" ? (
+        <Reseau onContact={setOuvert} onStudio={(id) => { setOnglet("studios"); setStudioOuvert(id); }} />
+      ) : onglet === "studios" ? (
         <ListeStudios ouvert={studioOuvert} setOuvert={setStudioOuvert} />
       ) : (
       <>
