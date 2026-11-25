@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  DndContext, DragOverlay, KeyboardSensor, PointerSensor, TouchSensor, pointerWithin, rectIntersection,
+  DndContext, DragOverlay, KeyboardSensor, MouseSensor, TouchSensor, pointerWithin, rectIntersection,
   useDraggable, useDroppable, useSensor, useSensors, type CollisionDetection, type DragEndEvent, type DragStartEvent,
 } from "@dnd-kit/core";
 import { ArrowDown, ArrowUp, BellRing, Briefcase, Check, Columns3, Flag, Plus, Search, Table2 } from "lucide-react";
@@ -43,7 +43,7 @@ export default function Candidatures() {
   }, [s.focus, s]);
 
   const sensors = useSensors(
-    useSensor(PointerSensor, { activationConstraint: { distance: 6 } }),
+    useSensor(MouseSensor, { activationConstraint: { distance: 6 } }),
     useSensor(TouchSensor, { activationConstraint: { delay: 220, tolerance: 8 } }),
     useSensor(KeyboardSensor),
   );
@@ -195,7 +195,7 @@ export default function Candidatures() {
               <Colonne key={st.id} id={st.id} label={st.label} couleur={st.couleur} liste={filtrees.filter((c) => c.statut === st.id)} onOuvrir={setOuverte} />
             ))}
           </div>
-          <DragOverlay dropAnimation={{ duration: 180 }}>{enGlisse ? <CarteKanban c={enGlisse} apercu onOuvrir={() => {}} /> : null}</DragOverlay>
+          <DragOverlay dropAnimation={{ duration: 180 }}>{enGlisse ? <CarteContenu c={enGlisse} apercu /> : null}</DragOverlay>
         </DndContext>
       ) : (
         <div className="carte overflow-x-auto">
@@ -257,18 +257,25 @@ function Colonne({ id, label, couleur, liste, onOuvrir }: { id: Statut; label: s
   );
 }
 
-function CarteKanban({ c, onOuvrir, apercu }: { c: Candidature; onOuvrir: () => void; apercu?: boolean }) {
+// La carte glissable. L'aperçu affiché pendant le glisser (DragOverlay) utilise CarteContenu
+// seul : rappeler useDraggable avec le même id dans l'aperçu casse le glisser-déposer (dnd-kit).
+function CarteKanban({ c, onOuvrir }: { c: Candidature; onOuvrir: () => void }) {
+  const { attributes, listeners, setNodeRef, isDragging } = useDraggable({ id: c.id });
+  return (
+    <div ref={setNodeRef} {...listeners} {...attributes} onClick={onOuvrir} className={`touch-manipulation ${isDragging ? "opacity-30" : ""}`}>
+      <CarteContenu c={c} />
+    </div>
+  );
+}
+
+function CarteContenu({ c, apercu }: { c: Candidature; apercu?: boolean }) {
   const s = useStore();
-  const { attributes, listeners, setNodeRef, isDragging } = useDraggable({ id: c.id, disabled: apercu });
   const p = prochaineRelance(c, s.data.relances, s.reglages);
   const due = !!p && p <= today();
   const jours = c.date_envoi ? diffDays(today(), c.date_envoi) : null;
   return (
     <div
-      ref={apercu ? undefined : setNodeRef}
-      {...(apercu ? {} : { ...listeners, ...attributes })}
-      onClick={onOuvrir}
-      className={`carte carte-lien cursor-grab select-none p-3 active:cursor-grabbing ${isDragging ? "opacity-30" : ""} ${apercu ? "rotate-2 shadow-[var(--ombre-forte)]" : ""}`}
+      className={`carte carte-lien cursor-grab select-none p-3 active:cursor-grabbing ${apercu ? "rotate-2 cursor-grabbing shadow-[var(--ombre-forte)]" : ""}`}
       style={{ borderLeft: due ? "3px solid var(--danger)" : undefined }}
     >
       <div className="flex items-start gap-2.5">
