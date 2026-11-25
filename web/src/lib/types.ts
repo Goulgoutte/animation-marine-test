@@ -139,6 +139,33 @@ export interface Reglages extends Base {
   derniere_visite: string | null;
 }
 
+export type ModeStudio = "presentiel" | "teletravail" | "mixte" | "inconnu";
+export type RoleStudio = "contact" | "ami";
+
+export interface Studio extends Base {
+  nom: string;
+  adresse: string | null;
+  ville: string | null;
+  pays: string | null;
+  site: string | null;
+  email_recrutement: string | null;
+  page_recrutement: string | null;
+  description: string | null;
+  mode_travail: ModeStudio;
+  techniques: string[];
+  taille: string | null;
+  notes: string | null;
+  logo: string | null;
+  updated_at?: string;
+}
+
+export interface ContactStudio extends Base {
+  contact_id: string;
+  studio_id: string;
+  role: RoleStudio;
+  detail: string | null;
+}
+
 export interface Tables {
   candidatures: Candidature;
   relances: Relance;
@@ -151,6 +178,8 @@ export interface Tables {
   reglages: Reglages;
   crm_colonnes: CrmColonne;
   crm_groupes: CrmGroupe;
+  studios: Studio;
+  contact_studios: ContactStudio;
 }
 export type TableName = keyof Tables;
 export const TABLE_NAMES: TableName[] = [
@@ -165,6 +194,8 @@ export const TABLE_NAMES: TableName[] = [
   "reglages",
   "crm_colonnes",
   "crm_groupes",
+  "studios",
+  "contact_studios",
 ];
 
 export type Donnees = { [K in TableName]: Tables[K][] };

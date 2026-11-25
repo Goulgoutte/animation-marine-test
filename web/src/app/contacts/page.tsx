@@ -1,13 +1,14 @@
 "use client";
 
-import { ArrowDownUp, BellRing, Check, Eye, Filter, Plus, Search, Users, X } from "lucide-react";
+import { ArrowDownUp, BellRing, Building2, Check, Eye, Filter, Plus, Search, Users, X } from "lucide-react";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { ListeMobile } from "@/components/crm/ListeMobile";
 import { Popover } from "@/components/crm/Popover";
 import { Tableau } from "@/components/crm/Tableau";
 import { useCrm } from "@/components/crm/useCrm";
+import { ListeStudios } from "@/components/studios/ListeStudios";
 import { FicheContact } from "@/components/FicheContact";
-import { Champ, EnTete, Sheet, Vide } from "@/components/ui";
+import { Champ, EnTete, Onglets, Sheet, Vide } from "@/components/ui";
 import { couleurEtiquette, encre, libellesDe } from "@/lib/crm";
 import { useIndicateurs } from "@/lib/indicateurs";
 
@@ -27,10 +28,18 @@ export default function Contacts() {
   const mobile = useMobile();
   const [ouvert, setOuvert] = useState<string | null>(null);
   const [nouveau, setNouveau] = useState(false);
+  const [onglet, setOnglet] = useState<"personnes" | "studios">("personnes");
+  const [studioOuvert, setStudioOuvert] = useState<string | null>(null);
 
   useEffect(() => {
     if (s.focus?.kind === "contact") {
       setOuvert(s.focus.id);
+      setStudioOuvert(null);
+      s.setFocus(null);
+    } else if (s.focus?.kind === "studio") {
+      setOnglet("studios");
+      setStudioOuvert(s.focus.id);
+      setOuvert(null);
       s.setFocus(null);
     }
   }, [s.focus, s]);
@@ -44,6 +53,13 @@ export default function Contacts() {
         titre="Contacts"
         description={contactsARecontacter.length > 0 ? <><strong className="font-semibold text-warn">{contactsARecontacter.length}</strong> à recontacter (plus de {s.reglages.delai_contact_mois} mois sans échange)</> : "Ton réseau professionnel"}
       />
+      <div className="mb-4">
+        <Onglets valeur={onglet} onChange={setOnglet} options={[{ id: "personnes", label: <><Users className="h-3.5 w-3.5" />Personnes</> }, { id: "studios", label: <><Building2 className="h-3.5 w-3.5" />Studios</> }]} />
+      </div>
+      {onglet === "studios" ? (
+        <ListeStudios ouvert={studioOuvert} setOuvert={setStudioOuvert} />
+      ) : (
+      <>
       {actionsContacts.length > 0 && (
         <p className="mb-4 flex items-center gap-2 rounded-xl border border-[color-mix(in_srgb,var(--warn)_35%,var(--line))] bg-[color-mix(in_srgb,var(--warn)_8%,var(--surface))] px-3.5 py-2.5 text-[13px] font-medium">
           <BellRing className="h-4 w-4 flex-none text-warn" />{actionsContacts.length} prochaine{actionsContacts.length > 1 ? "s" : ""} action{actionsContacts.length > 1 ? "s" : ""} arrivée{actionsContacts.length > 1 ? "s" : ""} à échéance dans les journaux d’échanges.
@@ -69,6 +85,8 @@ export default function Contacts() {
         <ListeMobile crm={crm} onOuvrir={setOuvert} />
       ) : (
         <Tableau crm={crm} onOuvrir={setOuvert} />
+      )}
+      </>
       )}
 
       {courant && <FicheContact c={courant} onClose={() => setOuvert(null)} />}
