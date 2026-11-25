@@ -34,7 +34,7 @@ export default function Accueil() {
     { label: "Acceptées", n: acceptees, ton: "var(--ok)" },
   ];
 
-  const aFaire = ind.relancesDues.length + ind.actionsContacts.length;
+  const aFaire = ind.relancesDues.length + ind.actionsCandidatures.length + ind.actionsContacts.length;
 
   function ouvrir(f: Focus, chemin: string) {
     s.setFocus(f);
@@ -43,6 +43,9 @@ export default function Accueil() {
   function relancer(id: string) {
     s.add("relances", { candidature_id: id, date: today(), canal: "mail", note: null });
     s.patch("candidatures", id, { statut: "relancee", cloture_auto: false, cloture_annulee: false });
+  }
+  function actionCandidatureFaite(id: string) {
+    s.patch("candidatures", id, { prochaine_action: null, prochaine_action_date: null });
   }
   function actionFaite(id: string) {
     const x = s.data.echanges.find((e) => e.id === id);
@@ -156,6 +159,18 @@ export default function Accueil() {
                   </li>
                 );
               })}
+              {ind.actionsCandidatures.map(({ c, a }) => (
+                <li key={`a-${c.id}`} className="flex items-center gap-3 py-2.5">
+                  <button onClick={() => ouvrir({ kind: "candidature", id: c.id }, "/candidatures/")} className="flex min-w-0 flex-1 items-center gap-3 text-left">
+                    <Avatar nom={c.studio || "?"} taille={36} />
+                    <span className="min-w-0">
+                      <span className="block truncate text-[13.5px] font-semibold">{a.texte}</span>
+                      <span className="micro block truncate">{c.studio || "Sans studio"} · {c.poste} · prévu le {fmtCourt(a.date)}</span>
+                    </span>
+                  </button>
+                  <button className="bouton bouton-petit flex-none" onClick={() => actionCandidatureFaite(c.id)}><Check />Fait</button>
+                </li>
+              ))}
               {ind.actionsContacts.map(({ e, c }) => (
                 <li key={e.id} className="flex items-center gap-3 py-2.5">
                   <button onClick={() => ouvrir({ kind: "contact", id: c.id }, "/contacts/")} className="flex min-w-0 flex-1 items-center gap-3 text-left">

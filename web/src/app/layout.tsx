@@ -27,9 +27,15 @@ export const viewport: Viewport = {
   ],
 };
 
+// Pose le thème choisi avant le premier affichage (évite le flash) ; absent = automatique.
+const SCRIPT_THEME = `try{var t=localStorage.getItem("veille-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}`;
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: SCRIPT_THEME }} />
+      </head>
       <body>
         <StoreProvider>
           <Shell>{children}</Shell>

@@ -34,6 +34,10 @@ export interface Candidature extends Base {
   cloture_annulee: boolean;
   notes: string | null;
   liens: string | null;
+  prochaine_action: string | null;
+  prochaine_action_date: string | null;
+  motif_cloture: string | null;
+  date_statut: string | null;
 }
 
 export interface Relance extends Base {

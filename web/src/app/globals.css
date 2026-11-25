@@ -1,7 +1,8 @@
 @import "tailwindcss";
 @import "@fontsource-variable/inter";
 
-/* Jetons de couleur : clair par défaut, sombre selon le système. */
+/* Jetons de couleur. :root = clair ; data-theme="dark" = sombre ;
+   automatique = préférence du système, seulement si data-theme est absent. */
 :root {
   --bg: #f4f5f8;
   --surface: #ffffff;
@@ -21,8 +22,27 @@
   --ombre-forte: 0 12px 40px rgb(18 20 28 / 0.16);
   color-scheme: light;
 }
+:root[data-theme="dark"] {
+  --bg: #0e0f14;
+  --surface: #171923;
+  --surface-2: #1d2030;
+  --line: #2a2e3f;
+  --fg: #eceef5;
+  --muted: #9298ad;
+  --accent: #8587f2;
+  --accent-fg: #0e0f14;
+  --accent-soft: #232547;
+  --accent-strong: #a3a5ff;
+  --danger: #f06a80;
+  --warn: #e8a13a;
+  --ok: #4cc58a;
+  --info: #6d9bf5;
+  --ombre: 0 1px 2px rgb(0 0 0 / 0.4);
+  --ombre-forte: 0 12px 40px rgb(0 0 0 / 0.6);
+  color-scheme: dark;
+}
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --bg: #0e0f14;
     --surface: #171923;
     --surface-2: #1d2030;

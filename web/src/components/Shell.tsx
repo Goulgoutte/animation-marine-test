@@ -9,6 +9,7 @@ import { useStore } from "@/lib/store";
 import { AutoCloture } from "./AutoCloture";
 import { Logo } from "./Logo";
 import { Recherche } from "./Recherche";
+import { SelecteurTheme } from "./Theme";
 import { Avatar, Sheet } from "./ui";
 
 const liens = [
@@ -126,6 +127,7 @@ function FeuillePlus({ onClose, onRecherche, profil }: { onClose: () => void; on
   return (
     <Sheet titre="Plus" sousTitre={profil ? `Connectée : ${p?.nom ?? profil}` : undefined} onClose={onClose}>
       <div className="flex flex-col gap-1">
+        <div className="mb-1"><SelecteurTheme /></div>
         <button onClick={onRecherche} className="nav-item w-full text-left"><Search />Rechercher</button>
         <Link href="/reglages/" onClick={onClose} className="nav-item"><Settings />Réglages</Link>
         {!demo && <button onClick={deconnexion} className="nav-item w-full text-left !text-danger"><LogOut />Déconnexion</button>}
@@ -166,6 +168,8 @@ function MenuProfil() {
               <p className="micro truncate">{profil?.email ?? (demo ? "Mode démo" : "")}</p>
             </div>
           </div>
+          <div className="my-1 h-px bg-line" />
+          <div className="px-1 pb-1.5 pt-1"><SelecteurTheme /></div>
           <div className="my-1 h-px bg-line" />
           <Link href="/reglages/" role="menuitem" onClick={() => setOuvert(false)} className="nav-item"><Settings />Réglages</Link>
           {!demo && <button role="menuitem" onClick={deconnexion} className="nav-item w-full text-left hover:!text-danger"><LogOut />Déconnexion</button>}

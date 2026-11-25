@@ -4,10 +4,11 @@ import { ExternalLink, Send, Trash2, Undo2, User } from "lucide-react";
 import { useState } from "react";
 import { BadgeStatut } from "@/components/BadgeStatut";
 import { Avatar, Champ, Sheet } from "@/components/ui";
+import { changementStatut, estCloturee, prochaineAction } from "@/lib/actions";
 import { fmt, ilYa, diffDays, today } from "@/lib/dates";
 import { prochaineRelance, relancesDe } from "@/lib/relances";
 import { useStore } from "@/lib/store";
-import { CANAUX, STATUTS, labelCanal, type Candidature, type Canal, type Statut } from "@/lib/types";
+import { CANAUX, STATUTS, labelCanal, labelStatut, type Candidature, type Canal, type Statut } from "@/lib/types";
 import { productionsVues } from "@/lib/veille";
 
 export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () => void }) {
@@ -28,18 +29,16 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
   });
 
   function changerStatut(statut: Statut) {
-    const p: Partial<Candidature> = { statut, cloture_auto: false };
-    if ((statut === "envoyee" || statut === "relancee") && !c.date_envoi) p.date_envoi = today();
-    maj(p);
+    maj(changementStatut(c, statut));
   }
   function relancer(e: React.FormEvent) {
     e.preventDefault();
     s.add("relances", { candidature_id: c.id, date: rDate, canal: rCanal, note: rNote || null });
-    maj({ statut: "relancee", cloture_auto: false, cloture_annulee: false });
+    maj(changementStatut(c, "relancee", { cloture_annulee: false }));
     setRNote("");
   }
   function annulerCloture() {
-    maj({ statut: c.statut_avant ?? "relancee", cloture_auto: false, cloture_annulee: true });
+    maj(changementStatut(c, c.statut_avant ?? "relancee", { cloture_annulee: true }));
   }
   function supprimer() {
     if (confirm(`Supprimer la candidature « ${c.studio} » et ses relances ?`)) {
@@ -48,6 +47,8 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
     }
   }
 
+  const action = prochaineAction(c, s.data.relances, s.reglages);
+  const cloturee = estCloturee(c);
   const reste = prochaine ? diffDays(prochaine, today()) : null;
   const peutRelancer = c.statut === "envoyee" || c.statut === "relancee";
 
@@ -80,6 +81,23 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
         </div>
       </div>
 
+      {cloturee ? (
+        <div className="mb-5 rounded-xl bg-surface-2 p-3">
+          <p className="meta">Motif de clôture{c.date_statut ? ` · ${fmt(c.date_statut)}` : ""}</p>
+          <input className="champ mt-1.5" placeholder="Poste pourvu, profil différent, pas de retour…" aria-label="Motif de clôture" value={c.motif_cloture ?? ""} onChange={(e) => maj({ motif_cloture: e.target.value || null })} />
+        </div>
+      ) : (
+        <div className="mb-5 rounded-xl bg-surface-2 p-3">
+          <p className="meta">Prochaine action</p>
+          <div className="mt-1.5 grid grid-cols-1 gap-2 sm:grid-cols-[1fr_auto_auto]">
+            <input className="champ" aria-label="Prochaine action" placeholder={action ? `${action.texte} (proposée)` : "Ex. envoyer le portfolio mis à jour"} value={c.prochaine_action ?? ""} onChange={(e) => maj({ prochaine_action: e.target.value || null })} />
+            <input type="date" className="champ sm:w-40" aria-label="Date de la prochaine action" value={c.prochaine_action_date ?? ""} onChange={(e) => maj({ prochaine_action_date: e.target.value || null })} />
+            {(c.prochaine_action || c.prochaine_action_date) && <button className="bouton" onClick={() => maj({ prochaine_action: null, prochaine_action_date: null })}>Effacer</button>}
+          </div>
+          {!c.prochaine_action && action && <p className="micro mt-1.5">Sans saisie, l’app propose : « {action.texte} »{action.date ? ` le ${fmt(action.date)}` : ""}.</p>}
+        </div>
+      )}
+
       <h3 className="titre-section mb-3">Historique</h3>
       <ol className="chronologie">
         <li>
@@ -100,10 +118,18 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
             </div>
           </li>
         ))}
-        {c.cloture_auto && (
+        {c.statut === "entretien" && (
           <li>
-            <span className="point" style={{ ["--c" as string]: "var(--muted)" }} />
-            <p className="text-[13px] font-semibold">Clôturée sans réponse (automatique)</p>
+            <span className="point" style={{ ["--c" as string]: "#8a52d9" }} />
+            <p className="text-[13px] font-semibold">Entretien{c.prochaine_action_date ? ` · ${fmt(c.prochaine_action_date)}` : " fixé"}</p>
+            {c.prochaine_action && <p className="micro">{c.prochaine_action}</p>}
+          </li>
+        )}
+        {cloturee && (
+          <li>
+            <span className="point" style={{ ["--c" as string]: c.statut === "acceptee" ? "var(--ok)" : c.statut === "refus" ? "var(--danger)" : "var(--muted)" }} />
+            <p className="text-[13px] font-semibold">{c.cloture_auto ? "Clôturée sans réponse (automatique)" : labelStatut(c.statut)}{c.date_statut ? ` · ${fmt(c.date_statut)}` : ""}</p>
+            {c.motif_cloture && <p className="micro">{c.motif_cloture}</p>}
           </li>
         )}
         {prochaine && (

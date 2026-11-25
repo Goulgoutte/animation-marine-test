@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { addDays, addMonths, diffDays, today } from "./dates";
 import { dernierEchange } from "./contacts";
+import { prochaineAction } from "./actions";
 import { aRelancer, prochaineRelance } from "./relances";
 import { useStore } from "./store";
 import type { Candidature, Contact, Echange } from "./types";
@@ -36,6 +37,12 @@ export function useIndicateurs() {
       .filter((c) => aRelancer(c, data.relances, reglages))
       .sort((a, b) => (prochaineRelance(a, data.relances, reglages) ?? "").localeCompare(prochaineRelance(b, data.relances, reglages) ?? ""));
 
+    // Actions saisies à la main et échues (hors relances déjà comptées plus haut)
+    const actionsCandidatures = data.candidatures
+      .map((c) => ({ c, a: prochaineAction(c, data.relances, reglages) }))
+      .filter((x): x is { c: Candidature; a: NonNullable<typeof x.a> } => !!x.a && !x.a.deduite && x.a.echue)
+      .sort((x, y) => (x.a.date ?? "").localeCompare(y.a.date ?? ""));
+
     const seuil = addMonths(today(), -reglages.delai_contact_mois);
     const suivis: ContactSuivi[] = data.contacts.map((c) => {
       const dernier = dernierEchange(c.id, data.echanges);
@@ -51,10 +58,10 @@ export function useIndicateurs() {
 
     return {
       offres, prods, offresPerimetre, nouvellesOffres, prodsMoment, prodsSurveillees,
-      relancesDues, suivis, contactsARecontacter, actionsContacts,
+      relancesDues, actionsCandidatures, suivis, contactsARecontacter, actionsContacts,
       compteurs: {
         veille: nouvellesOffres.length,
-        candidatures: relancesDues.length,
+        candidatures: relancesDues.length + actionsCandidatures.length,
         contacts: contactsARecontacter.length,
       },
     };

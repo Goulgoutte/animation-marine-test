@@ -24,6 +24,10 @@ create table if not exists public.candidatures (
   cloture_annulee boolean not null default false,
   notes text,
   liens text,
+  prochaine_action text,                         -- libellé libre ; vide = action déduite par l'app
+  prochaine_action_date date,
+  motif_cloture text,
+  date_statut date,                              -- dernier changement de statut
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );

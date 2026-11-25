@@ -16,14 +16,18 @@ export function donneesDemo(): Donnees {
     cloture_annulee: false,
     notes: null,
     liens: null,
+    prochaine_action: null,
+    prochaine_action_date: null,
+    motif_cloture: null,
+    date_statut: null,
   };
   return {
     candidatures: [
       { ...base, id: "demo-c1", studio: "Caribara", poste: "Candidature spontanée, décor couleur", type: "spontanee", categorie: "decor", date_envoi: addDays(t, -20), canal: "mail", statut: "envoyee", contact_id: "demo-k1", production_id: "prod-demo-1" },
       { ...base, id: "demo-c2", studio: "Miyu Productions", poste: "Layout décor, série", type: "offre", categorie: "decor", date_envoi: addDays(t, -40), canal: "formulaire", statut: "relancee" },
       { ...base, id: "demo-c3", studio: "Folivari", poste: "Background artist", type: "offre", categorie: "decor", date_envoi: addDays(t, -6), canal: "linkedin", statut: "envoyee" },
-      { ...base, id: "demo-c4", studio: "Blue Spirit", poste: "Color key artist", type: "offre", categorie: "decor", date_envoi: addDays(t, -30), canal: "recommandation", statut: "entretien" },
-      { ...base, id: "demo-c5", studio: "Mist Studio", poste: "Storyboardeuse", type: "offre", categorie: "autre", date_envoi: addDays(t, -50), canal: "mail", statut: "refus" },
+      { ...base, id: "demo-c4", studio: "Blue Spirit", poste: "Color key artist", type: "offre", categorie: "decor", date_envoi: addDays(t, -30), canal: "recommandation", statut: "entretien", prochaine_action: "Entretien visio avec la direction artistique", prochaine_action_date: addDays(t, 3), date_statut: addDays(t, -5) },
+      { ...base, id: "demo-c5", studio: "Mist Studio", poste: "Storyboardeuse", type: "offre", categorie: "autre", date_envoi: addDays(t, -50), canal: "mail", statut: "refus", motif_cloture: "Poste pourvu en interne", date_statut: addDays(t, -12) },
       { ...base, id: "demo-c6", studio: "Xilam", poste: "Candidature spontanée", type: "spontanee", categorie: "decor", date_envoi: null, canal: "mail", statut: "a_preparer" },
     ],
     relances: [
