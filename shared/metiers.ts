@@ -28,7 +28,7 @@ export interface MetiersPerso {
   crees?: Metier[];
 }
 
-const MOTS_DECOR = ["décor", "décors", "décorateur", "décoratrice", "décor couleur", "layout décor", "layout bg", "bg", "background", "backgrounds", "background artist", "background painter", "colour artist", "color artist", "color key", "color script", "colour script", "environment artist", "environment design", "matte painting", "set design", "props et décors", "bg color", "bg layout", "peintre décor", "production designer", "production design", "chef décorateur", "chef décorateur·rice"];
+const MOTS_DECOR = ["décor", "décors", "décorateur", "décoratrice", "décor couleur", "layout décor", "layout bg", "bg", "background", "backgrounds", "background artist", "background painter", "colour artist", "color artist", "color key", "color script", "colour script", "environment artist", "environment design", "matte painting", "matte painter", "set design", "props et décors", "bg color", "bg layout", "peintre décor", "production designer", "production design", "chef décorateur", "chef décorateur·rice"];
 
 export const METIERS: Metier[] = [
   // Décor : exactement la liste de la collecte (collector/config/keywords.json), pour que les deux classements restent d'accord.
