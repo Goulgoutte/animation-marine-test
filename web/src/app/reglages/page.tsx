@@ -1,7 +1,6 @@
 "use client";
 
-import { Archive, ArrowRight, BellRing, Compass, Database, Download, ExternalLink, LogOut, RotateCcw, UserRound, type LucideIcon } from "lucide-react";
-import Link from "next/link";
+import { Archive, BellRing, Database, Download, ExternalLink, LogOut, RotateCcw, UserRound, type LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import { SourcesReglages } from "@/components/SourcesReglages";
 import { Avatar, EnTete } from "@/components/ui";
@@ -91,18 +90,28 @@ export default function Reglages() {
           <ProfilMail />
         </Section>
 
-        <Section icone={Compass} titre="Périmètre de recherche">
-          <p className="flex flex-wrap items-center gap-x-2 text-[13.5px]">
-            Le périmètre se règle dans la Veille.
-            <Link href="/veille/" className="inline-flex items-center gap-1 font-semibold text-accent underline">Ouvrir la Veille <ArrowRight className="h-3.5 w-3.5" /></Link>
-          </p>
-        </Section>
-
-        <Section icone={BellRing} titre="Relances" description="Jours ouvrés : du lundi au vendredi, jours fériés non décomptés.">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <label className="flex flex-col gap-1"><span className="meta">1re relance (jours ouvrés)</span><input className="champ" type="number" min={1} max={90} value={r.delai_relance_1} onChange={(e) => s.saveReglages({ delai_relance_1: num(e.target.value, 1, 90, 10) })} /></label>
-            <label className="flex flex-col gap-1"><span className="meta">2e relance (jours ouvrés)</span><input className="champ" type="number" min={1} max={90} value={r.delai_relance_2} onChange={(e) => s.saveReglages({ delai_relance_2: num(e.target.value, 1, 90, 15) })} /></label>
-            <label className="flex flex-col gap-1"><span className="meta">Recontacter après (mois)</span><input className="champ" type="number" min={1} max={36} value={r.delai_contact_mois} onChange={(e) => s.saveReglages({ delai_contact_mois: num(e.target.value, 1, 36, 3) })} /></label>
+        <Section
+          icone={BellRing}
+          titre="Rappels"
+          description="Quand l’app te rappelle de relancer une candidature ou de reprendre contact avec quelqu’un. Ces rappels apparaissent dans « À faire » du tableau de bord et dans Candidatures."
+        >
+          <div className="grid grid-cols-1 gap-3 text-[13.5px]">
+            <label className="flex flex-wrap items-center gap-2">
+              Proposer une 1re relance
+              <input className="champ !w-20 text-center" type="number" min={1} max={90} value={r.delai_relance_1} onChange={(e) => s.saveReglages({ delai_relance_1: num(e.target.value, 1, 90, 10) })} />
+              jours ouvrés après l’envoi d’une candidature sans réponse.
+            </label>
+            <label className="flex flex-wrap items-center gap-2">
+              Puis une 2e relance
+              <input className="champ !w-20 text-center" type="number" min={1} max={90} value={r.delai_relance_2} onChange={(e) => s.saveReglages({ delai_relance_2: num(e.target.value, 1, 90, 15) })} />
+              jours ouvrés plus tard. Sans réponse ensuite, la candidature passe en « Sans réponse » (annulable).
+            </label>
+            <label className="flex flex-wrap items-center gap-2">
+              Me rappeler de recontacter quelqu’un après
+              <input className="champ !w-20 text-center" type="number" min={1} max={36} value={r.delai_contact_mois} onChange={(e) => s.saveReglages({ delai_contact_mois: num(e.target.value, 1, 36, 3) })} />
+              mois sans échange (seulement les personnes avec qui tu as déjà échangé).
+            </label>
+            <p className="micro">Jours ouvrés : du lundi au vendredi.</p>
           </div>
         </Section>
 
