@@ -5,7 +5,7 @@ import { addDays, diffDays, today } from "./dates";
 import { aRecontacter, dernierEchange } from "./contacts";
 import { prochaineAction } from "./actions";
 import { aRelancer, prochaineRelance } from "./relances";
-import { estDansMetiers, metiersSuivis } from "@shared/metiers";
+import { catalogueMetiers, metiersSuivis, passeMetiers } from "@shared/metiers";
 import { useStore } from "./store";
 import type { Candidature, Contact, Echange } from "./types";
 import { offreDansPerimetre, offresVues, productionDansPerimetre, productionsVues } from "./veille";
@@ -23,16 +23,18 @@ export function useIndicateurs() {
   const { collecte, data, reglages, visitePrecedente } = s;
 
   return useMemo(() => {
-    const offres = collecte ? offresVues(collecte, data, visitePrecedente) : [];
-    const prods = collecte ? productionsVues(collecte, data, visitePrecedente) : [];
+    // Mots-clés des métiers : catalogue par défaut + personnalisations des réglages
+    const catalogue = catalogueMetiers(reglages.perimetre.metiers_perso);
+    const offres = collecte ? offresVues(collecte, data, visitePrecedente, catalogue) : [];
+    const prods = collecte ? productionsVues(collecte, data, visitePrecedente, catalogue) : [];
     const metiersChoisis = metiersSuivis(reglages.perimetre);
     const offresPerimetre = offres
-      .filter((o) => estDansMetiers(o.metiers, metiersChoisis) && !o.masquee && (o.manuelle || offreDansPerimetre(o, reglages)))
+      .filter((o) => passeMetiers(o.metiers, metiersChoisis) && offreDansPerimetre(o, reglages))
       .sort((a, b) => b.premiereVue.localeCompare(a.premiereVue));
     const nouvellesOffres = offresPerimetre.filter((o) => o.nouveau);
-    const prodsMoment = prods.filter((p) => p.bonMomentDecor && !p.masquee && (p.manuelle || productionDansPerimetre(p, reglages)));
+    const prodsMoment = prods.filter((p) => p.bonMomentDecor && productionDansPerimetre(p, reglages));
     const prodsSurveillees = prods
-      .filter((p) => !p.masquee && (p.manuelle || productionDansPerimetre(p, reglages)) && (p.bonMomentDecor || p.misEnAvant))
+      .filter((p) => productionDansPerimetre(p, reglages) && (p.bonMomentDecor || p.misEnAvant))
       .sort((a, b) => Number(b.bonMomentDecor) - Number(a.bonMomentDecor) || b.premiereVue.localeCompare(a.premiereVue));
 
     const relancesDues: Candidature[] = data.candidatures

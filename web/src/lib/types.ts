@@ -1,3 +1,4 @@
+import type { MetiersPerso } from "@shared/metiers";
 import type { Categorie, Offre, Production } from "@shared/types";
 
 export type Statut =
@@ -142,6 +143,12 @@ export interface Perimetre {
   metiers?: string[];
   /** Ancien réglage (« decor » ou « autre »), lu seulement si `metiers` est absent. */
   categorie?: Categorie;
+  /** Modes de travail gardés (« sur-place », « hybride », « teletravail »). Absent : déduit de `teletravail`. */
+  modes?: string[];
+  /** Techniques gardées (« 2D », « 3D », « stop-motion », « inconnue »). Absent : déduit de `afficher3d`. */
+  techniques?: string[];
+  /** Mots-clés des métiers modifiés, métiers créés ou masqués : classement fait à l’affichage, aucune migration. */
+  metiers_perso?: MetiersPerso;
 }
 
 /** Profil d'envoi des mails (variables {{mon_prenom}}, {{ma_signature}}, {{portfolio}}…). */

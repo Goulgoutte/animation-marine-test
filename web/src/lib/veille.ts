@@ -1,8 +1,10 @@
 import type { Offre, Production } from "@shared/types";
-import { metiersOffre, metiersProduction } from "@shared/metiers";
+import type { Metier } from "@shared/metiers";
+import { METIERS, metiersOffre, metiersProduction } from "@shared/metiers";
 import type { Collecte } from "./store";
 import type { Donnees, Reglages } from "./types";
-import { lieuDansZones, normaliser, zonesActives } from "./zones";
+import { FILTRES_VIDES, filtresPersistants, offrePasse, productionPasse } from "./filtres";
+import { lieuDansZones, zonesActives } from "./zones";
 
 /** `metiers` : ids de shared/metiers.ts, classés côté site (titre, extrait, studio) à chaque affichage. */
 export type OffreVue = Offre & { manuelle: boolean; corrigee: boolean; masquee: boolean; nouveau: boolean; metiers: string[] };
@@ -15,7 +17,7 @@ function estNouveau(premiereVue: string, ref: string | null): boolean {
   return premiereVue > ref;
 }
 
-export function offresVues(c: Collecte, d: Donnees, ref: string | null): OffreVue[] {
+export function offresVues(c: Collecte, d: Donnees, ref: string | null, catalogue: Metier[] = METIERS): OffreVue[] {
   const masques = new Set(d.masquages.filter((m) => m.kind === "offre").map((m) => m.ref_id));
   const corr = new Map(d.corrections.filter((x) => x.kind === "offre").map((x) => [x.ref_id, x.champs]));
   const collectees = c.offres.offres.map((o) => ({ o, manuelle: false }));
@@ -23,11 +25,11 @@ export function offresVues(c: Collecte, d: Donnees, ref: string | null): OffreVu
   return [...collectees, ...manuelles].map(({ o, manuelle }) => {
     const champs = corr.get(o.id);
     const f = champs ? ({ ...o, ...champs } as Offre) : o;
-    return { ...f, manuelle, corrigee: !!champs, masquee: masques.has(o.id), nouveau: estNouveau(f.premiereVue, ref), metiers: metiersOffre(f) };
+    return { ...f, manuelle, corrigee: !!champs, masquee: masques.has(o.id), nouveau: estNouveau(f.premiereVue, ref), metiers: metiersOffre(f, catalogue) };
   });
 }
 
-export function productionsVues(c: Collecte, d: Donnees, ref: string | null): ProductionVue[] {
+export function productionsVues(c: Collecte, d: Donnees, ref: string | null, catalogue: Metier[] = METIERS): ProductionVue[] {
   const masques = new Set(d.masquages.filter((m) => m.kind === "production").map((m) => m.ref_id));
   const corr = new Map(d.corrections.filter((x) => x.kind === "production").map((x) => [x.ref_id, x.champs]));
   const collectees = c.productions.productions.map((o) => ({ o, manuelle: false }));
@@ -35,43 +37,20 @@ export function productionsVues(c: Collecte, d: Donnees, ref: string | null): Pr
   return [...collectees, ...manuelles].map(({ o, manuelle }) => {
     const champs = corr.get(o.id);
     const f = champs ? ({ ...o, ...champs } as Production) : o;
-    return { ...f, manuelle, corrigee: !!champs, masquee: masques.has(o.id), nouveau: estNouveau(f.premiereVue, ref), metiers: metiersProduction(f) };
+    return { ...f, manuelle, corrigee: !!champs, masquee: masques.has(o.id), nouveau: estNouveau(f.premiereVue, ref), metiers: metiersProduction(f, catalogue) };
   });
 }
 
 /**
- * Périmètre côté site, calculé à partir des zones choisies (ne dépend plus de `dansPerimetre`).
- * Mode inconnu : visible (badge « À vérifier »). Technique inconnue : visible aussi.
+ * Périmètre enregistré dans les réglages (zones, modes de travail, langues, techniques), sans le métier ni les filtres de l'URL.
+ * Mode inconnu : visible (badge « À vérifier »). Offres expirées et masquées : écartées. Sert au KPI et au compteur de navigation.
  */
-export function offreDansPerimetre(o: Offre, reg: Reglages): boolean {
-  const p = reg.perimetre;
-  if (o.technique === "3D" && !p.afficher3d) return false;
-  switch (o.modeTravail) {
-    case "teletravail-complet": {
-      if (!p.teletravail) return false;
-      if (o.residenceExigee) {
-        const r = normaliser(o.residenceExigee);
-        if (r !== "france" && r !== "fr") return false;
-      }
-      return o.langue === "inconnue" || (o.langue !== "autre" && p.langues.includes(o.langue));
-    }
-    case "paris-sur-place":
-    case "hybride":
-    case "sur-place-ailleurs": {
-      const lieux = [o.lieu, o.pays];
-      // Offre « sur place à Paris » sans lieu renseigné : le mode vient de la collecte, on s’y fie.
-      if (o.modeTravail === "paris-sur-place" && !o.lieu && !o.pays) lieux.push("Paris");
-      return lieuDansZones(lieux, zonesActives(p));
-    }
-    default:
-      return true;
-  }
+export function offreDansPerimetre(o: OffreVue, reg: Reglages): boolean {
+  return offrePasse(o, { ...FILTRES_VIDES, ...filtresPersistants(reg.perimetre) }, "metier");
 }
 
-export function productionDansPerimetre(p: Production, reg: Reglages): boolean {
-  if (p.technique === "3D" && !reg.perimetre.afficher3d) return false;
-  if (p.technique === "stop-motion") return false;
-  return true;
+export function productionDansPerimetre(p: ProductionVue, reg: Reglages): boolean {
+  return productionPasse(p, { ...FILTRES_VIDES, ...filtresPersistants(reg.perimetre) }, "metier");
 }
 
 /** Fabrication dans une des zones choisies (badge « Dans ta zone »). */

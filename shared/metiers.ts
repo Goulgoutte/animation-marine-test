@@ -10,6 +10,22 @@ export interface Metier {
   mots: string[];
   /** Un de ces mots dans le titre écarte le métier (ex. « animateur 3D » n'est pas de l'animation 2D). */
   exclure?: string[];
+  /** Métier masqué par l'utilisatrice : il ne classe plus rien et disparaît des filtres. */
+  masque?: boolean;
+}
+
+/** Personnalisation d'un métier du catalogue par défaut : seuls les champs présents remplacent le défaut. */
+export interface MetierModif {
+  label?: string;
+  mots?: string[];
+  exclure?: string[];
+  masque?: boolean;
+}
+
+/** Stocké dans reglages.perimetre.metiers_perso (jsonb, sans migration). */
+export interface MetiersPerso {
+  modifs?: Record<string, MetierModif>;
+  crees?: Metier[];
 }
 
 const MOTS_DECOR = ["décor", "décors", "décorateur", "décoratrice", "décor couleur", "layout décor", "layout bg", "bg", "background", "backgrounds", "background artist", "background painter", "colour artist", "color artist", "color key", "color script", "colour script", "environment artist", "environment design", "matte painting", "set design", "props et décors", "bg color", "bg layout", "peintre décor", "production designer", "production design", "chef décorateur", "chef décorateur·rice"];
@@ -72,8 +88,22 @@ export const METIERS: Metier[] = [
 /** Réglage par défaut : ce que Marine suit tant qu'elle n'a rien choisi. */
 export const METIERS_DEFAUT = ["decor", "concept"];
 
-export const metierParId = (id: string): Metier | undefined => METIERS.find((m) => m.id === id);
-export const labelMetier = (id: string): string => metierParId(id)?.label ?? id;
+/** Catalogue par défaut fusionné avec les personnalisations : renommages, mots-clés remplacés, masqués, métiers créés. */
+export function catalogueMetiers(perso?: MetiersPerso | null): Metier[] {
+  if (!perso) return METIERS;
+  const modifs = perso.modifs ?? {};
+  const base = METIERS.map((m) => {
+    const x = modifs[m.id];
+    return x ? { ...m, label: x.label?.trim() || m.label, mots: x.mots ?? m.mots, exclure: x.exclure ?? m.exclure, masque: x.masque } : m;
+  });
+  return [...base, ...(perso.crees ?? [])];
+}
+
+export const metierParId = (id: string, catalogue: Metier[] = METIERS): Metier | undefined => catalogue.find((m) => m.id === id);
+export const labelMetier = (id: string, catalogue: Metier[] = METIERS): string => (id === ID_AUTRES ? "Autres" : metierParId(id, catalogue)?.label ?? id);
+
+/** Pseudo-métier : offres et productions qu'aucun métier visible ne reconnaît. */
+export const ID_AUTRES = "autres";
 
 /** minuscules, sans accents, marques de genre retirées (« assistant·e », « compositeur.rice »), espaces normalisés */
 export function normaliserTexte(s: string): string {
@@ -109,34 +139,44 @@ export interface TexteAClasser {
 }
 
 /** Ids des métiers reconnus dans le titre, l'extrait et le studio (ordre du catalogue). */
-export function metiersDe(e: TexteAClasser): string[] {
+export function metiersDe(e: TexteAClasser, catalogue: Metier[] = METIERS): string[] {
   const titre = normaliserTexte(e.titre ?? "");
   const autour = normaliserTexte([e.extrait, e.studio, e.production].filter(Boolean).join(" "));
-  return METIERS.filter((m) => {
+  return catalogue.filter((m) => {
+    if (m.masque) return false;
     if (m.exclure?.some((x) => contientMot(titre, x))) return false;
     return m.mots.some((mot) => contientMot(titre, mot) || (/\s/.test(mot) && contientMot(autour, mot)));
   }).map((m) => m.id);
 }
 
+const decorActif = (catalogue: Metier[]) => !!catalogue.find((m) => m.id === "decor" && !m.masque);
+
 /** Offre : le texte, plus l'ancienne catégorie « décor » (offres saisies à la main ou corrigées). */
-export function metiersOffre(o: TexteAClasser & { categorie?: string }): string[] {
-  const ids = metiersDe(o);
-  return o.categorie === "decor" && !ids.includes("decor") ? ["decor", ...ids] : ids;
+export function metiersOffre(o: TexteAClasser & { categorie?: string }, catalogue: Metier[] = METIERS): string[] {
+  const ids = metiersDe(o, catalogue);
+  return o.categorie === "decor" && !ids.includes("decor") && decorActif(catalogue) ? ["decor", ...ids] : ids;
 }
 
 /** Production : le texte, plus « décor » quand la production est bien placée pour un décorateur (bon moment ou Paris/télétravail). */
 export function metiersProduction(p: {
   titre: string; extrait?: string | null; producteurs?: string[]; studiosFabrication?: string[]; bonMomentDecor?: boolean; misEnAvant?: boolean;
-}): string[] {
-  const ids = metiersDe({ titre: p.titre, extrait: p.extrait, studio: [...(p.studiosFabrication ?? []), ...(p.producteurs ?? [])].join(" ") });
-  return (p.bonMomentDecor || p.misEnAvant) && !ids.includes("decor") ? ["decor", ...ids] : ids;
+}, catalogue: Metier[] = METIERS): string[] {
+  const ids = metiersDe({ titre: p.titre, extrait: p.extrait, studio: [...(p.studiosFabrication ?? []), ...(p.producteurs ?? [])].join(" ") }, catalogue);
+  return (p.bonMomentDecor || p.misEnAvant) && !ids.includes("decor") && decorActif(catalogue) ? ["decor", ...ids] : ids;
 }
 
-/** Métiers suivis d'après les réglages : `metiers`, sinon l'ancien `categorie`, sinon le défaut. Les ids inconnus sont ignorés. */
-export function metiersSuivis(p: { metiers?: string[]; categorie?: "decor" | "autre" }): string[] {
+/**
+ * Métiers suivis d'après les réglages : `metiers`, sinon l'ancien `categorie`, sinon le défaut.
+ * Les ids inconnus ou masqués sont ignorés ; « autres » est gardé tel quel.
+ */
+export function metiersSuivis(p: { metiers?: string[]; categorie?: "decor" | "autre"; metiers_perso?: MetiersPerso | null }): string[] {
   const brut = p.metiers ?? (p.categorie === "decor" ? ["decor"] : METIERS_DEFAUT);
-  const ids = brut.filter((id) => !!metierParId(id));
-  return ids;
+  const cat = catalogueMetiers(p.metiers_perso);
+  return brut.filter((id) => id === ID_AUTRES || !!cat.find((m) => m.id === id && !m.masque));
 }
 
 export const estDansMetiers = (ids: string[], suivis: string[]): boolean => ids.some((i) => suivis.includes(i));
+
+/** Filtre par métiers : aucune sélection = tout passe ; « autres » = ce qu'aucun métier ne reconnaît. */
+export const passeMetiers = (ids: string[], suivis: string[]): boolean =>
+  suivis.length === 0 || estDansMetiers(ids, suivis) || (ids.length === 0 && suivis.includes(ID_AUTRES));

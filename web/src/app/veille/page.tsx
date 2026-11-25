@@ -1,63 +1,79 @@
 "use client";
 
-import { Archive, Briefcase, CalendarClock, Check, ExternalLink, EyeOff, Film, Globe2, MapPin, Pencil, Plus, Radar, Search, ShieldAlert, Sparkles, Undo2 } from "lucide-react";
+import { Archive, ArrowUpDown, Briefcase, CalendarClock, Check, ExternalLink, EyeOff, Film, Globe2, MapPin, Pencil, Plus, Radar, Search, ShieldAlert, Sparkles, Undo2 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { estDansMetiers, labelMetier, metiersOffre, metiersSuivis } from "@shared/metiers";
+import { catalogueMetiers } from "@shared/metiers";
 import { FormOffre, FormProduction } from "@/components/FormsVeille";
-import { BarrePerimetre, BoutonMetiers } from "@/components/Perimetre";
-import { Couverture, EnTete, Interrupteur, Onglets, Sheet, Vide, Vignette } from "@/components/ui";
+import { BoutonFiltres, GererMetiers, PanneauFiltres, RangeeActive } from "@/components/Filtres";
+import { Couverture, EnTete, Onglets, Sheet, Vide, Vignette } from "@/components/ui";
 import { nouvelleCandidature } from "@/lib/candidature";
 import { fmt, fmtCourt, today } from "@/lib/dates";
+import { FILTRES_VIDES, depuisUrl, estPersistant, filtresPersistants, offrePasse, perimetreDepuis, productionPasse, puces as pucesActives, trierOffres, trierProductions, triValide, versUrl, type Filtres, type Onglet, type Tri } from "@/lib/filtres";
+import { useIndicateurs } from "@/lib/indicateurs";
 import { useStore } from "@/lib/store";
 import type { Candidature } from "@/lib/types";
 import {
-  LABEL_CONTRAT, LABEL_FORMAT, LABEL_MODE, LABEL_NIVEAU, LABEL_STATUT_PROD, offreDansPerimetre, offresVues,
-  productionDansPerimetre, productionDansZone, productionsVues, type OffreVue, type ProductionVue,
+  LABEL_CONTRAT, LABEL_FORMAT, LABEL_MODE, LABEL_NIVEAU, LABEL_STATUT_PROD, offresVues,
+  productionDansZone, productionsVues, type OffreVue, type ProductionVue,
 } from "@/lib/veille";
 
-type Onglet = "offres" | "productions";
 const norm = (s: string) => s.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
 
 export default function Veille() {
   const s = useStore();
+  const ind = useIndicateurs();
   const [onglet, setOnglet] = useState<Onglet>("offres");
-  // Filtre de métier : « mes » (tous les métiers suivis), « autres » (le reste) ou l’id d’un métier suivi
-  const [filtre, setFiltre] = useState<string>("mes");
   const [q, setQ] = useState("");
-  const [horsPerimetre, setHorsPerimetre] = useState(false);
-  const [masques, setMasques] = useState(false);
+  // Filtres de l’URL (contrat, niveau, fraîcheur, affichage, tri, facettes des productions) : pas de persistance serveur
+  const [urlF, setUrlF] = useState<Filtres>(FILTRES_VIDES);
+  const [urlLue, setUrlLue] = useState(false);
+  const [panneau, setPanneau] = useState(false);
+  const [gerer, setGerer] = useState(false);
   const [ajout, setAjout] = useState<null | "offre" | "production">(null);
   const [detail, setDetail] = useState<null | { kind: "offre" | "production"; id: string }>(null);
   const [edition, setEdition] = useState(false);
   const [flash, setFlash] = useState<string | null>(null);
 
-  const offres = useMemo(() => offresVues(s.collecte!, s.data, s.visitePrecedente), [s.collecte, s.data, s.visitePrecedente]);
-  const prods = useMemo(() => productionsVues(s.collecte!, s.data, s.visitePrecedente), [s.collecte, s.data, s.visitePrecedente]);
+  const perimetre = s.reglages.perimetre;
+  const catalogue = useMemo(() => catalogueMetiers(perimetre.metiers_perso), [perimetre.metiers_perso]);
+  const metiersVisibles = useMemo(() => catalogue.filter((m) => !m.masque), [catalogue]);
+  const offres = useMemo(() => offresVues(s.collecte!, s.data, s.visitePrecedente, catalogue), [s.collecte, s.data, s.visitePrecedente, catalogue]);
+  const prods = useMemo(() => productionsVues(s.collecte!, s.data, s.visitePrecedente, catalogue), [s.collecte, s.data, s.visitePrecedente, catalogue]);
 
-  const suivis = useMemo(() => metiersSuivis(s.reglages.perimetre), [s.reglages.perimetre]);
-  const f = filtre === "mes" || filtre === "autres" || suivis.includes(filtre) ? filtre : "mes";
-  const dansFiltre = (metiers: string[], x: string) => (x === "mes" ? estDansMetiers(metiers, suivis) : x === "autres" ? !estDansMetiers(metiers, suivis) : metiers.includes(x));
+  // Filtres enregistrés (réglages) + filtres de l’URL
+  const f: Filtres = { ...urlF, ...filtresPersistants(perimetre) };
+  const tri = triValide(urlF.tri, onglet);
+  function maj(patch: Partial<Filtres>) {
+    const pers = Object.fromEntries(Object.entries(patch).filter(([k]) => estPersistant(k))) as Partial<Filtres>;
+    const reste = Object.fromEntries(Object.entries(patch).filter(([k]) => !estPersistant(k))) as Partial<Filtres>;
+    if (Object.keys(pers).length) s.saveReglages({ perimetre: perimetreDepuis(perimetre, pers) });
+    if (Object.keys(reste).length) setUrlF((x) => ({ ...x, ...reste }));
+  }
+  const effacer = () => maj({ ...FILTRES_VIDES, tri });
+
+  // Lecture de l’URL au chargement, puis écriture à chaque changement (sans recharger la page)
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search);
+    if (p.get("onglet") === "productions") setOnglet("productions");
+    setUrlF((x) => ({ ...x, ...depuisUrl(window.location.search) }));
+    setUrlLue(true);
+  }, []);
+  useEffect(() => {
+    if (!urlLue) return;
+    const suite = versUrl(window.location.search, urlF);
+    if (suite !== window.location.search) window.history.replaceState(window.history.state, "", `${window.location.pathname}${suite}${window.location.hash}`);
+  }, [urlF, urlLue]);
 
   // Ouverture depuis la recherche globale ou le tableau de bord
   useEffect(() => {
-    const f = s.focus;
-    if (!f || (f.kind !== "offre" && f.kind !== "production")) return;
-    if (f.kind === "offre") {
-      const o = offres.find((x) => x.id === f.id);
-      if (o) { setOnglet("offres"); setFiltre(estDansMetiers(o.metiers, suivis) ? "mes" : "autres"); }
-    } else {
-      const p = prods.find((x) => x.id === f.id);
-      if (p) { setOnglet("productions"); setFiltre(estDansMetiers(p.metiers, suivis) ? "mes" : "autres"); }
-    }
-    setDetail({ kind: f.kind, id: f.id });
+    const fo = s.focus;
+    if (!fo || (fo.kind !== "offre" && fo.kind !== "production")) return;
+    setOnglet(fo.kind === "offre" ? "offres" : "productions");
+    setDetail({ kind: fo.kind, id: fo.id });
     setEdition(false);
     s.setFocus(null);
-  }, [s.focus, offres, prods, s, suivis]);
-
-  useEffect(() => {
-    if (new URLSearchParams(window.location.search).get("onglet") === "productions") setOnglet("productions");
-  }, []);
+  }, [s.focus, s]);
 
   useEffect(() => {
     if (!flash) return;
@@ -69,19 +85,15 @@ export default function Veille() {
   const matchO = (o: OffreVue) => !t || norm([o.titre, o.studio, o.production, o.lieu, o.extrait].filter(Boolean).join(" ")).includes(t);
   const matchP = (p: ProductionVue) => !t || norm([p.titre, p.producteurs.join(" "), p.studiosFabrication.join(" "), p.realisateur, p.extrait].filter(Boolean).join(" ")).includes(t);
 
-  const offresCat = offres.filter((o) => dansFiltre(o.metiers, f));
-  const prodsCat = prods.filter((p) => dansFiltre(p.metiers, f));
-  const visiblesO = offresCat.filter((o) => matchO(o) && (horsPerimetre || o.manuelle || offreDansPerimetre(o, s.reglages)) && (masques ? o.masquee : !o.masquee));
-  const visiblesP = prodsCat.filter((p) => matchP(p) && (horsPerimetre || p.manuelle || productionDansPerimetre(p, s.reglages)) && (masques ? p.masquee : !p.masquee));
-  const nbMasques = (onglet === "offres" ? offresCat : prodsCat).filter((x) => x.masquee).length;
+  // La recherche texte entre dans les compteurs de facettes comme un filtre de plus
+  const offresTxt = offres.filter(matchO);
+  const prodsTxt = prods.filter(matchP);
+  const visiblesO = trierOffres(offresTxt.filter((o) => offrePasse(o, f)), tri);
+  const visiblesP = trierProductions(prodsTxt.filter((p) => productionPasse(p, f)), tri);
+  const nb = onglet === "offres" ? visiblesO.length : visiblesP.length;
+  const puces = pucesActives(f, onglet, catalogue);
 
-  const compte = (x: string) =>
-    onglet === "offres"
-      ? offres.filter((o) => dansFiltre(o.metiers, x) && !o.masquee && (horsPerimetre || o.manuelle || offreDansPerimetre(o, s.reglages))).length
-      : prods.filter((p) => dansFiltre(p.metiers, x) && !p.masquee && (horsPerimetre || p.manuelle || productionDansPerimetre(p, s.reglages))).length;
-
-  const nouvellesMetiers = offres.filter((o) => estDansMetiers(o.metiers, suivis) && o.nouveau && !o.masquee && offreDansPerimetre(o, s.reglages)).length;
-  const nbHors = (onglet === "offres" ? offresCat.filter((o) => !offreDansPerimetre(o, s.reglages)) : prodsCat.filter((p) => !productionDansPerimetre(p, s.reglages))).filter((x) => !x.masquee && !x.manuelle).length;
+  const nouvellesMetiers = ind.nouvellesOffres.length;
 
   const deja = (kind: "offre" | "production", id: string) =>
     s.data.candidatures.find((c) => (kind === "offre" ? c.offre_id : c.production_id) === id);
@@ -148,34 +160,27 @@ export default function Veille() {
         </p>
       )}
 
-      <div className="carte mb-5 flex flex-col gap-3 p-3 md:p-4">
-        <div className="flex flex-wrap items-center gap-2.5">
-          <Onglets valeur={onglet} onChange={setOnglet} options={[{ id: "offres", label: <><Briefcase className="h-3.5 w-3.5" />Offres d’emploi</> }, { id: "productions", label: <><Film className="h-3.5 w-3.5" />Productions</> }]} />
-          <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Métiers">
-            {suivis.length > 1 && <button className="puce" aria-pressed={f === "mes"} onClick={() => setFiltre("mes")}>Mes métiers <span className="opacity-70">{compte("mes")}</span></button>}
-            {suivis.map((id) => (
-              <button key={id} className="puce" aria-pressed={f === id || (suivis.length === 1 && f === "mes")} onClick={() => setFiltre(id)}>{labelMetier(id)} <span className="opacity-70">{compte(id)}</span></button>
-            ))}
-            <button className="puce" aria-pressed={f === "autres"} onClick={() => setFiltre("autres")}>Autres <span className="opacity-70">{compte("autres")}</span></button>
-            <BoutonMetiers />
-          </div>
-          <label className="relative ml-auto w-full min-w-0 sm:w-64">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
-            <input className="champ !pl-9" placeholder="Filtrer par titre, studio, lieu…" aria-label="Filtrer la veille" value={q} onChange={(e) => setQ(e.target.value)} />
-          </label>
-        </div>
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-line pt-3">
-          <Interrupteur label={`Afficher les résultats hors périmètre${nbHors ? ` (${nbHors})` : ""}`} checked={horsPerimetre} onChange={setHorsPerimetre} />
-          {nbMasques > 0 && <Interrupteur label={`Voir les masqués (${nbMasques})`} checked={masques} onChange={setMasques} />}
-        </div>
-        <BarrePerimetre />
+      <div className="carte mb-3 flex flex-wrap items-center gap-2.5 p-3">
+        <div className="max-sm:w-full"><Onglets valeur={onglet} onChange={setOnglet} options={[{ id: "offres", label: <><Briefcase className="h-3.5 w-3.5" />Offres d’emploi</> }, { id: "productions", label: <><Film className="h-3.5 w-3.5" />Productions</> }]} /></div>
+        <label className="relative min-w-[200px] flex-[1_1_260px]">
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
+          <input className="champ !pl-9" type="search" placeholder="Rechercher un titre, un studio, un lieu…" aria-label="Rechercher dans la veille" value={q} onChange={(e) => setQ(e.target.value)} />
+        </label>
+        <BoutonFiltres nb={puces.length} onClick={() => setPanneau(true)} className="max-sm:flex-[1_1_0]" />
+        <label className="relative flex-none max-sm:flex-[1.5_1_0]">
+          <ArrowUpDown className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted" />
+          <select className="champ !pl-8 !pr-7 sm:w-[190px]" aria-label="Trier par" value={tri} onChange={(e) => maj({ tri: e.target.value as Tri })}>
+            <option value="recentes">Plus récentes</option>
+            {onglet === "offres" ? <option value="limite">Date limite proche</option> : <option value="bon-moment">Bon moment d’abord</option>}
+          </select>
+        </label>
       </div>
+      <RangeeActive puces={puces} nb={nb} unite={onglet === "offres" ? ["offre", "offres"] : ["production", "productions"]} onRetirer={(p) => maj(p.retirer(f))} onEffacer={effacer} />
 
       {onglet === "offres" ? (
         visiblesO.length === 0 ? (
-          <Vide icone={Radar} titre="Rien à afficher ici" action={<button className="bouton bouton-plein" onClick={() => setAjout("offre")}><Plus />Ajouter une offre</button>}>
-            {t ? <>Aucune offre ne correspond à « {q} ».</> : <>Aucune offre {f === "autres" ? "dans les autres métiers" : f === "mes" ? "dans tes métiers" : `en ${labelMetier(f).toLowerCase()}`} dans ton périmètre pour l’instant. La collecte passe deux fois par jour.
-            Active « Afficher les résultats hors périmètre » pour vérifier le filtre, ou ajoute à la main une annonce vue sur LinkedIn ou Instagram.</>}
+          <Vide icone={Radar} titre="Rien à afficher ici" action={puces.length > 0 ? <button className="bouton bouton-plein" onClick={effacer}>Tout effacer</button> : <button className="bouton bouton-plein" onClick={() => setAjout("offre")}><Plus />Ajouter une offre</button>}>
+            {t ? <>Aucune offre ne correspond à « {q} » avec tes filtres.</> : puces.length > 0 ? <>Aucune offre ne correspond à tes filtres. Retire-en un ou efface-les tous.</> : <>Aucune offre pour l’instant. La collecte passe deux fois par jour. Tu peux aussi ajouter à la main une annonce vue sur LinkedIn ou Instagram.</>}
           </Vide>
         ) : (
           <ul className="grid grid-cols-1 gap-3 xl:grid-cols-2">
@@ -185,8 +190,8 @@ export default function Veille() {
           </ul>
         )
       ) : visiblesP.length === 0 ? (
-        <Vide icone={Film} titre="Aucune production à afficher" action={<button className="bouton bouton-plein" onClick={() => setAjout("production")}><Plus />Ajouter une production</button>}>
-          {t ? <>Aucune production ne correspond à « {q} ».</> : <>Les productions repérées dans l’actualité apparaîtront ici (2D en priorité). Tu peux aussi en ajouter une à la main quand tu en entends parler.</>}
+        <Vide icone={Film} titre="Aucune production à afficher" action={puces.length > 0 ? <button className="bouton bouton-plein" onClick={effacer}>Tout effacer</button> : <button className="bouton bouton-plein" onClick={() => setAjout("production")}><Plus />Ajouter une production</button>}>
+          {t ? <>Aucune production ne correspond à « {q} » avec tes filtres.</> : puces.length > 0 ? <>Aucune production ne correspond à tes filtres. Retire-en un ou efface-les tous.</> : <>Les productions repérées dans l’actualité apparaîtront ici. Tu peux aussi en ajouter une à la main quand tu en entends parler.</>}
         </Vide>
       ) : (
         <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
@@ -195,6 +200,12 @@ export default function Veille() {
           ))}
         </ul>
       )}
+
+      {panneau && (
+        <PanneauFiltres onglet={onglet} offres={offresTxt} prods={prodsTxt} f={f} maj={maj} puces={puces} nb={nb} metiers={metiersVisibles}
+          onEffacer={effacer} onGerer={() => setGerer(true)} onClose={gerer ? () => {} : () => setPanneau(false)} />
+      )}
+      {gerer && <GererMetiers offres={offres} prods={prods} onClose={() => setGerer(false)} />}
 
       {flash && (
         <div role="status" className="feuille fixed bottom-[calc(84px+env(safe-area-inset-bottom))] left-1/2 z-[55] flex w-[calc(100%-2rem)] max-w-md -translate-x-1/2 items-center justify-between gap-3 rounded-xl bg-fg px-4 py-3 text-[13px] text-bg shadow-[var(--ombre-forte)] md:bottom-6">
@@ -206,7 +217,7 @@ export default function Veille() {
       {ajout === "offre" && (
         <Sheet titre="Ajouter une offre à la main" onClose={() => setAjout(null)} large>
           <p className="mb-3 text-sm text-muted">Pour une annonce vue sur LinkedIn, Instagram ou ailleurs : colle le lien et remplis l’essentiel.</p>
-          <FormOffre avecUrl onCancel={() => setAjout(null)} onSave={(o) => { s.add("offres_manuelles", { data: o }); setAjout(null); setFiltre(estDansMetiers(metiersOffre(o), suivis) ? "mes" : "autres"); setOnglet("offres"); }} />
+          <FormOffre avecUrl onCancel={() => setAjout(null)} onSave={(o) => { s.add("offres_manuelles", { data: o }); setAjout(null); setOnglet("offres"); }} />
         </Sheet>
       )}
       {ajout === "production" && (
