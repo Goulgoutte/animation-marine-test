@@ -98,7 +98,7 @@ export function SourcesReglages() {
   }
 
   return (
-    <div className="grid gap-5">
+    <div className="grid grid-cols-1 gap-5">
       {s.demo && <p className="rounded-xl bg-surface-2 p-3 text-[13px] text-muted">Mode démo : les sources sont en lecture seule (données de la dernière collecte). Connecte-toi pour les gérer.</p>}
       {erreur && <p role="alert" className="rounded-xl bg-[color-mix(in_srgb,var(--danger)_10%,transparent)] p-3 text-[13px] text-danger">{erreur}</p>}
       {!s.demo && !chargement && !editable && !erreur && <p className="rounded-xl bg-surface-2 p-3 text-[13px] text-muted">La table des sources est vide : applique supabase/migrations/003_sources.sql. En attendant, lecture seule.</p>}
