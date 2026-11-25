@@ -1,6 +1,7 @@
 "use client";
 
-import { Archive, BellRing, Database, Download, ExternalLink, LogOut, RotateCcw, UserRound, type LucideIcon } from "lucide-react";
+import { Archive, BellRing, CircleHelp, Database, Download, ExternalLink, LogOut, RotateCcw, UserRound, type LucideIcon } from "lucide-react";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { SourcesReglages } from "@/components/SourcesReglages";
 import { Avatar, EnTete } from "@/components/ui";
@@ -13,12 +14,29 @@ import { ProfilMail } from "@/components/mail/ProfilMail";
 import { Mail } from "lucide-react";
 import { LABEL_MODE, offresVues, productionsVues } from "@/lib/veille";
 
-function Section({ icone: Icone, titre, description, children, pleine }: { icone: LucideIcon; titre: string; description?: ReactNode; children: ReactNode; pleine?: boolean }) {
+/** Point d'interrogation à côté d'un titre : l'explication s'affiche au survol, au focus clavier ou au toucher. */
+function Aide({ children }: { children: ReactNode }) {
+  return (
+    <span className="group relative inline-flex align-middle">
+      <button type="button" className="grid h-5 w-5 place-items-center rounded-full text-muted hover:text-accent focus-visible:text-accent" aria-label="À quoi ça sert ?">
+        <CircleHelp className="h-4 w-4" />
+      </button>
+      <span
+        role="tooltip"
+        className="pointer-events-none invisible absolute left-0 top-full z-30 mt-2 w-[min(300px,calc(100vw-3rem))] rounded-xl border border-line bg-surface p-3 text-[12.5px] font-normal leading-relaxed text-fg opacity-0 shadow-[var(--ombre-forte)] transition-opacity duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100"
+      >
+        {children}
+      </span>
+    </span>
+  );
+}
+
+function Section({ icone: Icone, titre, description, aide, children, pleine }: { icone: LucideIcon; titre: string; description?: ReactNode; aide?: ReactNode; children: ReactNode; pleine?: boolean }) {
   return (
     <section className={`carte grid grid-cols-1 gap-5 p-5 ${pleine ? "" : "lg:grid-cols-[230px_1fr] lg:gap-8"}`}>
       <div>
         <span className="mb-2.5 grid h-9 w-9 place-items-center rounded-xl bg-accent-soft text-accent"><Icone className="h-[18px] w-[18px]" /></span>
-        <h2 className="titre-section">{titre}</h2>
+        <h2 className="titre-section flex items-center gap-1.5">{titre}{aide && <Aide>{aide}</Aide>}</h2>
         {description && <p className="micro mt-1">{description}</p>}
       </div>
       <div className="min-w-0">{children}</div>
@@ -92,8 +110,19 @@ export default function Reglages() {
 
         <Section
           icone={BellRing}
-          titre="Rappels"
-          description="Quand l’app te rappelle de relancer une candidature ou de reprendre contact avec quelqu’un. Ces rappels apparaissent dans « À faire » du tableau de bord et dans Candidatures."
+          titre="Relances"
+          description="Quand l’app te propose de relancer."
+          aide={
+            <>
+              Ces délais pilotent les relances proposées automatiquement dans tes{" "}
+              <Link href="/candidatures/" className="font-semibold text-accent underline underline-offset-2">candidatures</Link>.
+              Une candidature envoyée restée sans réponse remonte dans « À faire maintenant », et sur le tableau de bord, avec « Relancer ».
+              Après la 2e relance sans réponse, elle passe en « Sans réponse », ce qui reste annulable.
+              Le dernier délai fait de même pour tes{" "}
+              <Link href="/contacts/" className="font-semibold text-accent underline underline-offset-2">contacts</Link>{" "}
+              déjà rencontrés : ils remontent dans « à recontacter ».
+            </>
+          }
         >
           <div className="grid grid-cols-1 gap-3 text-[13.5px]">
             <label className="flex flex-wrap items-center gap-2">
