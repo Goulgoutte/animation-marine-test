@@ -62,6 +62,25 @@ pnpm build        # produit web/out
 NEXT_PUBLIC_BASE_PATH=/mon-depot pnpm build   # comme sur GitHub Pages
 ```
 
+## Connexion Gmail
+
+Les brouillons et envois de mails passent par l'API Gmail, appelée directement depuis le navigateur. La connexion à l'app ne change pas : « Connecter Gmail » (Réglages > Compte, ou la fenêtre « Préparer le mail ») relance la connexion Google avec le droit supplémentaire `gmail.compose` (créer des brouillons et envoyer ; aucune lecture de la boîte).
+
+Configuration côté Google Cloud (le projet qui porte l'identifiant OAuth utilisé par Supabase) :
+
+1. **API et services > Bibliothèque** : activer l'**API Gmail**.
+2. **Écran de consentement OAuth > Accès aux données** (Data Access) : ajouter le scope `https://www.googleapis.com/auth/gmail.compose`.
+3. **Écran de consentement OAuth > Audience** : tant que l'app est en mode « Test », ajouter l'adresse Gmail de l'utilisatrice dans **Utilisateurs de test**.
+4. Côté Supabase, rien à changer : le provider Google est déjà actif. Vérifier que la page courante (Candidatures, Contacts, Réglages) figure dans Authentication > URL Configuration > Redirect URLs, par exemple `https://<utilisateur>.github.io/<dépôt>/**`.
+
+À savoir :
+
+- `gmail.compose` est un scope « sensible » : tant que l'app n'est pas vérifiée par Google, l'écran de consentement affiche l'avertissement « Google n'a pas validé cette application » (Paramètres avancés > Accéder à … (non sécurisé)). Pour un usage personnel, rester en mode Test avec soi-même comme utilisateur de test suffit, sans vérification. En mode Test, l'autorisation expire au bout de 7 jours : il suffit de reconnecter Gmail.
+- Le jeton d'accès Google dure environ **1 heure** et Supabase ne le rafraîchit pas. Il est gardé en mémoire et dans `sessionStorage` (jamais en base). Passé ce délai, ou sur une réponse 401 de Google, l'app affiche « Reconnecter Gmail ».
+- Le profil d'envoi (prénom, signature, liens du portfolio et du CV) se règle dans Réglages > Compte ; les modèles de mail dans Réglages > Modèles de mail. L'adresse d'envoi affichée n'est prise en compte par Gmail que si c'est l'adresse du compte ou un alias vérifié.
+- Mode démo : aucun appel à Google, les boutons simulent la création et l'envoi (« Mode démo : aucun mail réel »).
+- Base de données : exécuter `supabase/migrations/005_mail.sql` sur un projet existant (idempotent).
+
 ## Ajouter une source
 
 Les sources et mots-clés sont dans `collector/config/` (voir les fichiers présents pour le format). Modifier le fichier sur GitHub (le lien est dans Réglages), commiter : la prochaine collecte la prend en compte. La page Réglages affiche ensuite sa santé : vert (réussie depuis moins de 2 jours), orange (erreur, 0 résultat ou ancienne), rouge (rien depuis plus de 7 jours), gris (inactive ou manuelle).

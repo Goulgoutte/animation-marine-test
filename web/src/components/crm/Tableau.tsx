@@ -10,6 +10,12 @@ import { EditeurLibelles, Palette } from "./Libelles";
 import { ItemMenu, Popover } from "./Popover";
 import type { Crm } from "./useCrm";
 
+/** Mode sélection (envoi groupé) : contacts cochés. */
+export interface SelectionContacts {
+  ids: Set<string>;
+  basculer: (id: string) => void;
+}
+
 const LARGEUR_NOM = 270;
 const LARGEUR_PLUS = 52;
 
@@ -44,7 +50,7 @@ function SaisieEnPlace({ valeur, onValider, onAnnuler, placeholder, label, conti
   );
 }
 
-function NomEnPlace({ c, crm, onOuvrir, couleur }: { c: Contact; crm: Crm; onOuvrir: () => void; couleur: string }) {
+function NomEnPlace({ c, crm, onOuvrir, couleur, selection }: { c: Contact; crm: Crm; onOuvrir: () => void; couleur: string; selection?: SelectionContacts }) {
   const [edit, setEdit] = useState(false);
   const [menu, setMenu] = useState(false);
   const [mode, setMode] = useState<"menu" | "deplacer">("menu");
@@ -52,6 +58,7 @@ function NomEnPlace({ c, crm, onOuvrir, couleur }: { c: Contact; crm: Crm; onOuv
   const nom = nomComplet(c);
   return (
     <div className="flex h-full items-center gap-2 pl-3 pr-1.5" style={{ boxShadow: `inset 4px 0 0 ${couleur}` }}>
+      {selection && <input type="checkbox" className="h-4 w-4 flex-none accent-[var(--accent)]" checked={selection.ids.has(c.id)} onChange={() => selection.basculer(c.id)} aria-label={`Sélectionner ${nom || "ce contact"}`} />}
       <Avatar nom={nom || "?"} taille={26} rond />
       {edit ? (
         <SaisieEnPlace label="Nom du contact" valeur={nom} onValider={(v) => { const m = v.trim().split(/\s+/); crm.patchContact(c.id, m.length > 1 ? { prenom: m[0], nom: m.slice(1).join(" ") } : { prenom: "", nom: m[0] }); }} onAnnuler={() => setEdit(false)} />
@@ -200,7 +207,7 @@ function TitreGroupe({ g, n, crm, premier, dernier }: { g: CrmGroupe; n: number;
 }
 const Palette_ = ({ className }: { className?: string }) => <span className={`${className} rounded-full bg-gradient-to-br from-[#e2445c] via-[#fdab3d] to-[#579bfc]`} />;
 
-export function Tableau({ crm, onOuvrir }: { crm: Crm; onOuvrir: (id: string) => void }) {
+export function Tableau({ crm, onOuvrir, selection }: { crm: Crm; onOuvrir: (id: string) => void; selection?: SelectionContacts }) {
   const { visibles, groupes, s } = crm;
   const [ajout, setAjout] = useState<string | null>(null);
   const total = LARGEUR_NOM + visibles.reduce((a, c) => a + c.largeur, 0) + LARGEUR_PLUS;
@@ -234,7 +241,7 @@ export function Tableau({ crm, onOuvrir }: { crm: Crm; onOuvrir: (id: string) =>
                     {l.map((c) => (
                       <div role="row" key={c.id} className="group/r flex h-9 border-b border-line bg-surface text-[13px] hover:bg-surface-2">
                         <div role="rowheader" className="sticky left-0 z-10 flex-none border-r border-line bg-surface group-hover/r:bg-surface-2" style={{ width: LARGEUR_NOM }}>
-                          <NomEnPlace c={c} crm={crm} couleur={g.couleur} onOuvrir={() => onOuvrir(c.id)} />
+                          <NomEnPlace c={c} crm={crm} couleur={g.couleur} selection={selection} onOuvrir={() => onOuvrir(c.id)} />
                         </div>
                         {visibles.map((col) => (
                           <div role="cell" key={col.id} className="min-w-0 flex-none overflow-hidden border-r border-line" style={{ width: col.largeur }}>

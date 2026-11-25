@@ -1,15 +1,16 @@
 "use client";
 
-import { ChevronDown, Plus } from "lucide-react";
+import { Check, ChevronDown, Plus } from "lucide-react";
 import { useState } from "react";
 import { Avatar } from "@/components/ui";
 import { tonFraicheur, dernierEchange } from "@/lib/contacts";
 import { encre, libellesDe, nomComplet, valeur } from "@/lib/crm";
 import { diffDays, ilYa, today } from "@/lib/dates";
+import type { SelectionContacts } from "./Tableau";
 import type { Crm } from "./useCrm";
 
 /** Mobile : une liste de cartes par groupe, repliable. Le tap ouvre la fiche (toutes les colonnes y sont modifiables). */
-export function ListeMobile({ crm, onOuvrir }: { crm: Crm; onOuvrir: (id: string) => void }) {
+export function ListeMobile({ crm, onOuvrir, selection }: { crm: Crm; onOuvrir: (id: string) => void; selection?: SelectionContacts }) {
   const { groupes, s } = crm;
   const colStatut = crm.visibles.find((c) => c.type === "statut") ?? crm.colonnes.find((c) => c.type === "statut");
   const [ajout, setAjout] = useState<string | null>(null);
@@ -35,7 +36,8 @@ export function ListeMobile({ crm, onOuvrir }: { crm: Crm; onOuvrir: (id: string
                   const ton = tonFraicheur(j, s.reglages.delai_contact_mois);
                   return (
                     <li key={c.id}>
-                      <button type="button" onClick={() => onOuvrir(c.id)} className="carte carte-lien flex w-full items-center gap-3 overflow-hidden py-3 pl-4 pr-3 text-left" style={{ boxShadow: `inset 4px 0 0 ${g.couleur}` }}>
+                      <button type="button" role={selection ? "checkbox" : undefined} aria-checked={selection ? selection.ids.has(c.id) : undefined} aria-label={selection ? `Sélectionner ${n || "ce contact"}` : undefined} onClick={() => (selection ? selection.basculer(c.id) : onOuvrir(c.id))} className="carte carte-lien flex w-full items-center gap-3 overflow-hidden py-3 pl-4 pr-3 text-left" style={{ boxShadow: selection?.ids.has(c.id) ? `inset 4px 0 0 ${g.couleur}, 0 0 0 2px var(--accent)` : `inset 4px 0 0 ${g.couleur}` }}>
+                        {selection && <span className={`grid h-5 w-5 flex-none place-items-center rounded-md border ${selection.ids.has(c.id) ? "border-accent bg-accent text-white" : "border-line bg-surface"}`}>{selection.ids.has(c.id) && <Check className="h-3.5 w-3.5" />}</span>}
                         <Avatar nom={n || "?"} taille={40} rond />
                         <span className="min-w-0 flex-1">
                           <strong className="block truncate text-[14.5px] font-semibold">{n || "Sans nom"}</strong>

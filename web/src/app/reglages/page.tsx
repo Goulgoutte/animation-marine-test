@@ -9,6 +9,9 @@ import { estChampContact, texteDe, triees } from "@/lib/crm";
 import { csv, stamp, telecharger } from "@/lib/export";
 import { useStore } from "@/lib/store";
 import { labelCanal, labelEchange, labelStatut } from "@/lib/types";
+import { ModelesMail } from "@/components/mail/ModelesMail";
+import { ProfilMail } from "@/components/mail/ProfilMail";
+import { Mail } from "lucide-react";
 import { LABEL_MODE, offresVues, productionsVues } from "@/lib/veille";
 
 function Section({ icone: Icone, titre, description, children, pleine }: { icone: LucideIcon; titre: string; description?: ReactNode; children: ReactNode; pleine?: boolean }) {
@@ -85,6 +88,7 @@ export default function Reglages() {
             {!s.demo && <button className="bouton" onClick={s.deconnexion}><LogOut />Se déconnecter</button>}
           </div>
           {s.demo && <p className="mt-4 rounded-xl bg-surface-2 p-3 text-[13px] text-muted">Les données du mode démo restent dans ce navigateur. Elles disparaissent si tu effaces les données du site.</p>}
+          <ProfilMail />
         </Section>
 
         <Section icone={Compass} titre="Périmètre de recherche">
@@ -108,6 +112,10 @@ export default function Reglages() {
             Les mots-clés et le détail des sélecteurs se modifient dans les fichiers de <code className="rounded bg-[color-mix(in_srgb,var(--fg)_8%,transparent)] px-1">collector/config/</code> du dépôt.{" "}
             {lienConfig ? <a className="inline-flex items-center gap-1 font-semibold text-accent underline" href={lienConfig} target="_blank" rel="noopener noreferrer">Ouvrir sur GitHub <ExternalLink className="h-3 w-3" /></a> : <span className="micro">(lien disponible une fois le site déployé par GitHub Actions)</span>}
           </div>
+        </Section>
+
+        <Section icone={Mail} titre="Modèles de mail" description="Textes réutilisables pour les candidatures et les envois groupés, avec des variables comme {{studio}} ou {{contact_prenom}}.">
+          <ModelesMail />
         </Section>
 
         <Section icone={Archive} titre="Export et sauvegarde" description="CSV lisibles dans Excel ou Numbers ; sauvegarde complète en JSON.">

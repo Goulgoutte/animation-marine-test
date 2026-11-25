@@ -38,6 +38,11 @@ export interface Candidature extends Base {
   prochaine_action_date: string | null;
   motif_cloture: string | null;
   date_statut: string | null;
+  /** Vignette : URL copiée de l'offre ou de la production liée à la création (reste si l'offre disparaît de la collecte). */
+  image?: string | null;
+  /** Mail : destinataire (par défaut l'e-mail du contact lié) et brouillon Gmail créé. */
+  email_destinataire?: string | null;
+  gmail_brouillon_id?: string | null;
 }
 
 export interface Relance extends Base {
@@ -131,8 +136,29 @@ export interface Perimetre {
   afficher3d: boolean;
 }
 
+/** Profil d'envoi des mails (variables {{mon_prenom}}, {{ma_signature}}, {{portfolio}}…). */
+export interface ProfilMail {
+  prenom?: string;
+  nom?: string;
+  signature?: string;
+  portfolio?: string;
+  cv?: string;
+  /** Adresse d'envoi affichée (en-tête From) : Gmail ne l'honore que pour l'adresse du compte ou un alias vérifié. */
+  adresse?: string;
+  /** Modèles par défaut déjà créés (ne pas les recréer si tu les supprimes). */
+  modeles_init?: boolean;
+}
+
+export interface ModeleMail extends Base {
+  nom: string;
+  sujet: string;
+  corps: string;
+  categorie: string;
+}
+
 export interface Reglages extends Base {
   perimetre: Perimetre;
+  profil_mail?: ProfilMail;
   delai_relance_1: number;
   delai_relance_2: number;
   delai_contact_mois: number;
@@ -180,6 +206,7 @@ export interface Tables {
   crm_groupes: CrmGroupe;
   studios: Studio;
   contact_studios: ContactStudio;
+  modeles_mail: ModeleMail;
 }
 export type TableName = keyof Tables;
 export const TABLE_NAMES: TableName[] = [
@@ -196,6 +223,7 @@ export const TABLE_NAMES: TableName[] = [
   "crm_groupes",
   "studios",
   "contact_studios",
+  "modeles_mail",
 ];
 
 export type Donnees = { [K in TableName]: Tables[K][] };
@@ -206,6 +234,7 @@ export const REGLAGES_DEFAUT: Omit<Reglages, "id"> = {
   delai_relance_2: 15,
   delai_contact_mois: 3,
   derniere_visite: null,
+  profil_mail: {},
 };
 
 export const STATUTS: { id: Statut; label: string; couleur: string }[] = [

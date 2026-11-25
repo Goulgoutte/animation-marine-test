@@ -1,9 +1,12 @@
 "use client";
 
-import { ExternalLink, Send, Trash2, Undo2, User } from "lucide-react";
+import { ExternalLink, Mail, Send, Trash2, Undo2, User } from "lucide-react";
 import { useState } from "react";
 import { BadgeStatut } from "@/components/BadgeStatut";
-import { Avatar, Champ, Sheet } from "@/components/ui";
+import { BadgeBrouillon } from "@/components/LigneCandidature";
+import { FenetreMail } from "@/components/mail/FenetreMail";
+import { Avatar, Champ, Sheet, Vignette } from "@/components/ui";
+import { imageLiee } from "@/lib/candidature";
 import { changementStatut, estCloturee, prochaineAction } from "@/lib/actions";
 import { fmt, ilYa, diffDays, today } from "@/lib/dates";
 import { prochaineRelance, relancesDe } from "@/lib/relances";
@@ -18,6 +21,7 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
   const [rDate, setRDate] = useState(today());
   const [rCanal, setRCanal] = useState<Canal>("mail");
   const [rNote, setRNote] = useState("");
+  const [mail, setMail] = useState(false);
   const contact = s.data.contacts.find((k) => k.id === c.contact_id);
   const prod = c.production_id ? productionsVues(s.collecte!, s.data, null).find((p) => p.id === c.production_id) : null;
 
@@ -53,6 +57,7 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
   const peutRelancer = c.statut === "envoyee" || c.statut === "relancee";
 
   return (
+    <>
     <Sheet
       titre={c.studio || "Candidature"}
       sousTitre={<span className="flex flex-wrap items-center gap-2"><span>{c.poste}</span><BadgeStatut statut={c.statut} /></span>}
@@ -66,6 +71,16 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
           <button className="bouton bouton-petit" onClick={annulerCloture}><Undo2 />Annuler</button>
         </div>
       )}
+
+      <div className="mb-5 flex flex-wrap items-center gap-3">
+        <Vignette image={imageLiee(c, s.collecte, s.data)} nom={c.studio || "?"} taille={56} />
+        <div className="min-w-0 flex-1 basis-40">
+          <p className="truncate text-[14px] font-semibold">{c.studio || "Sans studio"}</p>
+          <p className="truncate text-[12.5px] text-muted">{c.poste || "Poste non précisé"}</p>
+          <div className="mt-1"><BadgeBrouillon c={c} /></div>
+        </div>
+        <button className="bouton bouton-plein" onClick={() => setMail(true)}><Mail />Préparer le mail</button>
+      </div>
 
       <div className="mb-5 grid grid-cols-2 gap-3">
         <div className="rounded-xl bg-surface-2 p-3">
@@ -185,6 +200,9 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
           </select>
         </Champ>
         <Champ label="Version du portfolio et du CV"><input {...texte("version_cv")} /></Champ>
+        <Champ label="E-mail du destinataire" className="sm:col-span-2">
+          <input type="email" inputMode="email" className="champ" value={c.email_destinataire ?? ""} placeholder={contact?.email ?? "Par défaut : l’e-mail du contact lié"} onChange={(e) => maj({ email_destinataire: e.target.value || null })} />
+        </Champ>
         <Champ label="Contact lié" className="sm:col-span-2">
           <select className="champ" value={c.contact_id ?? ""} onChange={(e) => maj({ contact_id: e.target.value || null })}>
             <option value="">Aucun</option>
@@ -201,5 +219,7 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
         <Champ label="Notes" className="sm:col-span-2"><textarea {...texte("notes")} /></Champ>
       </div>
     </Sheet>
+      {mail && <FenetreMail c={c} onClose={() => setMail(false)} />}
+    </>
   );
 }
