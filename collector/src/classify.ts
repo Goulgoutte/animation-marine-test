@@ -8,6 +8,7 @@ export interface Mots {
   teletravail: string[]; hybride: string[]; paris: string[]; signauxProduction: string[];
   statuts: Record<string, string[]>; formats: Record<string, string[]>;
   indicesAnimation: string[]; titresMetiers: string[];
+  exclusionsProduction: string[]; studiosConnus: string[]; studiosParis: string[]; diffuseurs: string[];
   residence: { paysAcces: string[]; pays: Record<string, string[]> };
   langues: { fr: string[]; en: string[]; autre: string[] };
 }
@@ -186,7 +187,7 @@ export function classerOffre(e: EntreeOffre, mots: Mots = motsParDefaut): Result
   };
 }
 
-// ---------- Productions (articles d'actualité) ----------
+// ---------- Productions (articles d'actualité, pages de commissions) ----------
 
 export interface ResultatProduction {
   estProduction: boolean;
@@ -197,20 +198,65 @@ export interface ResultatProduction {
   misEnAvant: boolean;
   realisateur: string | null;
   titre: string;
+  /** studios et producteurs reconnus dans le texte */
+  studios: string[];
+  diffuseur: string | null;
+  /** le titre de la production est entre guillemets dans le texte */
+  titreCite: boolean;
+  /** l'article nomme une œuvre entre guillemets ou un studio : assez précis pour être gardé tel quel */
+  precis: boolean;
+  /** appel à projets, palmarès, festival, nomination, bilan... */
+  exclu: boolean;
 }
 
 const ORDRE_STATUTS: StatutProd[] = ["postproduction", "preproduction", "production", "financement", "developpement"];
 
-function titreProduction(titre: string): string {
-  const m = /[«“"]\s*([^»”"]{2,80}?)\s*[»”"]/.exec(titre);
-  return (m ? m[1] : titre).trim();
+const GUILLEMETS = /[«“"]\s*([^»”"]{2,80}?)\s*[»”"]/;
+const NOM_PROPRE = "[A-ZÀ-Ý0-9][\\p{L}0-9'’&.!?-]*";
+
+/** Titre de l'œuvre : entre guillemets, ou après « la série / le film ». Sinon le titre de l'article, sans le nom du média. */
+export function titreProduction(titre: string, extrait = ""): { titre: string; cite: boolean } {
+  const m = GUILLEMETS.exec(titre) ?? GUILLEMETS.exec(extrait);
+  if (m) return { titre: m[1].trim(), cite: true };
+  const apres = new RegExp(
+    `(?:s[ée]rie|film|long[- ]m[ée]trage|court[- ]m[ée]trage|special|series|feature|movie)\\s+(?:d['’]animation\\s+|animated\\s+|intitul[ée]e?\\s+|titled\\s+|called\\s+)?(${NOM_PROPRE}(?:\\s+${NOM_PROPRE}){0,4})`, "u",
+  ).exec(titre);
+  if (apres && !/^(Le|La|Les|Un|Une|The|A|An|De|Du|Des|En|Et|Pour|Sur|Dans)$/.test(apres[1])) return { titre: apres[1].trim(), cite: true };
+  // « Fireborn : le comics adapté en série... » : le titre de l'œuvre précède les deux-points
+  const avant = /^([^:–—|«»"]{2,45}?)\s+:\s+\S/.exec(titre);
+  if (avant) return { titre: avant[1].trim(), cite: false };
+  return { titre: titre.replace(/\s+[-–|]\s+[^-–|]{2,40}$/, "").trim(), cite: false };
+}
+
+/** Studios et producteurs : liste connue, puis « produit par X ». Les diffuseurs ne sont pas des studios. */
+export function detecterStudios(texte: string, mots: Mots = motsParDefaut): string[] {
+  const tn = normaliser(texte);
+  const diff = new Set(mots.diffuseurs.map(normaliser));
+  const trouves = mots.studiosConnus.filter((s) => !diff.has(normaliser(s)) && contient(tn, s));
+  const motif = new RegExp(
+    `(?:[Pp]rodui(?:t|te|ts|tes)|[Cc]oprodui(?:t|te|ts|tes)|[Ff]abriqu[ée]e?|[Rr][ée]alis[ée]e?|[Aa]nim[ée]e?)\\s+(?:par|chez)\\s+(?:le studio\\s+|la soci[ée]t[ée]\\s+|les studios\\s+)?(${NOM_PROPRE}(?:\\s+(?:${NOM_PROPRE}|de|du|des|la|le|et|&)){0,3})|(?:[Pp]roduced|[Cc]o-produced|[Aa]nimated|[Dd]eveloped)\\s+by\\s+(?:studio\\s+)?(${NOM_PROPRE}(?:\\s+(?:${NOM_PROPRE}|of|and|&)){0,3})`, "gu",
+  );
+  for (const m of texte.matchAll(motif)) {
+    const nom = (m[1] ?? m[2]).replace(/\s+(?:et|and|&|de|du|des|la|le|of)$/i, "").trim();
+    if (nom.length >= 3 && !diff.has(normaliser(nom))) trouves.push(nom);
+  }
+  // sociétés dont le nom se termine par un mot de métier : « La Mola Studio », « Lunaris Pictures »
+  const suffixe = new RegExp(`(${NOM_PROPRE}(?:\\s+${NOM_PROPRE}){0,2}\\s+(?:Studios?|Films|Pictures|Productions?|Animation|Entertainment|Prod))(?![\\p{L}])`, "gu");
+  for (const m of texte.matchAll(suffixe)) {
+    const nom = m[1].trim();
+    if (nom.length >= 8 && !diff.has(normaliser(nom))) trouves.push(nom);
+  }
+  // « Ellipse » et « Ellipse Animation » : garder la forme la plus longue
+  const uniques = [...new Set(trouves)];
+  return uniques.filter((a) => !uniques.some((b) => b !== a && normaliser(b).includes(normaliser(a))));
 }
 
 export function classerProduction(
   e: { titre: string; extrait?: string; techniqueDefaut?: Technique },
   mots: Mots = motsParDefaut,
 ): ResultatProduction {
-  const t = normaliser(`${e.titre}. ${e.extrait ?? ""}`);
+  const brut = `${e.titre}. ${e.extrait ?? ""}`;
+  const t = normaliser(brut);
   const signaux = un(t, mots.signauxProduction);
   const animation = un(t, mots.indicesAnimation);
 
@@ -223,17 +269,29 @@ export function classerProduction(
     if (un(t, mots.formats[f] ?? [])) { format = f; break; }
   }
   const technique = detecterTechnique(t, mots, e.techniqueDefaut);
-  const real = /(?:directed by|realise par|un film de|a film by)\s+([A-ZÀ-Ý][\p{L}'’-]+(?:\s+[A-ZÀ-Ý][\p{L}'’-]+){0,2})/u.exec(`${e.titre}. ${e.extrait ?? ""}`);
+  const real = /(?:directed by|realise par|un film de|a film by)\s+([A-ZÀ-Ý][\p{L}'’-]+(?:\s+[A-ZÀ-Ý][\p{L}'’-]+){0,2})/u.exec(brut);
+  const studios = detecterStudios(brut, mots);
+  const { titre, cite } = titreProduction(e.titre, e.extrait ?? "");
+  // le titre de l'article suffit à exclure : un palmarès cite ses lauréats dans le corps du texte
+  const exclu = un(normaliser(e.titre), mots.exclusionsProduction) || un(normaliser((e.extrait ?? "").slice(0, 160)), mots.exclusionsProduction);
+  const nomme = cite && studios.length > 0;
+  const paris = new Set(mots.studiosParis.map(normaliser));
+  const diffuseur = mots.diffuseurs.find((d) => contient(t, d)) ?? null;
   return {
-    estProduction: animation && signaux,
+    estProduction: animation && signaux && (!exclu || nomme),
+    precis: cite || studios.length > 0,
     statut,
     format,
     technique,
     bonMomentDecor:
       statut === "financement" || statut === "preproduction" || statut === "production" ||
       /developpement avance|advanced development/.test(t),
-    misEnAvant: un(t, mots.paris),
+    misEnAvant: un(t, mots.paris) || studios.some((s) => paris.has(normaliser(s))),
     realisateur: real ? real[1] : null,
-    titre: titreProduction(e.titre),
+    titre,
+    studios,
+    diffuseur,
+    titreCite: cite,
+    exclu,
   };
 }

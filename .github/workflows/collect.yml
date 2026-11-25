@@ -2,9 +2,14 @@ name: Collecte
 
 on:
   schedule:
-    - cron: "0 6 * * *"
-    - cron: "0 16 * * *"
+    # toutes les 3 h : chaque source n'est collectée que si sa fréquence (table `sources`) est échue
+    - cron: "0 */3 * * *"
   workflow_dispatch:
+    inputs:
+      forcer:
+        description: "Collecter toutes les sources actives, même si leur fréquence n'est pas échue"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -44,6 +49,8 @@ jobs:
 
       - name: Collecte
         working-directory: collector
+        env:
+          FORCER: ${{ inputs.forcer && '1' || '' }}
         run: pnpm collect
 
       - name: Commiter les données si elles ont changé

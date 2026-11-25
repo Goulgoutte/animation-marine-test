@@ -11,6 +11,12 @@ const hash = (s: string) => createHash("sha1").update(s).digest("hex").slice(0, 
 const cle = (s: string | null | undefined) =>
   normaliser(s ?? "").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
 
+/** Noms sans doublon, casse ignorée : « Parmi les Lucioles » et « Parmi les lucioles » sont la même société. */
+export const sansDoublon = (noms: string[]): string[] => {
+  const vus = new Set<string>();
+  return noms.filter((n) => { const k = cle(n); if (!k || vus.has(k)) return false; vus.add(k); return true; });
+};
+
 export const idOffre = (studio: string | null, titre: string) => hash(`${cle(studio)}|${cle(titre)}`);
 export const idProduction = (titre: string) => hash(cle(titre));
 
@@ -49,6 +55,15 @@ export function dedoublonnerProductions(prods: Production[]): Production[] {
     if (!e) { m.set(p.id, p); continue; }
     m.set(p.id, {
       ...e,
+      format: e.format === "inconnu" ? p.format : e.format,
+      technique: e.technique === "inconnue" ? p.technique : e.technique,
+      statut: e.statut === "inconnu" ? p.statut : e.statut,
+      producteurs: sansDoublon([...e.producteurs, ...p.producteurs]),
+      studiosFabrication: sansDoublon([...e.studiosFabrication, ...p.studiosFabrication]),
+      diffuseur: e.diffuseur ?? p.diffuseur,
+      realisateur: e.realisateur ?? p.realisateur,
+      misEnAvant: e.misEnAvant || p.misEnAvant,
+      bonMomentDecor: e.bonMomentDecor || p.bonMomentDecor,
       extrait: e.extrait.length >= p.extrait.length ? e.extrait : p.extrait,
       image: e.image ?? p.image ?? null,
       sources: fusionnerSources(e.sources, p.sources),

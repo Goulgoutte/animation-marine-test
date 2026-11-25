@@ -80,7 +80,11 @@ export interface Production {
 }
 
 export type TypeSource = "emploi" | "carriere-studio" | "actualite" | "base-projets";
-export type Methode = "rss" | "html" | "playwright" | "manuel";
+export type Methode =
+  | "rss" | "html" | "playwright" | "manuel"
+  // collecteurs structurés (API ou flux publics d'un ATS) et pages de résultats du CNC
+  | "lever" | "recruitee" | "teamtailor" | "workable" | "smartrecruiters" | "werecruit" | "cnc";
+export type Frequence = "3h" | "6h" | "12h" | "quotidien" | "hebdo";
 
 export interface SourceStatut {
   id: string;
@@ -92,6 +96,12 @@ export interface SourceStatut {
   dernierSucces: string | null;
   derniereErreur: string | null;
   nbResultats: number; // lors de la dernière collecte
+  // Champs ajoutés avec la gestion des sources depuis l'app (tous facultatifs : anciens fichiers toujours valides).
+  frequence?: Frequence;
+  dernierPassage?: string | null; // dernière tentative, réussie ou non (ISO)
+  derniersTitres?: string[]; // les 5 derniers titres trouvés
+  ajouteeParUtilisatrice?: boolean;
+  notes?: string | null;
 }
 
 // Fichiers produits par la collecte, dans web/public/data/

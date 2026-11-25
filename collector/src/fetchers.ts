@@ -1,6 +1,8 @@
 import * as cheerio from "cheerio";
 import Parser from "rss-parser";
 import { recupererTexte, robotsAutorise, attendreTour, USER_AGENT } from "./http.ts";
+import { fetchAts, urlApi } from "./ats.ts";
+import { fetchCnc } from "./cnc.ts";
 import { imageDepuisItemRss, urlImage } from "./images.ts";
 import type { ItemBrut, SourceConfig } from "./types.ts";
 
@@ -52,6 +54,7 @@ export function extraireHtml(html: string, src: SourceConfig): ItemBrut[] {
     const a = sel.lien ? $el.find(sel.lien).first() : $el.is("a") ? $el : $el.find("a").first();
     let href = a.attr("href");
     // cartes sans lien (ex. Jobotropo) : ancre sur la page source, avec l'identifiant de la carte si présent
+    if (sel.sansLien && titre) href = `#${encodeURIComponent(titre.slice(0, 60))}`;
     if (!href && !$el.is("a") && sel.item !== "a") href = `#${$el.attr("data-job-id") ?? encodeURIComponent(titre.slice(0, 60))}`;
     if (!titre || !href || (href.startsWith("#") && $el.is("a")) || href.startsWith("mailto:") || href.startsWith("javascript:")) return;
     let url: string;
@@ -105,6 +108,9 @@ export async function fermerNavigateur(): Promise<void> {
 
 export async function recuperer(src: SourceConfig): Promise<ItemBrut[]> {
   if (src.methode === "rss") return fetchRss(src);
+  if (src.methode === "teamtailor") return fetchRss({ ...src, url: urlApi("teamtailor", src.url) });
+  if (src.methode === "cnc") return fetchCnc(src);
+  if (["lever", "recruitee", "workable", "smartrecruiters", "werecruit"].includes(src.methode)) return fetchAts(src);
   if (src.methode === "html") return fetchHtml(src);
   if (src.methode === "playwright") return fetchPlaywright(src);
   return [];

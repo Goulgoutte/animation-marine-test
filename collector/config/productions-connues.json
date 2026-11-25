@@ -1,0 +1,124 @@
+{
+  "commentaire": "Productions repérées à la main : le collecteur les intègre à chaque passage, comme des productions vues aujourd'hui. Champs : titre, format, technique, statut, producteurs, extrait, sources (nom + url).",
+  "productions": [
+    {
+      "titre": "Le Loup",
+      "format": "long-metrage",
+      "technique": "inconnue",
+      "statut": "financement",
+      "producteurs": [
+        "Xilam Films"
+      ],
+      "extrait": "Long métrage de Xilam Films, aidé par le CNC (aide aux techniques d’animation 2026, test technique puis production). Technique non précisée par la commission.",
+      "sources": [
+        {
+          "nom": "CNC : résultats de la commission d’aide aux techniques d’animation 2026",
+          "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167"
+        }
+      ]
+    },
+    {
+      "titre": "Limbo",
+      "format": "long-metrage",
+      "technique": "inconnue",
+      "statut": "financement",
+      "producteurs": [
+        "Sacrebleu Productions"
+      ],
+      "extrait": "Long métrage de Sacrebleu Productions (Paris), aidé par le CNC (aide aux techniques d’animation 2026, 200 000 €).",
+      "sources": [
+        {
+          "nom": "CNC : résultats de la commission d’aide aux techniques d’animation 2026",
+          "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167"
+        }
+      ]
+    },
+    {
+      "titre": "Oh là là !",
+      "format": "serie",
+      "technique": "inconnue",
+      "statut": "financement",
+      "producteurs": [
+        "Autour de Minuit Productions"
+      ],
+      "extrait": "Série d’Autour de Minuit Productions, test technique aidé par le CNC (aide aux techniques d’animation 2026, 50 000 €).",
+      "sources": [
+        {
+          "nom": "CNC : résultats de la commission d’aide aux techniques d’animation 2026",
+          "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167"
+        }
+      ]
+    },
+    {
+      "titre": "Chickies",
+      "format": "serie",
+      "technique": "3D",
+      "statut": "production",
+      "producteurs": [
+        "Xilam"
+      ],
+      "extrait": "Série 3D de Xilam, mise en production annoncée le 2 octobre 2025. Hors périmètre 2D, gardée pour le suivi de Xilam.",
+      "sources": [
+        {
+          "nom": "Xilam : annonce de la mise en production de Chickies",
+          "url": "https://xilam.com/2025/10/02/xilam-annonce-la-mise-en-production-de-chickies/"
+        },
+        {
+          "nom": "Xilam : fiche Chickies",
+          "url": "https://xilam.com/media/chickies/"
+        }
+      ]
+    },
+    {
+      "titre": "Les Aventures de Pil",
+      "format": "serie",
+      "technique": "inconnue",
+      "statut": "production",
+      "producteurs": [
+        "TAT Productions"
+      ],
+      "diffuseur": "France Télévisions (Okoo)",
+      "extrait": "Série de TAT Productions, diffusée sur Okoo (France Télévisions) en 2026, suite du long métrage. Technique non vérifiée.",
+      "sources": [
+        {
+          "nom": "Écran Total (via Google Actualités) : « Les Aventures de Pil » poursuit son épopée en Europe",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxISVNPWUZYYlVOZUU5UjBOUjhZVEM2Y1ZDaVgzdFd5U3huM3dQVDI0eVFhbHpBUTZzSk0tUWZUa2JYR3B4V2dBa0tZQVcyNm80enhYZm90cFE5MUxwQURKUkNjUDJudnB4Q01PYjAzbkJkRm5faTJiNTZzOERwSzREN1RzODJfeUlPd1ZmWG9R?oc=5"
+        }
+      ]
+    },
+    {
+      "titre": "Les chiens ne font pas des chats",
+      "format": "long-metrage",
+      "technique": "inconnue",
+      "statut": "production",
+      "producteurs": [
+        "Parmi les Lucioles Films"
+      ],
+      "villeFabrication": "Valence",
+      "extrait": "Long métrage de Parmi les Lucioles Films (studio de Valence), repéré à la main. Source : Le Film français, Annecy 2025 (film entré en production), lien à confirmer.",
+      "sources": [
+        {
+          "nom": "Le Film français (via Google Actualités) : Annecy 2025, le nouveau film d’Alain Gagnol est entré en production",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORi1wXzItRWNKOXh1amdnQy12Z1BHaWgzZmJXQTRjRDlIY0U1cWlVT2RMQlE2LXFVcHZCbjRZRk9mbmdiUGV5Qm9Tc1oxUVQ3T0hrNTZ3a1BpY0NmdmFBZDByLUtJU1BGRzRoRWs5SHRldWdDTkdNQmJfT1QxNnczSngxbnhpRDFHeDVwY01qbXdyVk40TnVJdl9CU2RlZHZBWWpqMlptVkVmbmc?oc=5"
+        }
+      ]
+    },
+    {
+      "titre": "Ellipse Animation : nouvelle ligne anime",
+      "format": "inconnu",
+      "technique": "inconnue",
+      "statut": "developpement",
+      "producteurs": [
+        "Ellipse Animation"
+      ],
+      "villeFabrication": "Paris",
+      "extrait": "Ellipse Animation (Média-Participations) développe des séries à forte sensibilité anime et recrute un Producteur artistique Anime à Paris (freelance ou CDD, 2 jours de télétravail par semaine).",
+      "sources": [
+        {
+          "nom": "Ellipse Animation : page Careers (Creative Producer – Anime)",
+          "url": "https://www.ellipseanimation.com/careers/"
+        }
+      ]
+    }
+  ]
+}
