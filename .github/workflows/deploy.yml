@@ -44,8 +44,8 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
           NEXT_PUBLIC_REPO_URL: https://github.com/${{ github.repository }}
           # Valeurs publiques (clé « anon »), donc des variables de dépôt et non des secrets.
-          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL || 'https://httsunqkptropfewozwm.supabase.co' }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_vUO5jHIyxAeX6SfVPwgn-g_AYPDjcbl' }}
         run: pnpm build
       - uses: actions/upload-pages-artifact@v3
         with:
