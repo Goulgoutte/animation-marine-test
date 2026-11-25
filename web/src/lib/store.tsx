@@ -165,12 +165,22 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     };
   }, [sb, session, persisterDemo]);
 
+  // Écritures Supabase en file, dans l'ordre des actions : un contact rangé dans un groupe tout juste
+  // créé ne doit pas partir avant l'insertion du groupe (sinon contacts_groupe_id_fkey échoue).
+  const fileEcritures = useRef<Promise<void>>(Promise.resolve());
   const ecrire = useCallback(
-    async (fn: () => PromiseLike<{ error: { message: string } | null }> | null) => {
-      const p = fn();
-      if (!p) return;
-      const { error } = await p;
-      if (error) setErreur(`Enregistrement impossible : ${error.message}`);
+    (fn: () => PromiseLike<{ error: { message: string } | null }> | null) => {
+      fileEcritures.current = fileEcritures.current.then(async () => {
+        try {
+          const p = fn();
+          if (!p) return;
+          const { error } = await p;
+          if (error) setErreur(`Enregistrement impossible : ${error.message}`);
+        } catch (e) {
+          setErreur(`Enregistrement impossible : ${e instanceof Error ? e.message : String(e)}`);
+        }
+      });
+      return fileEcritures.current;
     },
     [],
   );
