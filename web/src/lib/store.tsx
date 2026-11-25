@@ -20,7 +20,7 @@ const PARTAGE_MARINE_DEMO: Partage = { id: "demo-partage-marine", proprietaire: 
 const vide = (): Donnees => ({
   candidatures: [], relances: [], contacts: [], echanges: [], offres_manuelles: [],
   productions_manuelles: [], corrections: [], masquages: [], reglages: [], crm_colonnes: [], crm_groupes: [],
-  studios: [], contact_studios: [], modeles_mail: [],
+  studios: [], contact_studios: [], liens_contacts: [], modeles_mail: [],
 });
 
 export interface Collecte {
@@ -341,7 +341,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       // Suppressions en cascade (la base le fait aussi côté Supabase)
       if (t === "candidatures") suivant = { ...suivant, relances: suivant.relances.filter((r) => r.candidature_id !== id) };
       if (t === "crm_groupes") suivant = { ...suivant, contacts: suivant.contacts.map((k) => (k.groupe_id === id ? { ...k, groupe_id: null } : k)) };
-      if (t === "contacts") suivant = { ...suivant, echanges: suivant.echanges.filter((r) => r.contact_id !== id), contact_studios: suivant.contact_studios.filter((r) => r.contact_id !== id) };
+      if (t === "contacts") suivant = { ...suivant, echanges: suivant.echanges.filter((r) => r.contact_id !== id), contact_studios: suivant.contact_studios.filter((r) => r.contact_id !== id), liens_contacts: suivant.liens_contacts.filter((r) => r.contact_a !== id && r.contact_b !== id) };
       if (t === "studios") suivant = { ...suivant, contact_studios: suivant.contact_studios.filter((r) => r.studio_id !== id) };
       dataRef.current = suivant;
       setData(suivant);

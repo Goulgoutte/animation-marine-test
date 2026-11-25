@@ -15,7 +15,7 @@ type Ligne = { etat: "attente" | "encours" | "ok" | "erreur" | "saute"; message?
 const INTERVALLE_MS = 1000;
 
 /** Envoi groupé : 1 modèle, 2 aperçu de chaque mail personnalisé, 3 brouillons (défaut) ou envoi confirmé. */
-export function AssistantMail({ cibles, onClose }: { cibles: Cible[]; onClose: () => void }) {
+export function AssistantMail({ cibles, onClose, modeleImpose }: { cibles: Cible[]; onClose: () => void; modeleImpose?: { nom: string; sujet: string; corps: string } }) {
   const mail = useMail();
   const etat = useEtatGmail();
   const [etape, setEtape] = useState<1 | 2 | 3>(1);
@@ -31,7 +31,9 @@ export function AssistantMail({ cibles, onClose }: { cibles: Cible[]; onClose: (
   const [arret, setArret] = useState<string | null>(null);
   const stop = useRef(false);
 
-  const modele = mail.modeles.find((m) => m.id === modeleId) ?? mail.modeles[0];
+  // Un modèle imposé (ex. demande d'introduction depuis l'onglet Réseau) remplace la liste des modèles enregistrés.
+  const modeles = modeleImpose ? [{ id: "__impose", created_at: "", categorie: "autre", ...modeleImpose }] : mail.modeles;
+  const modele = modeles.find((m) => m.id === modeleId) ?? modeles[0];
   const mails = useMemo(
     () =>
       cibles.map((cible) => {
@@ -122,7 +124,7 @@ export function AssistantMail({ cibles, onClose }: { cibles: Cible[]; onClose: (
         <div className="grid gap-3">
           <Champ label="Modèle de mail">
             <select className="champ" value={modele?.id ?? ""} onChange={(e) => setModeleId(e.target.value)} aria-label="Modèle de mail">
-              {mail.modeles.map((m) => <option key={m.id} value={m.id}>{m.nom}</option>)}
+              {modeles.map((m) => <option key={m.id} value={m.id}>{m.nom}</option>)}
             </select>
           </Champ>
           {modele && (

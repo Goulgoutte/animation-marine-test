@@ -209,6 +209,17 @@ export interface ContactStudio extends Base {
   detail: string | null;
 }
 
+export type TypeLien = "ami" | "presente_par" | "collegue" | "meme_ecole" | "autre";
+
+/** Lien entre deux personnes du réseau. Pour « presente_par » : contact_a a présenté contact_b. */
+export interface LienContact extends Base {
+  contact_a: string;
+  contact_b: string;
+  type: TypeLien;
+  production: string | null;
+  note: string | null;
+}
+
 export interface Tables {
   candidatures: Candidature;
   relances: Relance;
@@ -223,6 +234,7 @@ export interface Tables {
   crm_groupes: CrmGroupe;
   studios: Studio;
   contact_studios: ContactStudio;
+  liens_contacts: LienContact;
   modeles_mail: ModeleMail;
 }
 /** Partage de vue en lecture seule (table `partages`, hors des tables de données par utilisateur). */
@@ -251,6 +263,7 @@ export const TABLE_NAMES: TableName[] = [
   "crm_groupes",
   "studios",
   "contact_studios",
+  "liens_contacts",
   "modeles_mail",
 ];
 
