@@ -23,7 +23,7 @@ function Aide({ children }: { children: ReactNode }) {
       </button>
       <span
         role="tooltip"
-        className="pointer-events-none invisible absolute left-0 top-full z-30 mt-2 w-[min(300px,calc(100vw-3rem))] rounded-xl border border-line bg-surface p-3 text-[12.5px] font-normal leading-relaxed text-fg opacity-0 shadow-[var(--ombre-forte)] transition-opacity duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100"
+        className="pointer-events-none invisible absolute -left-24 top-full sm:left-0 z-30 mt-2 w-[min(300px,calc(100vw-3rem))] rounded-xl border border-line bg-surface p-3 text-[12.5px] font-normal leading-relaxed text-fg opacity-0 shadow-[var(--ombre-forte)] transition-opacity duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100"
       >
         {children}
       </span>
