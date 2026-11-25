@@ -5,6 +5,7 @@ import { DecorIllustration } from "./DecorIllustration";
 import { Logo } from "./Logo";
 import { Squelette } from "./ui";
 import { BASE_PATH, supabase } from "@/lib/supabase";
+import { SCOPE_GMAIL, attendreJetonGmail } from "@/lib/gmail";
 
 function GoogleG() {
   return (
@@ -23,9 +24,11 @@ export function Connexion({ pret }: { pret: boolean }) {
 
   async function google() {
     setEtat("envoi");
+    // Gmail (brouillons et envoi) est demandé dès la connexion : un seul écran d'autorisation Google.
+    attendreJetonGmail();
     const { error } = await supabase()!.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${window.location.origin}${BASE_PATH}/` },
+      options: { scopes: SCOPE_GMAIL, redirectTo: `${window.location.origin}${BASE_PATH}/` },
     });
     if (error) {
       setMsg(error.message);

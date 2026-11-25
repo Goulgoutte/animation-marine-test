@@ -87,6 +87,15 @@ export function capturerJeton(session: { provider_token?: string | null } | null
   ecrire({ token, expire: Date.now() + DUREE_MS });
 }
 
+/** Connexion principale : demande Gmail dès la connexion Google, et garde le jeton au retour. */
+export function attendreJetonGmail() {
+  try {
+    sessionStorage.setItem(CLE_ATTENTE, "1");
+  } catch {
+    /* ignoré */
+  }
+}
+
 /** Relance l'OAuth Google avec le scope gmail.compose, puis revient sur la page courante. */
 export async function connecterGmail(): Promise<string | null> {
   const sb = supabase();
