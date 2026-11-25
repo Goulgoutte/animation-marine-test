@@ -7,6 +7,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useIndicateurs } from "@/lib/indicateurs";
 import { useStore } from "@/lib/store";
 import { AutoCloture } from "./AutoCloture";
+import { JaugeCollecte } from "./JaugeCollecte";
 import { Logo } from "./Logo";
 import { Recherche } from "./Recherche";
 import { SelecteurTheme } from "./Theme";
@@ -116,6 +117,7 @@ export function Shell({ children }: { children: ReactNode }) {
         </button>
       </nav>
 
+      {(actif("/veille/") || actif("/reglages/")) && <JaugeCollecte />}
       {recherche && <Recherche onClose={() => setRecherche(false)} />}
       {plus && <FeuillePlus onClose={() => setPlus(false)} onRecherche={() => { setPlus(false); setRecherche(true); }} profil={profil?.prenom ?? null} />}
     </>

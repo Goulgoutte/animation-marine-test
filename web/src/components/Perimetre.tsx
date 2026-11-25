@@ -1,7 +1,8 @@
 "use client";
 
-import { Check, Compass, Plus, Search, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { Check, Compass, Palette, Plus, Search, X } from "lucide-react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { METIERS, METIERS_DEFAUT, labelMetier, metiersSuivis } from "@shared/metiers";
 import { Interrupteur, Sheet } from "@/components/ui";
 import { useStore } from "@/lib/store";
 import type { Perimetre as PerimetreReglage } from "@/lib/types";
@@ -17,7 +18,94 @@ function usePerimetre() {
     s.saveReglages({ perimetre: { ...reste, zones, ...x } });
   };
   const basculer = (id: string) => maj({ zones: zones.includes(id) ? zones.filter((z) => z !== id) : [...zones, id] });
-  return { p, zones, maj, basculer };
+  const metiers = metiersSuivis(p);
+  // Écrire `metiers` remplace l’ancien champ `categorie`
+  const majMetiers = (liste: string[]) => {
+    const { zone: _ancien, categorie: _cat, ...reste } = p;
+    s.saveReglages({ perimetre: { ...reste, zones, metiers: liste } });
+  };
+  const basculerMetier = (id: string) => majMetiers(METIERS.map((m) => m.id).filter((x) => (x === id ? !metiers.includes(x) : metiers.includes(x))));
+  return { p, zones, maj, basculer, metiers, basculerMetier, reinitialiserMetiers: () => majMetiers(METIERS_DEFAUT) };
+}
+
+const MOBILE = "(max-width: 767px)";
+function useMobile() {
+  return useSyncExternalStore(
+    (cb) => { const m = window.matchMedia(MOBILE); m.addEventListener("change", cb); return () => m.removeEventListener("change", cb); },
+    () => window.matchMedia(MOBILE).matches,
+    () => false,
+  );
+}
+
+function PucesMetiers({ metiers, retirer }: { metiers: string[]; retirer: (id: string) => void }) {
+  if (metiers.length === 0) return <span className="micro">Aucun métier : tout est classé dans « Autres ».</span>;
+  return (
+    <>
+      {metiers.map((id) => (
+        <span key={id} className="puce !cursor-default gap-1 pr-1" aria-pressed="true">
+          {labelMetier(id)}
+          <button type="button" onClick={() => retirer(id)} className="grid h-4 w-4 place-items-center rounded-full hover:bg-[color-mix(in_srgb,currentColor_18%,transparent)]" aria-label={`Retirer le métier ${labelMetier(id)}`}>
+            <X className="h-3 w-3" />
+          </button>
+        </span>
+      ))}
+    </>
+  );
+}
+
+function ListeMetiers({ metiers, basculer, reinitialiser }: { metiers: string[]; basculer: (id: string) => void; reinitialiser: () => void }) {
+  return (
+    <div className="flex min-h-0 flex-col gap-1">
+      <div className="min-h-0 overflow-y-auto overscroll-contain pr-1">
+        {METIERS.map((m) => (
+          <label key={m.id} className="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-[13px] font-medium hover:bg-surface-2">
+            <input type="checkbox" className="h-4 w-4 flex-none accent-[var(--accent)]" checked={metiers.includes(m.id)} onChange={() => basculer(m.id)} />
+            <span className="min-w-0 break-words">{m.label}</span>
+          </label>
+        ))}
+      </div>
+      <p className="micro px-2">Le classement se fait à l’affichage : aucune collecte n’est relancée.</p>
+      <button type="button" className="bouton bouton-texte bouton-petit self-start" onClick={reinitialiser}>Remettre Décor et Concept art</button>
+    </div>
+  );
+}
+
+/** Bouton « Métiers » : cocher ou décocher les métiers suivis (popover sur ordinateur, feuille sur mobile). */
+export function BoutonMetiers() {
+  const { metiers, basculerMetier, reinitialiserMetiers } = usePerimetre();
+  const [ouvert, setOuvert] = useState(false);
+  const mobile = useMobile();
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!ouvert || mobile) return;
+    const clic = (e: MouseEvent) => ref.current && !ref.current.contains(e.target as Node) && setOuvert(false);
+    const touche = (e: KeyboardEvent) => e.key === "Escape" && setOuvert(false);
+    document.addEventListener("mousedown", clic);
+    document.addEventListener("keydown", touche);
+    return () => {
+      document.removeEventListener("mousedown", clic);
+      document.removeEventListener("keydown", touche);
+    };
+  }, [ouvert, mobile]);
+  const liste = <ListeMetiers metiers={metiers} basculer={basculerMetier} reinitialiser={reinitialiserMetiers} />;
+  return (
+    <div ref={ref} className="relative">
+      <button type="button" className="bouton !px-2.5 !py-1" aria-expanded={ouvert} aria-haspopup="dialog" onClick={() => setOuvert((v) => !v)}>
+        <Palette />Métiers
+      </button>
+      {ouvert && !mobile && (
+        <div role="dialog" aria-label="Choisir les métiers" className="feuille absolute left-0 top-full z-40 mt-2 flex max-h-[min(420px,60dvh)] w-[min(340px,calc(100vw-2rem))] flex-col rounded-2xl border border-line bg-surface p-3 shadow-[var(--ombre-forte)]">
+          {liste}
+        </div>
+      )}
+      {ouvert && mobile && (
+        <Sheet titre="Métiers suivis" sousTitre="Enregistré tout de suite, les compteurs se mettent à jour." onClose={() => setOuvert(false)}
+          pied={<button className="bouton bouton-plein w-full" onClick={() => setOuvert(false)}><Check />Terminé</button>}>
+          {liste}
+        </Sheet>
+      )}
+    </div>
+  );
 }
 
 function Puces({ zones, retirer }: { zones: string[]; retirer: (id: string) => void }) {
@@ -110,7 +198,7 @@ function ZonePopover({ zones, basculer }: { zones: string[]; basculer: (id: stri
 
 /** Rangée « Périmètre » de la Veille : ordinateur en ligne, mobile derrière un bouton + feuille. */
 export function BarrePerimetre() {
-  const { p, zones, maj, basculer } = usePerimetre();
+  const { p, zones, maj, basculer, metiers, basculerMetier, reinitialiserMetiers } = usePerimetre();
   const [feuille, setFeuille] = useState(false);
   return (
     <>
@@ -120,12 +208,16 @@ export function BarrePerimetre() {
           <Puces zones={zones} retirer={basculer} />
           <ZonePopover zones={zones} basculer={basculer} />
         </div>
+        <div className="flex min-w-0 flex-wrap items-center gap-1.5" role="group" aria-label="Métiers suivis">
+          <span className="meta flex items-center gap-1.5"><Palette className="h-3.5 w-3.5" />Métiers</span>
+          <PucesMetiers metiers={metiers} retirer={basculerMetier} />
+        </div>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2"><Interrupteurs p={p} maj={maj} /></div>
       </div>
 
       <div className="border-t border-line pt-3 md:hidden">
         <button type="button" className="bouton w-full" onClick={() => setFeuille(true)}>
-          <Compass />Périmètre · {zones.length} {zones.length > 1 ? "zones" : "zone"}
+          <Compass />Périmètre · {zones.length} {zones.length > 1 ? "zones" : "zone"} · {metiers.length} {metiers.length > 1 ? "métiers" : "métier"}
         </button>
       </div>
       {feuille && (
@@ -135,6 +227,10 @@ export function BarrePerimetre() {
             <div className="flex flex-wrap gap-x-4 gap-y-2.5"><Interrupteurs p={p} maj={maj} /></div>
             <div className="flex flex-wrap items-center gap-1.5"><Puces zones={zones} retirer={basculer} /></div>
             <ListeZones zones={zones} basculer={basculer} />
+            <div>
+              <p className="meta mb-1">Métiers suivis</p>
+              <ListeMetiers metiers={metiers} basculer={basculerMetier} reinitialiser={reinitialiserMetiers} />
+            </div>
           </div>
         </Sheet>
       )}

@@ -4,6 +4,8 @@ import { ChevronDown, ChevronRight, ExternalLink, Play, Plus, Trash2 } from "luc
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { Frequence, Methode, SourceStatut, TypeSource } from "@shared/types";
 import { FREQUENCES, LIBELLE_FREQUENCE, detecterSource, prochainPassageEstime } from "@shared/sources";
+import { chargeParDomaine, domainesCharges, limitesDepuis } from "@shared/charge";
+import { AlertTriangle } from "lucide-react";
 import { COULEUR, LIBELLE, santeSource, type Sante } from "@/lib/sante";
 import { supabase } from "@/lib/supabase";
 import { useStore } from "@/lib/store";
@@ -69,6 +71,9 @@ export function SourcesReglages() {
   const visibles = lignes.filter((l) => (filtreType === "tous" || l.type === filtreType) && (filtreSante === "toutes" || l.sante === filtreSante));
   const compte = (x: Sante) => lignes.filter((l) => l.sante === x).length;
 
+  const limites = limitesDepuis(s.collecte?.sources.limites);
+  // Note informative (jamais bloquante) : domaines au-dessus de ~50 % du plafond quotidien, d'après les réglages affichés
+  const chargees = useMemo(() => domainesCharges(chargeParDomaine(lignes, limites)), [lignes, limites]);
   async function maj(id: string, patch: Partial<Pick<LigneTable, "frequence" | "actif">>) {
     if (!sb || !table) return;
     const avant = table;
@@ -123,6 +128,12 @@ export function SourcesReglages() {
           <span className="micro mb-2">Lien « Lancer une collecte » disponible une fois le site déployé (NEXT_PUBLIC_REPO_URL).</span>
         )}
       </div>
+
+      {chargees.length > 0 && (
+        <p className="micro flex items-start gap-1.5"><AlertTriangle className="mt-px h-3.5 w-3.5 flex-none text-warn" />
+          Charge élevée : {chargees.map((d) => `${d.domaine} (${d.requetes} requêtes par jour sur ${d.plafond})`).join(", ")}. Rien n’est bloqué, mais évite de multiplier les passages sur un même site.
+        </p>
+      )}
 
       <div>
         <div className="hidden border-b border-line pb-2 text-[11.5px] font-semibold uppercase tracking-wide text-muted md:grid md:grid-cols-[minmax(0,1fr)_96px_92px_112px_48px_128px_100px_100px_52px] md:gap-x-3" role="row">

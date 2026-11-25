@@ -3,7 +3,7 @@
 import { Check, CalendarClock, MessageSquareReply, Send, Undo2 } from "lucide-react";
 import { useState } from "react";
 import { Avatar, Champ, Sheet } from "@/components/ui";
-import { ETAPES, derniereActivite, estCloturee, etapeCourante, prochaineAction, stagne, changementStatut } from "@/lib/actions";
+import { DELAI_PEUT_ETRE_JOURS, ETAPES, derniereActivite, estCloturee, etapeCourante, prochaineAction, stagne, changementStatut } from "@/lib/actions";
 import { addDays, diffDays, fmtCourt, today } from "@/lib/dates";
 import { relancesDe } from "@/lib/relances";
 import { useStore } from "@/lib/store";
@@ -31,7 +31,7 @@ export function useActionsCandidature() {
       maj(c, changementStatut(c, "envoyee", { prochaine_action: null, prochaine_action_date: null }));
     },
     relance(c: Candidature) {
-      s.add("relances", { candidature_id: c.id, date: today(), canal: "mail", note: null });
+      s.add("relances", { candidature_id: c.id, date: today(), canal: "mail_pro", note: null });
       maj(c, changementStatut(c, "relancee", { cloture_annulee: false, prochaine_action: null, prochaine_action_date: null }));
     },
     rouvrir(c: Candidature) {
@@ -39,8 +39,13 @@ export function useActionsCandidature() {
       maj(c, changementStatut(c, avant, { cloture_annulee: true }));
     },
     entretien,
-    reponse(c: Candidature, statut: "entretien" | "acceptee" | "refus", motif: string, date: string) {
+    reponse(c: Candidature, statut: "entretien" | "peut_etre" | "acceptee" | "refus", motif: string, date: string) {
       if (statut === "entretien") return entretien(c, date, motif);
+      if (statut === "peut_etre") {
+        // Le texte libre garde la raison dans les notes ; l’action « Relancer dans 3 semaines » est posée par défaut.
+        const note = motif.trim() ? [c.notes, `Peut-être (${fmtCourt(today())}) : ${motif.trim()}`].filter(Boolean).join("\n") : c.notes;
+        return maj(c, changementStatut(c, "peut_etre", { notes: note, prochaine_action_date: date }));
+      }
       maj(c, changementStatut(c, statut, { motif_cloture: motif.trim() || null }));
     },
   };
@@ -52,8 +57,8 @@ export type Actions = ReturnType<typeof useActionsCandidature>;
 function Frise({ c }: { c: Candidature }) {
   const { data } = useStore();
   const cour = etapeCourante(c, data.relances);
-  const couleur = c.statut === "refus" ? "var(--danger)" : c.statut === "acceptee" ? "var(--ok)" : c.statut === "sans_reponse" ? "var(--muted)" : "var(--accent)";
-  const nom = c.statut === "sans_reponse" ? "Sans réponse" : c.statut === "refus" ? "Refus" : c.statut === "acceptee" ? "Acceptée" : ETAPES[cour];
+  const couleur = c.statut === "refus" ? "var(--danger)" : c.statut === "acceptee" ? "var(--ok)" : c.statut === "sans_reponse" ? "var(--muted)" : c.statut === "peut_etre" ? couleurStatut("peut_etre") : "var(--accent)";
+  const nom = c.statut === "sans_reponse" ? "Sans réponse" : c.statut === "refus" ? "Refus" : c.statut === "acceptee" ? "Acceptée" : c.statut === "peut_etre" ? "Peut-être" : ETAPES[cour];
   return (
     <div className="flex items-center gap-2" role="img" aria-label={`Étape : ${nom}`}>
       <ol className="flex items-center">
@@ -119,7 +124,7 @@ function BoutonsRapides({ c, actions }: { c: Candidature; actions: Actions }) {
     <div className="flex flex-wrap gap-1.5">
       {c.statut === "a_preparer" && <button className={`${b} bouton-plein`} onClick={() => actions.envoye(c)}><Send />J’ai envoyé</button>}
       {(c.statut === "envoyee" || c.statut === "relancee") && nbRelances < 2 && <button className={b} onClick={() => actions.relance(c)}><Check />J’ai relancé</button>}
-      {(c.statut === "envoyee" || c.statut === "relancee") && <button className={b} onClick={() => actions.ouvrirEntretien(c)}><CalendarClock />Entretien fixé</button>}
+      {(c.statut === "envoyee" || c.statut === "relancee" || c.statut === "peut_etre") && <button className={b} onClick={() => actions.ouvrirEntretien(c)}><CalendarClock />Entretien fixé</button>}
       {c.statut !== "a_preparer" && <button className={b} onClick={() => actions.ouvrirReponse(c)}><MessageSquareReply />Réponse reçue</button>}
     </div>
   );
@@ -175,30 +180,34 @@ export function DialogueAction({ actions }: { actions: Actions }) {
 }
 
 function Contenu({ c, mode, actions }: { c: Candidature; mode: "entretien" | "reponse"; actions: Actions }) {
-  const [issue, setIssue] = useState<"entretien" | "acceptee" | "refus">(mode === "entretien" ? "entretien" : "refus");
+  const [issue, setIssue] = useState<"entretien" | "peut_etre" | "acceptee" | "refus">(mode === "entretien" ? "entretien" : "refus");
   const [date, setDate] = useState(addDays(today(), 7));
+  const [datePeutEtre, setDatePeutEtre] = useState(addDays(today(), DELAI_PEUT_ETRE_JOURS));
   const [texte, setTexte] = useState("");
   const entretien = issue === "entretien";
+  const peutEtre = issue === "peut_etre";
+  const motif = entretien ? "Intitulé (facultatif)" : peutEtre ? "Ce qu’elle a dit (facultatif)" : "Motif (facultatif)";
   return (
     <Sheet titre={mode === "entretien" ? "Entretien fixé" : "Réponse reçue"} sousTitre={`${c.studio} · ${c.poste}`} onClose={actions.fermer}>
       <form
         className="grid gap-3"
         onSubmit={(e) => {
           e.preventDefault();
-          actions.reponse(c, issue, texte, date);
+          actions.reponse(c, issue, texte, peutEtre ? datePeutEtre : date);
           actions.fermer();
         }}
       >
         {mode === "reponse" && (
           <div className="segment w-full" role="group" aria-label="Nature de la réponse">
-            {([["entretien", "Entretien"], ["acceptee", "Acceptée"], ["refus", "Refus"]] as const).map(([id, lib]) => (
+            {([["entretien", "Entretien"], ["peut_etre", "Peut-être"], ["acceptee", "Acceptée"], ["refus", "Refus"]] as const).map(([id, lib]) => (
               <button type="button" key={id} aria-pressed={issue === id} className="!flex-1 !justify-center" onClick={() => setIssue(id)}>{lib}</button>
             ))}
           </div>
         )}
         {entretien && <Champ label="Date de l’entretien ou du test"><input type="date" className="champ" required value={date} onChange={(e) => setDate(e.target.value)} /></Champ>}
-        <Champ label={entretien ? "Intitulé (facultatif)" : "Motif (facultatif)"}>
-          <input className="champ" value={texte} onChange={(e) => setTexte(e.target.value)} placeholder={entretien ? "Entretien visio, test de décor…" : issue === "refus" ? "Poste pourvu, profil différent…" : "Contrat, durée, début…"} autoFocus />
+        {peutEtre && <Champ label="Relancer le"><input type="date" className="champ" required value={datePeutEtre} onChange={(e) => setDatePeutEtre(e.target.value)} /></Champ>}
+        <Champ label={motif}>
+          <input className="champ" value={texte} onChange={(e) => setTexte(e.target.value)} placeholder={entretien ? "Entretien visio, test de décor…" : peutEtre ? "Pas besoin sur mon projet, je transmets aux autres…" : issue === "refus" ? "Poste pourvu, profil différent…" : "Contrat, durée, début…"} autoFocus />
         </Champ>
         <button className="bouton bouton-plein">Enregistrer</button>
       </form>

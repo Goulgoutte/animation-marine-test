@@ -41,7 +41,7 @@ export default function Accueil() {
     router.push(chemin);
   }
   function relancer(id: string) {
-    s.add("relances", { candidature_id: id, date: today(), canal: "mail", note: null });
+    s.add("relances", { candidature_id: id, date: today(), canal: "mail_pro", note: null });
     s.patch("candidatures", id, { statut: "relancee", cloture_auto: false, cloture_annulee: false });
   }
   function actionCandidatureFaite(id: string) {
@@ -71,12 +71,12 @@ export default function Accueil() {
         <h1 className="titre-page mt-0.5">Bonjour{s.profil?.prenom ? ` ${s.profil.prenom}` : ""}</h1>
         <p className="mt-1 text-[13.5px] text-muted">
           {aFaire > 0 ? <>Tu as <strong className="font-semibold text-fg">{aFaire} chose{aFaire > 1 ? "s" : ""} à faire</strong> aujourd’hui.</> : "Rien d’urgent aujourd’hui."}
-          {ind.nouvellesOffres.length > 0 && <> {ind.nouvellesOffres.length} nouvelle{ind.nouvellesOffres.length > 1 ? "s" : ""} offre{ind.nouvellesOffres.length > 1 ? "s" : ""} décor depuis ta dernière visite.</>}
+          {ind.nouvellesOffres.length > 0 && <> {ind.nouvellesOffres.length} nouvelle{ind.nouvellesOffres.length > 1 ? "s" : ""} offre{ind.nouvellesOffres.length > 1 ? "s" : ""} dans tes métiers depuis ta dernière visite.</>}
         </p>
       </header>
 
       <section aria-label="Indicateurs" className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <Kpi href="/veille/" label="Nouvelles offres décor" valeur={ind.nouvellesOffres.length} icone={Radar} ton="accent" note="dans ton périmètre" />
+        <Kpi href="/veille/" label="Nouvelles offres dans tes métiers" valeur={ind.nouvellesOffres.length} icone={Radar} ton="accent" note="dans ton périmètre" />
         <Kpi href="/veille/?onglet=productions" label="Bon moment pour candidater" valeur={ind.prodsMoment.length} icone={Sparkles} ton="ok" note="productions à approcher" />
         <Kpi href="/candidatures/" label="Relances dues aujourd’hui" valeur={ind.relancesDues.length} icone={CalendarCheck} ton={ind.relancesDues.length ? "danger" : "info"} note={ind.relancesDues.length ? "à envoyer maintenant" : "tout est à jour"} />
         <Kpi href="/contacts/" label="Contacts à recontacter" valeur={ind.contactsARecontacter.length} icone={Users} ton="warn" note={`sans échange depuis ${s.reglages.delai_contact_mois} mois`} />

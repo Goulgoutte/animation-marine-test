@@ -102,9 +102,28 @@ export interface SourceStatut {
   derniersTitres?: string[]; // les 5 derniers titres trouvés
   ajouteeParUtilisatrice?: boolean;
   notes?: string | null;
+  /** « plafond » : sautée au dernier passage parce que son domaine avait atteint le plafond de requêtes du jour. */
+  sautee?: "plafond" | null;
+}
+
+/** Une collecte, pour l'historique de la jauge (les 10 dernières). */
+export interface HistoriqueCollecte {
+  date: string; // ISO
+  requetes: number;
+  sources: number; // sources effectivement lues
+  sautees: string[]; // ids sautés (plafond de domaine)
+  partielle?: boolean; // lancée avec --only
 }
 
 // Fichiers produits par la collecte, dans web/public/data/
 export interface FichierOffres { genereLe: string; offres: Offre[] }
 export interface FichierProductions { genereLe: string; productions: Production[] }
-export interface FichierSources { genereLe: string; sources: SourceStatut[] }
+export interface FichierSources {
+  genereLe: string;
+  sources: SourceStatut[];
+  // Garde-fous (tous facultatifs : anciens fichiers toujours valides)
+  limites?: { plafondRequetesParDomaineParJour: number; plafondsParDomaine: Record<string, number>; delaiMinCollecteMinutes: number };
+  requetesJour?: { jour: string; parDomaine: Record<string, number> }; // compteur du jour (UTC) par domaine
+  derniereCollecteComplete?: string | null; // ISO : sert au délai minimal entre deux collectes complètes
+  historique?: HistoriqueCollecte[];
+}

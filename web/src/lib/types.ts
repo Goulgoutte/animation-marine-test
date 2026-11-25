@@ -4,12 +4,16 @@ export type Statut =
   | "a_preparer"
   | "envoyee"
   | "relancee"
+  | "peut_etre"
   | "entretien"
   | "refus"
   | "acceptee"
   | "sans_reponse";
 
-export type Canal = "mail" | "formulaire" | "linkedin" | "salon" | "recommandation" | "autre";
+/** `mail` est l’ancien identifiant (avant « Mail pro » et « Mail perso ») : toujours lu, affiché « Mail », plus proposé. */
+export type Canal =
+  | "mail" | "mail_pro" | "mail_perso" | "formulaire" | "linkedin" | "instagram" | "discord" | "whatsapp" | "sms"
+  | "salon" | "recommandation" | "autre";
 
 interface Base {
   id: string;
@@ -129,6 +133,10 @@ export interface Perimetre {
   teletravail: boolean;
   langues: ("fr" | "en")[];
   afficher3d: boolean;
+  /** Métiers suivis (ids de lib/metiers.ts). Absent : on retombe sur l’ancien `categorie` puis sur le défaut. */
+  metiers?: string[];
+  /** Ancien réglage (« decor » ou « autre »), lu seulement si `metiers` est absent. */
+  categorie?: Categorie;
 }
 
 export interface Reglages extends Base {
@@ -181,19 +189,28 @@ export const STATUTS: { id: Statut; label: string; couleur: string }[] = [
   { id: "a_preparer", label: "À préparer", couleur: "#7b8296" },
   { id: "envoyee", label: "Envoyée", couleur: "#2f6fdd" },
   { id: "relancee", label: "Relancée", couleur: "#c77a0a" },
+  { id: "peut_etre", label: "Peut-être", couleur: "#0e8fa3" },
   { id: "entretien", label: "Entretien ou test", couleur: "#8a52d9" },
   { id: "acceptee", label: "Acceptée", couleur: "#2c8a5a" },
   { id: "refus", label: "Refus", couleur: "#d6455d" },
   { id: "sans_reponse", label: "Sans réponse", couleur: "#8d93a5" },
 ];
 export const CANAUX: { id: Canal; label: string }[] = [
-  { id: "mail", label: "Mail" },
+  { id: "mail_pro", label: "Mail pro" },
+  { id: "mail_perso", label: "Mail perso" },
   { id: "formulaire", label: "Formulaire du site" },
   { id: "linkedin", label: "LinkedIn" },
+  { id: "instagram", label: "Instagram" },
+  { id: "discord", label: "Discord" },
+  { id: "whatsapp", label: "WhatsApp" },
+  { id: "sms", label: "SMS" },
   { id: "salon", label: "Salon ou festival" },
   { id: "recommandation", label: "Recommandation" },
   { id: "autre", label: "Autre" },
 ];
+/** Canaux proposés dans un menu : la liste courante, plus « Mail » si la fiche porte encore l’ancien identifiant. */
+export const canauxPour = (courant?: string): { id: Canal; label: string }[] =>
+  courant === "mail" ? [{ id: "mail", label: "Mail" }, ...CANAUX] : CANAUX;
 export const TYPES_ECHANGE: { id: TypeEchange; label: string }[] = [
   { id: "cafe", label: "Café" },
   { id: "dejeuner", label: "Déjeuner" },
@@ -204,5 +221,5 @@ export const TYPES_ECHANGE: { id: TypeEchange; label: string }[] = [
   { id: "mail", label: "Mail" },
 ];
 export const labelStatut = (s: Statut) => STATUTS.find((x) => x.id === s)?.label ?? s;
-export const labelCanal = (c: string) => CANAUX.find((x) => x.id === c)?.label ?? c;
+export const labelCanal = (c: string) => (c === "mail" ? "Mail" : (CANAUX.find((x) => x.id === c)?.label ?? c));
 export const labelEchange = (c: string) => TYPES_ECHANGE.find((x) => x.id === c)?.label ?? c;

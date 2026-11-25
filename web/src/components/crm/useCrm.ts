@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { colonnesParDefaut, groupesParDefaut, decouperNom, libellesDe, rangSuivant, texteDe, triees, valeur } from "@/lib/crm";
-import { dernierEchange } from "@/lib/contacts";
+import { aRecontacter, dernierEchange } from "@/lib/contacts";
 import { uid } from "@/lib/dates";
 import { useStore } from "@/lib/store";
 import type { Contact, CrmColonne, CrmGroupe, Libelle, TypeColonne } from "@/lib/types";
@@ -47,8 +47,7 @@ export function useCrm() {
     const colFiltre = filtre && filtre.col !== "__rappel" ? colonnes.find((c) => c.id === filtre.col) : null;
     let l = contacts.filter((c) => groupeDe(c) === groupeId);
     if (filtre?.col === "__rappel") {
-      const seuil = s.reglages.delai_contact_mois * 30;
-      l = l.filter((c) => { const d = dernierEchange(c.id, echanges); return !d || (Date.now() - new Date(d).getTime()) / 864e5 >= seuil; });
+      l = l.filter((c) => aRecontacter(dernierEchange(c.id, echanges), s.reglages.delai_contact_mois));
     }
     if (colFiltre && filtre) {
       l = l.filter((c) => { const v = valeur(c, colFiltre); return Array.isArray(v) ? v.includes(filtre.val) : v === filtre.val; });

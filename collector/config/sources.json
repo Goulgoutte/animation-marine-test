@@ -28,7 +28,7 @@
       "selecteurs": {
         "item": "a[href*='/emploi-']"
       },
-      "filtre": "animat|décor|decor|background|layout|2d|storyboard|dessin|illustrat|infograph|coloriste|graphiste",
+      "filtre": "animat|décor|decor|background|layout|2d|storyboard|dessin|illustrat|infograph|coloriste|graphiste|concept|visdev|visual dev|color|couleur|character design|intervall|clean",
       "note": "Beaucoup de jeu vidéo : le filtre garde les intitulés liés à l'animation et au dessin."
     },
     {

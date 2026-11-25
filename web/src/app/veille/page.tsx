@@ -3,9 +3,9 @@
 import { Archive, Briefcase, CalendarClock, Check, ExternalLink, EyeOff, Film, Globe2, MapPin, Pencil, Plus, Radar, Search, ShieldAlert, Sparkles, Undo2 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import type { Categorie } from "@shared/types";
+import { estDansMetiers, labelMetier, metiersOffre, metiersSuivis } from "@shared/metiers";
 import { FormOffre, FormProduction } from "@/components/FormsVeille";
-import { BarrePerimetre } from "@/components/Perimetre";
+import { BarrePerimetre, BoutonMetiers } from "@/components/Perimetre";
 import { Couverture, EnTete, Interrupteur, Onglets, Sheet, Vide, Vignette } from "@/components/ui";
 import { nouvelleCandidature } from "@/lib/candidature";
 import { fmt, fmtCourt, today } from "@/lib/dates";
@@ -13,7 +13,7 @@ import { useStore } from "@/lib/store";
 import type { Candidature } from "@/lib/types";
 import {
   LABEL_CONTRAT, LABEL_FORMAT, LABEL_MODE, LABEL_NIVEAU, LABEL_STATUT_PROD, offreDansPerimetre, offresVues,
-  productionCategorie, productionDansPerimetre, productionDansZone, productionsVues, type OffreVue, type ProductionVue,
+  productionDansPerimetre, productionDansZone, productionsVues, type OffreVue, type ProductionVue,
 } from "@/lib/veille";
 
 type Onglet = "offres" | "productions";
@@ -22,7 +22,8 @@ const norm = (s: string) => s.normalize("NFD").replace(/\p{Diacritic}/gu, "").to
 export default function Veille() {
   const s = useStore();
   const [onglet, setOnglet] = useState<Onglet>("offres");
-  const [cat, setCat] = useState<Categorie>("decor");
+  // Filtre de métier : « mes » (tous les métiers suivis), « autres » (le reste) ou l’id d’un métier suivi
+  const [filtre, setFiltre] = useState<string>("mes");
   const [q, setQ] = useState("");
   const [horsPerimetre, setHorsPerimetre] = useState(false);
   const [masques, setMasques] = useState(false);
@@ -34,21 +35,25 @@ export default function Veille() {
   const offres = useMemo(() => offresVues(s.collecte!, s.data, s.visitePrecedente), [s.collecte, s.data, s.visitePrecedente]);
   const prods = useMemo(() => productionsVues(s.collecte!, s.data, s.visitePrecedente), [s.collecte, s.data, s.visitePrecedente]);
 
+  const suivis = useMemo(() => metiersSuivis(s.reglages.perimetre), [s.reglages.perimetre]);
+  const f = filtre === "mes" || filtre === "autres" || suivis.includes(filtre) ? filtre : "mes";
+  const dansFiltre = (metiers: string[], x: string) => (x === "mes" ? estDansMetiers(metiers, suivis) : x === "autres" ? !estDansMetiers(metiers, suivis) : metiers.includes(x));
+
   // Ouverture depuis la recherche globale ou le tableau de bord
   useEffect(() => {
     const f = s.focus;
     if (!f || (f.kind !== "offre" && f.kind !== "production")) return;
     if (f.kind === "offre") {
       const o = offres.find((x) => x.id === f.id);
-      if (o) { setOnglet("offres"); setCat(o.categorie); }
+      if (o) { setOnglet("offres"); setFiltre(estDansMetiers(o.metiers, suivis) ? "mes" : "autres"); }
     } else {
       const p = prods.find((x) => x.id === f.id);
-      if (p) { setOnglet("productions"); setCat(productionCategorie(p)); }
+      if (p) { setOnglet("productions"); setFiltre(estDansMetiers(p.metiers, suivis) ? "mes" : "autres"); }
     }
     setDetail({ kind: f.kind, id: f.id });
     setEdition(false);
     s.setFocus(null);
-  }, [s.focus, offres, prods, s]);
+  }, [s.focus, offres, prods, s, suivis]);
 
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("onglet") === "productions") setOnglet("productions");
@@ -64,18 +69,18 @@ export default function Veille() {
   const matchO = (o: OffreVue) => !t || norm([o.titre, o.studio, o.production, o.lieu, o.extrait].filter(Boolean).join(" ")).includes(t);
   const matchP = (p: ProductionVue) => !t || norm([p.titre, p.producteurs.join(" "), p.studiosFabrication.join(" "), p.realisateur, p.extrait].filter(Boolean).join(" ")).includes(t);
 
-  const offresCat = offres.filter((o) => o.categorie === cat);
-  const prodsCat = prods.filter((p) => productionCategorie(p) === cat);
+  const offresCat = offres.filter((o) => dansFiltre(o.metiers, f));
+  const prodsCat = prods.filter((p) => dansFiltre(p.metiers, f));
   const visiblesO = offresCat.filter((o) => matchO(o) && (horsPerimetre || o.manuelle || offreDansPerimetre(o, s.reglages)) && (masques ? o.masquee : !o.masquee));
   const visiblesP = prodsCat.filter((p) => matchP(p) && (horsPerimetre || p.manuelle || productionDansPerimetre(p, s.reglages)) && (masques ? p.masquee : !p.masquee));
   const nbMasques = (onglet === "offres" ? offresCat : prodsCat).filter((x) => x.masquee).length;
 
-  const compte = (c: Categorie) =>
+  const compte = (x: string) =>
     onglet === "offres"
-      ? offres.filter((o) => o.categorie === c && !o.masquee && (horsPerimetre || o.manuelle || offreDansPerimetre(o, s.reglages))).length
-      : prods.filter((p) => productionCategorie(p) === c && !p.masquee && (horsPerimetre || p.manuelle || productionDansPerimetre(p, s.reglages))).length;
+      ? offres.filter((o) => dansFiltre(o.metiers, x) && !o.masquee && (horsPerimetre || o.manuelle || offreDansPerimetre(o, s.reglages))).length
+      : prods.filter((p) => dansFiltre(p.metiers, x) && !p.masquee && (horsPerimetre || p.manuelle || productionDansPerimetre(p, s.reglages))).length;
 
-  const nouvellesDecor = offres.filter((o) => o.categorie === "decor" && o.nouveau && !o.masquee && offreDansPerimetre(o, s.reglages)).length;
+  const nouvellesMetiers = offres.filter((o) => estDansMetiers(o.metiers, suivis) && o.nouveau && !o.masquee && offreDansPerimetre(o, s.reglages)).length;
   const nbHors = (onglet === "offres" ? offresCat.filter((o) => !offreDansPerimetre(o, s.reglages)) : prodsCat.filter((p) => !productionDansPerimetre(p, s.reglages))).filter((x) => !x.masquee && !x.manuelle).length;
 
   const deja = (kind: "offre" | "production", id: string) =>
@@ -129,7 +134,7 @@ export default function Veille() {
     <>
       <EnTete
         titre="Veille"
-        description={<><strong className="font-semibold text-accent">{nouvellesDecor}</strong> {nouvellesDecor > 1 ? "nouvelles offres" : "nouvelle offre"} décor dans ton périmètre{dateGen ? <> · collecte du {fmt(dateGen)}</> : null}</>}
+        description={<><strong className="font-semibold text-accent">{nouvellesMetiers}</strong> {nouvellesMetiers > 1 ? "nouvelles offres" : "nouvelle offre"} dans tes métiers et ton périmètre{dateGen ? <> · collecte du {fmt(dateGen)}</> : null}</>}
         droite={
           <>
             <button className="bouton" onClick={() => setAjout("production")}><Plus />Production</button>
@@ -146,9 +151,13 @@ export default function Veille() {
       <div className="carte mb-5 flex flex-col gap-3 p-3 md:p-4">
         <div className="flex flex-wrap items-center gap-2.5">
           <Onglets valeur={onglet} onChange={setOnglet} options={[{ id: "offres", label: <><Briefcase className="h-3.5 w-3.5" />Offres d’emploi</> }, { id: "productions", label: <><Film className="h-3.5 w-3.5" />Productions</> }]} />
-          <div className="flex gap-1.5" role="group" aria-label="Catégorie">
-            <button className="puce" aria-pressed={cat === "decor"} onClick={() => setCat("decor")}>Décor <span className="opacity-70">{compte("decor")}</span></button>
-            <button className="puce" aria-pressed={cat === "autre"} onClick={() => setCat("autre")}>Autres métiers <span className="opacity-70">{compte("autre")}</span></button>
+          <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Métiers">
+            {suivis.length > 1 && <button className="puce" aria-pressed={f === "mes"} onClick={() => setFiltre("mes")}>Mes métiers <span className="opacity-70">{compte("mes")}</span></button>}
+            {suivis.map((id) => (
+              <button key={id} className="puce" aria-pressed={f === id || (suivis.length === 1 && f === "mes")} onClick={() => setFiltre(id)}>{labelMetier(id)} <span className="opacity-70">{compte(id)}</span></button>
+            ))}
+            <button className="puce" aria-pressed={f === "autres"} onClick={() => setFiltre("autres")}>Autres <span className="opacity-70">{compte("autres")}</span></button>
+            <BoutonMetiers />
           </div>
           <label className="relative ml-auto w-full min-w-0 sm:w-64">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
@@ -165,7 +174,7 @@ export default function Veille() {
       {onglet === "offres" ? (
         visiblesO.length === 0 ? (
           <Vide icone={Radar} titre="Rien à afficher ici" action={<button className="bouton bouton-plein" onClick={() => setAjout("offre")}><Plus />Ajouter une offre</button>}>
-            {t ? <>Aucune offre ne correspond à « {q} ».</> : <>Aucune offre {cat === "decor" ? "décor" : "dans les autres métiers"} dans ton périmètre pour l’instant. La collecte passe deux fois par jour.
+            {t ? <>Aucune offre ne correspond à « {q} ».</> : <>Aucune offre {f === "autres" ? "dans les autres métiers" : f === "mes" ? "dans tes métiers" : `en ${labelMetier(f).toLowerCase()}`} dans ton périmètre pour l’instant. La collecte passe deux fois par jour.
             Active « Afficher les résultats hors périmètre » pour vérifier le filtre, ou ajoute à la main une annonce vue sur LinkedIn ou Instagram.</>}
           </Vide>
         ) : (
@@ -197,7 +206,7 @@ export default function Veille() {
       {ajout === "offre" && (
         <Sheet titre="Ajouter une offre à la main" onClose={() => setAjout(null)} large>
           <p className="mb-3 text-sm text-muted">Pour une annonce vue sur LinkedIn, Instagram ou ailleurs : colle le lien et remplis l’essentiel.</p>
-          <FormOffre avecUrl onCancel={() => setAjout(null)} onSave={(o) => { s.add("offres_manuelles", { data: o }); setAjout(null); setCat(o.categorie); setOnglet("offres"); }} />
+          <FormOffre avecUrl onCancel={() => setAjout(null)} onSave={(o) => { s.add("offres_manuelles", { data: o }); setAjout(null); setFiltre(estDansMetiers(metiersOffre(o), suivis) ? "mes" : "autres"); setOnglet("offres"); }} />
         </Sheet>
       )}
       {ajout === "production" && (
