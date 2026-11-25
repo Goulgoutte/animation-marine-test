@@ -1,16 +1,21 @@
 "use client";
 
+import { Link2, Mail, MapPin, Phone, Plus, Trash2 } from "lucide-react";
 import { useState } from "react";
-import { Champ, Sheet } from "@/components/ui";
+import { BadgeStatut } from "@/components/BadgeStatut";
+import { Avatar, Champ, Sheet } from "@/components/ui";
+import { tonFraicheur } from "@/lib/contacts";
 import { diffDays, fmt, ilYa, today } from "@/lib/dates";
 import { useStore } from "@/lib/store";
-import { TYPES_ECHANGE, labelEchange, labelStatut, type Contact, type TypeEchange } from "@/lib/types";
+import { TYPES_ECHANGE, labelEchange, type Contact, type TypeEchange } from "@/lib/types";
 import { productionsVues } from "@/lib/veille";
 
 export function FicheContact({ c, onClose }: { c: Contact; onClose: () => void }) {
   const s = useStore();
   const echanges = s.data.echanges.filter((e) => e.contact_id === c.id).sort((a, b) => b.date.localeCompare(a.date));
   const dernier = echanges[0]?.date ?? null;
+  const jours = dernier ? diffDays(today(), dernier) : null;
+  const ton = tonFraicheur(jours, s.reglages.delai_contact_mois);
   const cands = s.data.candidatures.filter((x) => x.contact_id === c.id);
   const prods = productionsVues(s.collecte!, s.data, null);
   const liees = cands.map((x) => prods.find((p) => p.id === x.production_id)).filter((p): p is NonNullable<typeof p> => !!p);
@@ -40,18 +45,91 @@ export function FicheContact({ c, onClose }: { c: Contact; onClose: () => void }
     }
   }
 
+  const nom = `${c.prenom} ${c.nom}`.trim() || "Contact";
   return (
-    <Sheet titre={`${c.prenom} ${c.nom}`.trim() || "Contact"} onClose={onClose} large>
-      <div className="carte mb-5 p-4">
-        <p className="meta">Dernier échange</p>
-        {dernier ? (
-          <p className="mt-1"><span className="chiffre !text-[3.4rem]">{diffDays(today(), dernier)}</span> <span className="titre-l">jours</span> <span className="micro">· {ilYa(diffDays(today(), dernier))}, le {fmt(dernier)}</span></p>
-        ) : (
-          <p className="mt-1 text-sm text-[var(--color-mute)]">Aucun échange noté. Ajoute le premier dans le journal ci-dessous.</p>
-        )}
+    <Sheet
+      titre={nom}
+      sousTitre={[c.fonction, c.structure].filter(Boolean).join(" · ") || undefined}
+      onClose={onClose}
+      large
+      pied={<div className="flex items-center justify-between"><button className="bouton bouton-texte bouton-danger" onClick={supprimer}><Trash2 />Supprimer</button><button className="bouton bouton-plein" onClick={onClose}>Terminé</button></div>}
+    >
+      <div className="flex items-center gap-4 rounded-xl bg-surface-2 p-4">
+        <Avatar nom={nom} taille={52} rond />
+        <div className="min-w-0 flex-1">
+          <p className="meta">Dernier échange</p>
+          {dernier ? (
+            <p className="mt-0.5 flex flex-wrap items-baseline gap-x-2"><span className={`c-${ton} text-[28px] font-bold leading-none text-[var(--c)]`}>{jours}</span><span className="text-sm font-semibold">jours</span><span className="micro">{ilYa(jours!)} · {fmt(dernier)}</span></p>
+          ) : (
+            <p className="mt-0.5 text-[13px] text-muted">Aucun échange noté pour l’instant.</p>
+          )}
+        </div>
+        <div className="flex flex-none gap-1.5">
+          {c.email && <a className="bouton bouton-icone" href={`mailto:${c.email}`} aria-label="Écrire un e-mail"><Mail /></a>}
+          {c.telephone && <a className="bouton bouton-icone" href={`tel:${c.telephone.replace(/\s/g, "")}`} aria-label="Appeler"><Phone /></a>}
+          {c.linkedin && <a className="bouton bouton-icone" href={c.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><Link2 /></a>}
+        </div>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2">
+      <h3 className="titre-section mb-3 mt-6">Journal des échanges <span className="font-normal text-muted">({echanges.length})</span></h3>
+      <form onSubmit={ajouter} className="mb-4 grid grid-cols-1 gap-2 rounded-xl bg-surface-2 p-3 sm:grid-cols-2">
+        <Champ label="Date"><input type="date" className="champ" value={e.date} onChange={(ev) => setE({ ...e, date: ev.target.value })} /></Champ>
+        <Champ label="Type">
+          <select className="champ" value={e.type} onChange={(ev) => setE({ ...e, type: ev.target.value as TypeEchange })}>
+            {TYPES_ECHANGE.map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}
+          </select>
+        </Champ>
+        <Champ label="Lieu"><input className="champ" value={e.lieu} onChange={(ev) => setE({ ...e, lieu: ev.target.value })} /></Champ>
+        <Champ label="Sujets abordés"><input className="champ" value={e.sujets} onChange={(ev) => setE({ ...e, sujets: ev.target.value })} /></Champ>
+        <Champ label="Ce qui a été promis" className="sm:col-span-2"><input className="champ" value={e.promesses} onChange={(ev) => setE({ ...e, promesses: ev.target.value })} /></Champ>
+        <Champ label="Prochaine action"><input className="champ" value={e.prochaine_action} onChange={(ev) => setE({ ...e, prochaine_action: ev.target.value })} /></Champ>
+        <Champ label="Pour le"><input type="date" className="champ" value={e.prochaine_date} onChange={(ev) => setE({ ...e, prochaine_date: ev.target.value })} /></Champ>
+        <div className="sm:col-span-2"><button className="bouton bouton-plein"><Plus />Ajouter l’échange</button></div>
+      </form>
+      {echanges.length === 0 ? (
+        <p className="micro">Le journal est vide. Note ici chaque café, visio ou message : l’app te rappelle de reprendre contact.</p>
+      ) : (
+        <ol className="chronologie">
+          {echanges.map((x) => {
+            const retard = !!x.prochaine_date && x.prochaine_date <= today();
+            return (
+              <li key={x.id}>
+                <span className="point" />
+                <div className="flex items-start justify-between gap-2">
+                  <p className="text-[13px] font-semibold">{labelEchange(x.type)} · {fmt(x.date)}{x.lieu ? <span className="font-normal text-muted"> · {x.lieu}</span> : null}</p>
+                  <button className="bouton bouton-petit bouton-texte flex-none" onClick={() => s.remove("echanges", x.id)}>Retirer</button>
+                </div>
+                {x.sujets && <p className="text-[13px]">{x.sujets}</p>}
+                {x.promesses && <p className="text-[13px] text-muted">Promis : {x.promesses}</p>}
+                {x.prochaine_action && (
+                  <p className={`mt-1 inline-block rounded-lg px-2 py-0.5 text-[12.5px] font-semibold ${retard ? "bg-[color-mix(in_srgb,var(--danger)_12%,transparent)] text-danger" : "bg-[color-mix(in_srgb,var(--fg)_6%,transparent)]"}`}>
+                    À faire : {x.prochaine_action}{x.prochaine_date ? ` (${fmt(x.prochaine_date)})` : ""}
+                  </p>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      )}
+
+      <h3 className="titre-section mb-3 mt-6">Candidatures et productions liées</h3>
+      {cands.length === 0 ? (
+        <p className="micro">Aucune. Depuis une candidature, choisis ce contact dans « Contact lié ».</p>
+      ) : (
+        <ul className="space-y-2">
+          {cands.map((x) => (
+            <li key={x.id} className="flex items-center gap-3 rounded-xl border border-line p-2.5 text-[13px]">
+              <Avatar nom={x.studio || "?"} taille={28} />
+              <span className="min-w-0 flex-1"><strong className="block truncate">{x.studio}</strong><span className="micro block truncate">{x.poste}</span></span>
+              <BadgeStatut statut={x.statut} />
+            </li>
+          ))}
+          {liees.map((p) => <li key={p.id} className="rounded-xl border border-line p-2.5 text-[13px]">Production : <strong>{p.titre}</strong></li>)}
+        </ul>
+      )}
+
+      <h3 className="titre-section mb-3 mt-6">Coordonnées</h3>
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <Champ label="Prénom"><input {...t("prenom")} /></Champ>
         <Champ label="Nom"><input {...t("nom")} /></Champ>
         <Champ label="Studio ou structure"><input {...t("structure")} /></Champ>
@@ -65,54 +143,7 @@ export function FicheContact({ c, onClose }: { c: Contact; onClose: () => void }
           <input className="champ" value={tags} onChange={(ev) => setTags(ev.target.value)} onBlur={() => maj({ etiquettes: tags.split(",").map((x) => x.trim()).filter(Boolean) })} />
         </Champ>
       </div>
-
-      <h3 className="titre-l mb-2 mt-7">Candidatures et productions liées</h3>
-      {cands.length === 0 ? (
-        <p className="micro">Aucune. Depuis une candidature, choisis ce contact dans « Contact lié ».</p>
-      ) : (
-        <ul className="space-y-1 text-sm">
-          {cands.map((x) => <li key={x.id}><strong>{x.studio}</strong> · {x.poste} <span className="badge b-info ml-1">{labelStatut(x.statut)}</span></li>)}
-          {liees.map((p) => <li key={p.id}>Production : <strong>{p.titre}</strong></li>)}
-        </ul>
-      )}
-
-      <h3 className="titre-l mb-2 mt-7">Journal des échanges ({echanges.length})</h3>
-      <form onSubmit={ajouter} className="carte mb-3 grid gap-2 p-3 sm:grid-cols-2">
-        <Champ label="Date"><input type="date" className="champ" value={e.date} onChange={(ev) => setE({ ...e, date: ev.target.value })} /></Champ>
-        <Champ label="Type">
-          <select className="champ" value={e.type} onChange={(ev) => setE({ ...e, type: ev.target.value as TypeEchange })}>
-            {TYPES_ECHANGE.map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}
-          </select>
-        </Champ>
-        <Champ label="Lieu"><input className="champ" value={e.lieu} onChange={(ev) => setE({ ...e, lieu: ev.target.value })} /></Champ>
-        <Champ label="Sujets abordés"><input className="champ" value={e.sujets} onChange={(ev) => setE({ ...e, sujets: ev.target.value })} /></Champ>
-        <Champ label="Ce qui a été promis" className="sm:col-span-2"><input className="champ" value={e.promesses} onChange={(ev) => setE({ ...e, promesses: ev.target.value })} /></Champ>
-        <Champ label="Prochaine action"><input className="champ" value={e.prochaine_action} onChange={(ev) => setE({ ...e, prochaine_action: ev.target.value })} /></Champ>
-        <Champ label="Pour le"><input type="date" className="champ" value={e.prochaine_date} onChange={(ev) => setE({ ...e, prochaine_date: ev.target.value })} /></Champ>
-        <div className="sm:col-span-2"><button className="bouton bouton-plein">Ajouter l’échange</button></div>
-      </form>
-      <ol className="space-y-2">
-        {echanges.map((x) => (
-          <li key={x.id} className="carte p-3 text-sm">
-            <div className="flex items-start justify-between gap-2">
-              <p><strong>{labelEchange(x.type)}</strong> · {fmt(x.date)}{x.lieu ? ` · ${x.lieu}` : ""}</p>
-              <button className="bouton bouton-petit bouton-texte" onClick={() => s.remove("echanges", x.id)}>Retirer</button>
-            </div>
-            {x.sujets && <p>{x.sujets}</p>}
-            {x.promesses && <p className="text-[var(--color-mute)]">Promis : {x.promesses}</p>}
-            {x.prochaine_action && (
-              <p className={`mt-1 font-semibold ${x.prochaine_date && x.prochaine_date <= today() ? "text-[var(--color-red)]" : ""}`}>
-                À faire : {x.prochaine_action}{x.prochaine_date ? ` (${fmt(x.prochaine_date)})` : ""}
-              </p>
-            )}
-          </li>
-        ))}
-      </ol>
-
-      <div className="mt-8 flex justify-between">
-        <button className="bouton bouton-texte text-[var(--color-red)]" onClick={supprimer}>Supprimer le contact</button>
-        <button className="bouton" onClick={onClose}>Fermer</button>
-      </div>
+      {c.ville && <p className="micro mt-3 flex items-center gap-1"><MapPin className="h-3 w-3" />{c.ville}</p>}
     </Sheet>
   );
 }

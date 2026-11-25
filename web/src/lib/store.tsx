@@ -5,7 +5,9 @@ import type { FichierOffres, FichierProductions, FichierSources } from "@shared/
 import { donneesDemo } from "@/fixtures/demo";
 import { offresFixture, productionsFixture, sourcesFixture } from "@/fixtures/donnees";
 import { uid } from "./dates";
-import { BASE_PATH, MODE_DEMO, supabase, urlRedirection } from "./supabase";
+import { BASE_PATH, MODE_DEMO, profilDe, supabase, type Profil } from "./supabase";
+import { Connexion } from "@/components/Connexion";
+import { SqueletteApp } from "@/components/ui";
 import { REGLAGES_DEFAUT, TABLE_NAMES, type Donnees, type Reglages, type TableName, type Tables } from "./types";
 
 const CLE_DEMO = "veille-animation-demo-v1";
@@ -24,7 +26,10 @@ export interface Collecte {
 interface Ctx {
   pret: boolean;
   demo: boolean;
-  email: string | null;
+  profil: Profil | null;
+  /** Fiche à ouvrir sur la page cible (recherche globale, tableau de bord). */
+  focus: Focus | null;
+  setFocus(f: Focus | null): void;
   erreur: string | null;
   data: Donnees;
   collecte: Collecte | null;
@@ -37,6 +42,10 @@ interface Ctx {
   deconnexion(): Promise<void>;
   effacerDemo(): void;
 }
+
+export type Focus = { kind: "offre" | "production" | "candidature" | "contact"; id: string };
+
+const PROFIL_DEMO: Profil = { email: null, nom: "Léa Démo", prenom: "Léa", avatar: null };
 
 const StoreCtx = createContext<Ctx | null>(null);
 export const useStore = () => {
@@ -71,7 +80,8 @@ async function chargerCollecte(): Promise<Collecte> {
 
 export function StoreProvider({ children }: { children: ReactNode }) {
   const [pret, setPret] = useState(false);
-  const [email, setEmail] = useState<string | null>(null);
+  const [profil, setProfil] = useState<Profil | null>(MODE_DEMO ? PROFIL_DEMO : null);
+  const [focus, setFocus] = useState<Focus | null>(null);
   const [session, setSession] = useState<boolean>(MODE_DEMO);
   const [erreur, setErreur] = useState<string | null>(null);
   const [data, setData] = useState<Donnees>(vide());
@@ -87,12 +97,12 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     if (!sb) return;
     sb.auth.getSession().then(({ data: d }) => {
       setSession(!!d.session);
-      setEmail(d.session?.user.email ?? null);
+      setProfil(profilDe(d.session?.user));
       if (!d.session) setPret(true);
     });
     const { data: sub } = sb.auth.onAuthStateChange((_e, s) => {
       setSession(!!s);
-      setEmail(s?.user.email ?? null);
+      setProfil(profilDe(s?.user));
     });
     return () => sub.subscription.unsubscribe();
   }, [sb]);
@@ -231,50 +241,13 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   const valeur = useMemo<Ctx>(
     () => ({
-      pret, demo: MODE_DEMO, email, erreur, data, collecte, reglages, visitePrecedente,
+      pret, demo: MODE_DEMO, profil, focus, setFocus, erreur, data, collecte, reglages, visitePrecedente,
       add, patch, remove, saveReglages, deconnexion, effacerDemo,
     }),
-    [pret, email, erreur, data, collecte, reglages, visitePrecedente, add, patch, remove, saveReglages, deconnexion, effacerDemo],
+    [pret, profil, focus, erreur, data, collecte, reglages, visitePrecedente, add, patch, remove, saveReglages, deconnexion, effacerDemo],
   );
 
   if (!MODE_DEMO && !session) return <Connexion pret={pret} />;
-  if (!pret) return <div className="p-8 text-sm text-[var(--color-mute)]">Chargement…</div>;
+  if (!pret) return <SqueletteApp />;
   return <StoreCtx.Provider value={valeur}>{children}</StoreCtx.Provider>;
-}
-
-function Connexion({ pret }: { pret: boolean }) {
-  const [email, setEmail] = useState("");
-  const [etat, setEtat] = useState<"saisie" | "envoi" | "envoye" | "erreur">("saisie");
-  const [msg, setMsg] = useState("");
-  if (!pret) return <div className="p-8 text-sm">Chargement…</div>;
-
-  async function envoyer(e: React.FormEvent) {
-    e.preventDefault();
-    setEtat("envoi");
-    const { error } = await supabase()!.auth.signInWithOtp({
-      email,
-      options: { emailRedirectTo: urlRedirection() },
-    });
-    if (error) {
-      setMsg(error.message);
-      setEtat("erreur");
-    } else setEtat("envoye");
-  }
-
-  return (
-    <main className="mx-auto flex min-h-dvh max-w-md flex-col justify-center px-6 py-12">
-      <p className="meta">Veille animation</p>
-      <h1 className="titre-xxl mt-2">Bonjour.</h1>
-      <p className="mt-4 text-[var(--color-mute)]">Saisis ton adresse e-mail : un lien de connexion t’y sera envoyé. Pas de mot de passe.</p>
-      {etat === "envoye" ? (
-        <p className="mt-8 rounded-xl bg-[var(--color-teal)] p-4 text-white">Lien envoyé à {email}. Ouvre-le depuis cet appareil.</p>
-      ) : (
-        <form onSubmit={envoyer} className="mt-8 flex flex-col gap-3">
-          <input type="email" required autoFocus value={email} onChange={(e) => setEmail(e.target.value)} placeholder="ton@adresse.fr" className="champ" aria-label="Adresse e-mail" />
-          <button className="bouton bouton-plein" disabled={etat === "envoi"}>{etat === "envoi" ? "Envoi…" : "Recevoir le lien"}</button>
-          {etat === "erreur" && <p className="text-sm text-[var(--color-red)]">{msg}</p>}
-        </form>
-      )}
-    </main>
-  );
 }

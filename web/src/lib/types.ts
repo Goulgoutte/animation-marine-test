@@ -135,13 +135,13 @@ export const REGLAGES_DEFAUT: Omit<Reglages, "id"> = {
 };
 
 export const STATUTS: { id: Statut; label: string; couleur: string }[] = [
-  { id: "a_preparer", label: "À préparer", couleur: "#8a8172" },
-  { id: "envoyee", label: "Envoyée", couleur: "#0f4c4a" },
-  { id: "relancee", label: "Relancée", couleur: "#c9821a" },
-  { id: "entretien", label: "Entretien ou test", couleur: "#5b3fa0" },
-  { id: "acceptee", label: "Acceptée", couleur: "#2f7d3a" },
-  { id: "refus", label: "Refus", couleur: "#b3402a" },
-  { id: "sans_reponse", label: "Sans réponse", couleur: "#6b6458" },
+  { id: "a_preparer", label: "À préparer", couleur: "#7b8296" },
+  { id: "envoyee", label: "Envoyée", couleur: "#2f6fdd" },
+  { id: "relancee", label: "Relancée", couleur: "#c77a0a" },
+  { id: "entretien", label: "Entretien ou test", couleur: "#8a52d9" },
+  { id: "acceptee", label: "Acceptée", couleur: "#2c8a5a" },
+  { id: "refus", label: "Refus", couleur: "#d6455d" },
+  { id: "sans_reponse", label: "Sans réponse", couleur: "#8d93a5" },
 ];
 export const CANAUX: { id: Canal; label: string }[] = [
   { id: "mail", label: "Mail" },

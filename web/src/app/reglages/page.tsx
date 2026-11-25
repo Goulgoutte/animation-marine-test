@@ -1,12 +1,27 @@
 "use client";
 
-import { EnTete, Interrupteur } from "@/components/ui";
+import { Archive, BellRing, Compass, Database, Download, ExternalLink, LogOut, RotateCcw, UserRound, type LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
+import { Avatar, EnTete, Interrupteur } from "@/components/ui";
 import { csv, stamp, telecharger } from "@/lib/export";
 import { fmt } from "@/lib/dates";
 import { COULEUR, LIBELLE, santeSource } from "@/lib/sante";
 import { useStore } from "@/lib/store";
 import { labelCanal, labelEchange, labelStatut, type Perimetre } from "@/lib/types";
 import { LABEL_MODE, offresVues, productionsVues } from "@/lib/veille";
+
+function Section({ icone: Icone, titre, description, children }: { icone: LucideIcon; titre: string; description?: ReactNode; children: ReactNode }) {
+  return (
+    <section className="carte grid grid-cols-1 gap-5 p-5 lg:grid-cols-[230px_1fr] lg:gap-8">
+      <div>
+        <span className="mb-2.5 grid h-9 w-9 place-items-center rounded-xl bg-accent-soft text-accent"><Icone className="h-[18px] w-[18px]" /></span>
+        <h2 className="titre-section">{titre}</h2>
+        {description && <p className="micro mt-1">{description}</p>}
+      </div>
+      <div className="min-w-0">{children}</div>
+    </section>
+  );
+}
 
 export default function Reglages() {
   const s = useStore();
@@ -55,14 +70,24 @@ export default function Reglages() {
 
   return (
     <>
-      <EnTete surtitre="Réglages" titre="Réglages" />
+      <EnTete titre="Réglages" description="Ton compte, ton périmètre de recherche et tes données." />
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <section className="carte p-5">
-          <h2 className="titre-l">Périmètre de recherche</h2>
-          <p className="micro mb-4 mt-1">Appliqué par-dessus le tri de la collecte. Rien n’est supprimé : l’interrupteur de la Veille montre tout.</p>
-          <div className="grid gap-4">
-            <label className="flex flex-col gap-1">
+      <div className="grid grid-cols-1 gap-4">
+        <Section icone={UserRound} titre="Compte" description="Connexion Google.">
+          <div className="flex flex-wrap items-center gap-4">
+            <Avatar nom={s.profil?.nom ?? s.profil?.email ?? "Moi"} url={s.profil?.avatar} taille={52} rond />
+            <div className="min-w-0 flex-1">
+              <p className="text-[15px] font-semibold">{s.profil?.nom ?? "Utilisatrice"}</p>
+              <p className="micro">{s.profil?.email ?? (s.demo ? "Mode démo : aucune connexion Supabase configurée" : "")}</p>
+            </div>
+            {!s.demo && <button className="bouton" onClick={s.deconnexion}><LogOut />Se déconnecter</button>}
+          </div>
+          {s.demo && <p className="mt-4 rounded-xl bg-surface-2 p-3 text-[13px] text-muted">Les données du mode démo restent dans ce navigateur. Elles disparaissent si tu effaces les données du site.</p>}
+        </Section>
+
+        <Section icone={Compass} titre="Périmètre de recherche" description="Appliqué par-dessus le tri de la collecte. Rien n’est supprimé : l’interrupteur de la Veille montre tout.">
+          <div className="grid gap-5">
+            <label className="flex max-w-sm flex-col gap-1">
               <span className="meta">Sur place</span>
               <select className="champ" value={p.zone} onChange={(e) => majP({ zone: e.target.value as Perimetre["zone"] })}>
                 <option value="paris">Paris intra-muros</option>
@@ -72,7 +97,7 @@ export default function Reglages() {
               <span className="micro">La zone est appliquée par la collecte (liste des villes dans collector/config).</span>
             </label>
             <Interrupteur label="Accepter le télétravail complet" checked={p.teletravail} onChange={(v) => majP({ teletravail: v })} />
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
               <span className="meta w-full">Langue de travail en télétravail</span>
               {(["fr", "en"] as const).map((l) => (
                 <Interrupteur key={l} label={l === "fr" ? "Français" : "Anglais"} checked={p.langues.includes(l)} onChange={(v) => majP({ langues: v ? [...p.langues, l] : p.langues.filter((x) => x !== l) })} />
@@ -80,67 +105,58 @@ export default function Reglages() {
             </div>
             <Interrupteur label="Montrer aussi la 3D" checked={p.afficher3d} onChange={(v) => majP({ afficher3d: v })} />
           </div>
-        </section>
+        </Section>
 
-        <section className="carte p-5">
-          <h2 className="titre-l">Délais</h2>
-          <div className="mt-4 grid gap-4 sm:grid-cols-3">
+        <Section icone={BellRing} titre="Relances" description="Jours ouvrés : du lundi au vendredi, jours fériés non décomptés.">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             <label className="flex flex-col gap-1"><span className="meta">1re relance (jours ouvrés)</span><input className="champ" type="number" min={1} max={90} value={r.delai_relance_1} onChange={(e) => s.saveReglages({ delai_relance_1: num(e.target.value, 1, 90, 10) })} /></label>
             <label className="flex flex-col gap-1"><span className="meta">2e relance (jours ouvrés)</span><input className="champ" type="number" min={1} max={90} value={r.delai_relance_2} onChange={(e) => s.saveReglages({ delai_relance_2: num(e.target.value, 1, 90, 15) })} /></label>
             <label className="flex flex-col gap-1"><span className="meta">Recontacter après (mois)</span><input className="champ" type="number" min={1} max={36} value={r.delai_contact_mois} onChange={(e) => s.saveReglages({ delai_contact_mois: num(e.target.value, 1, 36, 3) })} /></label>
           </div>
-          <p className="micro mt-3">Jours ouvrés : du lundi au vendredi, jours fériés non décomptés.</p>
-        </section>
+        </Section>
 
-        <section className="carte p-5 lg:col-span-2">
-          <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h2 className="titre-l">Santé des sources</h2>
-            {s.collecte && <span className="micro">Collecte du {fmt(s.collecte.sources.genereLe)}</span>}
-          </div>
+        <Section icone={Database} titre="Sources" description={s.collecte ? <>Collecte du {fmt(s.collecte.sources.genereLe)}</> : undefined}>
           {sources.length === 0 ? (
-            <p className="mt-3 text-sm text-[var(--color-mute)]">Aucune collecte n’a encore tourné. Lance le workflow « collect » depuis l’onglet Actions de GitHub.</p>
+            <p className="text-sm text-muted">Aucune collecte n’a encore tourné. Lance le workflow « collect » depuis l’onglet Actions de GitHub.</p>
           ) : (
-            <ul className="mt-3 divide-y divide-[var(--color-line)]">
+            <ul className="divide-y divide-line">
               {sources.map((src) => {
                 const st = santeSource(src);
                 return (
-                  <li key={src.id} className="flex items-start gap-3 py-2.5">
+                  <li key={src.id} className="flex items-start gap-3 py-2.5 first:pt-0">
                     <span className="pastille mt-1.5" style={{ background: COULEUR[st] }} title={LIBELLE[st]} role="img" aria-label={LIBELLE[st]} />
                     <div className="min-w-0 flex-1">
-                      <p className="font-bold"><a href={src.url} target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:underline">{src.nom}</a> <span className="micro font-normal">{src.methode} · {src.type}</span></p>
+                      <p className="text-[13.5px] font-semibold"><a href={src.url} target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:underline">{src.nom}</a> <span className="micro font-normal">{src.methode} · {src.type}</span></p>
                       <p className="micro">
                         {LIBELLE[st]} · {src.nbResultats} résultat(s){src.dernierSucces ? ` · dernier succès le ${fmt(src.dernierSucces)}` : " · jamais réussie"}
                       </p>
-                      {src.derniereErreur && <p className="micro text-[var(--color-red)]">{src.derniereErreur}</p>}
+                      {src.derniereErreur && <p className="micro break-words text-danger">{src.derniereErreur}</p>}
                     </div>
                   </li>
                 );
               })}
             </ul>
           )}
-          <div className="mt-4 rounded-xl bg-[var(--color-ink)]/5 p-3 text-sm">
-            Sources et mots-clés se modifient dans les fichiers de <code>collector/config/</code> du dépôt.{" "}
-            {lienConfig ? <a className="font-bold underline" href={lienConfig} target="_blank" rel="noopener noreferrer">Ouvrir sur GitHub</a> : <span className="micro">(lien disponible une fois le site déployé par GitHub Actions)</span>}
+          <div className="mt-4 rounded-xl bg-surface-2 p-3 text-[13px]">
+            Sources et mots-clés se modifient dans les fichiers de <code className="rounded bg-[color-mix(in_srgb,var(--fg)_8%,transparent)] px-1">collector/config/</code> du dépôt.{" "}
+            {lienConfig ? <a className="inline-flex items-center gap-1 font-semibold text-accent underline" href={lienConfig} target="_blank" rel="noopener noreferrer">Ouvrir sur GitHub <ExternalLink className="h-3 w-3" /></a> : <span className="micro">(lien disponible une fois le site déployé par GitHub Actions)</span>}
           </div>
-        </section>
+        </Section>
 
-        <section className="carte p-5">
-          <h2 className="titre-l">Exports</h2>
-          <p className="micro mb-3 mt-1">CSV lisibles dans Excel ou Numbers.</p>
+        <Section icone={Archive} titre="Export et sauvegarde" description="CSV lisibles dans Excel ou Numbers ; sauvegarde complète en JSON.">
           <div className="flex flex-wrap gap-2">
-            <button className="bouton" onClick={exportVeille}>Veille (CSV)</button>
-            <button className="bouton" onClick={exportCandidatures}>Candidatures (CSV)</button>
-            <button className="bouton" onClick={exportContacts}>Contacts (CSV)</button>
+            <button className="bouton" onClick={exportVeille}><Download />Veille (CSV)</button>
+            <button className="bouton" onClick={exportCandidatures}><Download />Candidatures (CSV)</button>
+            <button className="bouton" onClick={exportContacts}><Download />Contacts (CSV)</button>
           </div>
-        </section>
-
-        <section className="carte p-5">
-          <h2 className="titre-l">Sauvegarde</h2>
-          <p className="micro mb-3 mt-1">Toutes tes données (candidatures, contacts, échanges, ajouts, corrections, réglages) dans un seul fichier JSON.</p>
-          <button className="bouton bouton-plein" onClick={sauvegarde}>Télécharger la sauvegarde</button>
-          {s.demo && <button className="bouton bouton-texte ml-2 text-[var(--color-red)]" onClick={() => confirm("Effacer les données du mode démo et repartir de l’exemple ?") && s.effacerDemo()}>Réinitialiser la démo</button>}
-          {s.email && <p className="micro mt-4">Connectée : {s.email} · <button className="underline" onClick={s.deconnexion}>Se déconnecter</button></p>}
-        </section>
+          <div className="mt-5 border-t border-line pt-4">
+            <p className="micro mb-3">Toutes tes données (candidatures, contacts, échanges, ajouts, corrections, réglages) dans un seul fichier JSON.</p>
+            <div className="flex flex-wrap items-center gap-2">
+              <button className="bouton bouton-plein" onClick={sauvegarde}><Download />Télécharger la sauvegarde</button>
+              {s.demo && <button className="bouton bouton-texte bouton-danger" onClick={() => confirm("Effacer les données du mode démo et repartir de l’exemple ?") && s.effacerDemo()}><RotateCcw />Réinitialiser la démo</button>}
+            </div>
+          </div>
+        </Section>
       </div>
     </>
   );

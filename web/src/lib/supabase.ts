@@ -13,7 +13,23 @@ export function supabase(): SupabaseClient | null {
   return client;
 }
 
-/** URL de retour du lien magique : racine du site, basePath compris. */
+/** URL de retour après la connexion Google : racine du site, basePath compris. */
 export function urlRedirection(): string {
   return `${window.location.origin}${BASE_PATH}/`;
+}
+
+export interface Profil {
+  email: string | null;
+  nom: string | null;
+  prenom: string | null;
+  avatar: string | null;
+}
+
+/** Profil affiché dans l’interface, tiré des métadonnées du compte Google. */
+export function profilDe(user: { email?: string | null; user_metadata?: Record<string, unknown> } | null | undefined): Profil | null {
+  if (!user) return null;
+  const m = user.user_metadata ?? {};
+  const nom = (m.full_name as string) || (m.name as string) || null;
+  const prenom = (m.given_name as string) || nom?.split(" ")[0] || user.email?.split("@")[0] || null;
+  return { email: user.email ?? null, nom, prenom, avatar: (m.avatar_url as string) || (m.picture as string) || null };
 }

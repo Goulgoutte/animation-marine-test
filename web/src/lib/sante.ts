@@ -2,7 +2,7 @@ import type { SourceStatut } from "@shared/types";
 import { diffDays, today } from "./dates";
 
 export type Sante = "vert" | "orange" | "rouge" | "gris";
-export const COULEUR: Record<Sante, string> = { vert: "#2f7d3a", orange: "#e08a00", rouge: "#d9482a", gris: "#b9b09d" };
+export const COULEUR: Record<Sante, string> = { vert: "#2c8a5a", orange: "#d98a0b", rouge: "#d6455d", gris: "#a3a9ba" };
 export const LIBELLE: Record<Sante, string> = { vert: "En bonne santé", orange: "À surveiller", rouge: "Ne renvoie plus rien", gris: "Inactive ou manuelle" };
 
 export function santeSource(src: SourceStatut): Sante {
