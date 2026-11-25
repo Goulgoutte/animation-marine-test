@@ -9,23 +9,21 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  build:
-    # Après « collect », ne déployer que si la collecte a réussi.
+  build-deploy:
+    # Après la collecte, ne publier que si elle a réussi.
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'workflow_run' && 'main' || github.sha }}
+          ref: main
       - uses: pnpm/action-setup@v4
         with:
           version: 11
@@ -34,7 +32,6 @@ jobs:
           node-version: 22
           cache: pnpm
           cache-dependency-path: web/pnpm-lock.yaml
-      - uses: actions/configure-pages@v5
       - name: Installer
         working-directory: web
         run: pnpm install --frozen-lockfile
@@ -43,20 +40,13 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
           NEXT_PUBLIC_REPO_URL: https://github.com/${{ github.repository }}
-          # Valeurs publiques (clé « anon »), donc des variables de dépôt et non des secrets.
+          # Valeurs publiques (clé publishable), protégées par la RLS.
           NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL || 'https://httsunqkptropfewozwm.supabase.co' }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_vUO5jHIyxAeX6SfVPwgn-g_AYPDjcbl' }}
         run: pnpm build
-      - uses: actions/upload-pages-artifact@v3
+      - name: Publier sur la branche gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: web/out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: web/out
+          force_orphan: true
