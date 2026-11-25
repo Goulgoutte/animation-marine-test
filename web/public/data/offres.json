@@ -1,6 +1,502 @@
 {
-  "genereLe": "2026-11-25T16:36:07.911Z",
+  "genereLe": "2026-11-25T17:42:06.599Z",
   "offres": [
+    {
+      "id": "02d65d21eec3",
+      "titre": "CREATIVE PRODUCER – ANIME",
+      "studio": "Ellipse Animation",
+      "production": null,
+      "lieu": "Paris",
+      "pays": "France",
+      "categorie": "autre",
+      "technique": "2D",
+      "modeTravail": "paris-sur-place",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "fr",
+      "dansPerimetre": true,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "CREATIVE PRODUCER – ANIME Paris learn more and applySEE LESS Ellipse Animation recrute un Producteur Artistique Anime Média-Participations est l’un des principaux acteurs de divertissement européens. Le Groupe compte plus de 60 sociétés dans les domaines de l’édition, de l’audiovisuel, du jeu vidéo, des parcs à thème et des plateformes numériques et rassemble notamment Kana, Vega, ADN, Microïds, ainsi que de nombreuses maisons d’édition et sociétés de production reconnues. Ellipse Animation, label de production d’animation du Groupe, développe et produit depuis plus de vingt ans des séries et…",
+      "image": "https://www.ellipseanimation.com/wp-content/uploads/2022/06/Logo_Dreamland.svg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "ellipse",
+          "url": "https://www.ellipseanimation.com/careers/#CREATIVE%20PRODUCER%20%E2%80%93%20ANIME",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "c5b1640070c7",
+      "titre": "Technicien.ne Support IT (CDD)",
+      "studio": "Superprod",
+      "production": null,
+      "lieu": "Paris, FR",
+      "pays": "France",
+      "categorie": "autre",
+      "technique": "2D",
+      "modeTravail": "paris-sur-place",
+      "residenceExigee": null,
+      "contrat": "CDD",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-10-07T08:50:26.167Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "CDD - 12 mois Temps plein",
+      "image": "https://wio.blob.core.windows.net/gallery/superprod/ribbon/27e4eca5-87d3-4865-bbf3-bf597e4bcd28/bannierewerecruit2024.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "superprod",
+          "url": "https://careers.werecruit.io/fr/superprod/offres/technicienne-support-it-cdd-6a79c3",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "a9fd818b99b6",
+      "titre": "Production Designer, Adult Animated Series",
+      "studio": "Superprod",
+      "production": null,
+      "lieu": "Paris, FR",
+      "pays": "France",
+      "categorie": "decor",
+      "technique": "2D",
+      "modeTravail": "paris-sur-place",
+      "residenceExigee": null,
+      "contrat": "CDD",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-09-04T08:11:52.974Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "CDD - 3 mois Temps plein",
+      "image": "https://wio.blob.core.windows.net/werecruit/27f66bea-dddb-4cbb-8d81-498b297f9ab8.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "superprod",
+          "url": "https://careers.werecruit.io/fr/superprod/offres/production-designer-adult-animated-series-899bac",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "e0d211f0206e",
+      "titre": "Chargé·e de production Animation (Mid/Senior)",
+      "studio": "Melusine Studio",
+      "production": null,
+      "lieu": "Contern, LU",
+      "pays": null,
+      "categorie": "autre",
+      "technique": "2D",
+      "modeTravail": "sur-place-ailleurs",
+      "residenceExigee": null,
+      "contrat": "CDD",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2025-06-09T14:44:52.219Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "CDD - 3 mois Temps plein",
+      "image": "https://wio.blob.core.windows.net/gallery/superprod/ribbon/a9d76e59-f7d0-4cff-a8a1-579d96ae2cda/bannermelu.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "superprod",
+          "url": "https://careers.werecruit.io/fr/superprod/offres/chargee-de-production-animation-midsenior-093cec",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "855b2f22e955",
+      "titre": "RIGGING SUPERVISOR (M/F/NB)",
+      "studio": "Fortiche",
+      "production": null,
+      "lieu": "Paris",
+      "pays": "France",
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "paris-sur-place",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "",
+      "image": "https://fortiche.b-cdn.net/wp-content/uploads/2025/04/02_TICKET_BARRECODE_BECOME-A-PARTNER-1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "fortiche",
+          "url": "https://forticheprod.com/job-offers/rigging-supervisor-m-f-nb/",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "b59732770947",
+      "titre": "Animateur/trice 2D confirmé.e",
+      "studio": "Magic Design Studios",
+      "production": null,
+      "lieu": "Montpellier",
+      "pays": null,
+      "categorie": "autre",
+      "technique": "2D",
+      "modeTravail": "sur-place-ailleurs",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "Animateur/trice 2D confirmé.e",
+      "image": "https://static.wixstatic.com/media/bdc00a_4864fff678584e5886401ff32e904ff7%7Emv2.jpg/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/bdc00a_4864fff678584e5886401ff32e904ff7%7Emv2.jpg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "magic-design",
+          "url": "https://www.magicdesignstudios.com/jobs-alert#Animateur%2Ftrice%202D%20confirm%C3%A9.e",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "686d964ed287",
+      "titre": "Level Artist",
+      "studio": "Magic Design Studios",
+      "production": null,
+      "lieu": "Montpellier",
+      "pays": null,
+      "categorie": "autre",
+      "technique": "2D",
+      "modeTravail": "sur-place-ailleurs",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "Level Artist",
+      "image": "https://static.wixstatic.com/media/bdc00a_4864fff678584e5886401ff32e904ff7%7Emv2.jpg/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/bdc00a_4864fff678584e5886401ff32e904ff7%7Emv2.jpg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "magic-design",
+          "url": "https://www.magicdesignstudios.com/jobs-alert#Level%20Artist",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "1ff3d91aa54d",
+      "titre": "Lightbox Animation: Sets&Props Concept Artist Internship",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "stage",
+      "niveau": "inconnu",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-11-23T17:01:08.000Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "Headquarters: Córdoba, Andalusia, Spain URL: https://lbox.es Your mission If you are passionate about 3D animated films and want to create magic cinematographic, you can´t let this opportunity go! We are looking for a talented Sets&Props Concept Artist Internship with enthusiasm to join our great team on the exciting new project, Animated Feature TAD 4!! You will be responsible for creating outst…",
+      "image": "https://weworkremotely.com/assets/wwr-social-99bb25ef1fffe3494daa93d911e2dc4594c8fe59e7692e284cc7a22585470174.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "weworkremotely-design",
+          "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-sets-props-concept-artist-internship",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "60cd670c1af6",
+      "titre": "Lightbox Animation: Senior Storyboard Artist",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-11-22T17:00:52.000Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "Headquarters: Córdoba, Andalusia, Spain URL: https://lbox.es Your mission If you are passionate about 3D animated films and want to create magic cinematographic, you can´t let this opportunity go! We are looking for a talented ​Senior Storyboard Artist with enthusiasm to join our great team on the exciting new project, Animated Feature TAD 4!! ​You will be responsible for drawing a scene-by-scene…",
+      "image": "https://weworkremotely.com/assets/wwr-social-99bb25ef1fffe3494daa93d911e2dc4594c8fe59e7692e284cc7a22585470174.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "weworkremotely-design",
+          "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-storyboard-artist",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "bdb42f456b00",
+      "titre": "Lightbox Animation: Sets&Props Concept Art Supervisor",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-11-22T17:00:50.000Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "Headquarters: Córdoba, Andalusia, Spain URL: https://lbox.es Your mission If you are passionate about 3D animated films and want to create magic cinematographic, you can´t let this opportunity go! We are looking for a talented ​Sets&Props Concept Art Supervisor with enthusiasm to join our great team on the exciting new project, Animated Feature TAD 4!! ​You will be responsible for leading the Art…",
+      "image": "https://weworkremotely.com/assets/wwr-social-99bb25ef1fffe3494daa93d911e2dc4594c8fe59e7692e284cc7a22585470174.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "weworkremotely-design",
+          "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-sets-props-concept-art-supervisor",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "134a4ed00faf",
+      "titre": "Lightbox Animation: Senior Matte Painter",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-11-22T17:00:47.000Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "Headquarters: Córdoba, Andalusia, Spain URL: https://lbox.es Your mission If you are passionate about 3D animated films and want to create magic cinematographic, you can´t let this opportunity go! We are looking for a talented Senior Matte Painter​ with enthusiasm to join our great team on the exciting new project, Animated Feature TAD 4!! ​You will be responsible for creating photo realistic ele…",
+      "image": "https://weworkremotely.com/assets/wwr-social-99bb25ef1fffe3494daa93d911e2dc4594c8fe59e7692e284cc7a22585470174.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "weworkremotely-design",
+          "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-matte-painter",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "6f0dbf31a70e",
+      "titre": "Lightbox Animation: Senior Sets&Props Model Artist",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-11-21T17:00:44.000Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "Headquarters: Córdoba, Andalusia, Spain URL: https://lbox.es Your mission If you are passionate about 3D animated films and want to create magic cinematographic, you can´t let this opportunity go! We are looking for a talented ​Senior Sets&Props Model Artist with enthusiasm to join our great team on the exciting new project, Animated Feature TAD 4!! ​You will be an essential part of our artistic …",
+      "image": "https://weworkremotely.com/assets/wwr-social-99bb25ef1fffe3494daa93d911e2dc4594c8fe59e7692e284cc7a22585470174.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "weworkremotely-design",
+          "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-sets-props-model-artist",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "e3ff52e26eff",
+      "titre": "Lightbox Animation: Senior VFX Artist",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-11-21T17:00:41.000Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "Headquarters: Córdoba, Andalusia, Spain URL: https://lbox.es Your mission If you are passionate about 3D animated films and want to create magic cinematographic, you can´t let this opportunity go! We are looking for a talented Senior ​VFX Artist with enthusiasm to join our great team on the exciting new project, Animated Feature TAD 4!! ​You will be responsible for designing, creating and simulat…",
+      "image": "https://weworkremotely.com/assets/wwr-social-99bb25ef1fffe3494daa93d911e2dc4594c8fe59e7692e284cc7a22585470174.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "weworkremotely-design",
+          "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-vfx-artist",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "c48c5ad6c7ab",
+      "titre": "Lightbox Animation: Senior Rigger Artist",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-11-21T17:00:39.000Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "Headquarters: Córdoba, Andalusia, Spain URL: https://lbox.es Your mission If you are passionate about 3D animated films and want to create magic cinematographic, you can´t let this opportunity go! We are looking for a talented ​Senior Rigger Artist with enthusiasm to join our great team on the exciting new project, Animated Feature TAD 4!! ​You will be responsible for ​creating and maintain anima…",
+      "image": "https://weworkremotely.com/assets/wwr-social-99bb25ef1fffe3494daa93d911e2dc4594c8fe59e7692e284cc7a22585470174.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "weworkremotely-design",
+          "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-rigger-artist",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "5c2364e10e70",
+      "titre": "Lightbox Animation: Senior Sets&Props Surface Artist",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-11-18T11:31:41.000Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "Headquarters: Córdoba, Andalusia, Spain URL: https://lbox.es Your mission If you are passionate about 3D animated films and want to create magic cinematographic, you can´t let this opportunity go! We are looking for a talented ​Senior Sets&Props Surface Artist with enthusiasm to join our great team on the exciting new project, Animated Feature TAD 4!! ​You will be an essential part of our artisti…",
+      "image": "https://weworkremotely.com/assets/wwr-social-99bb25ef1fffe3494daa93d911e2dc4594c8fe59e7692e284cc7a22585470174.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "weworkremotely-design",
+          "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-sets-props-surface-artist",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
+    {
+      "id": "63b2b3e2782f",
+      "titre": "Lightbox Animation: Senior Sets&Props Concept Artist",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-11-18T11:31:38.000Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "Headquarters: Córdoba, Andalusia, Spain URL: https://lbox.es Your mission If you are passionate about 3D animated films and want to create magic cinematographic, you can´t let this opportunity go! We are looking for a talented ​Senior Sets&Props Concept Artist with enthusiasm to join our great team on the exciting new project, Animated Feature TAD 4!! ​You will be responsible for creating outstan…",
+      "image": "https://weworkremotely.com/assets/wwr-social-99bb25ef1fffe3494daa93d911e2dc4594c8fe59e7692e284cc7a22585470174.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "weworkremotely-design",
+          "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-sets-props-concept-artist",
+          "vuLe": "2026-11-25T17:42:06.599Z"
+        }
+      ]
+    },
     {
       "id": "0f9a39f5511e",
       "titre": "Superviseur.euse Rig (3D)(3D Rigging Supervisor)",
@@ -28,7 +524,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1736",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -59,7 +555,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1735",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -90,7 +586,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1734",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -121,7 +617,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1733",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -152,7 +648,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1732",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -183,7 +679,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1731",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -214,7 +710,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1730",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -245,7 +741,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1729",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -276,7 +772,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1728",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -307,7 +803,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1727",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -338,7 +834,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/SINF1069-29206",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -369,7 +865,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/EINF1034-29200",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -400,7 +896,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/EINF2297-29189",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -431,7 +927,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/ECOM183-29177",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -462,7 +958,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/SINF147-29136",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     },
@@ -484,7 +980,7 @@
       "aVerifier": true,
       "dateDebut": null,
       "dateLimite": null,
-      "datePublication": null,
+      "datePublication": "2026-11-05T16:03:06.000Z",
       "premiereVue": "2026-11-25T16:36:07.911Z",
       "extrait": "",
       "image": "https://xilam.com/wp-content/uploads/2017/10/favicon.png",
@@ -493,7 +989,7 @@
         {
           "sourceId": "xilam",
           "url": "https://xilam.com/2026/11/05/stage-assistant-e-youtube-reseaux-sociaux/",
-          "vuLe": "2026-11-25T16:36:07.911Z"
+          "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
     }

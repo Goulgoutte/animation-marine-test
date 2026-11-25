@@ -2,18 +2,17 @@
 
 import { Archive, BellRing, Compass, Database, Download, ExternalLink, LogOut, RotateCcw, UserRound, type LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
+import { SourcesReglages } from "@/components/SourcesReglages";
 import { Avatar, EnTete, Interrupteur } from "@/components/ui";
 import { estChampContact, texteDe, triees } from "@/lib/crm";
 import { csv, stamp, telecharger } from "@/lib/export";
-import { fmt } from "@/lib/dates";
-import { COULEUR, LIBELLE, santeSource } from "@/lib/sante";
 import { useStore } from "@/lib/store";
 import { labelCanal, labelEchange, labelStatut, type Perimetre } from "@/lib/types";
 import { LABEL_MODE, offresVues, productionsVues } from "@/lib/veille";
 
-function Section({ icone: Icone, titre, description, children }: { icone: LucideIcon; titre: string; description?: ReactNode; children: ReactNode }) {
+function Section({ icone: Icone, titre, description, children, pleine }: { icone: LucideIcon; titre: string; description?: ReactNode; children: ReactNode; pleine?: boolean }) {
   return (
-    <section className="carte grid grid-cols-1 gap-5 p-5 lg:grid-cols-[230px_1fr] lg:gap-8">
+    <section className={`carte grid grid-cols-1 gap-5 p-5 ${pleine ? "" : "lg:grid-cols-[230px_1fr] lg:gap-8"}`}>
       <div>
         <span className="mb-2.5 grid h-9 w-9 place-items-center rounded-xl bg-accent-soft text-accent"><Icone className="h-[18px] w-[18px]" /></span>
         <h2 className="titre-section">{titre}</h2>
@@ -29,7 +28,6 @@ export default function Reglages() {
   const r = s.reglages;
   const p = r.perimetre;
   const majP = (x: Partial<Perimetre>) => s.saveReglages({ perimetre: { ...p, ...x } });
-  const sources = s.collecte?.sources.sources ?? [];
   const repo = process.env.NEXT_PUBLIC_REPO_URL;
   const lienConfig = repo ? `${repo}/tree/main/collector/config` : null;
   const num = (v: string, min: number, max: number, def: number) => Math.min(max, Math.max(min, parseInt(v, 10) || def));
@@ -120,30 +118,10 @@ export default function Reglages() {
           </div>
         </Section>
 
-        <Section icone={Database} titre="Sources" description={s.collecte ? <>Collecte du {fmt(s.collecte.sources.genereLe)}</> : undefined}>
-          {sources.length === 0 ? (
-            <p className="text-sm text-muted">Aucune collecte n’a encore tourné. Lance le workflow « collect » depuis l’onglet Actions de GitHub.</p>
-          ) : (
-            <ul className="divide-y divide-line">
-              {sources.map((src) => {
-                const st = santeSource(src);
-                return (
-                  <li key={src.id} className="flex items-start gap-3 py-2.5 first:pt-0">
-                    <span className="pastille mt-1.5" style={{ background: COULEUR[st] }} title={LIBELLE[st]} role="img" aria-label={LIBELLE[st]} />
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[13.5px] font-semibold"><a href={src.url} target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:underline">{src.nom}</a> <span className="micro font-normal">{src.methode} · {src.type}</span></p>
-                      <p className="micro">
-                        {LIBELLE[st]} · {src.nbResultats} résultat(s){src.dernierSucces ? ` · dernier succès le ${fmt(src.dernierSucces)}` : " · jamais réussie"}
-                      </p>
-                      {src.derniereErreur && <p className="micro break-words text-danger">{src.derniereErreur}</p>}
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
+        <Section icone={Database} titre="Sources" description="Où la collecte cherche les offres et les productions. Fréquence et activation se règlent ici, sans passer par GitHub." pleine>
+          <SourcesReglages />
           <div className="mt-4 rounded-xl bg-surface-2 p-3 text-[13px]">
-            Sources et mots-clés se modifient dans les fichiers de <code className="rounded bg-[color-mix(in_srgb,var(--fg)_8%,transparent)] px-1">collector/config/</code> du dépôt.{" "}
+            Les mots-clés et le détail des sélecteurs se modifient dans les fichiers de <code className="rounded bg-[color-mix(in_srgb,var(--fg)_8%,transparent)] px-1">collector/config/</code> du dépôt.{" "}
             {lienConfig ? <a className="inline-flex items-center gap-1 font-semibold text-accent underline" href={lienConfig} target="_blank" rel="noopener noreferrer">Ouvrir sur GitHub <ExternalLink className="h-3 w-3" /></a> : <span className="micro">(lien disponible une fois le site déployé par GitHub Actions)</span>}
           </div>
         </Section>

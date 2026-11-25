@@ -1,5 +1,5 @@
 export type * from "../../shared/types.ts";
-import type { Methode, Technique, TypeSource } from "../../shared/types.ts";
+import type { Frequence, FormatProd, Methode, Technique, TypeSource } from "../../shared/types.ts";
 
 export interface Selecteurs {
   item: string;
@@ -9,6 +9,8 @@ export interface Selecteurs {
   lieu?: string;
   studio?: string;
   date?: string;
+  /** les cartes n'ont pas de lien propre : ancre sur la page source (une par titre) */
+  sansLien?: boolean;
 }
 
 export interface SourceConfig {
@@ -25,6 +27,9 @@ export interface SourceConfig {
   technique?: Technique;
   lieuDefaut?: string;
   note?: string;
+  /** fréquence de collecte ; défaut : quotidien */
+  frequence?: Frequence;
+  ajouteeParUtilisatrice?: boolean;
 }
 
 /** Élément brut renvoyé par un fetcher, avant classification. */
@@ -37,4 +42,7 @@ export interface ItemBrut {
   studio?: string | null;
   /** URL https absolue d'une image trouvée dans la source elle-même */
   image?: string | null;
+  /** renseignés par les sources qui structurent leurs productions (pages du CNC) */
+  format?: FormatProd;
+  producteurs?: string[];
 }

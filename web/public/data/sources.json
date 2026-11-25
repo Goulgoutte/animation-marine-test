@@ -1,5 +1,5 @@
 {
-  "genereLe": "2026-11-25T16:36:07.911Z",
+  "genereLe": "2026-11-25T17:42:06.599Z",
   "sources": [
     {
       "id": "jobotropo",
@@ -8,9 +8,20 @@
       "type": "emploi",
       "methode": "playwright",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 10
+      "nbResultats": 10,
+      "frequence": "6h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Superviseur.euse Rig (3D)(3D Rigging Supervisor)",
+        "Monteur·euse(Editor)",
+        "Chef·fe Compositing (2D)(Lead 2D Compositing)",
+        "Directeur·rice Artistique(Art Director)",
+        "Concept Artist(Concept Artist)"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Contenu chargé en JavaScript (10 premières offres, cartes sans lien : ancre sur la page). Beaucoup de 3D : le filtre périmètre trie."
     },
     {
       "id": "afjv-emploi",
@@ -19,9 +30,20 @@
       "type": "emploi",
       "methode": "html",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 5
+      "nbResultats": 5,
+      "frequence": "6h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Game Artist 2D H/F/NB",
+        "Illustrator",
+        "Technical Animator (100% Télétravail)",
+        "Animateurs Nintendo (H/F) CDD partiel fin d'année",
+        "Graphiste 3D / Level Artist (F/H)"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Beaucoup de jeu vidéo : le filtre garde les intitulés liés à l'animation et au dessin."
     },
     {
       "id": "3dvf-emploi",
@@ -30,9 +52,14 @@
       "type": "emploi",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Flux valide mais vide : 3DVF affiche « 0 dernières offres d'emploi » (vérifié le 25/11/2026)."
     },
     {
       "id": "animworks-studiowatch",
@@ -43,7 +70,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Liste rendue en JavaScript, logos et compteurs sans lien exploitable : pas de flux ni d'API publique. Ajout manuel."
     },
     {
       "id": "cojob",
@@ -54,7 +86,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Bloque la récupération automatique (redirige vers okapijob.com). Pas de flux public : ajout manuel."
     },
     {
       "id": "francetravail",
@@ -65,7 +102,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "L'API officielle « Offres d'emploi » exige une clé OAuth (compte développeur) et le robots.txt du site interdit la recherche : ajout manuel."
     },
     {
       "id": "jobvfx",
@@ -76,7 +118,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page de catégories (VFX/3D/jeu), pas d'offres : sans intérêt pour la 2D."
     },
     {
       "id": "zerply",
@@ -87,7 +134,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "L'URL /industry-jobs renvoie 404 (25/11/2026) : site probablement fermé."
     },
     {
       "id": "animation-ireland-emploi",
@@ -96,9 +148,14 @@
       "type": "emploi",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Flux job_feed valide mais vide le 25/11/2026. Beaucoup d'offres avec résidence irlandaise exigée quand il se remplit."
     },
     {
       "id": "animation-ireland-rss",
@@ -107,9 +164,14 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 2
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
     },
     {
       "id": "awn-rss",
@@ -118,9 +180,14 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
     },
     {
       "id": "indeed",
@@ -131,7 +198,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Scraping interdit : ajout manuel."
     },
     {
       "id": "linkedin",
@@ -142,7 +214,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "JAMAIS de collecte automatique : ajout manuel seulement."
     },
     {
       "id": "instagram",
@@ -153,51 +230,80 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "JAMAIS de collecte automatique : ajout manuel seulement."
     },
     {
       "id": "fost",
       "nom": "FOST (Paris, Angoulême)",
-      "url": "https://fost.studio/",
+      "url": "https://fost.studio/jobs/",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page recrutement : candidature par formulaire Tally, aucune offre publiée (stages et alternances sur LinkedIn/Instagram, non collectés)."
     },
     {
       "id": "mist",
       "nom": "MIST",
-      "url": "https://mist.studio/",
+      "url": "https://mist.studio/work/all/",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page « Recrutements » : « annonces en cours » vide le 25/11/2026."
     },
     {
       "id": "xilam",
       "nom": "Xilam",
-      "url": "https://xilam.com/",
+      "url": "https://xilam.com/category/offres-emploi/feed/",
       "type": "carriere-studio",
-      "methode": "html",
+      "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 1
+      "nbResultats": 1,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Stage Assistant.e YouTube & Réseaux sociaux"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Flux WordPress de la catégorie « offres d'emploi » de xilam.com/rejoignez-nous/ (la page elle-même est rendue en JavaScript)."
     },
     {
       "id": "ellipse",
       "nom": "Ellipse Animation",
-      "url": "https://www.ellipseanimation.com/",
+      "url": "https://www.ellipseanimation.com/careers/",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 1,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "CREATIVE PRODUCER – ANIME"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Offres déroulées en accordéon sur la page careers (nouvelle ligne anime : Creative Producer – Anime)."
     },
     {
       "id": "malil",
@@ -205,32 +311,47 @@
       "url": "https://www.malil-art.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Aucune page recrutement ni lien carrière sur le site (Angoulême) : candidature par e-mail, ajout manuel."
     },
     {
       "id": "enclume",
       "nom": "Enclume Animation (Bruxelles)",
-      "url": "https://www.enclumeanimation.com/",
+      "url": "https://www.enclumeanimation.com/jobs-stages",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page « Jobs & stages » : aucune offre le 25/11/2026 (candidature spontanée par formulaire Jotform). Bruxelles : télétravail jamais à temps plein."
     },
     {
       "id": "caribara",
       "nom": "Caribara (Paris)",
-      "url": "https://www.caribara.com/",
+      "url": "https://www.caribara-animation.com/contact/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "caribara.com n'est pas le studio : le site est caribara-animation.com, dont la page Contact renvoie vers les réseaux sociaux (non collectés) pour les offres. Actualités suivies par le flux caribara-actus."
     },
     {
       "id": "zag",
@@ -238,10 +359,15 @@
       "url": "https://www.zag.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Site rendu en JavaScript, aucune page recrutement exposée (zagtoon.com : pas de flux)."
     },
     {
       "id": "lacachette",
@@ -249,10 +375,15 @@
       "url": "https://www.lacachette.fr/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "lacachette.fr est une librairie, pas le studio : domaine erroné, studio non retrouvé."
     },
     {
       "id": "bobbypills",
@@ -260,10 +391,15 @@
       "url": "https://www.bobbypills.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Aucune page recrutement sur le site (candidature par e-mail)."
     },
     {
       "id": "folivari",
@@ -271,21 +407,35 @@
       "url": "https://folivari.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Aucune page recrutement ni offre sur le site ; flux WordPress vide."
     },
     {
       "id": "superprod",
-      "nom": "Superprod",
-      "url": "https://www.superprod.net/fr/superprod-animation",
+      "nom": "Superprod (WeRecruit)",
+      "url": "https://careers.werecruit.io/fr/superprod",
       "type": "carriere-studio",
-      "methode": "html",
+      "methode": "werecruit",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 3,
+      "frequence": "6h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Technicien.ne Support IT (CDD)",
+        "Production Designer, Adult Animated Series",
+        "Chargé·e de production Animation (Mid/Senior)"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page careers.werecruit.io : liste d'offres embarquée dans la page (window.allOffers). Inclut Production Designer, Adult Animated Series (Paris)."
     },
     {
       "id": "teamto",
@@ -293,10 +443,15 @@
       "url": "https://www.teamto.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Site rendu en JavaScript, aucune page recrutement exposée."
     },
     {
       "id": "suncreature",
@@ -304,10 +459,15 @@
       "url": "https://www.suncreature.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Aucune page recrutement exposée."
     },
     {
       "id": "sacrebleu",
@@ -318,7 +478,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "sacrebleuprod.com injoignable (connexion réinitialisée) : domaine à retrouver."
     },
     {
       "id": "bluespirit",
@@ -329,7 +494,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "HTTP 403 (protection anti-robot) : non contourné. Pas de flux public."
     },
     {
       "id": "miyu",
@@ -340,7 +510,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Domaine miyu-productions.com introuvable (DNS) : à retrouver."
     },
     {
       "id": "2minutes",
@@ -351,7 +526,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Site injoignable (timeout) le 25/11/2026."
     },
     {
       "id": "ooolala",
@@ -359,10 +539,15 @@
       "url": "https://www.ooolala.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Application web sans page recrutement exposée (/lander)."
     },
     {
       "id": "folimage",
@@ -370,10 +555,15 @@
       "url": "https://www.folimage.fr/fr/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Aucune page recrutement exposée."
     },
     {
       "id": "jpl",
@@ -381,21 +571,31 @@
       "url": "https://jplfilms.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Aucune page recrutement exposée."
     },
     {
       "id": "andarta",
       "nom": "Andarta Pictures (Valence)",
-      "url": "https://andarta-pictures.com/fr/",
+      "url": "https://andarta-pictures.com/fr/recrutement/",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page recrutement : « Aucune offre actuellement » le 25/11/2026 (formulaires Google par métier)."
     },
     {
       "id": "normaal",
@@ -403,21 +603,31 @@
       "url": "https://normaal.fr/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Aucune page recrutement exposée ; flux vide."
     },
     {
       "id": "cartoonsaloon",
       "nom": "Cartoon Saloon",
-      "url": "https://www.cartoonsaloon.ie/",
+      "url": "https://www.cartoonsaloon.ie/irish-animation-studio/careers/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Offres dans un iframe Occupop (api.occupop.com) : aucune vacance ouverte le 25/11/2026. Collecteur Occupop à écrire si le studio recrute."
     },
     {
       "id": "studiosouza",
@@ -425,32 +635,47 @@
       "url": "https://www.studiosouza.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Aucune page recrutement exposée."
     },
     {
       "id": "waooh",
       "nom": "Waooh (Liège)",
-      "url": "https://www.waooh.be/",
+      "url": "https://www.waooh.be/jobs/",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Seule offre publiée : candidature spontanée (exclue). Liège : télétravail ?"
     },
     {
       "id": "kavaleer",
       "nom": "Kavaleer",
-      "url": "https://kavaleer.com/",
+      "url": "https://kavaleer.com/jobs/",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page Jobs : « Nothing Found » le 25/11/2026 (Dublin)."
     },
     {
       "id": "fargo",
@@ -461,7 +686,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "fargo-animation.com injoignable."
     },
     {
       "id": "jammedia",
@@ -472,7 +702,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "jam-media.com est en vente (hugedomains) : studio sans site."
     },
     {
       "id": "stim",
@@ -483,29 +718,44 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Studio 3D : désactivé par défaut. La page /fr/recrutement est lisible (liste de liens) si besoin."
     },
     {
       "id": "illumination-paris",
-      "nom": "Illumination Studios Paris",
-      "url": "https://www.illuminationstudiosparis.com/",
+      "nom": "Illumination (Lever)",
+      "url": "https://jobs.lever.co/illumination",
       "type": "carriere-studio",
-      "methode": "html",
-      "actif": false,
-      "dernierSucces": null,
+      "methode": "lever",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "API publique Lever (api.lever.co/v0/postings/illumination) : 0 offre publiée le 25/11/2026. Studio majoritairement 3D, mais storyboard/design 2D possibles : le classement décide."
     },
     {
       "id": "dwarf",
       "nom": "Dwarf Animation",
-      "url": "https://www.dwarfanimation.com/",
+      "url": "https://www.dwarfanimation.com/careers",
       "type": "carriere-studio",
       "methode": "html",
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Studio 3D : page careers « no position available » le 25/11/2026."
     },
     {
       "id": "angel",
@@ -516,7 +766,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Angel Studios (distribution/streaming), hors animation 2D : sans objet."
     },
     {
       "id": "filmfrance-annuaire",
@@ -527,7 +782,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Annuaire de studios, pas une source d'offres : sert à trouver de nouveaux studios, jamais collecté."
     },
     {
       "id": "catsuka",
@@ -536,9 +796,17 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 2,
+      "frequence": "6h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "... [English] : Image Comics",
+        "Grendel"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
     },
     {
       "id": "cartoonbrew",
@@ -547,9 +815,14 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
     },
     {
       "id": "animationmagazine",
@@ -557,10 +830,15 @@
       "url": "https://www.animationmagazine.net/feed/",
       "type": "actualite",
       "methode": "rss",
-      "actif": true,
+      "actif": false,
       "dernierSucces": null,
-      "derniereErreur": "Error: HTTP 403",
-      "nbResultats": 0
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "HTTP 403 (protection anti-robot) sur tous les flux : non contourné. Alternative : Google Actualités RSS site:animationmagazine.net (voir les sources Google Actualités, en attente)."
     },
     {
       "id": "kidscreen",
@@ -568,10 +846,15 @@
       "url": "https://kidscreen.com/feed/",
       "type": "actualite",
       "methode": "rss",
-      "actif": true,
+      "actif": false,
       "dernierSucces": null,
-      "derniereErreur": "Error: réponse non RSS (page HTML ou blocage anti-robot)",
-      "nbResultats": 0
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Flux protégé par un défi anti-robot (HTTP 202 vide) : non contourné."
     },
     {
       "id": "deadline-animation",
@@ -580,9 +863,14 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
     },
     {
       "id": "variety-animation",
@@ -591,9 +879,14 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
     },
     {
       "id": "skwigly",
@@ -602,9 +895,16 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 3
+      "nbResultats": 1,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "CALM: An animated feature based on Cuentos de amor de locura y de muerte"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
     },
     {
       "id": "3dvf-actu",
@@ -613,9 +913,16 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 1
+      "nbResultats": 1,
+      "frequence": "6h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Gaussian Splatting, l’avenir du scan 3D ? Comprendre les bases et débuter"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
     },
     {
       "id": "ecran-total",
@@ -623,10 +930,15 @@
       "url": "https://www.ecran-total.fr/feed/",
       "type": "actualite",
       "methode": "rss",
-      "actif": true,
+      "actif": false,
       "dernierSucces": null,
-      "derniereErreur": "Error: réponse non RSS (page HTML ou blocage anti-robot)",
-      "nbResultats": 0
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Flux /feed/ redirigé puis HTTP 403 (anti-robot) : non contourné."
     },
     {
       "id": "magelis",
@@ -635,9 +947,14 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T16:36:07.911Z",
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
     },
     {
       "id": "cineuropa",
@@ -648,7 +965,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "403 lors des tests."
     },
     {
       "id": "screendaily",
@@ -659,7 +981,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Flux RSS introuvable : à tester en HTML."
     },
     {
       "id": "broadcast",
@@ -670,7 +997,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Flux RSS introuvable ; contenu en partie payant."
     },
     {
       "id": "satellifax",
@@ -681,7 +1013,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Payant : titres publics uniquement, sinon saisie manuelle."
     },
     {
       "id": "lefilmfrancais",
@@ -692,7 +1029,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Payant : titres publics uniquement, sinon saisie manuelle."
     },
     {
       "id": "cnc",
@@ -700,10 +1042,15 @@
       "url": "https://www.cnc.fr/rss",
       "type": "actualite",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "« /rss » du CNC renvoie une page HTML, pas un flux. Remplacée par les pages de résultats des commissions (aide aux techniques d'animation)."
     },
     {
       "id": "afca",
@@ -711,10 +1058,15 @@
       "url": "https://www.afca.asso.fr/",
       "type": "actualite",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Pas de flux (404) ; page d'accueil sans article exploitable."
     },
     {
       "id": "cartoon-media",
@@ -722,10 +1074,15 @@
       "url": "https://www.cartoon-media.eu/",
       "type": "base-projets",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Pas de flux (404) et page d'accueil sans article exploitable."
     },
     {
       "id": "unifrance",
@@ -733,10 +1090,15 @@
       "url": "https://www.unifrance.org/",
       "type": "actualite",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": null,
-      "derniereErreur": "Error: HTTP 403",
-      "nbResultats": 0
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Cloudflare (« Just a moment ») sur tout le site : non contourné."
     },
     {
       "id": "scriptoclap",
@@ -747,7 +1109,12 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Injoignable lors des tests : très utile, à réessayer."
     },
     {
       "id": "aura-cinema",
@@ -755,10 +1122,15 @@
       "url": "https://www.auvergnerhonealpes-cinema.fr/",
       "type": "actualite",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Pas de flux ; page d'accueil sans article exploitable."
     },
     {
       "id": "animfrance",
@@ -766,10 +1138,15 @@
       "url": "https://www.animfrance.fr/",
       "type": "actualite",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Pas de flux (404) ; page d'accueil sans article exploitable."
     },
     {
       "id": "annecy-mifa",
@@ -777,10 +1154,15 @@
       "url": "https://www.annecyfestival.com/",
       "type": "actualite",
       "methode": "html",
-      "actif": true,
+      "actif": false,
       "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T16:36:07.911Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Pas de flux (404) ; page d'accueil sans article exploitable. Les résultats du festival sont de toute façon des palmarès, exclus du classement."
     },
     {
       "id": "cartoon-movie",
@@ -791,7 +1173,526 @@
       "actif": false,
       "dernierSucces": null,
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Même domaine que Cartoon Media : désactivé tant que l'URL n'est pas confirmée."
+    },
+    {
+      "id": "fortiche",
+      "nom": "Fortiche (Paris)",
+      "url": "https://forticheprod.com/jobs",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 1,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "RIGGING SUPERVISOR (M/F/NB)"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page jobs de forticheprod.com (cartes Elementor). Studio Paris 2D/3D (Arcane)."
+    },
+    {
+      "id": "magic-design",
+      "nom": "Magic Design Studios (Montpellier)",
+      "url": "https://www.magicdesignstudios.com/jobs-alert",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 2,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Animateur/trice 2D confirmé.e",
+        "Level Artist"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page JOBS (Wix) : un h1 par offre. Jeu vidéo 2D (Spine), télétravail partiel possible."
+    },
+    {
+      "id": "weworkremotely-design",
+      "nom": "We Work Remotely (design, télétravail)",
+      "url": "https://weworkremotely.com/categories/remote-design-jobs.rss",
+      "type": "emploi",
+      "methode": "rss",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 9,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Lightbox Animation: Sets&Props Concept Artist Internship",
+        "Lightbox Animation: Senior Storyboard Artist",
+        "Lightbox Animation: Sets&Props Concept Art Supervisor",
+        "Lightbox Animation: Senior Matte Painter",
+        "Lightbox Animation: Senior Sets&Props Model Artist"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Flux RSS officiel de la catégorie design : tout est en télétravail, le filtre ne garde que les intitulés d'animation et d'illustration. Résidence exigée détectée par le classement."
+    },
+    {
+      "id": "animationcareerreview",
+      "nom": "Animation Career Review",
+      "url": "https://www.animationcareerreview.com/rss.xml",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Flux d'actualités sur les carrières en animation (pas des offres)."
+    },
+    {
+      "id": "waooh-actus",
+      "nom": "Waooh (actualités)",
+      "url": "https://www.waooh.be/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 1,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Congratulations to Bobby Prod, Distributor of the year !"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Flux WordPress du studio de Liège."
+    },
+    {
+      "id": "xilam-actus",
+      "nom": "Xilam (actualités)",
+      "url": "https://xilam.com/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 1,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Le Loup"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Annonces de mise en production (ex. Chickies)."
+    },
+    {
+      "id": "ellipse-actus",
+      "nom": "Ellipse Animation (actualités)",
+      "url": "https://www.ellipseanimation.com/news/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 2,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "ANIMAL JACK: An adaptation in development with TF1",
+        "Komodo No Chill, our new kids’ project presented at Cartoon Forum"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
+    },
+    {
+      "id": "fost-actus",
+      "nom": "FOST (actualités)",
+      "url": "https://fost.studio/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
+    },
+    {
+      "id": "mist-actus",
+      "nom": "Mist (actualités)",
+      "url": "https://mist.studio/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
+    },
+    {
+      "id": "caribara-actus",
+      "nom": "Caribara (actualités)",
+      "url": "https://www.caribara-animation.com/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
+    },
+    {
+      "id": "kavaleer-actus",
+      "nom": "Kavaleer (actualités)",
+      "url": "https://kavaleer.com/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 1,
+      "frequence": "quotidien",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "ADAM"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
+    },
+    {
+      "id": "animationxpress",
+      "nom": "AnimationXpress",
+      "url": "https://www.animationxpress.com/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
+    },
+    {
+      "id": "c21media",
+      "nom": "C21Media (TV et coproductions)",
+      "url": "https://www.c21media.net/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Presse économique de la fiction TV : annonces de séries et coproductions."
+    },
+    {
+      "id": "indiewire-animation",
+      "nom": "IndieWire (animation)",
+      "url": "https://www.indiewire.com/c/animation/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "12h",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": null
+    },
+    {
+      "id": "fortiche-actus",
+      "nom": "Fortiche (actualités)",
+      "url": "https://forticheprod.com/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "dernierSucces": null,
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Le robots.txt de forticheprod.com interdit /feed/ : non collecté."
+    },
+    {
+      "id": "cnc-animation-2026",
+      "nom": "Aide aux techniques d’animation du CNC, commission 2026",
+      "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
+      "type": "base-projets",
+      "methode": "cnc",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 43,
+      "frequence": "hebdo",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Titre du projet",
+        "Isis et osiris",
+        "Ro",
+        "Le transsaharien",
+        "La marche des tournesols"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+    },
+    {
+      "id": "cnc-animation-2025-12",
+      "nom": "Aide aux techniques d’animation du CNC, commission du 2 décembre 2025",
+      "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-du-2-decembre-2025_2512567",
+      "type": "base-projets",
+      "methode": "cnc",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 50,
+      "frequence": "hebdo",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Titre du projet",
+        "Yakari - film 2",
+        "Extra-terriens",
+        "Twisted",
+        "Prudence"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+    },
+    {
+      "id": "cnc-animation-2025-09",
+      "nom": "Aide aux techniques d’animation du CNC, commission du 17 septembre 2025",
+      "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-du-17-septembre-2025_2504716",
+      "type": "base-projets",
+      "methode": "cnc",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 10,
+      "frequence": "hebdo",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Titre du projet",
+        "Cyrano",
+        "Les chats ne font pas des chiens",
+        "Ogresse",
+        "Mijoté de brebis"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+    },
+    {
+      "id": "cnc-animation-2025-06",
+      "nom": "Aide aux techniques d’animation du CNC, commission du 26 juin 2025",
+      "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-du-26-juin-2025_2504660",
+      "type": "base-projets",
+      "methode": "cnc",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 10,
+      "frequence": "hebdo",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Titre du projet",
+        "Melvile",
+        "20 allée de la Danse",
+        "Apocalypse Mojito",
+        "L’Etat sauvage"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+    },
+    {
+      "id": "cnc-animation-2025-03",
+      "nom": "Aide aux techniques d’animation du CNC, commission du 25 mars 2025",
+      "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-du-25-mars-2025_2419453",
+      "type": "base-projets",
+      "methode": "cnc",
+      "actif": true,
+      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "derniereErreur": null,
+      "nbResultats": 11,
+      "frequence": "hebdo",
+      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "derniersTitres": [
+        "Titre du projet",
+        "Fleur",
+        "Le Dossier de l'aube",
+        "Tyler Cross",
+        "Mon chien, Dieu et les pokétrucs"
+      ],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+    },
+    {
+      "id": "gn-fr-series-2d",
+      "nom": "Google Actualités : séries d’animation 2D en production",
+      "url": "https://news.google.com/rss/search?q=s%C3%A9rie+animation+2D+production&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "dernierSucces": null,
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-fr-longs",
+      "nom": "Google Actualités : longs métrages d’animation en production",
+      "url": "https://news.google.com/rss/search?q=long+m%C3%A9trage+d%27animation+production+OR+pr%C3%A9production&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "dernierSucces": null,
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-fr-studios",
+      "nom": "Google Actualités : studios d’animation français",
+      "url": "https://news.google.com/rss/search?q=studio+d%27animation+fran%C3%A7ais+s%C3%A9rie+OR+film&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "dernierSucces": null,
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-fr-decors",
+      "nom": "Google Actualités : décors et animation 2D",
+      "url": "https://news.google.com/rss/search?q=d%C3%A9cors+%22animation+2D%22&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "dernierSucces": null,
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-fr-cnc",
+      "nom": "Google Actualités : aide du CNC à l’animation",
+      "url": "https://news.google.com/rss/search?q=CNC+aide+animation+s%C3%A9rie+OR+film+financement&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "dernierSucces": null,
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-en-series",
+      "nom": "Google News : 2D animated series in production",
+      "url": "https://news.google.com/rss/search?q=2D+animated+series+%22in+production%22+OR+greenlit&hl=en&gl=US&ceid=US:en",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "dernierSucces": null,
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-en-features",
+      "nom": "Google News : hand-drawn animated feature in production",
+      "url": "https://news.google.com/rss/search?q=hand-drawn+animated+feature+production&hl=en&gl=US&ceid=US:en",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "dernierSucces": null,
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-en-french",
+      "nom": "Google News : French animation studio series announced",
+      "url": "https://news.google.com/rss/search?q=French+animation+studio+series+announced+Paris&hl=en&gl=US&ceid=US:en",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "dernierSucces": null,
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "6h",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "productions-connues",
+      "nom": "Productions repérées à la main",
+      "url": "https://github.com",
+      "type": "base-projets",
+      "methode": "manuel",
+      "actif": false,
+      "dernierSucces": null,
+      "derniereErreur": null,
+      "nbResultats": 0,
+      "frequence": "quotidien",
+      "dernierPassage": null,
+      "derniersTitres": [],
+      "ajouteeParUtilisatrice": false,
+      "notes": "Fichier collector/config/productions-connues.json : toujours intégré à la collecte."
     }
   ]
 }

@@ -1,7 +1,10 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { classerOffre, classerProduction, motsParDefaut, normaliser } from "./classify.ts";
+import { connuesEnProductions, lireConnues } from "./connues.ts";
 import { fermerNavigateur, recuperer } from "./fetchers.ts";
+import { estEchue } from "../../shared/sources.ts";
+import { chargerSources } from "./remote.ts";
 import { enrichirImages } from "./images.ts";
 import { fusionnerOffres, fusionnerProductions, idOffre, idProduction } from "./merge.ts";
 import type {
@@ -30,7 +33,8 @@ const dateIso = (s: string | null): string | null => {
 function filtreTitre(src: SourceConfig): ((titre: string) => boolean) | null {
   if (src.filtre) { const re = new RegExp(src.filtre, "i"); return (t) => re.test(t); }
   // pages HTML d'emploi ou de carrière : ne garder que ce qui ressemble à un intitulé de poste
-  if (src.methode !== "rss" && (src.type === "emploi" || src.type === "carriere-studio")) {
+  // (les API d'ATS ne renvoient que des offres : pas de filtre)
+  if ((src.methode === "html" || src.methode === "playwright") && (src.type === "emploi" || src.type === "carriere-studio")) {
     const re = new RegExp(motsParDefaut.titresMetiers.map((m) => normaliser(m).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"));
     return (t) => t.length >= 10 && re.test(normaliser(t));
   }
@@ -62,18 +66,22 @@ export function enOffre(src: SourceConfig, it: ItemBrut, maintenant: string): Of
 }
 
 export function enProduction(src: SourceConfig, it: ItemBrut, maintenant: string): Production | null {
-  const c = classerProduction({ titre: it.titre, extrait: it.extrait, techniqueDefaut: src.technique });
-  if (!c.estProduction) return null;
+  let c = classerProduction({ titre: it.titre, extrait: it.extrait, techniqueDefaut: src.technique });
+  if (src.methode === "cnc") {
+    // page de résultats d'une commission : chaque ligne est un projet aidé, donc financé
+    c = { ...c, estProduction: true, titre: it.titre, statut: "financement", bonMomentDecor: true, format: it.format ?? c.format };
+  } else if (!c.estProduction || (src.type === "actualite" && !c.precis)) return null;
+  const producteurs = it.producteurs ?? c.studios;
   return {
     id: idProduction(c.titre),
     titre: c.titre,
-    format: c.format,
+    format: it.format && it.format !== "inconnu" ? it.format : c.format,
     technique: c.technique,
-    producteurs: [],
+    producteurs,
     studiosFabrication: [],
     paysCoproducteurs: [],
     paysDecors: null,
-    diffuseur: null,
+    diffuseur: c.diffuseur,
     realisateur: c.realisateur,
     statut: c.statut,
     dateDemarrage: null,
@@ -90,11 +98,11 @@ export function enProduction(src: SourceConfig, it: ItemBrut, maintenant: string
 
 async function main() {
   const seulement = process.argv.find((a) => a.startsWith("--only="))?.slice(7).split(",");
+  const forcer = process.argv.includes("--force") || process.env.FORCER === "1" || process.env.FORCER === "true";
   const maintenant = new Date();
   const iso = maintenant.toISOString();
-  const configs: SourceConfig[] = JSON.parse(
-    readFileSync(new URL("../config/sources.json", import.meta.url), "utf8"),
-  ).sources;
+  const { configs, origine } = await chargerSources();
+  console.log(`Sources : ${configs.length} (${origine === "supabase" ? "table Supabase" : "repli sur config/sources.json"})${forcer ? ", passage forcé" : ""}`);
   const prevSources = new Map((lire<FichierSources>("sources.json")?.sources ?? []).map((s) => [s.id, s]));
   const offres: Offre[] = [];
   const prods: Production[] = [];
@@ -106,22 +114,34 @@ async function main() {
       id: src.id, nom: src.nom, url: src.url, type: src.type, methode: src.methode, actif: src.actif,
       dernierSucces: prev?.dernierSucces ?? null,
       derniereErreur: src.actif ? (prev?.derniereErreur ?? null) : null,
-      nbResultats: 0,
+      nbResultats: prev?.nbResultats ?? 0,
+      frequence: src.frequence ?? "quotidien",
+      dernierPassage: prev?.dernierPassage ?? prev?.dernierSucces ?? null,
+      derniersTitres: prev?.derniersTitres ?? [],
+      ajouteeParUtilisatrice: src.ajouteeParUtilisatrice ?? false,
+      notes: src.note ?? null,
     };
     statuts.push(statut);
     if (!src.actif || src.methode === "manuel") continue;
-    if (seulement && !seulement.includes(src.id)) { statut.nbResultats = prev?.nbResultats ?? 0; continue; }
+    if (seulement && !seulement.includes(src.id)) continue;
+    if (!seulement && !forcer && !estEchue(statut.dernierPassage, statut.frequence, maintenant)) {
+      console.log(`SKIP ${src.id}: pas encore échue (${statut.frequence}, dernier passage ${statut.dernierPassage})`);
+      continue;
+    }
+    statut.dernierPassage = iso;
     try {
       let items = await recuperer(src);
       const ok = filtreTitre(src);
       if (ok) items = items.filter((i) => ok(i.titre));
       const forOffres = src.type === "emploi" || src.type === "carriere-studio";
       let n = 0;
+      const titres: string[] = [];
       for (const it of items) {
-        if (forOffres) { offres.push(enOffre(src, it, iso)); n++; }
-        else { const p = enProduction(src, it, iso); if (p) { prods.push(p); n++; } }
+        if (forOffres) { offres.push(enOffre(src, it, iso)); n++; titres.push(it.titre); }
+        else { const p = enProduction(src, it, iso); if (p) { prods.push(p); n++; titres.push(p.titre); } }
       }
       statut.nbResultats = n;
+      statut.derniersTitres = titres.slice(0, 5);
       statut.dernierSucces = iso;
       statut.derniereErreur = null;
       console.log(`OK   ${src.id}: ${items.length} éléments, ${n} retenus`);
@@ -132,6 +152,10 @@ async function main() {
     }
   }
   await fermerNavigateur();
+
+  // productions repérées à la main : toujours intégrées, comme si elles venaient d'être vues
+  // en tête : à doublon égal, le titre soigné de la main l'emporte sur celui de la source
+  prods.unshift(...connuesEnProductions(lireConnues(), iso));
 
   // les données d'exemple (pnpm seed) disparaissent dès qu'une vraie collecte écrit les fichiers
   const reel = <T extends { sources: { sourceId: string }[] }>(l: T[]) => l.filter((x) => !x.sources.every((s) => s.sourceId === "exemple"));

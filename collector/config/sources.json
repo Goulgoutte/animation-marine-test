@@ -7,6 +7,7 @@
       "type": "emploi",
       "methode": "playwright",
       "actif": true,
+      "frequence": "6h",
       "selecteurs": {
         "item": "article.job-full-card",
         "titre": ".job-role",
@@ -23,6 +24,7 @@
       "type": "emploi",
       "methode": "html",
       "actif": true,
+      "frequence": "6h",
       "selecteurs": {
         "item": "a[href*='/emploi-']"
       },
@@ -35,7 +37,9 @@
       "url": "https://3dvf.com/offres-emploi/feed/",
       "type": "emploi",
       "methode": "rss",
-      "actif": true
+      "actif": true,
+      "frequence": "12h",
+      "note": "Flux valide mais vide : 3DVF affiche « 0 dernières offres d'emploi » (vérifié le 25/11/2026)."
     },
     {
       "id": "animworks-studiowatch",
@@ -44,10 +48,11 @@
       "type": "emploi",
       "methode": "html",
       "actif": false,
+      "frequence": "6h",
       "selecteurs": {
         "item": "a"
       },
-      "note": "Page agrégée sans liens exploitables (liste rendue en JavaScript, logos et compteurs) : écrire des sélecteurs avant d'activer."
+      "note": "Liste rendue en JavaScript, logos et compteurs sans lien exploitable : pas de flux ni d'API publique. Ajout manuel."
     },
     {
       "id": "cojob",
@@ -56,7 +61,8 @@
       "type": "emploi",
       "methode": "html",
       "actif": false,
-      "note": "Bloque la récupération automatique (redirige vers okapijob.com). Ajout manuel."
+      "frequence": "6h",
+      "note": "Bloque la récupération automatique (redirige vers okapijob.com). Pas de flux public : ajout manuel."
     },
     {
       "id": "francetravail",
@@ -65,7 +71,8 @@
       "type": "emploi",
       "methode": "playwright",
       "actif": false,
-      "note": "Recherche JavaScript, robots.txt restrictif : à tester à la main avant d'activer."
+      "frequence": "6h",
+      "note": "L'API officielle « Offres d'emploi » exige une clé OAuth (compte développeur) et le robots.txt du site interdit la recherche : ajout manuel."
     },
     {
       "id": "jobvfx",
@@ -74,10 +81,11 @@
       "type": "emploi",
       "methode": "html",
       "actif": false,
+      "frequence": "6h",
       "selecteurs": {
         "item": "a[href*='job']"
       },
-      "note": "Page de catégories (VFX/3D/jeu), pas d'offres : désactivé."
+      "note": "Page de catégories (VFX/3D/jeu), pas d'offres : sans intérêt pour la 2D."
     },
     {
       "id": "zerply",
@@ -86,7 +94,8 @@
       "type": "emploi",
       "methode": "playwright",
       "actif": false,
-      "note": "Injoignable lors des tests (25/11/2026)."
+      "frequence": "6h",
+      "note": "L'URL /industry-jobs renvoie 404 (25/11/2026) : site probablement fermé."
     },
     {
       "id": "animation-ireland-emploi",
@@ -95,7 +104,8 @@
       "type": "emploi",
       "methode": "rss",
       "actif": true,
-      "note": "Beaucoup d'offres avec résidence irlandaise exigée."
+      "frequence": "12h",
+      "note": "Flux job_feed valide mais vide le 25/11/2026. Beaucoup d'offres avec résidence irlandaise exigée quand il se remplit."
     },
     {
       "id": "animation-ireland-rss",
@@ -103,7 +113,8 @@
       "url": "https://animationireland.com/feed",
       "type": "actualite",
       "methode": "rss",
-      "actif": true
+      "actif": true,
+      "frequence": "12h"
     },
     {
       "id": "awn-rss",
@@ -111,7 +122,8 @@
       "url": "https://www.awn.com/rss.xml",
       "type": "actualite",
       "methode": "rss",
-      "actif": true
+      "actif": true,
+      "frequence": "6h"
     },
     {
       "id": "indeed",
@@ -120,6 +132,7 @@
       "type": "emploi",
       "methode": "manuel",
       "actif": false,
+      "frequence": "6h",
       "note": "Scraping interdit : ajout manuel."
     },
     {
@@ -129,6 +142,7 @@
       "type": "emploi",
       "methode": "manuel",
       "actif": false,
+      "frequence": "6h",
       "note": "JAMAIS de collecte automatique : ajout manuel seulement."
     },
     {
@@ -138,59 +152,70 @@
       "type": "actualite",
       "methode": "manuel",
       "actif": false,
+      "frequence": "12h",
       "note": "JAMAIS de collecte automatique : ajout manuel seulement."
     },
     {
       "id": "fost",
       "nom": "FOST (Paris, Angoulême)",
-      "url": "https://fost.studio/",
+      "url": "https://fost.studio/jobs/",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "studio": "FOST (Paris, Angoulême)",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
-      }
+      },
+      "studio": "FOST (Paris, Angoulême)",
+      "technique": "2D",
+      "note": "Page recrutement : candidature par formulaire Tally, aucune offre publiée (stages et alternances sur LinkedIn/Instagram, non collectés)."
     },
     {
       "id": "mist",
       "nom": "MIST",
-      "url": "https://mist.studio/",
+      "url": "https://mist.studio/work/all/",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "studio": "MIST",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
-      }
+      },
+      "studio": "MIST",
+      "technique": "2D",
+      "note": "Page « Recrutements » : « annonces en cours » vide le 25/11/2026."
     },
     {
       "id": "xilam",
       "nom": "Xilam",
-      "url": "https://xilam.com/",
+      "url": "https://xilam.com/category/offres-emploi/feed/",
       "type": "carriere-studio",
-      "methode": "html",
+      "methode": "rss",
       "actif": true,
+      "frequence": "12h",
       "studio": "Xilam",
       "technique": "2D",
-      "selecteurs": {
-        "item": "a"
-      }
+      "note": "Flux WordPress de la catégorie « offres d'emploi » de xilam.com/rejoignez-nous/ (la page elle-même est rendue en JavaScript)."
     },
     {
       "id": "ellipse",
       "nom": "Ellipse Animation",
-      "url": "https://www.ellipseanimation.com/",
+      "url": "https://www.ellipseanimation.com/careers/",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
+      "frequence": "12h",
+      "selecteurs": {
+        "item": ".accordion.job",
+        "titre": ".job__title",
+        "lieu": ".job__info span:nth-of-type(2)",
+        "sansLien": true
+      },
+      "filtre": ".",
       "studio": "Ellipse Animation",
       "technique": "2D",
-      "selecteurs": {
-        "item": "a"
-      }
+      "lieuDefaut": "Paris",
+      "note": "Offres déroulées en accordéon sur la page careers (nouvelle ligne anime : Creative Producer – Anime)."
     },
     {
       "id": "malil",
@@ -198,40 +223,46 @@
       "url": "https://www.malil-art.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "Malil Art (Angoulême, layout BG et BG couleur)",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
-      "lieuDefaut": "Angoulême"
+      "studio": "Malil Art (Angoulême, layout BG et BG couleur)",
+      "technique": "2D",
+      "lieuDefaut": "Angoulême",
+      "note": "Aucune page recrutement ni lien carrière sur le site (Angoulême) : candidature par e-mail, ajout manuel."
     },
     {
       "id": "enclume",
       "nom": "Enclume Animation (Bruxelles)",
-      "url": "https://www.enclumeanimation.com/",
+      "url": "https://www.enclumeanimation.com/jobs-stages",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "studio": "Enclume Animation (Bruxelles)",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
-      "lieuDefaut": "Bruxelles"
+      "studio": "Enclume Animation",
+      "technique": "2D",
+      "lieuDefaut": "Bruxelles",
+      "note": "Page « Jobs & stages » : aucune offre le 25/11/2026 (candidature spontanée par formulaire Jotform). Bruxelles : télétravail jamais à temps plein."
     },
     {
       "id": "caribara",
       "nom": "Caribara (Paris)",
-      "url": "https://www.caribara.com/",
+      "url": "https://www.caribara-animation.com/contact/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "Caribara (Paris)",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
-      }
+      },
+      "studio": "Caribara (Paris)",
+      "technique": "2D",
+      "note": "caribara.com n'est pas le studio : le site est caribara-animation.com, dont la page Contact renvoie vers les réseaux sociaux (non collectés) pour les offres. Actualités suivies par le flux caribara-actus."
     },
     {
       "id": "zag",
@@ -239,12 +270,14 @@
       "url": "https://www.zag.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "ZAG (Paris)",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
-      }
+      },
+      "studio": "ZAG (Paris)",
+      "technique": "2D",
+      "note": "Site rendu en JavaScript, aucune page recrutement exposée (zagtoon.com : pas de flux)."
     },
     {
       "id": "lacachette",
@@ -252,12 +285,14 @@
       "url": "https://www.lacachette.fr/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "La Cachette (Paris)",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
-      }
+      },
+      "studio": "La Cachette (Paris)",
+      "technique": "2D",
+      "note": "lacachette.fr est une librairie, pas le studio : domaine erroné, studio non retrouvé."
     },
     {
       "id": "bobbypills",
@@ -265,12 +300,14 @@
       "url": "https://www.bobbypills.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "Bobbypills (Paris)",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
-      }
+      },
+      "studio": "Bobbypills (Paris)",
+      "technique": "2D",
+      "note": "Aucune page recrutement sur le site (candidature par e-mail)."
     },
     {
       "id": "folivari",
@@ -278,25 +315,26 @@
       "url": "https://folivari.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "Folivari (Paris)",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
-      }
+      },
+      "studio": "Folivari (Paris)",
+      "technique": "2D",
+      "note": "Aucune page recrutement ni offre sur le site ; flux WordPress vide."
     },
     {
       "id": "superprod",
-      "nom": "Superprod",
-      "url": "https://www.superprod.net/fr/superprod-animation",
+      "nom": "Superprod (WeRecruit)",
+      "url": "https://careers.werecruit.io/fr/superprod",
       "type": "carriere-studio",
-      "methode": "html",
+      "methode": "werecruit",
       "actif": true,
+      "frequence": "6h",
       "studio": "Superprod",
       "technique": "2D",
-      "selecteurs": {
-        "item": "a"
-      }
+      "note": "Page careers.werecruit.io : liste d'offres embarquée dans la page (window.allOffers). Inclut Production Designer, Adult Animated Series (Paris)."
     },
     {
       "id": "teamto",
@@ -304,12 +342,14 @@
       "url": "https://www.teamto.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "TeamTO (nouvelle activité 2D et anime)",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
-      }
+      },
+      "studio": "TeamTO (nouvelle activité 2D et anime)",
+      "technique": "2D",
+      "note": "Site rendu en JavaScript, aucune page recrutement exposée."
     },
     {
       "id": "suncreature",
@@ -317,12 +357,14 @@
       "url": "https://www.suncreature.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "SunCreature",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
-      }
+      },
+      "studio": "SunCreature",
+      "technique": "2D",
+      "note": "Aucune page recrutement exposée."
     },
     {
       "id": "sacrebleu",
@@ -331,12 +373,13 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": false,
-      "studio": "Sacrebleu Productions (Paris)",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
-      "note": "Injoignable lors des tests : URL à vérifier."
+      "studio": "Sacrebleu Productions (Paris)",
+      "technique": "2D",
+      "note": "sacrebleuprod.com injoignable (connexion réinitialisée) : domaine à retrouver."
     },
     {
       "id": "bluespirit",
@@ -345,12 +388,13 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": false,
-      "studio": "Blue Spirit (Paris)",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
-      "note": "403 sur la récupération automatique : ajout manuel."
+      "studio": "Blue Spirit (Paris)",
+      "technique": "2D",
+      "note": "HTTP 403 (protection anti-robot) : non contourné. Pas de flux public."
     },
     {
       "id": "miyu",
@@ -359,12 +403,13 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": false,
-      "studio": "Miyu (Paris)",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
-      "note": "Injoignable lors des tests : URL à vérifier."
+      "studio": "Miyu (Paris)",
+      "technique": "2D",
+      "note": "Domaine miyu-productions.com introuvable (DNS) : à retrouver."
     },
     {
       "id": "2minutes",
@@ -373,12 +418,13 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": false,
-      "studio": "2 Minutes (Paris)",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
-      "note": "Injoignable lors des tests : URL à vérifier."
+      "studio": "2 Minutes (Paris)",
+      "technique": "2D",
+      "note": "Site injoignable (timeout) le 25/11/2026."
     },
     {
       "id": "ooolala",
@@ -386,14 +432,15 @@
       "url": "https://www.ooolala.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "OOOLALA",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
+      "studio": "OOOLALA",
+      "technique": "2D",
       "lieuDefaut": "Angoulême",
-      "note": "Hors Paris : seules les offres en télétravail comptent."
+      "note": "Application web sans page recrutement exposée (/lander)."
     },
     {
       "id": "folimage",
@@ -401,14 +448,15 @@
       "url": "https://www.folimage.fr/fr/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "Folimage",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
+      "studio": "Folimage",
+      "technique": "2D",
       "lieuDefaut": "Valence",
-      "note": "Hors Paris : seules les offres en télétravail comptent."
+      "note": "Aucune page recrutement exposée."
     },
     {
       "id": "jpl",
@@ -416,29 +464,31 @@
       "url": "https://jplfilms.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "JPL Films",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
+      "studio": "JPL Films",
+      "technique": "2D",
       "lieuDefaut": "Paris",
-      "note": "Hors Paris : seules les offres en télétravail comptent."
+      "note": "Aucune page recrutement exposée."
     },
     {
       "id": "andarta",
       "nom": "Andarta Pictures (Valence)",
-      "url": "https://andarta-pictures.com/fr/",
+      "url": "https://andarta-pictures.com/fr/recrutement/",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "studio": "Andarta Pictures (Valence)",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
-        "item": "a"
+        "item": "main a[href*='/recrutement/']"
       },
+      "studio": "Andarta Pictures",
+      "technique": "2D",
       "lieuDefaut": "Valence",
-      "note": "Hors Paris : seules les offres en télétravail comptent."
+      "note": "Page recrutement : « Aucune offre actuellement » le 25/11/2026 (formulaires Google par métier)."
     },
     {
       "id": "normaal",
@@ -446,29 +496,31 @@
       "url": "https://normaal.fr/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "Normaal",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
+      "studio": "Normaal",
+      "technique": "2D",
       "lieuDefaut": "Belgique",
-      "note": "Hors Paris : seules les offres en télétravail comptent."
+      "note": "Aucune page recrutement exposée ; flux vide."
     },
     {
       "id": "cartoonsaloon",
       "nom": "Cartoon Saloon",
-      "url": "https://www.cartoonsaloon.ie/",
+      "url": "https://www.cartoonsaloon.ie/irish-animation-studio/careers/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "Cartoon Saloon",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
+      "studio": "Cartoon Saloon",
+      "technique": "2D",
       "lieuDefaut": "Kilkenny",
-      "note": "Hors Paris : seules les offres en télétravail comptent."
+      "note": "Offres dans un iframe Occupop (api.occupop.com) : aucune vacance ouverte le 25/11/2026. Collecteur Occupop à écrire si le studio recrute."
     },
     {
       "id": "studiosouza",
@@ -476,44 +528,47 @@
       "url": "https://www.studiosouza.com/",
       "type": "carriere-studio",
       "methode": "html",
-      "actif": true,
-      "studio": "Studio Souza",
-      "technique": "2D",
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
+      "studio": "Studio Souza",
+      "technique": "2D",
       "lieuDefaut": "Inconnu",
-      "note": "Hors Paris : seules les offres en télétravail comptent."
+      "note": "Aucune page recrutement exposée."
     },
     {
       "id": "waooh",
       "nom": "Waooh (Liège)",
-      "url": "https://www.waooh.be/",
+      "url": "https://www.waooh.be/jobs/",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "studio": "Waooh (Liège)",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
-        "item": "a"
+        "item": "a[href*='/job_offer/']"
       },
+      "studio": "Waooh",
+      "technique": "2D",
       "lieuDefaut": "Liège",
-      "note": "Hors Paris : seules les offres en télétravail comptent."
+      "note": "Seule offre publiée : candidature spontanée (exclue). Liège : télétravail ?"
     },
     {
       "id": "kavaleer",
       "nom": "Kavaleer",
-      "url": "https://kavaleer.com/",
+      "url": "https://kavaleer.com/jobs/",
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "studio": "Kavaleer",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
+      "studio": "Kavaleer",
+      "technique": "2D",
       "lieuDefaut": "Dublin",
-      "note": "Hors Paris : seules les offres en télétravail comptent."
+      "note": "Page Jobs : « Nothing Found » le 25/11/2026 (Dublin)."
     },
     {
       "id": "fargo",
@@ -522,13 +577,14 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": false,
-      "studio": "Fargo",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
+      "studio": "Fargo",
+      "technique": "2D",
       "lieuDefaut": "Angoulême",
-      "note": "Injoignable lors des tests : URL à vérifier."
+      "note": "fargo-animation.com injoignable."
     },
     {
       "id": "jammedia",
@@ -537,13 +593,14 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": false,
-      "studio": "Jam Media",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
+      "studio": "Jam Media",
+      "technique": "2D",
       "lieuDefaut": "Dublin",
-      "note": "Le domaine est à vendre : URL à retrouver."
+      "note": "jam-media.com est en vente (hugedomains) : studio sans site."
     },
     {
       "id": "stim",
@@ -552,40 +609,43 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": false,
-      "studio": "Stim Studio",
-      "technique": "3D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
-      "note": "Studio 3D : désactivé par défaut."
+      "studio": "Stim Studio",
+      "technique": "3D",
+      "note": "Studio 3D : désactivé par défaut. La page /fr/recrutement est lisible (liste de liens) si besoin."
     },
     {
       "id": "illumination-paris",
-      "nom": "Illumination Studios Paris",
-      "url": "https://www.illuminationstudiosparis.com/",
+      "nom": "Illumination (Lever)",
+      "url": "https://jobs.lever.co/illumination",
       "type": "carriere-studio",
-      "methode": "html",
-      "actif": false,
-      "studio": "Illumination Studios Paris",
-      "technique": "3D",
+      "methode": "lever",
+      "actif": true,
+      "frequence": "6h",
       "selecteurs": {
         "item": "a"
       },
-      "note": "Studio 3D : désactivé par défaut."
+      "studio": "Illumination",
+      "technique": "3D",
+      "note": "API publique Lever (api.lever.co/v0/postings/illumination) : 0 offre publiée le 25/11/2026. Studio majoritairement 3D, mais storyboard/design 2D possibles : le classement décide."
     },
     {
       "id": "dwarf",
       "nom": "Dwarf Animation",
-      "url": "https://www.dwarfanimation.com/",
+      "url": "https://www.dwarfanimation.com/careers",
       "type": "carriere-studio",
       "methode": "html",
       "actif": false,
-      "studio": "Dwarf Animation",
-      "technique": "3D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
-      "note": "Studio 3D : désactivé par défaut."
+      "studio": "Dwarf Animation",
+      "technique": "3D",
+      "note": "Studio 3D : page careers « no position available » le 25/11/2026."
     },
     {
       "id": "angel",
@@ -594,12 +654,13 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": false,
-      "studio": "Angel Studios",
-      "technique": "2D",
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "a"
       },
-      "note": "Repéré mais hors cible probable (US) : désactivé."
+      "studio": "Angel Studios",
+      "technique": "2D",
+      "note": "Angel Studios (distribution/streaming), hors animation 2D : sans objet."
     },
     {
       "id": "filmfrance-annuaire",
@@ -608,7 +669,8 @@
       "type": "base-projets",
       "methode": "html",
       "actif": false,
-      "note": "Sert à découvrir des studios : à parcourir à la main pour trouver leur page recrutement."
+      "frequence": "quotidien",
+      "note": "Annuaire de studios, pas une source d'offres : sert à trouver de nouveaux studios, jamais collecté."
     },
     {
       "id": "catsuka",
@@ -616,7 +678,8 @@
       "url": "https://www.catsuka.com/syndication/rss2/news.php",
       "type": "actualite",
       "methode": "rss",
-      "actif": true
+      "actif": true,
+      "frequence": "6h"
     },
     {
       "id": "cartoonbrew",
@@ -624,7 +687,8 @@
       "url": "https://www.cartoonbrew.com/feed",
       "type": "actualite",
       "methode": "rss",
-      "actif": true
+      "actif": true,
+      "frequence": "6h"
     },
     {
       "id": "animationmagazine",
@@ -632,8 +696,9 @@
       "url": "https://www.animationmagazine.net/feed/",
       "type": "actualite",
       "methode": "rss",
-      "actif": true,
-      "note": "Renvoie 403 aux robots lors des tests."
+      "actif": false,
+      "frequence": "12h",
+      "note": "HTTP 403 (protection anti-robot) sur tous les flux : non contourné. Alternative : Google Actualités RSS site:animationmagazine.net (voir les sources Google Actualités, en attente)."
     },
     {
       "id": "kidscreen",
@@ -641,8 +706,9 @@
       "url": "https://kidscreen.com/feed/",
       "type": "actualite",
       "methode": "rss",
-      "actif": true,
-      "note": "Renvoie une page d'attente (202) lors des tests."
+      "actif": false,
+      "frequence": "12h",
+      "note": "Flux protégé par un défi anti-robot (HTTP 202 vide) : non contourné."
     },
     {
       "id": "deadline-animation",
@@ -650,7 +716,8 @@
       "url": "https://deadline.com/tag/animation/feed/",
       "type": "actualite",
       "methode": "rss",
-      "actif": true
+      "actif": true,
+      "frequence": "6h"
     },
     {
       "id": "variety-animation",
@@ -658,7 +725,8 @@
       "url": "https://variety.com/t/animation/feed/",
       "type": "actualite",
       "methode": "rss",
-      "actif": true
+      "actif": true,
+      "frequence": "6h"
     },
     {
       "id": "skwigly",
@@ -666,7 +734,8 @@
       "url": "https://www.skwigly.co.uk/feed/",
       "type": "actualite",
       "methode": "rss",
-      "actif": true
+      "actif": true,
+      "frequence": "12h"
     },
     {
       "id": "3dvf-actu",
@@ -674,7 +743,8 @@
       "url": "https://www.3dvf.com/feed",
       "type": "actualite",
       "methode": "rss",
-      "actif": true
+      "actif": true,
+      "frequence": "6h"
     },
     {
       "id": "ecran-total",
@@ -682,8 +752,9 @@
       "url": "https://www.ecran-total.fr/feed/",
       "type": "actualite",
       "methode": "rss",
-      "actif": true,
-      "note": "Renvoie 403 aux robots lors des tests."
+      "actif": false,
+      "frequence": "12h",
+      "note": "Flux /feed/ redirigé puis HTTP 403 (anti-robot) : non contourné."
     },
     {
       "id": "magelis",
@@ -691,7 +762,8 @@
       "url": "https://www.magelis.org/feed/",
       "type": "actualite",
       "methode": "rss",
-      "actif": true
+      "actif": true,
+      "frequence": "12h"
     },
     {
       "id": "cineuropa",
@@ -700,6 +772,7 @@
       "type": "actualite",
       "methode": "rss",
       "actif": false,
+      "frequence": "12h",
       "note": "403 lors des tests."
     },
     {
@@ -709,6 +782,7 @@
       "type": "actualite",
       "methode": "html",
       "actif": false,
+      "frequence": "12h",
       "selecteurs": {
         "item": "h2 a, h3 a, article a"
       },
@@ -721,6 +795,7 @@
       "type": "actualite",
       "methode": "html",
       "actif": false,
+      "frequence": "12h",
       "selecteurs": {
         "item": "h2 a, h3 a, article a"
       },
@@ -733,6 +808,7 @@
       "type": "actualite",
       "methode": "manuel",
       "actif": false,
+      "frequence": "12h",
       "note": "Payant : titres publics uniquement, sinon saisie manuelle."
     },
     {
@@ -742,6 +818,7 @@
       "type": "actualite",
       "methode": "manuel",
       "actif": false,
+      "frequence": "12h",
       "note": "Payant : titres publics uniquement, sinon saisie manuelle."
     },
     {
@@ -750,11 +827,12 @@
       "url": "https://www.cnc.fr/rss",
       "type": "actualite",
       "methode": "html",
-      "actif": true,
+      "actif": false,
+      "frequence": "12h",
       "selecteurs": {
         "item": "h2 a, h3 a, article a"
       },
-      "note": "L'URL /rss renvoie du HTML : à ajuster."
+      "note": "« /rss » du CNC renvoie une page HTML, pas un flux. Remplacée par les pages de résultats des commissions (aide aux techniques d'animation)."
     },
     {
       "id": "afca",
@@ -762,10 +840,12 @@
       "url": "https://www.afca.asso.fr/",
       "type": "actualite",
       "methode": "html",
-      "actif": true,
+      "actif": false,
+      "frequence": "12h",
       "selecteurs": {
         "item": "h2 a, h3 a, article a"
-      }
+      },
+      "note": "Pas de flux (404) ; page d'accueil sans article exploitable."
     },
     {
       "id": "cartoon-media",
@@ -773,10 +853,12 @@
       "url": "https://www.cartoon-media.eu/",
       "type": "base-projets",
       "methode": "html",
-      "actif": true,
+      "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "h2 a, h3 a, article a"
-      }
+      },
+      "note": "Pas de flux (404) et page d'accueil sans article exploitable."
     },
     {
       "id": "unifrance",
@@ -784,10 +866,12 @@
       "url": "https://www.unifrance.org/",
       "type": "actualite",
       "methode": "html",
-      "actif": true,
+      "actif": false,
+      "frequence": "12h",
       "selecteurs": {
         "item": "h2 a, h3 a, article a"
-      }
+      },
+      "note": "Cloudflare (« Just a moment ») sur tout le site : non contourné."
     },
     {
       "id": "scriptoclap",
@@ -796,6 +880,7 @@
       "type": "base-projets",
       "methode": "html",
       "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "h2 a, h3 a, article a"
       },
@@ -807,10 +892,12 @@
       "url": "https://www.auvergnerhonealpes-cinema.fr/",
       "type": "actualite",
       "methode": "html",
-      "actif": true,
+      "actif": false,
+      "frequence": "12h",
       "selecteurs": {
         "item": "h2 a, h3 a, article a"
-      }
+      },
+      "note": "Pas de flux ; page d'accueil sans article exploitable."
     },
     {
       "id": "animfrance",
@@ -818,10 +905,12 @@
       "url": "https://www.animfrance.fr/",
       "type": "actualite",
       "methode": "html",
-      "actif": true,
+      "actif": false,
+      "frequence": "12h",
       "selecteurs": {
         "item": "h2 a, h3 a, article a"
-      }
+      },
+      "note": "Pas de flux (404) ; page d'accueil sans article exploitable."
     },
     {
       "id": "annecy-mifa",
@@ -829,10 +918,12 @@
       "url": "https://www.annecyfestival.com/",
       "type": "actualite",
       "methode": "html",
-      "actif": true,
+      "actif": false,
+      "frequence": "12h",
       "selecteurs": {
         "item": "h2 a, h3 a, article a"
-      }
+      },
+      "note": "Pas de flux (404) ; page d'accueil sans article exploitable. Les résultats du festival sont de toute façon des palmarès, exclus du classement."
     },
     {
       "id": "cartoon-movie",
@@ -841,10 +932,308 @@
       "type": "base-projets",
       "methode": "html",
       "actif": false,
+      "frequence": "quotidien",
       "selecteurs": {
         "item": "h2 a, h3 a, article a"
       },
       "note": "Même domaine que Cartoon Media : désactivé tant que l'URL n'est pas confirmée."
+    },
+    {
+      "id": "fortiche",
+      "nom": "Fortiche (Paris)",
+      "url": "https://forticheprod.com/jobs",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "frequence": "12h",
+      "selecteurs": {
+        "item": "a.e-con[href*='/job-offers/']",
+        "titre": "h5.elementor-heading-title"
+      },
+      "studio": "Fortiche",
+      "lieuDefaut": "Paris",
+      "note": "Page jobs de forticheprod.com (cartes Elementor). Studio Paris 2D/3D (Arcane)."
+    },
+    {
+      "id": "magic-design",
+      "nom": "Magic Design Studios (Montpellier)",
+      "url": "https://www.magicdesignstudios.com/jobs-alert",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "frequence": "12h",
+      "selecteurs": {
+        "item": "h1",
+        "sansLien": true
+      },
+      "studio": "Magic Design Studios",
+      "technique": "2D",
+      "lieuDefaut": "Montpellier",
+      "note": "Page JOBS (Wix) : un h1 par offre. Jeu vidéo 2D (Spine), télétravail partiel possible."
+    },
+    {
+      "id": "weworkremotely-design",
+      "nom": "We Work Remotely (design, télétravail)",
+      "url": "https://weworkremotely.com/categories/remote-design-jobs.rss",
+      "type": "emploi",
+      "methode": "rss",
+      "actif": true,
+      "frequence": "12h",
+      "filtre": "animat|background|storyboard|illustrat|2d|concept art|colou?r|visual development",
+      "note": "Flux RSS officiel de la catégorie design : tout est en télétravail, le filtre ne garde que les intitulés d'animation et d'illustration. Résidence exigée détectée par le classement."
+    },
+    {
+      "id": "animationcareerreview",
+      "nom": "Animation Career Review",
+      "url": "https://www.animationcareerreview.com/rss.xml",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "frequence": "12h",
+      "note": "Flux d'actualités sur les carrières en animation (pas des offres)."
+    },
+    {
+      "id": "waooh-actus",
+      "nom": "Waooh (actualités)",
+      "url": "https://www.waooh.be/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "frequence": "quotidien",
+      "note": "Flux WordPress du studio de Liège."
+    },
+    {
+      "id": "xilam-actus",
+      "nom": "Xilam (actualités)",
+      "url": "https://xilam.com/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "frequence": "quotidien",
+      "note": "Annonces de mise en production (ex. Chickies)."
+    },
+    {
+      "id": "ellipse-actus",
+      "nom": "Ellipse Animation (actualités)",
+      "url": "https://www.ellipseanimation.com/news/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "frequence": "quotidien"
+    },
+    {
+      "id": "fost-actus",
+      "nom": "FOST (actualités)",
+      "url": "https://fost.studio/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "frequence": "quotidien"
+    },
+    {
+      "id": "mist-actus",
+      "nom": "Mist (actualités)",
+      "url": "https://mist.studio/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "frequence": "quotidien"
+    },
+    {
+      "id": "caribara-actus",
+      "nom": "Caribara (actualités)",
+      "url": "https://www.caribara-animation.com/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "frequence": "quotidien"
+    },
+    {
+      "id": "kavaleer-actus",
+      "nom": "Kavaleer (actualités)",
+      "url": "https://kavaleer.com/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "frequence": "quotidien"
+    },
+    {
+      "id": "animationxpress",
+      "nom": "AnimationXpress",
+      "url": "https://www.animationxpress.com/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "frequence": "12h"
+    },
+    {
+      "id": "c21media",
+      "nom": "C21Media (TV et coproductions)",
+      "url": "https://www.c21media.net/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "frequence": "12h",
+      "note": "Presse économique de la fiction TV : annonces de séries et coproductions."
+    },
+    {
+      "id": "indiewire-animation",
+      "nom": "IndieWire (animation)",
+      "url": "https://www.indiewire.com/c/animation/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "frequence": "12h"
+    },
+    {
+      "id": "fortiche-actus",
+      "nom": "Fortiche (actualités)",
+      "url": "https://forticheprod.com/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "frequence": "quotidien",
+      "note": "Le robots.txt de forticheprod.com interdit /feed/ : non collecté."
+    },
+    {
+      "id": "cnc-animation-2026",
+      "nom": "Aide aux techniques d’animation du CNC, commission 2026",
+      "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
+      "type": "base-projets",
+      "methode": "cnc",
+      "actif": true,
+      "frequence": "hebdo",
+      "note": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+    },
+    {
+      "id": "cnc-animation-2025-12",
+      "nom": "Aide aux techniques d’animation du CNC, commission du 2 décembre 2025",
+      "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-du-2-decembre-2025_2512567",
+      "type": "base-projets",
+      "methode": "cnc",
+      "actif": true,
+      "frequence": "hebdo",
+      "note": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+    },
+    {
+      "id": "cnc-animation-2025-09",
+      "nom": "Aide aux techniques d’animation du CNC, commission du 17 septembre 2025",
+      "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-du-17-septembre-2025_2504716",
+      "type": "base-projets",
+      "methode": "cnc",
+      "actif": true,
+      "frequence": "hebdo",
+      "note": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+    },
+    {
+      "id": "cnc-animation-2025-06",
+      "nom": "Aide aux techniques d’animation du CNC, commission du 26 juin 2025",
+      "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-du-26-juin-2025_2504660",
+      "type": "base-projets",
+      "methode": "cnc",
+      "actif": true,
+      "frequence": "hebdo",
+      "note": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+    },
+    {
+      "id": "cnc-animation-2025-03",
+      "nom": "Aide aux techniques d’animation du CNC, commission du 25 mars 2025",
+      "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-du-25-mars-2025_2419453",
+      "type": "base-projets",
+      "methode": "cnc",
+      "actif": true,
+      "frequence": "hebdo",
+      "note": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+    },
+    {
+      "id": "gn-fr-series-2d",
+      "nom": "Google Actualités : séries d’animation 2D en production",
+      "url": "https://news.google.com/rss/search?q=s%C3%A9rie+animation+2D+production&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "frequence": "6h",
+      "note": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-fr-longs",
+      "nom": "Google Actualités : longs métrages d’animation en production",
+      "url": "https://news.google.com/rss/search?q=long+m%C3%A9trage+d%27animation+production+OR+pr%C3%A9production&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "frequence": "6h",
+      "note": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-fr-studios",
+      "nom": "Google Actualités : studios d’animation français",
+      "url": "https://news.google.com/rss/search?q=studio+d%27animation+fran%C3%A7ais+s%C3%A9rie+OR+film&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "frequence": "6h",
+      "note": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-fr-decors",
+      "nom": "Google Actualités : décors et animation 2D",
+      "url": "https://news.google.com/rss/search?q=d%C3%A9cors+%22animation+2D%22&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "frequence": "6h",
+      "note": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-fr-cnc",
+      "nom": "Google Actualités : aide du CNC à l’animation",
+      "url": "https://news.google.com/rss/search?q=CNC+aide+animation+s%C3%A9rie+OR+film+financement&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "frequence": "6h",
+      "note": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-en-series",
+      "nom": "Google News : 2D animated series in production",
+      "url": "https://news.google.com/rss/search?q=2D+animated+series+%22in+production%22+OR+greenlit&hl=en&gl=US&ceid=US:en",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "frequence": "6h",
+      "note": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-en-features",
+      "nom": "Google News : hand-drawn animated feature in production",
+      "url": "https://news.google.com/rss/search?q=hand-drawn+animated+feature+production&hl=en&gl=US&ceid=US:en",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "frequence": "6h",
+      "note": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "gn-en-french",
+      "nom": "Google News : French animation studio series announced",
+      "url": "https://news.google.com/rss/search?q=French+animation+studio+series+announced+Paris&hl=en&gl=US&ceid=US:en",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "frequence": "6h",
+      "note": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+    },
+    {
+      "id": "productions-connues",
+      "nom": "Productions repérées à la main",
+      "url": "https://github.com",
+      "type": "base-projets",
+      "methode": "manuel",
+      "actif": false,
+      "frequence": "quotidien",
+      "note": "Fichier collector/config/productions-connues.json : toujours intégré à la collecte."
     }
   ]
 }
