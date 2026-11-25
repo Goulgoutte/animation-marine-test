@@ -7,6 +7,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useIndicateurs } from "@/lib/indicateurs";
 import { useStore } from "@/lib/store";
 import { AutoCloture } from "./AutoCloture";
+import { AutoImage } from "./AutoImage";
 import { Logo } from "./Logo";
 import { Recherche } from "./Recherche";
 import { SelecteurTheme } from "./Theme";
@@ -45,6 +46,7 @@ export function Shell({ children }: { children: ReactNode }) {
   return (
     <>
       <AutoCloture />
+      <AutoImage />
 
       {/* Barre latérale (ordinateur) */}
       <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 flex-col border-r border-line bg-surface md:flex" aria-label="Navigation principale">

@@ -1,10 +1,13 @@
 "use client";
 
-import { ArrowDownUp, BellRing, Check, Eye, Filter, Plus, Search, Users, X } from "lucide-react";
+import { ArrowDownUp, BellRing, Check, CheckSquare, Eye, Filter, Plus, Search, Users, X } from "lucide-react";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { ListeMobile } from "@/components/crm/ListeMobile";
 import { Popover } from "@/components/crm/Popover";
 import { Tableau } from "@/components/crm/Tableau";
+import { AssistantMail } from "@/components/mail/AssistantMail";
+import { BarreSelection } from "@/components/mail/BarreSelection";
+import { useMail } from "@/components/mail/useMail";
 import { useCrm } from "@/components/crm/useCrm";
 import { FicheContact } from "@/components/FicheContact";
 import { Champ, EnTete, Sheet, Vide } from "@/components/ui";
@@ -27,6 +30,9 @@ export default function Contacts() {
   const mobile = useMobile();
   const [ouvert, setOuvert] = useState<string | null>(null);
   const [nouveau, setNouveau] = useState(false);
+  const [selection, setSelection] = useState<Set<string> | null>(null); // mode sélection (envoi groupé)
+  const [assistant, setAssistant] = useState(false);
+  const mail = useMail();
 
   useEffect(() => {
     if (s.focus?.kind === "contact") {
@@ -37,6 +43,10 @@ export default function Contacts() {
 
   const courant = s.data.contacts.find((c) => c.id === ouvert) ?? null;
   const actifs = crm.filtre ? 1 : 0;
+  const idsVisibles = crm.groupes.filter((g) => !g.replie).flatMap((g) => crm.lignes(g.id).map((c) => c.id));
+  const basculer = (id: string) => setSelection((cur) => { const n = new Set(cur); if (n.has(id)) n.delete(id); else n.add(id); return n; });
+  const sel = selection ? { ids: selection, basculer } : undefined;
+  const choisis = selection ? s.data.contacts.filter((c) => selection.has(c.id)) : [];
 
   return (
     <>
@@ -58,6 +68,7 @@ export default function Contacts() {
         <BoutonFiltre crm={crm} actifs={actifs} nbRappel={contactsARecontacter.length} />
         {!mobile && <BoutonTri crm={crm} />}
         {!mobile && crm.masquees.length > 0 && <BoutonMasquees crm={crm} />}
+        <button className="bouton" aria-pressed={!!selection} onClick={() => setSelection(selection ? null : new Set())}><CheckSquare />{selection ? "Terminer la sélection" : "Sélectionner"}</button>
         <button className="bouton bouton-plein ml-auto" onClick={() => setNouveau(true)}><Plus />Nouveau contact</button>
       </div>
 
@@ -66,11 +77,19 @@ export default function Contacts() {
           Note ici les personnes rencontrées (superviseurs, chargées de production, RH…) et chaque échange : l’app te rappelle de reprendre contact au bout de {s.reglages.delai_contact_mois} mois.
         </Vide>
       ) : mobile ? (
-        <ListeMobile crm={crm} onOuvrir={setOuvert} />
+        <ListeMobile crm={crm} onOuvrir={setOuvert} selection={sel} />
       ) : (
-        <Tableau crm={crm} onOuvrir={setOuvert} />
+        <Tableau crm={crm} onOuvrir={setOuvert} selection={sel} />
       )}
 
+      {selection && (
+        <BarreSelection
+          n={selection.size} total={idsVisibles.length}
+          onTout={() => setSelection(new Set(idsVisibles))} onAucun={() => setSelection(new Set())}
+          onPreparer={() => setAssistant(true)} onAnnuler={() => setSelection(null)}
+        />
+      )}
+      {assistant && <AssistantMail cibles={choisis.map(mail.cibleContact)} onClose={() => { setAssistant(false); setSelection(null); }} />}
       {courant && <FicheContact c={courant} onClose={() => setOuvert(null)} />}
       {nouveau && (
         <Sheet titre="Nouveau contact" onClose={() => setNouveau(false)}>

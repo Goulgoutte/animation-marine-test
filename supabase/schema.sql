@@ -28,6 +28,9 @@ create table if not exists public.candidatures (
   prochaine_action_date date,
   motif_cloture text,
   date_statut date,                              -- dernier changement de statut
+  image text,                                    -- URL de la vignette (copiée de l'offre ou de la production liée)
+  email_destinataire text,                       -- destinataire du mail (par défaut l'e-mail du contact lié)
+  gmail_brouillon_id text,                       -- brouillon Gmail créé, pas encore envoyé
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -117,6 +120,18 @@ create table if not exists public.reglages (
   delai_relance_2 int not null default 15,       -- jours ouvrés après la relance précédente
   delai_contact_mois int not null default 3,
   derniere_visite timestamptz,                   -- badge « Nouveau »
+  profil_mail jsonb not null default '{}'::jsonb, -- profil d'envoi : prénom, nom, signature, portfolio, CV, adresse affichée
+  created_at timestamptz not null default now()
+);
+
+-- --------------------------------------------------------------- modèles de mail
+create table if not exists public.modeles_mail (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  nom text not null default '',
+  sujet text not null default '',
+  corps text not null default '',                -- variables {{studio}}, {{poste}}, {{contact_prenom}}…
+  categorie text not null default 'candidature', -- candidature | relance | remerciement | autre
   created_at timestamptz not null default now()
 );
 
@@ -131,7 +146,7 @@ declare
 begin
   foreach t in array array[
     'candidatures', 'relances', 'contacts', 'echanges', 'offres_manuelles',
-    'productions_manuelles', 'corrections', 'masquages', 'reglages'
+    'productions_manuelles', 'corrections', 'masquages', 'reglages', 'modeles_mail'
   ]
   loop
     execute format('alter table public.%I enable row level security', t);

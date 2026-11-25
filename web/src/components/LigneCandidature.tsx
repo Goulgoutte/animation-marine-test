@@ -1,16 +1,18 @@
 "use client";
 
-import { Check, CalendarClock, MessageSquareReply, Send, Undo2 } from "lucide-react";
+import { Check, CalendarClock, FilePen, Mail, MessageSquareReply, Send, Undo2 } from "lucide-react";
 import { useState } from "react";
-import { Avatar, Champ, Sheet } from "@/components/ui";
+import { Champ, Sheet, Vignette } from "@/components/ui";
 import { ETAPES, derniereActivite, estCloturee, etapeCourante, prochaineAction, stagne, changementStatut } from "@/lib/actions";
 import { addDays, diffDays, fmtCourt, today } from "@/lib/dates";
 import { relancesDe } from "@/lib/relances";
+import { imageLiee } from "@/lib/candidature";
 import { useStore } from "@/lib/store";
 import { STATUTS, labelStatut, type Candidature, type Statut } from "@/lib/types";
 import { couleurStatut } from "./BadgeStatut";
+import { FenetreMail } from "./mail/FenetreMail";
 
-type Dialogue = { c: Candidature; mode: "entretien" | "reponse" } | null;
+type Dialogue = { c: Candidature; mode: "entretien" | "reponse" | "mail" } | null;
 
 /** Changements de statut et actions rapides : mettent à jour statut, dates et historique des relances. */
 export function useActionsCandidature() {
@@ -24,6 +26,7 @@ export function useActionsCandidature() {
     fermer: () => setDialogue(null),
     ouvrirEntretien: (c: Candidature) => setDialogue({ c, mode: "entretien" }),
     ouvrirReponse: (c: Candidature) => setDialogue({ c, mode: "reponse" }),
+    ouvrirMail: (c: Candidature) => setDialogue({ c, mode: "mail" }),
     statut(c: Candidature, statut: Statut) {
       if (c.statut !== statut) maj(c, changementStatut(c, statut));
     },
@@ -121,6 +124,7 @@ function BoutonsRapides({ c, actions }: { c: Candidature; actions: Actions }) {
       {(c.statut === "envoyee" || c.statut === "relancee") && nbRelances < 2 && <button className={b} onClick={() => actions.relance(c)}><Check />J’ai relancé</button>}
       {(c.statut === "envoyee" || c.statut === "relancee") && <button className={b} onClick={() => actions.ouvrirEntretien(c)}><CalendarClock />Entretien fixé</button>}
       {c.statut !== "a_preparer" && <button className={b} onClick={() => actions.ouvrirReponse(c)}><MessageSquareReply />Réponse reçue</button>}
+      <button className={b} onClick={() => actions.ouvrirMail(c)}><Mail />Préparer le mail</button>
     </div>
   );
 }
@@ -136,22 +140,40 @@ function MenuStatut({ c, actions }: { c: Candidature; actions: Actions }) {
   );
 }
 
-export function LigneCandidature({ c, actions, onOuvrir }: { c: Candidature; actions: Actions; onOuvrir: () => void }) {
-  const { data, reglages } = useStore();
+/** Mode sélection (envoi groupé) : case à cocher en tête de ligne. */
+export interface SelectionLigne {
+  coche: boolean;
+  basculer: () => void;
+}
+
+export function BadgeBrouillon({ c }: { c: Candidature }) {
+  if (!c.gmail_brouillon_id) return null;
+  return <span className="badge c-ok" title="Un brouillon Gmail est prêt à relire et envoyer"><FilePen />Brouillon Gmail prêt</span>;
+}
+
+export function LigneCandidature({ c, actions, onOuvrir, selection }: { c: Candidature; actions: Actions; onOuvrir: () => void; selection?: SelectionLigne }) {
+  const { data, reglages, collecte } = useStore();
+  const image = imageLiee(c, collecte, data);
   const echue = !estCloturee(c) && !!prochaineAction(c, data.relances, reglages)?.echue;
   const stop = (e: React.SyntheticEvent) => e.stopPropagation();
   return (
     <li
-      onClick={onOuvrir}
+      onClick={selection ? selection.basculer : onOuvrir}
       className="carte carte-lien grid cursor-pointer gap-x-4 gap-y-2.5 p-3.5 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.95fr)_minmax(0,1.75fr)_auto] md:items-center"
-      style={{ borderLeft: echue ? "3px solid var(--danger)" : undefined }}
+      style={{ borderLeft: echue ? "3px solid var(--danger)" : undefined, boxShadow: selection?.coche ? "0 0 0 2px var(--accent)" : undefined }}
     >
       <div className="flex min-w-0 items-center gap-3">
-        <Avatar nom={c.studio || "?"} taille={40} />
+        {selection && (
+          <input type="checkbox" className="h-[18px] w-[18px] flex-none accent-[var(--accent)]" checked={selection.coche} onChange={selection.basculer} onClick={stop} aria-label={`Sélectionner ${c.studio || "la candidature"}`} />
+        )}
+        <Vignette image={image} nom={c.studio || "?"} taille={40} />
         <div className="min-w-0">
           <button onClick={(e) => { stop(e); onOuvrir(); }} className="block max-w-full truncate text-left text-[14px] font-semibold leading-tight hover:underline">{c.studio || "Sans studio"}</button>
           <p className="truncate text-[12.5px] text-muted">{c.poste || "Poste non précisé"}</p>
-          <span className={`badge mt-1 ${c.categorie === "decor" ? "c-accent" : "c-mute"}`}>{c.categorie === "decor" ? "Décor" : "Autre métier"}</span>
+          <span className="mt-1 flex flex-wrap gap-1">
+            <span className={`badge ${c.categorie === "decor" ? "c-accent" : "c-mute"}`}>{c.categorie === "decor" ? "Décor" : "Autre métier"}</span>
+            <BadgeBrouillon c={c} />
+          </span>
         </div>
       </div>
       <div className="flex flex-col gap-1">
@@ -171,6 +193,7 @@ export function LigneCandidature({ c, actions, onOuvrir }: { c: Candidature; act
 export function DialogueAction({ actions }: { actions: Actions }) {
   const d = actions.dialogue;
   if (!d) return null;
+  if (d.mode === "mail") return <FenetreMail key={d.c.id} c={d.c} onClose={actions.fermer} />;
   return <Contenu key={`${d.c.id}-${d.mode}`} c={d.c} mode={d.mode} actions={actions} />;
 }
 

@@ -3,6 +3,9 @@ import { addDays, today } from "@/lib/dates";
 import type { Donnees } from "@/lib/types";
 import { REGLAGES_DEFAUT } from "@/lib/types";
 
+// Vignette de démonstration (SVG intégré : aucun accès réseau).
+const IMAGE_DEMO = `data:image/svg+xml;utf8,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b8def"/><stop offset="1" stop-color="#b06ad8"/></linearGradient></defs><rect width="80" height="80" fill="url(#g)"/><path d="M0 56 C18 38 32 46 46 52 S70 36 80 48 V80 H0Z" fill="#fff" opacity=".35"/><circle cx="58" cy="22" r="8" fill="#ffe08a"/></svg>')}`;
+
 // Jeu de départ du mode démo (localStorage) : de quoi voir les trois pages remplies.
 export function donneesDemo(): Donnees {
   const t = today();
@@ -21,10 +24,13 @@ export function donneesDemo(): Donnees {
     prochaine_action_date: null,
     motif_cloture: null,
     date_statut: null,
+    image: null,
+    email_destinataire: null,
+    gmail_brouillon_id: null,
   };
   return {
     candidatures: [
-      { ...base, id: "demo-c1", studio: "Caribara", poste: "Candidature spontanée, décor couleur", type: "spontanee", categorie: "decor", date_envoi: addDays(t, -20), canal: "mail", statut: "envoyee", contact_id: "demo-k1", production_id: "prod-demo-1" },
+      { ...base, id: "demo-c1", studio: "Caribara", poste: "Candidature spontanée, décor couleur", type: "spontanee", categorie: "decor", date_envoi: addDays(t, -20), canal: "mail", statut: "envoyee", contact_id: "demo-k1", production_id: "prod-demo-1", image: IMAGE_DEMO },
       { ...base, id: "demo-c2", studio: "Miyu Productions", poste: "Layout décor, série", type: "offre", categorie: "decor", date_envoi: addDays(t, -40), canal: "formulaire", statut: "relancee" },
       { ...base, id: "demo-c3", studio: "Folivari", poste: "Background artist", type: "offre", categorie: "decor", date_envoi: addDays(t, -6), canal: "linkedin", statut: "envoyee" },
       { ...base, id: "demo-c4", studio: "Blue Spirit", poste: "Color key artist", type: "offre", categorie: "decor", date_envoi: addDays(t, -30), canal: "recommandation", statut: "entretien", prochaine_action: "Entretien visio avec la direction artistique", prochaine_action_date: addDays(t, 3), date_statut: addDays(t, -5) },
@@ -54,6 +60,7 @@ export function donneesDemo(): Donnees {
     masquages: [],
     crm_colonnes: colonnesParDefaut((cle) => `demo-col-${cle}`),
     crm_groupes: groupesParDefaut((i) => `demo-g${i}`),
+    modeles_mail: [],
     reglages: [{ id: "demo-reglages", ...REGLAGES_DEFAUT, derniere_visite: addDays(t, -3) + "T08:00:00.000Z" }],
   };
 }

@@ -5,6 +5,7 @@ import type { FichierOffres, FichierProductions, FichierSources } from "@shared/
 import { donneesDemo } from "@/fixtures/demo";
 import { offresFixture, productionsFixture, sourcesFixture } from "@/fixtures/donnees";
 import { uid } from "./dates";
+import { capturerJeton } from "./gmail";
 import { BASE_PATH, MODE_DEMO, profilDe, supabase, type Profil } from "./supabase";
 import { Connexion } from "@/components/Connexion";
 import { SqueletteApp } from "@/components/ui";
@@ -13,7 +14,7 @@ import { REGLAGES_DEFAUT, TABLE_NAMES, type Donnees, type Reglages, type TableNa
 const CLE_DEMO = "veille-animation-demo-v1";
 const vide = (): Donnees => ({
   candidatures: [], relances: [], contacts: [], echanges: [], offres_manuelles: [],
-  productions_manuelles: [], corrections: [], masquages: [], reglages: [], crm_colonnes: [], crm_groupes: [],
+  productions_manuelles: [], corrections: [], masquages: [], reglages: [], crm_colonnes: [], crm_groupes: [], modeles_mail: [],
 });
 
 export interface Collecte {
@@ -96,11 +97,13 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (!sb) return;
     sb.auth.getSession().then(({ data: d }) => {
+      capturerJeton(d.session);
       setSession(!!d.session);
       setProfil(profilDe(d.session?.user));
       if (!d.session) setPret(true);
     });
     const { data: sub } = sb.auth.onAuthStateChange((_e, s) => {
+      capturerJeton(s);
       setSession(!!s);
       setProfil(profilDe(s?.user));
     });

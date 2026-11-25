@@ -1,9 +1,12 @@
 "use client";
 
-import { BellRing, Briefcase, CalendarCheck, CheckCheck, Clock, Plus, Search, Send } from "lucide-react";
+import { BellRing, Briefcase, CalendarCheck, CheckCheck, CheckSquare, Clock, Plus, Search, Send } from "lucide-react";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { DialogueAction, LigneCandidature, useActionsCandidature } from "@/components/LigneCandidature";
 import { FicheCandidature } from "@/components/FicheCandidature";
+import { AssistantMail } from "@/components/mail/AssistantMail";
+import { BarreSelection } from "@/components/mail/BarreSelection";
+import { useMail } from "@/components/mail/useMail";
 import { Champ, EnTete, Onglets, Sheet, Vide } from "@/components/ui";
 import { SEUIL_STAGNE, derniereActivite, estCloturee, prochaineAction, sectionDe, stagne, type Section } from "@/lib/actions";
 import { nouvelleCandidature } from "@/lib/candidature";
@@ -28,6 +31,9 @@ export default function Candidatures() {
   const [nouvelle, setNouvelle] = useState(false);
   const [q, setQ] = useState("");
   const [seulementStagne, setSeulementStagne] = useState(false);
+  const [selection, setSelection] = useState<Set<string> | null>(null); // mode sélection (envoi groupé)
+  const [assistant, setAssistant] = useState(false);
+  const mail = useMail();
   const { candidatures, relances } = s.data;
 
   useEffect(() => {
@@ -81,6 +87,13 @@ export default function Candidatures() {
     setOuverte(c.id);
   }
 
+  const visibles = onglet === "cloturees" ? cloturees : SECTIONS.flatMap((x) => parSection[x.id]);
+  const basculer = (id: string) => setSelection((cur) => { const n = new Set(cur); if (n.has(id)) n.delete(id); else n.add(id); return n; });
+  const ligne = (c: Candidature) => (
+    <LigneCandidature key={c.id} c={c} actions={actions} onOuvrir={() => setOuverte(c.id)} selection={selection ? { coche: selection.has(c.id), basculer: () => basculer(c.id) } : undefined} />
+  );
+  const choisies = selection ? candidatures.filter((c) => selection.has(c.id)) : [];
+
   const totalVisible = SECTIONS.reduce((n, x) => n + parSection[x.id].length, 0);
 
   return (
@@ -109,6 +122,7 @@ export default function Candidatures() {
 
       <div className="mb-3 mt-5 flex flex-wrap items-center gap-2.5">
         <Onglets valeur={onglet} onChange={setOnglet} options={[{ id: "actives", label: <>En cours<span className="text-muted">{nbActives}</span></> }, { id: "cloturees", label: <>Clôturées<span className="text-muted">{nbCloturees}</span></> }]} />
+        <button className="bouton" aria-pressed={!!selection} onClick={() => setSelection(selection ? null : new Set())}><CheckSquare />{selection ? "Terminer la sélection" : "Sélectionner"}</button>
         <label className="relative ml-auto w-full sm:w-64">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
           <input className="champ !pl-9" placeholder="Filtrer par studio ou poste…" aria-label="Filtrer les candidatures" value={q} onChange={(e) => setQ(e.target.value)} />
@@ -123,7 +137,7 @@ export default function Candidatures() {
         cloturees.length === 0 ? (
           <Vide icone={CheckCheck} titre="Rien de clôturé">{q ? `Aucune candidature clôturée ne correspond à « ${q} ».` : "Les candidatures acceptées, refusées ou restées sans réponse se rangent ici, avec leur motif."}</Vide>
         ) : (
-          <ul className="grid gap-2.5">{cloturees.map((c) => <LigneCandidature key={c.id} c={c} actions={actions} onOuvrir={() => setOuverte(c.id)} />)}</ul>
+          <ul className="grid gap-2.5">{cloturees.map(ligne)}</ul>
         )
       ) : totalVisible === 0 ? (
         <Vide icone={Search} titre={seulementStagne ? "Rien ne stagne" : "Aucun résultat"}>{seulementStagne ? `Toutes tes candidatures en cours ont bougé depuis moins de ${SEUIL_STAGNE} jours.` : `Aucune candidature en cours ne correspond à « ${q} ».`}</Vide>
@@ -142,7 +156,7 @@ export default function Candidatures() {
                 {liste.length === 0 ? (
                   <p className="flex items-center gap-2 rounded-xl border border-dashed border-line px-4 py-3 text-[13px] text-muted"><CheckCheck className="h-4 w-4 flex-none text-ok" />Rien à faire maintenant. Une candidature envoyée remonte ici après {s.reglages.delai_relance_1} jours ouvrés.</p>
                 ) : (
-                  <ul className="grid gap-2.5">{liste.map((c) => <LigneCandidature key={c.id} c={c} actions={actions} onOuvrir={() => setOuverte(c.id)} />)}</ul>
+                  <ul className="grid gap-2.5">{liste.map(ligne)}</ul>
                 )}
               </section>
             );
@@ -150,6 +164,14 @@ export default function Candidatures() {
         </div>
       )}
 
+      {selection && (
+        <BarreSelection
+          n={selection.size} total={visibles.length}
+          onTout={() => setSelection(new Set(visibles.map((c) => c.id)))} onAucun={() => setSelection(new Set())}
+          onPreparer={() => setAssistant(true)} onAnnuler={() => setSelection(null)}
+        />
+      )}
+      {assistant && <AssistantMail cibles={choisies.map(mail.cibleCandidature)} onClose={() => { setAssistant(false); setSelection(null); }} />}
       <DialogueAction actions={actions} />
       {courante && <FicheCandidature c={courante} onClose={() => setOuverte(null)} />}
       {nouvelle && (
