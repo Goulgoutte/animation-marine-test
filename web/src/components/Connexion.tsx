@@ -1,7 +1,7 @@
 "use client";
 
-import { BellRing, Kanban, Radar } from "lucide-react";
 import { useState } from "react";
+import { DecorIllustration } from "./DecorIllustration";
 import { Logo } from "./Logo";
 import { Squelette } from "./ui";
 import { BASE_PATH, supabase } from "@/lib/supabase";
@@ -16,12 +16,6 @@ function GoogleG() {
     </svg>
   );
 }
-
-const points = [
-  { icone: Radar, titre: "Veille automatique", texte: "Offres et productions 2D à Paris ou en télétravail, triées pour toi." },
-  { icone: Kanban, titre: "Candidatures suivies", texte: "Un kanban, des relances calculées, plus rien d’oublié." },
-  { icone: BellRing, titre: "Réseau entretenu", texte: "Qui tu as vu, quand, et qui recontacter." },
-];
 
 export function Connexion({ pret }: { pret: boolean }) {
   const [etat, setEtat] = useState<"repos" | "envoi" | "erreur">("repos");
@@ -40,27 +34,10 @@ export function Connexion({ pret }: { pret: boolean }) {
   }
 
   return (
-    <main className="grid min-h-dvh grid-cols-1 lg:grid-cols-[1.05fr_1fr]">
-      <section className="relative hidden overflow-hidden p-12 text-white lg:flex lg:flex-col lg:justify-between" style={{ background: "linear-gradient(150deg,#4a4ac4 0%,#6a5be0 55%,#8b6df0 100%)" }}>
-        <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-white/10 blur-2xl" />
-        <div aria-hidden className="pointer-events-none absolute -bottom-32 -left-16 h-96 w-96 rounded-full bg-black/15 blur-3xl" />
-        <span className="relative text-[15px] font-bold tracking-tight">Veille animation</span>
-        <div className="relative max-w-md">
-          <h2 className="text-4xl font-bold leading-tight tracking-tight">Trouver le prochain décor, au bon moment.</h2>
-          <ul className="mt-10 space-y-6">
-            {points.map((p) => (
-              <li key={p.titre} className="flex gap-4">
-                <span className="grid h-10 w-10 flex-none place-items-center rounded-xl bg-white/15"><p.icone className="h-5 w-5" /></span>
-                <span>
-                  <strong className="block text-[15px]">{p.titre}</strong>
-                  <span className="text-[13.5px] text-white/75">{p.texte}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <span className="relative text-xs text-white/60">Animation 2D · décor, layout, background</span>
-      </section>
+    <main className="grid min-h-dvh grid-cols-1 lg:grid-cols-[55fr_45fr]">
+      <div className="lg:p-4">
+        <DecorIllustration className="h-[35vh] min-h-[220px] rounded-b-[28px] lg:sticky lg:top-4 lg:h-[calc(100dvh-2rem)] lg:rounded-[28px]" />
+      </div>
 
       <section className="flex flex-col items-center justify-center px-6 py-12 pt-[max(48px,env(safe-area-inset-top))]">
         <div className="anim-entree w-full max-w-sm">

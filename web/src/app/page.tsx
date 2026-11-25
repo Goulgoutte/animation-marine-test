@@ -5,7 +5,7 @@ import { ArrowRight, CalendarCheck, Check, CheckCircle2, Film, Radar, RefreshCw,
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo } from "react";
-import { Avatar, Kpi, Vide } from "@/components/ui";
+import { Avatar, Kpi, Vide, Vignette } from "@/components/ui";
 import { fmtCourt, ilYa, diffDays, today } from "@/lib/dates";
 import { envoyeesParSemaine, REPONDUES, useIndicateurs } from "@/lib/indicateurs";
 import { prochaineRelance } from "@/lib/relances";
@@ -220,7 +220,7 @@ export default function Accueil() {
               {ind.offresPerimetre.slice(0, 5).map((o) => (
                 <li key={o.id}>
                   <button onClick={() => ouvrir({ kind: "offre", id: o.id }, "/veille/")} className="-mx-2 flex w-[calc(100%+1rem)] items-center gap-3 rounded-xl px-2 py-2.5 text-left transition-colors hover:bg-surface-2">
-                    <Avatar nom={o.studio ?? o.titre} taille={36} />
+                    <Vignette image={o.image} nom={o.studio ?? o.titre} taille={36} />
                     <span className="min-w-0 flex-1">
                       <span className="block truncate text-[13.5px] font-semibold">{o.titre}</span>
                       <span className="micro block truncate">{[o.studio, LABEL_MODE[o.modeTravail]].filter(Boolean).join(" · ")}</span>
@@ -245,7 +245,7 @@ export default function Accueil() {
               {ind.prodsSurveillees.slice(0, 5).map((p) => (
                 <li key={p.id}>
                   <button onClick={() => ouvrir({ kind: "production", id: p.id }, "/veille/")} className="-mx-2 flex w-[calc(100%+1rem)] items-center gap-3 rounded-xl px-2 py-2.5 text-left transition-colors hover:bg-surface-2">
-                    <Avatar nom={p.studiosFabrication[0] ?? p.producteurs[0] ?? p.titre} taille={36} />
+                    <Vignette image={p.image} nom={p.studiosFabrication[0] ?? p.producteurs[0] ?? p.titre} taille={36} />
                     <span className="min-w-0 flex-1">
                       <span className="block truncate text-[13.5px] font-semibold">{p.titre}</span>
                       <span className="micro block truncate">{[LABEL_FORMAT[p.format], LABEL_STATUT_PROD[p.statut], p.producteurs[0]].filter(Boolean).join(" · ")}</span>

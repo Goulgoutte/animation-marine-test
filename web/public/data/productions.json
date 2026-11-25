@@ -1,65 +1,39 @@
 {
-  "genereLe": "2026-11-25T15:46:49.952Z",
+  "genereLe": "2026-11-25T16:36:07.911Z",
   "productions": [
     {
-      "id": "3d2de840d161",
-      "titre": "Les Vacances de Zoé",
-      "format": "serie",
-      "technique": "2D",
+      "id": "a0943d8dfc99",
+      "titre": "Guest post: Irish-Australian Co-production Opportunities in Animation",
+      "format": "inconnu",
+      "technique": "inconnue",
       "producteurs": [],
       "studiosFabrication": [],
       "paysCoproducteurs": [],
       "paysDecors": null,
       "diffuseur": null,
       "realisateur": null,
-      "statut": "preproduction",
+      "statut": "inconnu",
       "dateDemarrage": null,
       "villeFabrication": null,
       "contactRecrutement": null,
-      "extrait": "La série d'animation 2D de 52 x 11 minutes, réalisée par Camille Martin, sera fabriquée à Paris avec le soutien du CNC.",
-      "premiereVue": "2026-11-23T15:46:49.952Z",
-      "misEnAvant": true,
-      "bonMomentDecor": true,
-      "sources": [
-        {
-          "sourceId": "exemple",
-          "url": "https://exemple.invalid/prod/1",
-          "vuLe": "2026-11-23T15:46:49.952Z"
-        }
-      ]
-    },
-    {
-      "id": "1016082ab9bf",
-      "titre": "La Rivière aux oiseaux",
-      "format": "long-metrage",
-      "technique": "2D",
-      "producteurs": [],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": null,
-      "statut": "financement",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "Film d'animation 2D dessiné à la main, tour de table bouclé avec France Télévisions. Fabrication prévue à Angoulême.",
-      "premiereVue": "2026-11-21T15:46:49.952Z",
+      "extrait": "By Zoe Smith, Market Executive for the Digital Creative Sector at Enterprise Ireland Australia and New Zealand A Natural Creative Partnership. I’ll admit that I still tend to assume everyone is still experiencing a degree of online event fatigue, scarred by the COVID-era webinar boom when it seemed we might never meet in person again. I recently took part in... The post Guest post: Irish-Australi…",
+      "image": "https://animationireland.com/wp-content/uploads/2026/09/Zoe-from-EI-1024x640.jpg",
+      "premiereVue": "2026-11-25T16:36:07.911Z",
       "misEnAvant": false,
-      "bonMomentDecor": true,
+      "bonMomentDecor": false,
       "sources": [
         {
-          "sourceId": "exemple",
-          "url": "https://exemple.invalid/prod/2",
-          "vuLe": "2026-11-21T15:46:49.952Z"
+          "sourceId": "animation-ireland-rss",
+          "url": "https://animationireland.com/irish-australian-co-production-opportunities-in-animation/",
+          "vuLe": "2026-11-25T16:36:07.911Z"
         }
       ]
     },
     {
-      "id": "6247e7f7b1e0",
-      "titre": "Petit Loup des neiges",
-      "format": "long-metrage",
-      "technique": "2D",
+      "id": "7806d4efe1e6",
+      "titre": "Animation Ireland at Annecy!",
+      "format": "inconnu",
+      "technique": "inconnue",
       "producteurs": [],
       "studiosFabrication": [],
       "paysCoproducteurs": [],
@@ -70,49 +44,107 @@
       "dateDemarrage": null,
       "villeFabrication": null,
       "contactRecrutement": null,
-      "extrait": "Un long-métrage animé en 2D, présenté en pitch à Cartoon Movie. Coproduction France-Belgique.",
-      "premiereVue": "2026-11-20T15:46:49.952Z",
+      "extrait": "A strong delegation of over 200 participants from Ireland (professionals and students) attended the world-renowned Annecy Animation Festival last month. For Animation Ireland, the NTAA and our 40 members, this might have been our busiest MIFA yet, with a busy week on the Ireland stand, where the team facilitated over 66 of meetings (33 hrs) over the four days of... The post Animation Ireland at A…",
+      "image": "https://animationireland.com/wp-content/uploads/2026/07/Team-at-Annecy2-1024x678.jpg",
+      "premiereVue": "2026-11-25T16:36:07.911Z",
       "misEnAvant": false,
       "bonMomentDecor": false,
       "sources": [
         {
-          "sourceId": "exemple",
-          "url": "https://exemple.invalid/prod/3",
-          "vuLe": "2026-11-20T15:46:49.952Z"
+          "sourceId": "animation-ireland-rss",
+          "url": "https://animationireland.com/animation-ireland-at-annecy/",
+          "vuLe": "2026-11-25T16:36:07.911Z"
         }
       ]
     },
     {
-      "id": "c01faa364b44",
-      "titre": "Night Garden Club",
-      "format": "serie",
-      "technique": "2D",
+      "id": "424195aa1692",
+      "titre": "CALM: An animated feature based on Cuentos de amor de locura y de muerte – in development at La Mola Studio",
+      "format": "court",
+      "technique": "inconnue",
       "producteurs": [],
       "studiosFabrication": [],
       "paysCoproducteurs": [],
       "paysDecors": null,
       "diffuseur": null,
       "realisateur": null,
-      "statut": "production",
+      "statut": "developpement",
       "dateDemarrage": null,
       "villeFabrication": null,
       "contactRecrutement": null,
-      "extrait": "The hand-drawn animated series enters production at a Dublin studio, with 26 episodes. Backgrounds will be done remotely.",
-      "premiereVue": "2026-11-22T15:46:49.952Z",
+      "extrait": "La Mola Studio is developing a feature film that brings together different animation techniques and artistic perspectives, with collaborations from Ibero- American studios and the life of Uruguayan writer Horacio Quiroga as its connecting thread. After exploring the universe of Horacio Quiroga in the short film CALM, the Last Tale of Horacio Quiroga, filmmakers Álvaro […] The post CALM: An animat…",
+      "image": "https://www.skwigly.co.uk/wp-content/uploads/2026/11/calm_feat.jpg",
+      "premiereVue": "2026-11-25T16:36:07.911Z",
       "misEnAvant": false,
-      "bonMomentDecor": true,
+      "bonMomentDecor": false,
       "sources": [
         {
-          "sourceId": "exemple",
-          "url": "https://exemple.invalid/prod/4",
-          "vuLe": "2026-11-22T15:46:49.952Z"
+          "sourceId": "skwigly",
+          "url": "https://www.skwigly.co.uk/la-mola-studio-calm/",
+          "vuLe": "2026-11-25T16:36:07.911Z"
         }
       ]
     },
     {
-      "id": "b99ae57d436d",
-      "titre": "Mini Monstres",
-      "format": "serie",
+      "id": "94d506ad270d",
+      "titre": "Animation Production Days 2027 – Call for Projects",
+      "format": "inconnu",
+      "technique": "inconnue",
+      "producteurs": [],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "financement",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "Project submissions are now open for the 21st edition of Animation Production Days (APD). Taking place in Stuttgart from 27 to 29 April 2027, APD brings together animation producers and creatives with potential partners from across the industry. APD is the leading co-production and financing market for animation in German-speaking countries, providing a platform for […] The post Animation Product…",
+      "image": "https://www.skwigly.co.uk/wp-content/uploads/2025/12/Animation-Production-Days-logo.jpg",
+      "premiereVue": "2026-11-25T16:36:07.911Z",
+      "misEnAvant": false,
+      "bonMomentDecor": true,
+      "sources": [
+        {
+          "sourceId": "skwigly",
+          "url": "https://www.skwigly.co.uk/animation-production-days-2027-call-for-projects/",
+          "vuLe": "2026-11-25T16:36:07.911Z"
+        }
+      ]
+    },
+    {
+      "id": "417bcebbf324",
+      "titre": "CEE Animation Forum 2026 Crowns Winners",
+      "format": "long-metrage",
+      "technique": "inconnue",
+      "producteurs": [],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "financement",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "Hungarian How to Become a Landlord wins the audience award, while Polish Dancing Bears is named best feature film at the leading regional pitching, financing, and co-production market for European animated projects. Ukrainian-Czech Illogical Adult World wins the Council of Europe Series Co-Production Development Award. The winners of the 14th CEE Animation Forum were announced […] The post CEE An…",
+      "image": "https://www.skwigly.co.uk/wp-content/uploads/2026/11/CEE-Animation-Forum-2026-Crowns-Winners.jpg",
+      "premiereVue": "2026-11-25T16:36:07.911Z",
+      "misEnAvant": false,
+      "bonMomentDecor": true,
+      "sources": [
+        {
+          "sourceId": "skwigly",
+          "url": "https://www.skwigly.co.uk/cee-animation-forum-2026-crowns-winners/",
+          "vuLe": "2026-11-25T16:36:07.911Z"
+        }
+      ]
+    },
+    {
+      "id": "f63f4dbc2974",
+      "titre": "Gaussian Splatting, l’avenir du scan 3D ? Comprendre les bases et débuter",
+      "format": "inconnu",
       "technique": "3D",
       "producteurs": [],
       "studiosFabrication": [],
@@ -124,69 +156,16 @@
       "dateDemarrage": null,
       "villeFabrication": null,
       "contactRecrutement": null,
-      "extrait": "La série d'animation en images de synthèse (Maya, Houdini) démarre sa fabrication à Lyon.",
-      "premiereVue": "2026-11-19T15:46:49.952Z",
+      "extrait": "A l’occasion du Forum Ecoles Studios 2026 porté par Noranim, Benoît Rogez (auteur de cet article, membre de l’équipe 3DVF et spécialiste scan 3D freelance) a présenté une conférence sur le gaussian splatting. L’objectif : poser les bases, présenter des usages en production dans les domaines des effets visuels, de l’animation, de la VR/XR ou […]",
+      "image": "https://3dvf.com/wp-content/uploads/2026/11/3dgs-header-150x150.webp",
+      "premiereVue": "2026-11-25T16:36:07.911Z",
       "misEnAvant": false,
       "bonMomentDecor": true,
       "sources": [
         {
-          "sourceId": "exemple",
-          "url": "https://exemple.invalid/prod/5",
-          "vuLe": "2026-11-19T15:46:49.952Z"
-        }
-      ]
-    },
-    {
-      "id": "a760f71e219a",
-      "titre": "Kitsune Tales",
-      "format": "serie",
-      "technique": "2D",
-      "producteurs": [],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": null,
-      "statut": "preproduction",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "The 2D animated series was greenlit after financing closed, with a French co-production and pre-production starting in Paris.",
-      "premiereVue": "2026-11-24T15:46:49.952Z",
-      "misEnAvant": true,
-      "bonMomentDecor": true,
-      "sources": [
-        {
-          "sourceId": "exemple",
-          "url": "https://exemple.invalid/prod/7",
-          "vuLe": "2026-11-24T15:46:49.952Z"
-        }
-      ]
-    },
-    {
-      "id": "aff6534cb60d",
-      "titre": "Le Renne et la Lune",
-      "format": "special-tv",
-      "technique": "2D",
-      "producteurs": [],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": null,
-      "statut": "developpement",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "Un téléfilm d'animation 2D présenté au Cartoon Forum, encore en développement.",
-      "premiereVue": "2026-11-13T15:46:49.952Z",
-      "misEnAvant": false,
-      "bonMomentDecor": false,
-      "sources": [
-        {
-          "sourceId": "exemple",
-          "url": "https://exemple.invalid/prod/8",
-          "vuLe": "2026-11-13T15:46:49.952Z"
+          "sourceId": "3dvf-actu",
+          "url": "https://3dvf.com/gaussian-splatting-lavenir-du-scan-3d-comprendre-les-bases-et-debuter/",
+          "vuLe": "2026-11-25T16:36:07.911Z"
         }
       ]
     }

@@ -2,6 +2,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { classerOffre, classerProduction, motsParDefaut, normaliser } from "./classify.ts";
 import { fermerNavigateur, recuperer } from "./fetchers.ts";
+import { enrichirImages } from "./images.ts";
 import { fusionnerOffres, fusionnerProductions, idOffre, idProduction } from "./merge.ts";
 import type {
   FichierOffres, FichierProductions, FichierSources, ItemBrut, Offre, Production, SourceConfig, SourceStatut,
@@ -54,6 +55,7 @@ export function enOffre(src: SourceConfig, it: ItemBrut, maintenant: string): Of
     datePublication: dateIso(it.date),
     premiereVue: maintenant,
     extrait: it.extrait,
+    image: it.image ?? null,
     probablementExpiree: false,
     sources: [{ sourceId: src.id, url: it.url, vuLe: maintenant }],
   };
@@ -78,6 +80,7 @@ export function enProduction(src: SourceConfig, it: ItemBrut, maintenant: string
     villeFabrication: null,
     contactRecrutement: null,
     extrait: it.extrait || it.titre,
+    image: it.image ?? null,
     premiereVue: maintenant,
     misEnAvant: c.misEnAvant,
     bonMomentDecor: c.bonMomentDecor,
@@ -132,8 +135,15 @@ async function main() {
 
   // les données d'exemple (pnpm seed) disparaissent dès qu'une vraie collecte écrit les fichiers
   const reel = <T extends { sources: { sourceId: string }[] }>(l: T[]) => l.filter((x) => !x.sources.every((s) => s.sourceId === "exemple"));
-  const offresFinales = fusionnerOffres(offres, reel(lire<FichierOffres>("offres.json")?.offres ?? []), maintenant);
-  const prodsFinales = fusionnerProductions(prods, reel(lire<FichierProductions>("productions.json")?.productions ?? []), maintenant);
+  const prevOffres = reel(lire<FichierOffres>("offres.json")?.offres ?? []);
+  const prevProds = reel(lire<FichierProductions>("productions.json")?.productions ?? []);
+  if (!process.argv.includes("--sans-images")) {
+    const st = await enrichirImages(offres, prods, prevOffres, prevProds, configs);
+    console.log(`Images offres : ${st.offres.reutilisees} reprises, ${st.offres.trouvees} trouvées, ${st.offres.sans} sans.`);
+    console.log(`Images productions : ${st.prods.reutilisees} reprises, ${st.prods.trouvees} trouvées, ${st.prods.sans} sans.`);
+  }
+  const offresFinales = fusionnerOffres(offres, prevOffres, maintenant);
+  const prodsFinales = fusionnerProductions(prods, prevProds, maintenant);
   ecrire("offres.json", { genereLe: iso, offres: offresFinales } satisfies FichierOffres);
   ecrire("productions.json", { genereLe: iso, productions: prodsFinales } satisfies FichierProductions);
   ecrire("sources.json", { genereLe: iso, sources: statuts } satisfies FichierSources);

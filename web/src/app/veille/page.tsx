@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import type { Categorie } from "@shared/types";
 import { FormOffre, FormProduction } from "@/components/FormsVeille";
-import { Avatar, EnTete, Interrupteur, Onglets, Sheet, Vide } from "@/components/ui";
+import { Couverture, EnTete, Interrupteur, Onglets, Sheet, Vide, Vignette } from "@/components/ui";
 import { nouvelleCandidature } from "@/lib/candidature";
 import { fmt, fmtCourt, today } from "@/lib/dates";
 import { useStore } from "@/lib/store";
@@ -178,7 +178,7 @@ export default function Veille() {
           {t ? <>Aucune production ne correspond à « {q} ».</> : <>Les productions repérées dans l’actualité apparaîtront ici (2D en priorité). Tu peux aussi en ajouter une à la main quand tu en entends parler.</>}
         </Vide>
       ) : (
-        <ul className="grid grid-cols-1 gap-3 xl:grid-cols-2">
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
           {visiblesP.map((p) => (
             <li key={p.id}><CarteProd p={p} cand={deja("production", p.id)} onOuvrir={() => { setDetail({ kind: "production", id: p.id }); setEdition(false); }} onMasquer={() => (p.masquee ? reafficher("production", p.id) : masquer("production", p.id))} onCandidater={() => candidaterProd(p)} /></li>
           ))}
@@ -295,6 +295,12 @@ function BadgesOffre({ o }: { o: OffreVue }) {
 function DetailOffre({ o }: { o: OffreVue }) {
   return (
     <>
+      {o.image && (
+        <div className="mb-4 flex items-center gap-3 rounded-xl bg-surface-2 p-3">
+          <Vignette image={o.image} nom={o.studio ?? o.titre} taille={56} />
+          <p className="min-w-0 truncate text-[13.5px] font-semibold">{o.studio ?? "Studio non précisé"}</p>
+        </div>
+      )}
       <div className="flex flex-wrap gap-1.5"><BadgesOffre o={o} /></div>
       <dl className="mt-4 grid grid-cols-2 gap-2">
         <Fait label="Lieu">{[o.lieu, o.pays && o.pays !== "France" ? o.pays : null].filter(Boolean).join(", ") || null}</Fait>
@@ -322,6 +328,7 @@ function DetailOffre({ o }: { o: OffreVue }) {
 function DetailProd({ p }: { p: ProductionVue }) {
   return (
     <>
+      <Couverture image={p.image} nom={p.studiosFabrication[0] ?? p.producteurs[0] ?? p.titre} titre={p.titre} className="mb-4 rounded-2xl" grand />
       <div className="flex flex-wrap gap-1.5">
         {p.nouveau && <span className="badge badge-plein c-accent">Nouveau</span>}
         {p.bonMomentDecor && <span className="badge c-ok"><Sparkles />Bon moment pour candidater en décor</span>}
@@ -370,7 +377,7 @@ function CarteOffre({ o, cand, onOuvrir, onMasquer, onCandidater }: { o: OffreVu
   return (
     <article className={`group carte carte-lien relative h-full p-4 ${o.masquee ? "opacity-60" : ""}`}>
       <div className="flex items-start gap-3">
-        <Avatar nom={nomStudio} taille={40} />
+        <Vignette image={o.image} nom={nomStudio} taille={48} />
         <div className="min-w-0 flex-1">
           <h3 className="break-words text-[14.5px] font-semibold leading-snug">
             <button onClick={onOuvrir} className="text-left after:absolute after:inset-0 after:content-[''] after:rounded-[14px]">{o.titre}</button>
@@ -398,12 +405,13 @@ function CarteOffre({ o, cand, onOuvrir, onMasquer, onCandidater }: { o: OffreVu
 function CarteProd({ p, cand, onOuvrir, onMasquer, onCandidater }: { p: ProductionVue; cand?: Candidature; onOuvrir: () => void; onMasquer: () => void; onCandidater: () => void }) {
   const nomStudio = p.studiosFabrication[0] ?? p.producteurs[0] ?? p.titre;
   return (
-    <article className={`group carte carte-lien relative h-full p-4 ${p.masquee ? "opacity-60" : ""}`}>
+    <article className={`group carte carte-lien relative h-full overflow-hidden ${p.masquee ? "opacity-60" : ""}`}>
+      <Couverture image={p.image} nom={nomStudio} titre={p.titre} />
+      <div className="p-4">
       <div className="flex items-start gap-3">
-        <Avatar nom={nomStudio} taille={40} />
         <div className="min-w-0 flex-1">
           <h3 className="break-words text-[14.5px] font-semibold leading-snug">
-            <button onClick={onOuvrir} className="text-left after:absolute after:inset-0 after:content-[''] after:rounded-[14px]">{p.titre}</button>
+            <button onClick={onOuvrir} className="text-left after:absolute after:inset-0 after:content-['']">{p.titre}</button>
           </h3>
           <p className="truncate text-[13px] text-muted">{[p.producteurs[0], p.studiosFabrication[0]].filter(Boolean).join(" · ") || LABEL_FORMAT[p.format]}</p>
         </div>
@@ -424,6 +432,7 @@ function CarteProd({ p, cand, onOuvrir, onMasquer, onCandidater }: { p: Producti
         </p>
       )}
       <Actions masquee={p.masquee} cand={cand} labelCandidater="Préparer une candidature spontanée" onMasquer={onMasquer} onCandidater={onCandidater} />
+      </div>
     </article>
   );
 }

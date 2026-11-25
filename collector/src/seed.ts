@@ -69,7 +69,7 @@ function main() {
     return {
       id: idOffre(e.studio, e.titre), titre: e.titre, studio: e.studio, production: e.production ?? null,
       lieu: e.lieu, pays, ...reste, dateDebut: null, dateLimite: e.dateLimite ?? null, datePublication: ilYa(e.jours),
-      premiereVue: ilYa(e.jours), extrait: e.extrait,
+      premiereVue: ilYa(e.jours), extrait: e.extrait, image: null,
       probablementExpiree: e.dateLimite ? Date.parse(e.dateLimite) < maintenant.getTime() : false,
       sources: [{ sourceId: "exemple", url: `https://exemple.invalid/offre/${i + 1}`, vuLe: iso }],
     };

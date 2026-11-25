@@ -35,6 +35,7 @@ export function dedoublonnerOffres(offres: Offre[]): Offre[] {
     m.set(o.id, {
       ...e,
       extrait: e.extrait.length >= o.extrait.length ? e.extrait : o.extrait,
+      image: e.image ?? o.image ?? null,
       sources: fusionnerSources(e.sources, o.sources),
     });
   }
@@ -49,6 +50,7 @@ export function dedoublonnerProductions(prods: Production[]): Production[] {
     m.set(p.id, {
       ...e,
       extrait: e.extrait.length >= p.extrait.length ? e.extrait : p.extrait,
+      image: e.image ?? p.image ?? null,
       sources: fusionnerSources(e.sources, p.sources),
     });
   }
@@ -62,7 +64,7 @@ export function fusionnerOffres(nouvelles: Offre[], precedentes: Offre[], mainte
   const res = new Map<string, Offre>();
   for (const n of dedoublonnerOffres(nouvelles)) {
     const p = prev.get(n.id);
-    res.set(n.id, p ? { ...n, premiereVue: p.premiereVue, sources: fusionnerSources(p.sources, n.sources) } : n);
+    res.set(n.id, p ? { ...n, image: n.image ?? p.image ?? null, premiereVue: p.premiereVue, sources: fusionnerSources(p.sources, n.sources) } : n);
   }
   // absentes aujourd'hui : on les garde (une source en panne ne doit rien effacer), sauf si trop vieilles
   for (const p of precedentes) {
@@ -86,7 +88,7 @@ export function fusionnerProductions(nouvelles: Production[], precedentes: Produ
   const res = new Map<string, Production>();
   for (const n of dedoublonnerProductions(nouvelles)) {
     const p = prev.get(n.id);
-    res.set(n.id, p ? { ...n, premiereVue: p.premiereVue, sources: fusionnerSources(p.sources, n.sources) } : n);
+    res.set(n.id, p ? { ...n, image: n.image ?? p.image ?? null, premiereVue: p.premiereVue, sources: fusionnerSources(p.sources, n.sources) } : n);
   }
   for (const p of precedentes) if (!res.has(p.id)) res.set(p.id, p);
   return [...res.values()]

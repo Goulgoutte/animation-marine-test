@@ -39,7 +39,7 @@ export function FormOffre({ initial, avecUrl, onSave, onCancel }: { initial?: Of
     const base: Offre = initial ?? {
       id: uid(), titre: "", studio: null, production: null, lieu: null, pays: null, technique: "2D", modeTravail: "inconnu",
       residenceExigee: null, contrat: "inconnu", niveau: "inconnu", langue: "inconnue", dateDebut: null, dateLimite: null,
-      datePublication: null, premiereVue: maintenant, extrait: "", categorie: "decor", dansPerimetre: true, aVerifier: false,
+      datePublication: null, premiereVue: maintenant, extrait: "", image: null, categorie: "decor", dansPerimetre: true, aVerifier: false,
       probablementExpiree: false, sources: [],
     };
     onSave(
@@ -105,7 +105,7 @@ export function FormProduction({ initial, avecUrl, onSave, onCancel }: { initial
     const base: Production = initial ?? {
       id: uid(), titre: "", format: "inconnu", technique: "2D", producteurs: [], studiosFabrication: [], paysCoproducteurs: [],
       paysDecors: null, diffuseur: null, realisateur: null, statut: "inconnu", dateDemarrage: null, villeFabrication: null,
-      contactRecrutement: null, extrait: "", premiereVue: maintenant, misEnAvant: false, bonMomentDecor: false, sources: [],
+      contactRecrutement: null, extrait: "", image: null, premiereVue: maintenant, misEnAvant: false, bonMomentDecor: false, sources: [],
     };
     onSave({
       ...base, titre, format, technique, statut, producteurs: liste(producteurs), studiosFabrication: liste(studios),

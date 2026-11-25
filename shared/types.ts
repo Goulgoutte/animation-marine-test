@@ -37,6 +37,8 @@ export interface Offre {
   datePublication: string | null;
   premiereVue: string; // ISO, sert au badge « Nouveau »
   extrait: string;
+  image: string | null; // URL https absolue : visuel de l'offre, à défaut logo du studio
+  logo?: string | null; // logo du studio, si trouvé séparément
   categorie: Categorie;
   dansPerimetre: boolean; // 2D (ou inconnue) ET (Paris sur place OU télétravail complet accessible depuis la France, en FR/EN)
   aVerifier: boolean; // technique ou mode de travail non déterminé
@@ -69,6 +71,8 @@ export interface Production {
   villeFabrication: string | null;
   contactRecrutement: string | null;
   extrait: string;
+  image: string | null; // URL https absolue (og:image de l'article, enclosure RSS…)
+  logo?: string | null;
   premiereVue: string;
   misEnAvant: boolean; // fabrication à Paris ou studio connu pour le télétravail
   bonMomentDecor: boolean; // dev avancé, financement bouclé, préprod, début de prod

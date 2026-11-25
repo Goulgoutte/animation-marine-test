@@ -2,7 +2,7 @@
 
 import { X, type LucideIcon } from "lucide-react";
 import Link from "next/link";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 
 /** Panneau latéral (ordinateur) ou feuille du bas (mobile). */
@@ -160,6 +160,54 @@ export function SqueletteApp() {
         <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">{[0, 1, 2, 3].map((i) => <Squelette key={i} className="h-28 rounded-2xl" />)}</div>
         <div className="grid grid-cols-1 gap-3 lg:grid-cols-2"><Squelette className="h-64 rounded-2xl" /><Squelette className="h-64 rounded-2xl" /></div>
       </div>
+    </div>
+  );
+}
+
+/** Image distante avec repli : `null` tant qu’elle est absente ou cassée. */
+function useImage(image?: string | null) {
+  const [cassee, setCassee] = useState<string | null>(null);
+  const [prete, setPrete] = useState<string | null>(null);
+  const ok = !!image && cassee !== image;
+  return { ok, prete: ok && prete === image, onError: () => setCassee(image ?? null), onLoad: () => setPrete(image ?? null) };
+}
+
+/** Vignette carrée (logo du studio ou image) ; repli : avatar à initiales. */
+export function Vignette({ image, nom, taille = 36 }: { image?: string | null; nom: string; taille?: number }) {
+  const im = useImage(image);
+  if (!im.ok) return <Avatar nom={nom} taille={taille} />;
+  return (
+    <span className={`relative flex-none overflow-hidden shadow-[inset_0_0_0_1px_var(--line)] transition-colors ${im.prete ? "bg-white" : "bg-surface-2"}`} style={{ width: taille, height: taille, borderRadius: Math.round(taille * 0.3) }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={image!} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer" width={taille} height={taille} onError={im.onError} onLoad={im.onLoad}
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-200 ${im.prete ? "opacity-100" : "opacity-0"}`} />
+    </span>
+  );
+}
+
+/** Visuel 16/9 (production) ; repli : dégradé déterministe, motif de collines et initiales. */
+export function Couverture({ image, nom, titre, className = "", grand }: { image?: string | null; nom: string; titre?: string; className?: string; grand?: boolean }) {
+  const im = useImage(image);
+  const h = 215 + (hue(nom + (titre ?? "")) % 140); // bleus, violets, roses : reste dans la palette de l’app
+  const h2 = (h + 48) % 360;
+  return (
+    <div className={`relative aspect-video w-full overflow-hidden bg-surface-2 ${className}`}>
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{ background: `radial-gradient(120% 90% at 85% 0%, hsl(${h2} 85% 72% / .55), transparent 60%), linear-gradient(145deg, hsl(${h} 62% 52%), hsl(${h2} 58% 36%))` }}
+      >
+        <svg viewBox="0 0 160 90" preserveAspectRatio="none" className="absolute inset-x-0 bottom-0 h-3/5 w-full">
+          <path d="M0 62 C25 40 45 48 70 56 S120 34 160 52 V90 H0Z" fill="#fff" opacity=".12" />
+          <path d="M0 74 C30 58 60 70 90 66 S135 56 160 70 V90 H0Z" fill="#000" opacity=".16" />
+        </svg>
+        <span className={`absolute left-4 top-3 font-extrabold tracking-tight text-white/85 ${grand ? "text-5xl" : "text-3xl"}`}>{initiales(nom)}</span>
+      </div>
+      {im.ok && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={image!} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer" width={640} height={360} onError={im.onError} onLoad={im.onLoad}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${im.prete ? "opacity-100" : "opacity-0"}`} />
+      )}
     </div>
   );
 }

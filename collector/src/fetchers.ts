@@ -1,15 +1,29 @@
 import * as cheerio from "cheerio";
 import Parser from "rss-parser";
 import { recupererTexte, robotsAutorise, attendreTour, USER_AGENT } from "./http.ts";
+import { imageDepuisItemRss, urlImage } from "./images.ts";
 import type { ItemBrut, SourceConfig } from "./types.ts";
 
 const nettoyer = (s: string) => s.replace(/\s+/g, " ").trim();
 const coupe = (s: string, n = 400) => (s.length > n ? s.slice(0, n - 1) + "…" : s);
 
+export const creerParserRss = () =>
+  new Parser({
+    timeout: 20000,
+    headers: { "user-agent": USER_AGENT },
+    customFields: {
+      item: [
+        ["media:content", "mediaContent", { keepArray: true }],
+        ["media:thumbnail", "mediaThumbnail", { keepArray: true }],
+        ["content:encoded", "contentEncoded"],
+      ],
+    },
+  });
+
 export async function fetchRss(src: SourceConfig): Promise<ItemBrut[]> {
   const xml = await recupererTexte(src.url);
   if (!/^\s*(<\?xml|<rss|<feed|<rdf)/i.test(xml)) throw new Error("réponse non RSS (page HTML ou blocage anti-robot)");
-  const parser = new Parser({ timeout: 20000, headers: { "user-agent": USER_AGENT } });
+  const parser = creerParserRss();
   const flux = await parser.parseString(xml);
   return flux.items
     .filter((i) => i.title && i.link)
@@ -21,6 +35,7 @@ export async function fetchRss(src: SourceConfig): Promise<ItemBrut[]> {
         extrait: coupe(nettoyer(resume)),
         date: i.isoDate ?? (i.pubDate ? new Date(i.pubDate).toISOString() : null),
         lieu: null,
+        image: imageDepuisItemRss(i, i.link!),
       };
     });
 }
@@ -43,7 +58,9 @@ export function extraireHtml(html: string, src: SourceConfig): ItemBrut[] {
     try { url = new URL(href, src.url).toString(); } catch { return; }
     if (vus.has(url)) return;
     vus.add(url);
+    const img = $el.is("img") ? $el : $el.find("img").first();
     items.push({
+      image: img.length ? urlImage(img.attr("src") ?? img.attr("data-src") ?? img.attr("data-lazy-src") ?? img.attr("srcset") ?? img.attr("data-srcset"), src.url) : null,
       titre: coupe(titre, 200),
       url,
       extrait: sel.extrait ? coupe(nettoyer($el.find(sel.extrait).first().text())) : $el.is("a") ? "" : coupe(nettoyer($el.text()), 600),

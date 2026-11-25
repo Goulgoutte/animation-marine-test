@@ -9,7 +9,7 @@ const src = (sourceId: string, url: string, n = 0) => ({ sourceId, url, vuLe: is
 const o = (p: Partial<Offre> & Pick<Offre, "id" | "titre">): Offre => ({
   studio: null, production: null, lieu: null, pays: "France", technique: "2D", modeTravail: "paris-sur-place",
   residenceExigee: null, contrat: "CDDU", niveau: "confirme", langue: "fr", dateDebut: null, dateLimite: null,
-  datePublication: null, premiereVue: iso(-10), extrait: "", categorie: "decor", dansPerimetre: true,
+  datePublication: null, premiereVue: iso(-10), extrait: "", image: null, categorie: "decor", dansPerimetre: true,
   aVerifier: false, probablementExpiree: false, sources: [], ...p,
 });
 
@@ -31,7 +31,7 @@ export const offresFixture: FichierOffres = {
 const p = (x: Partial<Production> & Pick<Production, "id" | "titre">): Production => ({
   format: "serie", technique: "2D", producteurs: [], studiosFabrication: [], paysCoproducteurs: [], paysDecors: null,
   diffuseur: null, realisateur: null, statut: "inconnu", dateDemarrage: null, villeFabrication: null,
-  contactRecrutement: null, extrait: "", premiereVue: iso(-7), misEnAvant: false, bonMomentDecor: false, sources: [], ...x,
+  contactRecrutement: null, extrait: "", image: null, premiereVue: iso(-7), misEnAvant: false, bonMomentDecor: false, sources: [], ...x,
 });
 
 export const productionsFixture: FichierProductions = {

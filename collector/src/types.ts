@@ -35,4 +35,6 @@ export interface ItemBrut {
   date: string | null;
   lieu: string | null;
   studio?: string | null;
+  /** URL https absolue d'une image trouvée dans la source elle-même */
+  image?: string | null;
 }

@@ -1,5 +1,5 @@
 {
-  "genereLe": "2026-11-25T15:46:49.952Z",
+  "genereLe": "2026-11-25T16:36:07.911Z",
   "sources": [
     {
       "id": "jobotropo",
@@ -8,9 +8,9 @@
       "type": "emploi",
       "methode": "playwright",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 10
     },
     {
       "id": "afjv-emploi",
@@ -19,9 +19,9 @@
       "type": "emploi",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 5
     },
     {
       "id": "3dvf-emploi",
@@ -30,7 +30,7 @@
       "type": "emploi",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -96,7 +96,7 @@
       "type": "emploi",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -107,9 +107,9 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 2
     },
     {
       "id": "awn-rss",
@@ -118,7 +118,7 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -162,7 +162,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -173,7 +173,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -184,9 +184,9 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 1
     },
     {
       "id": "ellipse",
@@ -195,7 +195,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -206,7 +206,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -217,7 +217,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -228,7 +228,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -239,7 +239,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -250,7 +250,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -261,7 +261,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -272,7 +272,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -283,7 +283,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -294,7 +294,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -305,7 +305,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -360,7 +360,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -371,7 +371,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -382,7 +382,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -393,7 +393,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -404,7 +404,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -415,7 +415,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -426,7 +426,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -437,7 +437,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -448,7 +448,7 @@
       "type": "carriere-studio",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -536,7 +536,7 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -547,7 +547,7 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -559,7 +559,7 @@
       "methode": "rss",
       "actif": true,
       "dernierSucces": null,
-      "derniereErreur": null,
+      "derniereErreur": "Error: HTTP 403",
       "nbResultats": 0
     },
     {
@@ -570,7 +570,7 @@
       "methode": "rss",
       "actif": true,
       "dernierSucces": null,
-      "derniereErreur": null,
+      "derniereErreur": "Error: réponse non RSS (page HTML ou blocage anti-robot)",
       "nbResultats": 0
     },
     {
@@ -580,7 +580,7 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -591,7 +591,7 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -602,9 +602,9 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 3
     },
     {
       "id": "3dvf-actu",
@@ -613,9 +613,9 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
-      "nbResultats": 0
+      "nbResultats": 1
     },
     {
       "id": "ecran-total",
@@ -625,7 +625,7 @@
       "methode": "rss",
       "actif": true,
       "dernierSucces": null,
-      "derniereErreur": null,
+      "derniereErreur": "Error: réponse non RSS (page HTML ou blocage anti-robot)",
       "nbResultats": 0
     },
     {
@@ -635,7 +635,7 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -701,7 +701,7 @@
       "type": "actualite",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -712,7 +712,7 @@
       "type": "actualite",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -723,7 +723,7 @@
       "type": "base-projets",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -735,7 +735,7 @@
       "methode": "html",
       "actif": true,
       "dernierSucces": null,
-      "derniereErreur": null,
+      "derniereErreur": "Error: HTTP 403",
       "nbResultats": 0
     },
     {
@@ -756,7 +756,7 @@
       "type": "actualite",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -767,7 +767,7 @@
       "type": "actualite",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
@@ -778,7 +778,7 @@
       "type": "actualite",
       "methode": "html",
       "actif": true,
-      "dernierSucces": null,
+      "dernierSucces": "2026-11-25T16:36:07.911Z",
       "derniereErreur": null,
       "nbResultats": 0
     },
