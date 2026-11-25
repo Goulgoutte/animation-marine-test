@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import type { Categorie } from "@shared/types";
 import { FormOffre, FormProduction } from "@/components/FormsVeille";
+import { BarrePerimetre } from "@/components/Perimetre";
 import { Couverture, EnTete, Interrupteur, Onglets, Sheet, Vide, Vignette } from "@/components/ui";
 import { nouvelleCandidature } from "@/lib/candidature";
 import { fmt, fmtCourt, today } from "@/lib/dates";
@@ -12,7 +13,7 @@ import { useStore } from "@/lib/store";
 import type { Candidature } from "@/lib/types";
 import {
   LABEL_CONTRAT, LABEL_FORMAT, LABEL_MODE, LABEL_NIVEAU, LABEL_STATUT_PROD, offreDansPerimetre, offresVues,
-  productionCategorie, productionDansPerimetre, productionsVues, type OffreVue, type ProductionVue,
+  productionCategorie, productionDansPerimetre, productionDansZone, productionsVues, type OffreVue, type ProductionVue,
 } from "@/lib/veille";
 
 type Onglet = "offres" | "productions";
@@ -158,6 +159,7 @@ export default function Veille() {
           <Interrupteur label={`Afficher les résultats hors périmètre${nbHors ? ` (${nbHors})` : ""}`} checked={horsPerimetre} onChange={setHorsPerimetre} />
           {nbMasques > 0 && <Interrupteur label={`Voir les masqués (${nbMasques})`} checked={masques} onChange={setMasques} />}
         </div>
+        <BarrePerimetre />
       </div>
 
       {onglet === "offres" ? (
@@ -284,7 +286,7 @@ function BadgesOffre({ o }: { o: OffreVue }) {
     <>
       {o.nouveau && <span className="badge badge-plein c-accent">Nouveau</span>}
       {o.residenceExigee && <span className="badge badge-plein c-danger"><ShieldAlert />Résidence exigée : {o.residenceExigee}</span>}
-      {o.aVerifier && <span className="badge c-warn">À vérifier</span>}
+      {(o.aVerifier || o.modeTravail === "inconnu") && <span className="badge c-warn">À vérifier</span>}
       {expiree && <span className="badge c-mute"><Archive />Probablement expirée</span>}
       {o.manuelle && <span className="badge c-info">Ajoutée à la main</span>}
       {o.corrigee && <span className="badge c-info">Corrigée</span>}
@@ -326,6 +328,7 @@ function DetailOffre({ o }: { o: OffreVue }) {
 }
 
 function DetailProd({ p }: { p: ProductionVue }) {
+  const dansZone = productionDansZone(p, useStore().reglages);
   return (
     <>
       <Couverture image={p.image} nom={p.studiosFabrication[0] ?? p.producteurs[0] ?? p.titre} titre={p.titre} className="mb-4 rounded-2xl" grand />
@@ -333,6 +336,7 @@ function DetailProd({ p }: { p: ProductionVue }) {
         {p.nouveau && <span className="badge badge-plein c-accent">Nouveau</span>}
         {p.bonMomentDecor && <span className="badge c-ok"><Sparkles />Bon moment pour candidater en décor</span>}
         {p.misEnAvant && <span className="badge c-info"><MapPin />Fabrication à Paris ou télétravail</span>}
+        {dansZone && <span className="badge c-ok"><MapPin />Dans ta zone</span>}
         {p.manuelle && <span className="badge c-info">Ajoutée à la main</span>}
         {p.corrigee && <span className="badge c-info">Corrigée</span>}
       </div>
@@ -404,6 +408,7 @@ function CarteOffre({ o, cand, onOuvrir, onMasquer, onCandidater }: { o: OffreVu
 
 function CarteProd({ p, cand, onOuvrir, onMasquer, onCandidater }: { p: ProductionVue; cand?: Candidature; onOuvrir: () => void; onMasquer: () => void; onCandidater: () => void }) {
   const nomStudio = p.studiosFabrication[0] ?? p.producteurs[0] ?? p.titre;
+  const dansZone = productionDansZone(p, useStore().reglages);
   return (
     <article className={`group carte carte-lien relative h-full overflow-hidden ${p.masquee ? "opacity-60" : ""}`}>
       <Couverture image={p.image} nom={nomStudio} titre={p.titre} />
@@ -421,6 +426,7 @@ function CarteProd({ p, cand, onOuvrir, onMasquer, onCandidater }: { p: Producti
         {p.nouveau && <span className="badge badge-plein c-accent">Nouveau</span>}
         {p.bonMomentDecor && <span className="badge c-ok"><Sparkles />Bon moment pour candidater en décor</span>}
         {p.misEnAvant && <span className="badge c-info"><MapPin />Paris ou télétravail</span>}
+        {dansZone && <span className="badge c-ok"><MapPin />Dans ta zone</span>}
         <span className="badge c-mute">{LABEL_FORMAT[p.format]}</span>
         {p.technique !== "inconnue" && <span className="badge c-accent">{p.technique}</span>}
         <span className="badge c-mute">{LABEL_STATUT_PROD[p.statut]}</span>

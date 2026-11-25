@@ -1,13 +1,14 @@
 "use client";
 
-import { Archive, BellRing, Compass, Database, Download, ExternalLink, LogOut, RotateCcw, UserRound, type LucideIcon } from "lucide-react";
+import { Archive, ArrowRight, BellRing, Compass, Database, Download, ExternalLink, LogOut, RotateCcw, UserRound, type LucideIcon } from "lucide-react";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { SourcesReglages } from "@/components/SourcesReglages";
-import { Avatar, EnTete, Interrupteur } from "@/components/ui";
+import { Avatar, EnTete } from "@/components/ui";
 import { estChampContact, texteDe, triees } from "@/lib/crm";
 import { csv, stamp, telecharger } from "@/lib/export";
 import { useStore } from "@/lib/store";
-import { labelCanal, labelEchange, labelStatut, type Perimetre } from "@/lib/types";
+import { labelCanal, labelEchange, labelStatut } from "@/lib/types";
 import { LABEL_MODE, offresVues, productionsVues } from "@/lib/veille";
 
 function Section({ icone: Icone, titre, description, children, pleine }: { icone: LucideIcon; titre: string; description?: ReactNode; children: ReactNode; pleine?: boolean }) {
@@ -26,8 +27,6 @@ function Section({ icone: Icone, titre, description, children, pleine }: { icone
 export default function Reglages() {
   const s = useStore();
   const r = s.reglages;
-  const p = r.perimetre;
-  const majP = (x: Partial<Perimetre>) => s.saveReglages({ perimetre: { ...p, ...x } });
   const repo = process.env.NEXT_PUBLIC_REPO_URL;
   const lienConfig = repo ? `${repo}/tree/main/collector/config` : null;
   const num = (v: string, min: number, max: number, def: number) => Math.min(max, Math.max(min, parseInt(v, 10) || def));
@@ -73,7 +72,7 @@ export default function Reglages() {
 
   return (
     <>
-      <EnTete titre="Réglages" description="Ton compte, ton périmètre de recherche et tes données." />
+      <EnTete titre="Réglages" description="Ton compte, tes relances, tes sources et tes données." />
 
       <div className="grid grid-cols-1 gap-4">
         <Section icone={UserRound} titre="Compte" description="Connexion Google.">
@@ -88,26 +87,11 @@ export default function Reglages() {
           {s.demo && <p className="mt-4 rounded-xl bg-surface-2 p-3 text-[13px] text-muted">Les données du mode démo restent dans ce navigateur. Elles disparaissent si tu effaces les données du site.</p>}
         </Section>
 
-        <Section icone={Compass} titre="Périmètre de recherche" description="Appliqué par-dessus le tri de la collecte. Rien n’est supprimé : l’interrupteur de la Veille montre tout.">
-          <div className="grid gap-5">
-            <label className="flex max-w-sm flex-col gap-1">
-              <span className="meta">Sur place</span>
-              <select className="champ" value={p.zone} onChange={(e) => majP({ zone: e.target.value as Perimetre["zone"] })}>
-                <option value="paris">Paris intra-muros</option>
-                <option value="petite-couronne">Paris et petite couronne</option>
-                <option value="idf">Île-de-France</option>
-              </select>
-              <span className="micro">La zone est appliquée par la collecte (liste des villes dans collector/config).</span>
-            </label>
-            <Interrupteur label="Accepter le télétravail complet" checked={p.teletravail} onChange={(v) => majP({ teletravail: v })} />
-            <div className="flex flex-wrap gap-x-5 gap-y-2">
-              <span className="meta w-full">Langue de travail en télétravail</span>
-              {(["fr", "en"] as const).map((l) => (
-                <Interrupteur key={l} label={l === "fr" ? "Français" : "Anglais"} checked={p.langues.includes(l)} onChange={(v) => majP({ langues: v ? [...p.langues, l] : p.langues.filter((x) => x !== l) })} />
-              ))}
-            </div>
-            <Interrupteur label="Montrer aussi la 3D" checked={p.afficher3d} onChange={(v) => majP({ afficher3d: v })} />
-          </div>
+        <Section icone={Compass} titre="Périmètre de recherche">
+          <p className="flex flex-wrap items-center gap-x-2 text-[13.5px]">
+            Le périmètre se règle dans la Veille.
+            <Link href="/veille/" className="inline-flex items-center gap-1 font-semibold text-accent underline">Ouvrir la Veille <ArrowRight className="h-3.5 w-3.5" /></Link>
+          </p>
         </Section>
 
         <Section icone={BellRing} titre="Relances" description="Jours ouvrés : du lundi au vendredi, jours fériés non décomptés.">

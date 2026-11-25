@@ -1,6 +1,7 @@
 import type { Offre, Production } from "@shared/types";
 import type { Collecte } from "./store";
 import type { Donnees, Reglages } from "./types";
+import { lieuDansZones, normaliser, zonesActives } from "./zones";
 
 export type OffreVue = Offre & { manuelle: boolean; corrigee: boolean; masquee: boolean; nouveau: boolean };
 export type ProductionVue = Production & { manuelle: boolean; corrigee: boolean; masquee: boolean; nouveau: boolean };
@@ -36,20 +37,44 @@ export function productionsVues(c: Collecte, d: Donnees, ref: string | null): Pr
   });
 }
 
-/** Filtre « périmètre » côté site : s’ajoute à `dansPerimetre` calculé par la collecte. */
+/**
+ * Périmètre côté site, calculé à partir des zones choisies (ne dépend plus de `dansPerimetre`).
+ * Mode inconnu : visible (badge « À vérifier »). Technique inconnue : visible aussi.
+ */
 export function offreDansPerimetre(o: Offre, reg: Reglages): boolean {
-  if (!o.dansPerimetre) return false;
   const p = reg.perimetre;
-  if (!p.teletravail && o.modeTravail === "teletravail-complet") return false;
-  if (!p.afficher3d && o.technique === "3D") return false;
-  if (o.modeTravail === "teletravail-complet" && o.langue !== "inconnue" && o.langue !== "autre" && !p.langues.includes(o.langue)) return false;
-  return true;
+  if (o.technique === "3D" && !p.afficher3d) return false;
+  switch (o.modeTravail) {
+    case "teletravail-complet": {
+      if (!p.teletravail) return false;
+      if (o.residenceExigee) {
+        const r = normaliser(o.residenceExigee);
+        if (r !== "france" && r !== "fr") return false;
+      }
+      return o.langue === "inconnue" || (o.langue !== "autre" && p.langues.includes(o.langue));
+    }
+    case "paris-sur-place":
+    case "hybride":
+    case "sur-place-ailleurs": {
+      const lieux = [o.lieu, o.pays];
+      // Offre « sur place à Paris » sans lieu renseigné : le mode vient de la collecte, on s’y fie.
+      if (o.modeTravail === "paris-sur-place" && !o.lieu && !o.pays) lieux.push("Paris");
+      return lieuDansZones(lieux, zonesActives(p));
+    }
+    default:
+      return true;
+  }
 }
 
 export function productionDansPerimetre(p: Production, reg: Reglages): boolean {
   if (p.technique === "3D" && !reg.perimetre.afficher3d) return false;
   if (p.technique === "stop-motion") return false;
   return true;
+}
+
+/** Fabrication dans une des zones choisies (badge « Dans ta zone »). */
+export function productionDansZone(p: Production, reg: Reglages): boolean {
+  return lieuDansZones([p.villeFabrication], zonesActives(reg.perimetre));
 }
 
 /** Pour les productions, « Décor » = celles où un décorateur a une prise : bon moment ou fabrication parisienne / télétravail. */

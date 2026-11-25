@@ -122,7 +122,10 @@ export interface Masquage extends Base {
 }
 
 export interface Perimetre {
-  zone: "paris" | "petite-couronne" | "idf";
+  /** Zones choisies (ids de lib/zones.ts). */
+  zones?: string[];
+  /** Ancien réglage, lu seulement si `zones` est absent. */
+  zone?: "paris" | "petite-couronne" | "idf";
   teletravail: boolean;
   langues: ("fr" | "en")[];
   afficher3d: boolean;
@@ -167,7 +170,7 @@ export const TABLE_NAMES: TableName[] = [
 export type Donnees = { [K in TableName]: Tables[K][] };
 
 export const REGLAGES_DEFAUT: Omit<Reglages, "id"> = {
-  perimetre: { zone: "petite-couronne", teletravail: true, langues: ["fr", "en"], afficher3d: false },
+  perimetre: { zones: ["paris", "petite-couronne"], teletravail: true, langues: ["fr", "en"], afficher3d: false },
   delai_relance_1: 10,
   delai_relance_2: 15,
   delai_contact_mois: 3,
