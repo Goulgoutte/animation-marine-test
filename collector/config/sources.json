@@ -1,0 +1,850 @@
+{
+  "sources": [
+    {
+      "id": "jobotropo",
+      "nom": "Jobotropo",
+      "url": "https://www.jobotropo.com/jobs",
+      "type": "emploi",
+      "methode": "playwright",
+      "actif": true,
+      "selecteurs": {
+        "item": "article.job-full-card",
+        "titre": ".job-role",
+        "studio": ".organization-first-header h3",
+        "lieu": "[data-tag=location]"
+      },
+      "filtre": ".",
+      "note": "Contenu chargé en JavaScript (10 premières offres, cartes sans lien : ancre sur la page). Beaucoup de 3D : le filtre périmètre trie."
+    },
+    {
+      "id": "afjv-emploi",
+      "nom": "AFJV emploi (graphisme et animation)",
+      "url": "https://emploi.afjv.com/",
+      "type": "emploi",
+      "methode": "html",
+      "actif": true,
+      "selecteurs": {
+        "item": "a[href*='/emploi-']"
+      },
+      "filtre": "animat|décor|decor|background|layout|2d|storyboard|dessin|illustrat|infograph|coloriste|graphiste",
+      "note": "Beaucoup de jeu vidéo : le filtre garde les intitulés liés à l'animation et au dessin."
+    },
+    {
+      "id": "3dvf-emploi",
+      "nom": "3DVF emploi",
+      "url": "https://3dvf.com/offres-emploi/feed/",
+      "type": "emploi",
+      "methode": "rss",
+      "actif": true
+    },
+    {
+      "id": "animworks-studiowatch",
+      "nom": "anim.works StudioWatch",
+      "url": "https://anim.works/studiowatch/",
+      "type": "emploi",
+      "methode": "html",
+      "actif": false,
+      "selecteurs": {
+        "item": "a"
+      },
+      "note": "Page agrégée sans liens exploitables (liste rendue en JavaScript, logos et compteurs) : écrire des sélecteurs avant d'activer."
+    },
+    {
+      "id": "cojob",
+      "nom": "Cojob (animateur 2D 3D)",
+      "url": "https://www.cojob.fr/",
+      "type": "emploi",
+      "methode": "html",
+      "actif": false,
+      "note": "Bloque la récupération automatique (redirige vers okapijob.com). Ajout manuel."
+    },
+    {
+      "id": "francetravail",
+      "nom": "France Travail (décorateur animation, animateur 2D et 3D)",
+      "url": "https://candidat.francetravail.fr/offres/emploi",
+      "type": "emploi",
+      "methode": "playwright",
+      "actif": false,
+      "note": "Recherche JavaScript, robots.txt restrictif : à tester à la main avant d'activer."
+    },
+    {
+      "id": "jobvfx",
+      "nom": "JobVFX",
+      "url": "https://jobvfx.com/",
+      "type": "emploi",
+      "methode": "html",
+      "actif": false,
+      "selecteurs": {
+        "item": "a[href*='job']"
+      },
+      "note": "Page de catégories (VFX/3D/jeu), pas d'offres : désactivé."
+    },
+    {
+      "id": "zerply",
+      "nom": "Zerply industry-jobs",
+      "url": "https://zerply.com/industry-jobs",
+      "type": "emploi",
+      "methode": "playwright",
+      "actif": false,
+      "note": "Injoignable lors des tests (25/11/2026)."
+    },
+    {
+      "id": "animation-ireland-emploi",
+      "nom": "Animation Ireland emploi (flux job_feed)",
+      "url": "https://animationireland.com/?feed=job_feed",
+      "type": "emploi",
+      "methode": "rss",
+      "actif": true,
+      "note": "Beaucoup d'offres avec résidence irlandaise exigée."
+    },
+    {
+      "id": "animation-ireland-rss",
+      "nom": "Animation Ireland (actualités)",
+      "url": "https://animationireland.com/feed",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true
+    },
+    {
+      "id": "awn-rss",
+      "nom": "Animation World Network (flux, dont Studio Jobs Roundup)",
+      "url": "https://www.awn.com/rss.xml",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true
+    },
+    {
+      "id": "indeed",
+      "nom": "Indeed",
+      "url": "https://fr.indeed.com/",
+      "type": "emploi",
+      "methode": "manuel",
+      "actif": false,
+      "note": "Scraping interdit : ajout manuel."
+    },
+    {
+      "id": "linkedin",
+      "nom": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/",
+      "type": "emploi",
+      "methode": "manuel",
+      "actif": false,
+      "note": "JAMAIS de collecte automatique : ajout manuel seulement."
+    },
+    {
+      "id": "instagram",
+      "nom": "Instagram",
+      "url": "https://www.instagram.com/",
+      "type": "actualite",
+      "methode": "manuel",
+      "actif": false,
+      "note": "JAMAIS de collecte automatique : ajout manuel seulement."
+    },
+    {
+      "id": "fost",
+      "nom": "FOST (Paris, Angoulême)",
+      "url": "https://fost.studio/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "FOST (Paris, Angoulême)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      }
+    },
+    {
+      "id": "mist",
+      "nom": "MIST",
+      "url": "https://mist.studio/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "MIST",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      }
+    },
+    {
+      "id": "xilam",
+      "nom": "Xilam",
+      "url": "https://xilam.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Xilam",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      }
+    },
+    {
+      "id": "ellipse",
+      "nom": "Ellipse Animation",
+      "url": "https://www.ellipseanimation.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Ellipse Animation",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      }
+    },
+    {
+      "id": "malil",
+      "nom": "Malil Art (Angoulême, layout BG et BG couleur)",
+      "url": "https://www.malil-art.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Malil Art (Angoulême, layout BG et BG couleur)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Angoulême"
+    },
+    {
+      "id": "enclume",
+      "nom": "Enclume Animation (Bruxelles)",
+      "url": "https://www.enclumeanimation.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Enclume Animation (Bruxelles)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Bruxelles"
+    },
+    {
+      "id": "caribara",
+      "nom": "Caribara (Paris)",
+      "url": "https://www.caribara.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Caribara (Paris)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      }
+    },
+    {
+      "id": "zag",
+      "nom": "ZAG (Paris)",
+      "url": "https://www.zag.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "ZAG (Paris)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      }
+    },
+    {
+      "id": "lacachette",
+      "nom": "La Cachette (Paris)",
+      "url": "https://www.lacachette.fr/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "La Cachette (Paris)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      }
+    },
+    {
+      "id": "bobbypills",
+      "nom": "Bobbypills (Paris)",
+      "url": "https://www.bobbypills.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Bobbypills (Paris)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      }
+    },
+    {
+      "id": "folivari",
+      "nom": "Folivari (Paris)",
+      "url": "https://folivari.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Folivari (Paris)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      }
+    },
+    {
+      "id": "superprod",
+      "nom": "Superprod",
+      "url": "https://www.superprod.net/fr/superprod-animation",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Superprod",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      }
+    },
+    {
+      "id": "teamto",
+      "nom": "TeamTO (nouvelle activité 2D et anime)",
+      "url": "https://www.teamto.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "TeamTO (nouvelle activité 2D et anime)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      }
+    },
+    {
+      "id": "suncreature",
+      "nom": "SunCreature",
+      "url": "https://www.suncreature.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "SunCreature",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      }
+    },
+    {
+      "id": "sacrebleu",
+      "nom": "Sacrebleu Productions (Paris)",
+      "url": "https://www.sacrebleuprod.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": false,
+      "studio": "Sacrebleu Productions (Paris)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "note": "Injoignable lors des tests : URL à vérifier."
+    },
+    {
+      "id": "bluespirit",
+      "nom": "Blue Spirit (Paris)",
+      "url": "https://www.bluespirit.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": false,
+      "studio": "Blue Spirit (Paris)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "note": "403 sur la récupération automatique : ajout manuel."
+    },
+    {
+      "id": "miyu",
+      "nom": "Miyu (Paris)",
+      "url": "https://www.miyu-productions.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": false,
+      "studio": "Miyu (Paris)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "note": "Injoignable lors des tests : URL à vérifier."
+    },
+    {
+      "id": "2minutes",
+      "nom": "2 Minutes (Paris)",
+      "url": "https://www.2minutes.tv/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": false,
+      "studio": "2 Minutes (Paris)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "note": "Injoignable lors des tests : URL à vérifier."
+    },
+    {
+      "id": "ooolala",
+      "nom": "OOOLALA",
+      "url": "https://www.ooolala.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "OOOLALA",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Angoulême",
+      "note": "Hors Paris : seules les offres en télétravail comptent."
+    },
+    {
+      "id": "folimage",
+      "nom": "Folimage",
+      "url": "https://www.folimage.fr/fr/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Folimage",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Valence",
+      "note": "Hors Paris : seules les offres en télétravail comptent."
+    },
+    {
+      "id": "jpl",
+      "nom": "JPL Films",
+      "url": "https://jplfilms.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "JPL Films",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Paris",
+      "note": "Hors Paris : seules les offres en télétravail comptent."
+    },
+    {
+      "id": "andarta",
+      "nom": "Andarta Pictures (Valence)",
+      "url": "https://andarta-pictures.com/fr/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Andarta Pictures (Valence)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Valence",
+      "note": "Hors Paris : seules les offres en télétravail comptent."
+    },
+    {
+      "id": "normaal",
+      "nom": "Normaal",
+      "url": "https://normaal.fr/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Normaal",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Belgique",
+      "note": "Hors Paris : seules les offres en télétravail comptent."
+    },
+    {
+      "id": "cartoonsaloon",
+      "nom": "Cartoon Saloon",
+      "url": "https://www.cartoonsaloon.ie/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Cartoon Saloon",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Kilkenny",
+      "note": "Hors Paris : seules les offres en télétravail comptent."
+    },
+    {
+      "id": "studiosouza",
+      "nom": "Studio Souza",
+      "url": "https://www.studiosouza.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Studio Souza",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Inconnu",
+      "note": "Hors Paris : seules les offres en télétravail comptent."
+    },
+    {
+      "id": "waooh",
+      "nom": "Waooh (Liège)",
+      "url": "https://www.waooh.be/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Waooh (Liège)",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Liège",
+      "note": "Hors Paris : seules les offres en télétravail comptent."
+    },
+    {
+      "id": "kavaleer",
+      "nom": "Kavaleer",
+      "url": "https://kavaleer.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": true,
+      "studio": "Kavaleer",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Dublin",
+      "note": "Hors Paris : seules les offres en télétravail comptent."
+    },
+    {
+      "id": "fargo",
+      "nom": "Fargo",
+      "url": "https://www.fargo-animation.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": false,
+      "studio": "Fargo",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Angoulême",
+      "note": "Injoignable lors des tests : URL à vérifier."
+    },
+    {
+      "id": "jammedia",
+      "nom": "Jam Media",
+      "url": "https://www.jam-media.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": false,
+      "studio": "Jam Media",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "lieuDefaut": "Dublin",
+      "note": "Le domaine est à vendre : URL à retrouver."
+    },
+    {
+      "id": "stim",
+      "nom": "Stim Studio",
+      "url": "https://www.stimstudio.com/fr/recrutement",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": false,
+      "studio": "Stim Studio",
+      "technique": "3D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "note": "Studio 3D : désactivé par défaut."
+    },
+    {
+      "id": "illumination-paris",
+      "nom": "Illumination Studios Paris",
+      "url": "https://www.illuminationstudiosparis.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": false,
+      "studio": "Illumination Studios Paris",
+      "technique": "3D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "note": "Studio 3D : désactivé par défaut."
+    },
+    {
+      "id": "dwarf",
+      "nom": "Dwarf Animation",
+      "url": "https://www.dwarfanimation.com/",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": false,
+      "studio": "Dwarf Animation",
+      "technique": "3D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "note": "Studio 3D : désactivé par défaut."
+    },
+    {
+      "id": "angel",
+      "nom": "Angel Studios",
+      "url": "https://www.angel.com/careers",
+      "type": "carriere-studio",
+      "methode": "html",
+      "actif": false,
+      "studio": "Angel Studios",
+      "technique": "2D",
+      "selecteurs": {
+        "item": "a"
+      },
+      "note": "Repéré mais hors cible probable (US) : désactivé."
+    },
+    {
+      "id": "filmfrance-annuaire",
+      "nom": "Film France : annuaire des studios d'animation",
+      "url": "https://www.filmfrance.net/en/plan-your-production/animation-studios/",
+      "type": "base-projets",
+      "methode": "html",
+      "actif": false,
+      "note": "Sert à découvrir des studios : à parcourir à la main pour trouver leur page recrutement."
+    },
+    {
+      "id": "catsuka",
+      "nom": "Catsuka",
+      "url": "https://www.catsuka.com/syndication/rss2/news.php",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true
+    },
+    {
+      "id": "cartoonbrew",
+      "nom": "Cartoon Brew",
+      "url": "https://www.cartoonbrew.com/feed",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true
+    },
+    {
+      "id": "animationmagazine",
+      "nom": "Animation Magazine",
+      "url": "https://www.animationmagazine.net/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "note": "Renvoie 403 aux robots lors des tests."
+    },
+    {
+      "id": "kidscreen",
+      "nom": "Kidscreen",
+      "url": "https://kidscreen.com/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "note": "Renvoie une page d'attente (202) lors des tests."
+    },
+    {
+      "id": "deadline-animation",
+      "nom": "Deadline (animation)",
+      "url": "https://deadline.com/tag/animation/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true
+    },
+    {
+      "id": "variety-animation",
+      "nom": "Variety (animation)",
+      "url": "https://variety.com/t/animation/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true
+    },
+    {
+      "id": "skwigly",
+      "nom": "Skwigly",
+      "url": "https://www.skwigly.co.uk/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true
+    },
+    {
+      "id": "3dvf-actu",
+      "nom": "3DVF actualités",
+      "url": "https://www.3dvf.com/feed",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true
+    },
+    {
+      "id": "ecran-total",
+      "nom": "Écran Total",
+      "url": "https://www.ecran-total.fr/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true,
+      "note": "Renvoie 403 aux robots lors des tests."
+    },
+    {
+      "id": "magelis",
+      "nom": "Magelis (pôle image d'Angoulême)",
+      "url": "https://www.magelis.org/feed/",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": true
+    },
+    {
+      "id": "cineuropa",
+      "nom": "Cineuropa",
+      "url": "https://www.cineuropa.org/rss",
+      "type": "actualite",
+      "methode": "rss",
+      "actif": false,
+      "note": "403 lors des tests."
+    },
+    {
+      "id": "screendaily",
+      "nom": "Screen Daily",
+      "url": "https://www.screendaily.com/",
+      "type": "actualite",
+      "methode": "html",
+      "actif": false,
+      "selecteurs": {
+        "item": "h2 a, h3 a, article a"
+      },
+      "note": "Flux RSS introuvable : à tester en HTML."
+    },
+    {
+      "id": "broadcast",
+      "nom": "Broadcast",
+      "url": "https://www.broadcastnow.co.uk/",
+      "type": "actualite",
+      "methode": "html",
+      "actif": false,
+      "selecteurs": {
+        "item": "h2 a, h3 a, article a"
+      },
+      "note": "Flux RSS introuvable ; contenu en partie payant."
+    },
+    {
+      "id": "satellifax",
+      "nom": "Satellifax",
+      "url": "https://www.satellifax.com/",
+      "type": "actualite",
+      "methode": "manuel",
+      "actif": false,
+      "note": "Payant : titres publics uniquement, sinon saisie manuelle."
+    },
+    {
+      "id": "lefilmfrancais",
+      "nom": "Le Film Français",
+      "url": "https://www.lefilmfrancais.com/",
+      "type": "actualite",
+      "methode": "manuel",
+      "actif": false,
+      "note": "Payant : titres publics uniquement, sinon saisie manuelle."
+    },
+    {
+      "id": "cnc",
+      "nom": "CNC (communiqués et aides)",
+      "url": "https://www.cnc.fr/rss",
+      "type": "actualite",
+      "methode": "html",
+      "actif": true,
+      "selecteurs": {
+        "item": "h2 a, h3 a, article a"
+      },
+      "note": "L'URL /rss renvoie du HTML : à ajuster."
+    },
+    {
+      "id": "afca",
+      "nom": "AFCA (Association française du cinéma d'animation)",
+      "url": "https://www.afca.asso.fr/",
+      "type": "actualite",
+      "methode": "html",
+      "actif": true,
+      "selecteurs": {
+        "item": "h2 a, h3 a, article a"
+      }
+    },
+    {
+      "id": "cartoon-media",
+      "nom": "Cartoon Media (Cartoon Forum, Cartoon Movie)",
+      "url": "https://www.cartoon-media.eu/",
+      "type": "base-projets",
+      "methode": "html",
+      "actif": true,
+      "selecteurs": {
+        "item": "h2 a, h3 a, article a"
+      }
+    },
+    {
+      "id": "unifrance",
+      "nom": "Unifrance",
+      "url": "https://www.unifrance.org/",
+      "type": "actualite",
+      "methode": "html",
+      "actif": true,
+      "selecteurs": {
+        "item": "h2 a, h3 a, article a"
+      }
+    },
+    {
+      "id": "scriptoclap",
+      "nom": "Scriptoclap (projets en développement)",
+      "url": "https://www.scriptoclap.fr/",
+      "type": "base-projets",
+      "methode": "html",
+      "actif": false,
+      "selecteurs": {
+        "item": "h2 a, h3 a, article a"
+      },
+      "note": "Injoignable lors des tests : très utile, à réessayer."
+    },
+    {
+      "id": "aura-cinema",
+      "nom": "Auvergne-Rhône-Alpes Cinéma",
+      "url": "https://www.auvergnerhonealpes-cinema.fr/",
+      "type": "actualite",
+      "methode": "html",
+      "actif": true,
+      "selecteurs": {
+        "item": "h2 a, h3 a, article a"
+      }
+    },
+    {
+      "id": "animfrance",
+      "nom": "Animation France",
+      "url": "https://www.animfrance.fr/",
+      "type": "actualite",
+      "methode": "html",
+      "actif": true,
+      "selecteurs": {
+        "item": "h2 a, h3 a, article a"
+      }
+    },
+    {
+      "id": "annecy-mifa",
+      "nom": "Annecy / MIFA",
+      "url": "https://www.annecyfestival.com/",
+      "type": "actualite",
+      "methode": "html",
+      "actif": true,
+      "selecteurs": {
+        "item": "h2 a, h3 a, article a"
+      }
+    },
+    {
+      "id": "cartoon-movie",
+      "nom": "Cartoon Movie",
+      "url": "https://www.cartoon-media.eu/cartoon-movie",
+      "type": "base-projets",
+      "methode": "html",
+      "actif": false,
+      "selecteurs": {
+        "item": "h2 a, h3 a, article a"
+      },
+      "note": "Même domaine que Cartoon Media : désactivé tant que l'URL n'est pas confirmée."
+    }
+  ]
+}

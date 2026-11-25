@@ -1,0 +1,25 @@
+{
+  "name": "veille-animation-collector",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Collecte des offres et productions d'animation 2D (usage personnel)",
+  "scripts": {
+    "collect": "tsx src/collect.ts",
+    "seed": "tsx src/seed.ts",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "robots-parser": "^3.0.1",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "playwright": "^1.49.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": { "node": ">=22" }
+}

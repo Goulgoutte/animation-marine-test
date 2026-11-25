@@ -1,0 +1,56 @@
+{
+  "decor": ["décor", "décors", "décorateur", "décoratrice", "décor couleur", "layout décor", "layout bg", "bg", "background", "backgrounds", "background artist", "background painter", "colour artist", "color artist", "color key", "color script", "colour script", "environment artist", "environment design", "matte painting", "set design", "props et décors", "bg color", "bg layout", "peintre décor"],
+  "technique2D": ["2d", "animation traditionnelle", "dessin animé", "dessin à la main", "hand-drawn", "hand drawn", "cut-out", "cutout", "puppet 2d", "toon boom", "harmony", "storyboard pro", "tvpaint", "photoshop", "krita", "clip studio", "painted backgrounds", "traditional animation"],
+  "technique3D": ["3d", "cg", "cgi", "maya", "blender", "houdini", "unreal", "lookdev", "surfacing", "lighting artist", "rigging 3d", "modélisation", "modeling", "texturing", "motion capture", "mocap"],
+  "stopMotion": ["stop motion", "stop-motion", "image par image", "marionnettes animées"],
+  "teletravail": ["télétravail", "100 % télétravail", "100% télétravail", "full remote", "fully remote", "remote", "work from home", "à distance", "teleworking", "wfh"],
+  "hybride": ["hybride", "hybrid", "télétravail partiel", "partially remote", "jours de télétravail", "days in the office", "days a week in", "days per week on site"],
+  "paris": ["paris", "75", "92", "93", "94", "île-de-france", "ile-de-france", "idf", "montreuil", "saint-denis", "issy-les-moulineaux", "boulogne-billancourt", "clichy", "levallois", "arcueil", "vincennes", "pantin", "ivry", "malakoff", "montrouge"],
+  "signauxProduction": ["en production", "lancement de la fabrication", "début de fabrication", "entre en production", "tour de table bouclé", "financement", "aide du cnc", "préproduction", "pitch", "cartoon forum", "cartoon movie", "mifa", "recrute pour la série", "in production", "enters production", "greenlit", "green-lit", "greenlight", "pre-production", "preproduction", "in development", "financing", "production start", "begins production", "commissioned", "orders series", "picks up", "pre-sale", "co-production", "coproduction"],
+  "statuts": {
+    "postproduction": ["post-production", "postproduction", "post-prod", "wraps production"],
+    "preproduction": ["préproduction", "pré-production", "preproduction", "pre-production", "pre-prod", "préfabrication"],
+    "production": ["en production", "in production", "entre en production", "enters production", "début de fabrication", "lancement de la fabrication", "begins production", "production start", "now in production"],
+    "financement": ["financement", "financing", "funding", "tour de table", "aide du cnc", "cnc", "greenlit", "green-lit", "greenlight", "commissioned", "orders series", "picks up", "raises", "pre-sale", "boucle", "closes financing"],
+    "developpement": ["développement", "in development", "development", "pitch", "cartoon forum", "cartoon movie", "mifa"]
+  },
+  "formats": {
+    "special-tv": ["spécial tv", "special tv", "tv special", "téléfilm", "holiday special"],
+    "court": ["court-métrage", "court métrage", "short film", "animated short"],
+    "long-metrage": ["long-métrage", "long métrage", "feature film", "animated feature", "feature", "film d'animation", "movie"],
+    "serie": ["série", "series", "saison", "season", "épisodes", "episodes"]
+  },
+  "indicesAnimation": ["animation", "animé", "animée", "animated", "cartoon", "dessin", "anime"],
+  "titresMetiers": ["décor", "background", "layout", "animateur", "animatrice", "animator", "artist", "artiste", "storyboard", "compositing", "graphiste", "dessinat", "coloriste", "assistant", "directeur", "directrice", "director", "supervis", "stagiaire", "intern", "coordinat", "production manager", "chargé", "designer", "peintre", "painter", "rigger", "cleanup", "inbetween", "intervalliste"],
+  "residence": {
+    "paysAcces": ["france"],
+    "pays": {
+      "Royaume-Uni": ["uk", "u.k.", "united kingdom", "britain", "great britain", "england", "royaume-uni", "scotland", "wales"],
+      "Irlande": ["ireland", "irlande", "republic of ireland", "roi"],
+      "États-Unis": ["us", "usa", "u.s.", "united states", "états-unis", "etats-unis", "america"],
+      "Canada": ["canada", "canadian"],
+      "Australie": ["australia", "australie"],
+      "Nouvelle-Zélande": ["new zealand", "nouvelle-zélande"],
+      "Allemagne": ["germany", "allemagne"],
+      "Espagne": ["spain", "espagne"],
+      "Italie": ["italy", "italie"],
+      "Belgique": ["belgium", "belgique"],
+      "Luxembourg": ["luxembourg"],
+      "Suisse": ["switzerland", "suisse"],
+      "Pays-Bas": ["netherlands", "pays-bas", "holland"],
+      "Danemark": ["denmark", "danemark"],
+      "Suède": ["sweden", "suède"],
+      "Norvège": ["norway", "norvège"],
+      "Pologne": ["poland", "pologne"],
+      "Portugal": ["portugal"],
+      "Inde": ["india", "inde"],
+      "France": ["france"],
+      "Union européenne": ["eu", "european union", "union européenne", "eea"]
+    }
+  },
+  "langues": {
+    "fr": ["le", "la", "les", "des", "du", "une", "un", "et", "pour", "avec", "dans", "vous", "nous", "notre", "sur", "au", "aux", "est", "recherche", "poste", "rejoindre", "candidature", "expérience", "profil"],
+    "en": ["the", "and", "for", "with", "you", "your", "our", "we", "are", "will", "to", "of", "in", "is", "looking", "role", "experience", "join", "team", "apply"],
+    "autre": ["und", "der", "die", "das", "mit", "für", "wir", "el", "los", "las", "con", "para", "nosotros", "il", "gli", "per", "con", "voor", "het", "een", "wij", "og", "och", "att", "jest", "oraz"]
+  }
+}

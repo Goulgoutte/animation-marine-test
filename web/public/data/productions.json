@@ -1,0 +1,194 @@
+{
+  "genereLe": "2026-11-25T15:46:49.952Z",
+  "productions": [
+    {
+      "id": "3d2de840d161",
+      "titre": "Les Vacances de Zoé",
+      "format": "serie",
+      "technique": "2D",
+      "producteurs": [],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "preproduction",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "La série d'animation 2D de 52 x 11 minutes, réalisée par Camille Martin, sera fabriquée à Paris avec le soutien du CNC.",
+      "premiereVue": "2026-11-23T15:46:49.952Z",
+      "misEnAvant": true,
+      "bonMomentDecor": true,
+      "sources": [
+        {
+          "sourceId": "exemple",
+          "url": "https://exemple.invalid/prod/1",
+          "vuLe": "2026-11-23T15:46:49.952Z"
+        }
+      ]
+    },
+    {
+      "id": "1016082ab9bf",
+      "titre": "La Rivière aux oiseaux",
+      "format": "long-metrage",
+      "technique": "2D",
+      "producteurs": [],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "financement",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "Film d'animation 2D dessiné à la main, tour de table bouclé avec France Télévisions. Fabrication prévue à Angoulême.",
+      "premiereVue": "2026-11-21T15:46:49.952Z",
+      "misEnAvant": false,
+      "bonMomentDecor": true,
+      "sources": [
+        {
+          "sourceId": "exemple",
+          "url": "https://exemple.invalid/prod/2",
+          "vuLe": "2026-11-21T15:46:49.952Z"
+        }
+      ]
+    },
+    {
+      "id": "6247e7f7b1e0",
+      "titre": "Petit Loup des neiges",
+      "format": "long-metrage",
+      "technique": "2D",
+      "producteurs": [],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "developpement",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "Un long-métrage animé en 2D, présenté en pitch à Cartoon Movie. Coproduction France-Belgique.",
+      "premiereVue": "2026-11-20T15:46:49.952Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "exemple",
+          "url": "https://exemple.invalid/prod/3",
+          "vuLe": "2026-11-20T15:46:49.952Z"
+        }
+      ]
+    },
+    {
+      "id": "c01faa364b44",
+      "titre": "Night Garden Club",
+      "format": "serie",
+      "technique": "2D",
+      "producteurs": [],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "production",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "The hand-drawn animated series enters production at a Dublin studio, with 26 episodes. Backgrounds will be done remotely.",
+      "premiereVue": "2026-11-22T15:46:49.952Z",
+      "misEnAvant": false,
+      "bonMomentDecor": true,
+      "sources": [
+        {
+          "sourceId": "exemple",
+          "url": "https://exemple.invalid/prod/4",
+          "vuLe": "2026-11-22T15:46:49.952Z"
+        }
+      ]
+    },
+    {
+      "id": "b99ae57d436d",
+      "titre": "Mini Monstres",
+      "format": "serie",
+      "technique": "3D",
+      "producteurs": [],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "production",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "La série d'animation en images de synthèse (Maya, Houdini) démarre sa fabrication à Lyon.",
+      "premiereVue": "2026-11-19T15:46:49.952Z",
+      "misEnAvant": false,
+      "bonMomentDecor": true,
+      "sources": [
+        {
+          "sourceId": "exemple",
+          "url": "https://exemple.invalid/prod/5",
+          "vuLe": "2026-11-19T15:46:49.952Z"
+        }
+      ]
+    },
+    {
+      "id": "a760f71e219a",
+      "titre": "Kitsune Tales",
+      "format": "serie",
+      "technique": "2D",
+      "producteurs": [],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "preproduction",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "The 2D animated series was greenlit after financing closed, with a French co-production and pre-production starting in Paris.",
+      "premiereVue": "2026-11-24T15:46:49.952Z",
+      "misEnAvant": true,
+      "bonMomentDecor": true,
+      "sources": [
+        {
+          "sourceId": "exemple",
+          "url": "https://exemple.invalid/prod/7",
+          "vuLe": "2026-11-24T15:46:49.952Z"
+        }
+      ]
+    },
+    {
+      "id": "aff6534cb60d",
+      "titre": "Le Renne et la Lune",
+      "format": "special-tv",
+      "technique": "2D",
+      "producteurs": [],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "developpement",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "Un téléfilm d'animation 2D présenté au Cartoon Forum, encore en développement.",
+      "premiereVue": "2026-11-13T15:46:49.952Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "exemple",
+          "url": "https://exemple.invalid/prod/8",
+          "vuLe": "2026-11-13T15:46:49.952Z"
+        }
+      ]
+    }
+  ]
+}
