@@ -4,7 +4,9 @@ import { Link2, Mail, MapPin, Phone, Plus, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { BadgeStatut } from "@/components/BadgeStatut";
 import { Avatar, Champ, Sheet } from "@/components/ui";
+import { ChampFiche } from "@/components/crm/ChampFiche";
 import { tonFraicheur } from "@/lib/contacts";
+import { estChampContact, triees } from "@/lib/crm";
 import { diffDays, fmt, ilYa, today } from "@/lib/dates";
 import { useStore } from "@/lib/store";
 import { TYPES_ECHANGE, labelEchange, type Contact, type TypeEchange } from "@/lib/types";
@@ -143,6 +145,26 @@ export function FicheContact({ c, onClose }: { c: Contact; onClose: () => void }
           <input className="champ" value={tags} onChange={(ev) => setTags(ev.target.value)} onBlur={() => maj({ etiquettes: tags.split(",").map((x) => x.trim()).filter(Boolean) })} />
         </Champ>
       </div>
+      {(() => {
+        const perso = triees(s.data.crm_colonnes).filter((k) => k.type !== "dernier_echange" && !estChampContact(k));
+        const groupes = triees(s.data.crm_groupes);
+        if (perso.length === 0 && groupes.length === 0) return null;
+        return (
+          <>
+            <h3 className="titre-section mb-3 mt-6">Suivi</h3>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {groupes.length > 0 && (
+                <Champ label="Groupe">
+                  <select className="champ" value={c.groupe_id ?? groupes[0].id} onChange={(ev) => maj({ groupe_id: ev.target.value })}>
+                    {groupes.map((g) => <option key={g.id} value={g.id}>{g.titre}</option>)}
+                  </select>
+                </Champ>
+              )}
+              {perso.map((k) => <ChampFiche key={k.id} col={k} c={c} onChange={maj} />)}
+            </div>
+          </>
+        );
+      })()}
       {c.ville && <p className="micro mt-3 flex items-center gap-1"><MapPin className="h-3 w-3" />{c.ville}</p>}
     </Sheet>
   );

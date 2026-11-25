@@ -13,7 +13,7 @@ import { REGLAGES_DEFAUT, TABLE_NAMES, type Donnees, type Reglages, type TableNa
 const CLE_DEMO = "veille-animation-demo-v1";
 const vide = (): Donnees => ({
   candidatures: [], relances: [], contacts: [], echanges: [], offres_manuelles: [],
-  productions_manuelles: [], corrections: [], masquages: [], reglages: [],
+  productions_manuelles: [], corrections: [], masquages: [], reglages: [], crm_colonnes: [], crm_groupes: [],
 });
 
 export interface Collecte {
@@ -210,6 +210,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       } as Donnees;
       // Suppressions en cascade (la base le fait aussi côté Supabase)
       if (t === "candidatures") suivant = { ...suivant, relances: suivant.relances.filter((r) => r.candidature_id !== id) };
+      if (t === "crm_groupes") suivant = { ...suivant, contacts: suivant.contacts.map((k) => (k.groupe_id === id ? { ...k, groupe_id: null } : k)) };
       if (t === "contacts") suivant = { ...suivant, echanges: suivant.echanges.filter((r) => r.contact_id !== id) };
       dataRef.current = suivant;
       setData(suivant);

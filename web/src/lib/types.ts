@@ -58,6 +58,38 @@ export interface Contact extends Base {
   linkedin: string | null;
   rencontre: string | null;
   etiquettes: string[];
+  /** CRM : groupe du tableau, valeurs des colonnes personnalisées (clé = id de colonne), rang dans le groupe. */
+  groupe_id?: string | null;
+  champs?: Record<string, unknown>;
+  ordre?: number | null;
+}
+
+export type TypeColonne =
+  | "texte" | "texte_long" | "statut" | "etiquettes" | "date" | "nombre"
+  | "lien" | "email" | "telephone" | "case" | "note" | "dernier_echange";
+
+export interface Libelle {
+  id: string;
+  label: string;
+  couleur: string;
+}
+
+export interface CrmColonne extends Base {
+  cle: string;
+  titre: string;
+  type: TypeColonne;
+  options: { libelles?: Libelle[] };
+  ordre: number;
+  largeur: number;
+  masquee: boolean;
+  systeme: boolean;
+}
+
+export interface CrmGroupe extends Base {
+  titre: string;
+  couleur: string;
+  ordre: number;
+  replie: boolean;
 }
 
 export type TypeEchange = "cafe" | "dejeuner" | "festival" | "visio" | "appel" | "message" | "mail";
@@ -114,6 +146,8 @@ export interface Tables {
   corrections: Correction;
   masquages: Masquage;
   reglages: Reglages;
+  crm_colonnes: CrmColonne;
+  crm_groupes: CrmGroupe;
 }
 export type TableName = keyof Tables;
 export const TABLE_NAMES: TableName[] = [
@@ -126,6 +160,8 @@ export const TABLE_NAMES: TableName[] = [
   "corrections",
   "masquages",
   "reglages",
+  "crm_colonnes",
+  "crm_groupes",
 ];
 
 export type Donnees = { [K in TableName]: Tables[K][] };

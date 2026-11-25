@@ -3,6 +3,7 @@
 import { Archive, BellRing, Compass, Database, Download, ExternalLink, LogOut, RotateCcw, UserRound, type LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import { Avatar, EnTete, Interrupteur } from "@/components/ui";
+import { estChampContact, texteDe, triees } from "@/lib/crm";
 import { csv, stamp, telecharger } from "@/lib/export";
 import { fmt } from "@/lib/dates";
 import { COULEUR, LIBELLE, santeSource } from "@/lib/sante";
@@ -54,14 +55,18 @@ export default function Reglages() {
     ], lignes), "text/csv;charset=utf-8");
   }
   function exportContacts() {
+    // Colonnes du CRM qui ne sont pas déjà des champs de la fiche (statut, dates, notes, colonnes ajoutées…).
+    const colsPerso = triees(s.data.crm_colonnes).filter((k) => !estChampContact(k) && k.type !== "dernier_echange");
     const lignes = s.data.contacts.map((c) => {
       const ex = s.data.echanges.filter((e) => e.contact_id === c.id).sort((a, b) => b.date.localeCompare(a.date));
-      return { ...c, dernier: ex[0]?.date ?? "", nb: ex.length, journal: ex.map((e) => `${e.date} ${labelEchange(e.type)} : ${e.sujets ?? ""}`) };
+      const perso = Object.fromEntries(colsPerso.map((k) => [`crm_${k.id}`, texteDe(c, k, s.data.echanges)]));
+      return { ...c, groupe: s.data.crm_groupes.find((g) => g.id === c.groupe_id)?.titre ?? "", ...perso, dernier: ex[0]?.date ?? "", nb: ex.length, journal: ex.map((e) => `${e.date} ${labelEchange(e.type)} : ${e.sujets ?? ""}`) };
     });
     telecharger(`contacts-${stamp()}.csv`, csv([
       { cle: "prenom", titre: "Prénom" }, { cle: "nom", titre: "Nom" }, { cle: "structure", titre: "Structure" }, { cle: "fonction", titre: "Fonction" },
       { cle: "ville", titre: "Ville" }, { cle: "email", titre: "E-mail" }, { cle: "telephone", titre: "Téléphone" }, { cle: "linkedin", titre: "LinkedIn" },
-      { cle: "etiquettes", titre: "Étiquettes" }, { cle: "dernier", titre: "Dernier échange" }, { cle: "nb", titre: "Nb d’échanges" }, { cle: "journal", titre: "Journal" },
+      { cle: "etiquettes", titre: "Étiquettes" }, { cle: "groupe", titre: "Groupe" },
+      ...colsPerso.map((k) => ({ cle: `crm_${k.id}`, titre: k.titre })), { cle: "dernier", titre: "Dernier échange" }, { cle: "nb", titre: "Nb d’échanges" }, { cle: "journal", titre: "Journal" },
     ], lignes), "text/csv;charset=utf-8");
   }
   function sauvegarde() {
