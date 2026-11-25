@@ -190,6 +190,8 @@ export interface Studio extends Base {
   taille: string | null;
   notes: string | null;
   logo: string | null;
+  /** Image de couverture (URL) ; absente = illustration générée d’après le nom. */
+  couverture?: string | null;
   updated_at?: string;
 }
 
