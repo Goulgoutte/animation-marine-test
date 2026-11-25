@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo } from "react";
 import { changementStatut } from "@/lib/actions";
 import { today } from "@/lib/dates";
-import { creerBrouillon, envoyerMail, type ResultatMail } from "@/lib/gmail";
+import { creerBrouillon, envoyerMail, ErreurGmail, type ResultatMail } from "@/lib/gmail";
 import { MODELES_PAR_DEFAUT, valeursCandidature, valeursContact, type Valeurs } from "@/lib/modeles";
 import { useStore } from "@/lib/store";
 import type { Candidature, Contact } from "@/lib/types";
@@ -31,7 +31,7 @@ export function useMail() {
 
   // Modèles par défaut : créés une seule fois, au premier usage (le drapeau évite de les recréer si on les supprime).
   const assurerModeles = useCallback(() => {
-    if (semisEnCours || profil?.modeles_init || s.data.modeles_mail.length > 0) return;
+    if (s.lectureSeule || semisEnCours || profil?.modeles_init || s.data.modeles_mail.length > 0) return;
     semisEnCours = true;
     for (const m of MODELES_PAR_DEFAUT) s.add("modeles_mail", m);
     s.saveReglages({ profil_mail: { ...(profil ?? {}), modeles_init: true } });
@@ -70,6 +70,7 @@ export function useMail() {
   /** Crée le brouillon Gmail (ou l'envoie) puis met à jour la candidature et l'historique. Lève ErreurGmail en cas d'échec. */
   const livrer = useCallback(
     async (cible: Cible, mode: "brouillon" | "envoi", email: string, sujet: string, corps: string): Promise<ResultatMail> => {
+      if (s.lectureSeule) throw new ErreurGmail("Gmail est désactivé en lecture seule.");
       const nomDe = [profil?.prenom, profil?.nom].filter(Boolean).join(" ") || undefined;
       const mail = { a: email, sujet, corps, de: profil?.adresse || undefined, nomDe, html: true };
       const res = mode === "brouillon" ? await creerBrouillon(mail) : await envoyerMail(mail);
@@ -100,5 +101,5 @@ export function useMail() {
     [s, profil],
   );
 
-  return { modeles: s.data.modeles_mail, assurerModeles, cibleCandidature, cibleContact, livrer };
+  return { lectureSeule: s.lectureSeule, modeles: s.data.modeles_mail, assurerModeles, cibleCandidature, cibleContact, livrer };
 }

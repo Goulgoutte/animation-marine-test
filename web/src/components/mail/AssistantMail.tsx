@@ -105,7 +105,7 @@ export function AssistantMail({ cibles, onClose }: { cibles: Cible[]; onClose: (
       ) : enCours ? (
         <button className="bouton" onClick={() => { stop.current = true; }}>Arrêter</button>
       ) : (
-        <button className={`bouton ${mode === "brouillon" ? "bouton-plein" : "bouton-danger"}`} disabled={N === 0 || !gmailPret(etat) || (mode === "envoi" && !confirme)} onClick={lancer}>
+        <button className={`bouton ${mode === "brouillon" ? "bouton-plein" : "bouton-danger"}`} disabled={N === 0 || !gmailPret(etat, mail.lectureSeule) || (mode === "envoi" && !confirme)} onClick={lancer}>
           {mode === "brouillon" ? <FilePen /> : <Send />}{verbe}
         </button>
       )}

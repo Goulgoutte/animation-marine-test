@@ -3,15 +3,18 @@
 import { Mail, RefreshCw } from "lucide-react";
 import { useState } from "react";
 import { connecterGmail, expirationGmail, useEtatGmail } from "@/lib/gmail";
+import { useStore } from "@/lib/store";
 
 export const MSG_DEMO = "Mode démo : aucun mail réel";
 
 /** État de la connexion Gmail et bouton « Connecter Gmail » / « Reconnecter Gmail ». */
 export function BoutonGmail({ compact }: { compact?: boolean }) {
   const etat = useEtatGmail();
+  const { lectureSeule } = useStore();
   const [erreur, setErreur] = useState<string | null>(null);
   const [envoi, setEnvoi] = useState(false);
 
+  if (lectureSeule) return <p className="micro rounded-lg bg-surface-2 px-2.5 py-1.5" role="status">Gmail désactivé : tu es en lecture seule.</p>;
   if (etat === "demo") return <p className="micro rounded-lg bg-surface-2 px-2.5 py-1.5" role="status">{MSG_DEMO}</p>;
 
   const fin = expirationGmail();
@@ -36,4 +39,4 @@ export function BoutonGmail({ compact }: { compact?: boolean }) {
   );
 }
 
-export const gmailPret = (etat: ReturnType<typeof useEtatGmail>) => etat === "demo" || etat === "connecte";
+export const gmailPret = (etat: ReturnType<typeof useEtatGmail>, lectureSeule = false) => !lectureSeule && (etat === "demo" || etat === "connecte");

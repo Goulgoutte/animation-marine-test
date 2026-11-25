@@ -9,6 +9,7 @@ import { estChampContact, texteDe, triees } from "@/lib/crm";
 import { csv, stamp, telecharger } from "@/lib/export";
 import { useStore } from "@/lib/store";
 import { labelCanal, labelEchange, labelStatut } from "@/lib/types";
+import { PartagerMaVue } from "@/components/Partage";
 import { ModelesMail } from "@/components/mail/ModelesMail";
 import { ProfilMail } from "@/components/mail/ProfilMail";
 import { Mail } from "lucide-react";
@@ -106,6 +107,7 @@ export default function Reglages() {
           </div>
           {s.demo && <p className="mt-4 rounded-xl bg-surface-2 p-3 text-[13px] text-muted">Les données du mode démo restent dans ce navigateur. Elles disparaissent si tu effaces les données du site.</p>}
           <ProfilMail />
+          <PartagerMaVue />
         </Section>
 
         <Section

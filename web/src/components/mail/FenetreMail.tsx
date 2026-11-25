@@ -42,7 +42,7 @@ export function FenetreMail({ c, onClose }: { c: Candidature; onClose: () => voi
   const corps = edition.corps ?? rCorps.texte;
   const adresseOk = adresseValide(email);
   const pret = adresseOk && sujet.trim().length > 0 && corps.trim().length > 0 && !!modele;
-  const peut = pret && gmailPret(etat) && !occupe;
+  const peut = pret && gmailPret(etat, mail.lectureSeule) && !occupe;
 
   async function lancer(mode: "brouillon" | "envoi") {
     setOccupe(true);

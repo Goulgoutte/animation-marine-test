@@ -169,3 +169,84 @@ end $$;
 grant usage on schema public to authenticated;
 grant select, insert, update, delete on all tables in schema public to authenticated;
 revoke all on all tables in schema public from anon;
+
+-- ------------------------------------------------------------------- partages
+-- Partage de vue en lecture seule : modèle de sécurité détaillé en tête de migrations/009_partages.sql.
+-- Ce bloc doit rester en dernier : il remplace les politiques SELECT définies plus haut.
+create table if not exists public.partages (
+  id uuid primary key default gen_random_uuid(),
+  proprietaire uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  invite_email text not null check (invite_email = lower(btrim(invite_email)) and invite_email <> ''),
+  actif boolean not null default true,
+  proprietaire_nom text,      -- remplis par la propriétaire à partir de son profil Google, pour l'affichage chez l'invitée
+  proprietaire_avatar text,
+  created_at timestamptz not null default now(),
+  unique (proprietaire, invite_email)
+);
+
+alter table public.partages add column if not exists proprietaire_nom text;
+alter table public.partages add column if not exists proprietaire_avatar text;
+
+create index if not exists partages_invite_idx on public.partages (lower(invite_email)) where actif;
+
+alter table public.partages enable row level security;
+
+drop policy if exists partages_select_proprietaire on public.partages;
+create policy partages_select_proprietaire on public.partages for select using (proprietaire = auth.uid());
+
+drop policy if exists partages_select_invite on public.partages;
+create policy partages_select_invite on public.partages for select
+  using (actif and lower(invite_email) = lower(coalesce(auth.jwt() ->> 'email', '')));
+
+drop policy if exists partages_insert_proprietaire on public.partages;
+create policy partages_insert_proprietaire on public.partages for insert with check (proprietaire = auth.uid());
+
+drop policy if exists partages_update_proprietaire on public.partages;
+create policy partages_update_proprietaire on public.partages for update
+  using (proprietaire = auth.uid()) with check (proprietaire = auth.uid());
+
+drop policy if exists partages_delete_proprietaire on public.partages;
+create policy partages_delete_proprietaire on public.partages for delete using (proprietaire = auth.uid());
+
+-- Peut-on lire les lignes de « owner » ? Oui si ce sont les siennes ou si un partage actif nous est accordé.
+create or replace function public.peut_lire(owner uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select owner = auth.uid()
+    or exists (
+      select 1 from public.partages p
+      where p.proprietaire = owner
+        and p.actif
+        and lower(p.invite_email) = lower(coalesce(auth.jwt() ->> 'email', ''))
+    );
+$$;
+
+revoke all on function public.peut_lire(uuid) from public, anon;
+grant execute on function public.peut_lire(uuid) to authenticated;
+
+-- Politique SELECT : propriétaire OU partage actif (uniquement sur les tables présentes).
+do $$
+declare
+  t text;
+begin
+  foreach t in array array[
+    'candidatures', 'relances', 'contacts', 'echanges',
+    'offres_manuelles', 'productions_manuelles', 'corrections', 'masquages',
+    'reglages', 'crm_colonnes', 'crm_groupes', 'modeles_mail',
+    'studios', 'contact_studios', 'liens_contacts'
+  ]
+  loop
+    if to_regclass('public.' || t) is not null then
+      execute format('drop policy if exists %I on public.%I', t || '_select_own', t);
+      execute format('drop policy if exists %I on public.%I', t || '_select_partage', t);
+      execute format('create policy %I on public.%I for select using (public.peut_lire(user_id))', t || '_select_partage', t);
+    end if;
+  end loop;
+end $$;
+
+grant select, insert, update, delete on public.partages to authenticated;
+revoke all on public.partages from anon;

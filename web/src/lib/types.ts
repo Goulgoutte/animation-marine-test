@@ -225,6 +225,17 @@ export interface Tables {
   contact_studios: ContactStudio;
   modeles_mail: ModeleMail;
 }
+/** Partage de vue en lecture seule (table `partages`, hors des tables de données par utilisateur). */
+export interface Partage {
+  id: string;
+  proprietaire: string;
+  invite_email: string;
+  actif: boolean;
+  proprietaire_nom: string | null;
+  proprietaire_avatar: string | null;
+  created_at?: string;
+}
+
 export type TableName = keyof Tables;
 export const TABLE_NAMES: TableName[] = [
   "candidatures",

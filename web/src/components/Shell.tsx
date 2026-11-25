@@ -12,6 +12,7 @@ import { JaugeCollecte } from "./JaugeCollecte";
 import { Logo } from "./Logo";
 import { Recherche } from "./Recherche";
 import { SelecteurTheme } from "./Theme";
+import { BandeauPartage, VuesPartagees } from "./Partage";
 import { Avatar, Sheet } from "./ui";
 
 const liens = [
@@ -74,8 +75,9 @@ export function Shell({ children }: { children: ReactNode }) {
       </aside>
 
       <div className="md:pl-60">
+        <BandeauPartage />
         {/* Barre du haut : ordinateur */}
-        <header className="sticky top-0 z-20 hidden h-14 items-center gap-3 border-b border-line bg-bg/85 px-6 backdrop-blur md:flex">
+        <header className="sticky top-[var(--bandeau,0px)] z-20 hidden h-14 items-center gap-3 border-b border-line bg-bg/85 px-6 backdrop-blur md:flex">
           <button onClick={() => setRecherche(true)} className="group flex h-9 w-full max-w-md items-center gap-2.5 rounded-xl border border-line bg-surface px-3 text-[13px] text-muted shadow-[var(--ombre)] transition-colors hover:border-[color-mix(in_srgb,var(--muted)_45%,var(--line))]" aria-label="Rechercher">
             <Search className="h-4 w-4" />
             <span className="flex-1 text-left">Rechercher une offre, une production, un contact…</span>
@@ -85,7 +87,7 @@ export function Shell({ children }: { children: ReactNode }) {
         </header>
 
         {/* Barre d’app : mobile */}
-        <header className="sticky top-0 z-20 flex items-center gap-2 border-b border-line bg-bg/90 px-4 pb-2.5 pt-[max(10px,env(safe-area-inset-top))] backdrop-blur md:hidden">
+        <header className="sticky top-[var(--bandeau,0px)] z-20 flex items-center gap-2 border-b border-line bg-bg/90 px-4 pb-2.5 pt-[max(10px,env(safe-area-inset-top))] backdrop-blur md:hidden">
           <span className="min-w-0 flex-1"><Logo taille={30} /></span>
           <button onClick={() => setRecherche(true)} className="bouton bouton-texte bouton-icone" aria-label="Rechercher"><Search className="!h-5 !w-5" /></button>
           <MenuProfil />
@@ -133,6 +135,7 @@ function FeuillePlus({ onClose, onRecherche, profil }: { onClose: () => void; on
       <div className="flex flex-col gap-1">
         <div className="mb-1"><SelecteurTheme /></div>
         <button onClick={onRecherche} className="nav-item w-full text-left"><Search />Rechercher</button>
+        <VuesPartagees onChoix={onClose} />
         <Link href="/reglages/" onClick={onClose} className="nav-item"><Settings />Réglages</Link>
         {!demo && <button onClick={deconnexion} className="nav-item w-full text-left !text-danger"><LogOut />Déconnexion</button>}
       </div>
@@ -174,6 +177,7 @@ function MenuProfil() {
           </div>
           <div className="my-1 h-px bg-line" />
           <div className="px-1 pb-1.5 pt-1"><SelecteurTheme /></div>
+          <VuesPartagees onChoix={() => setOuvert(false)} />
           <div className="my-1 h-px bg-line" />
           <Link href="/reglages/" role="menuitem" onClick={() => setOuvert(false)} className="nav-item"><Settings />Réglages</Link>
           {!demo && <button role="menuitem" onClick={deconnexion} className="nav-item w-full text-left hover:!text-danger"><LogOut />Déconnexion</button>}

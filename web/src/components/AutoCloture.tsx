@@ -6,13 +6,14 @@ import { useStore } from "@/lib/store";
 
 /** Passe en « sans réponse » les candidatures relancées deux fois sans réponse (annulable depuis la fiche). */
 export function AutoCloture() {
-  const { data, reglages, patch } = useStore();
+  const { data, reglages, patch, lectureSeule } = useStore();
   useEffect(() => {
+    if (lectureSeule) return;
     for (const c of data.candidatures) {
       if (doitEtreCloturee(c, data.relances, reglages)) {
         patch("candidatures", c.id, { statut: "sans_reponse", statut_avant: c.statut, cloture_auto: true });
       }
     }
-  }, [data.candidatures, data.relances, reglages, patch]);
+  }, [data.candidatures, data.relances, reglages, patch, lectureSeule]);
   return null;
 }
