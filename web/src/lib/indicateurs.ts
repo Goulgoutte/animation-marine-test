@@ -1,10 +1,11 @@
 "use client";
 
 import { useMemo } from "react";
-import { addDays, addMonths, diffDays, today } from "./dates";
-import { dernierEchange } from "./contacts";
+import { addDays, diffDays, today } from "./dates";
+import { aRecontacter, dernierEchange } from "./contacts";
 import { prochaineAction } from "./actions";
 import { aRelancer, prochaineRelance } from "./relances";
+import { estDansMetiers, metiersSuivis } from "@shared/metiers";
 import { useStore } from "./store";
 import type { Candidature, Contact, Echange } from "./types";
 import { offreDansPerimetre, offresVues, productionDansPerimetre, productionsVues } from "./veille";
@@ -24,8 +25,9 @@ export function useIndicateurs() {
   return useMemo(() => {
     const offres = collecte ? offresVues(collecte, data, visitePrecedente) : [];
     const prods = collecte ? productionsVues(collecte, data, visitePrecedente) : [];
+    const metiersChoisis = metiersSuivis(reglages.perimetre);
     const offresPerimetre = offres
-      .filter((o) => o.categorie === "decor" && !o.masquee && (o.manuelle || offreDansPerimetre(o, reglages)))
+      .filter((o) => estDansMetiers(o.metiers, metiersChoisis) && !o.masquee && (o.manuelle || offreDansPerimetre(o, reglages)))
       .sort((a, b) => b.premiereVue.localeCompare(a.premiereVue));
     const nouvellesOffres = offresPerimetre.filter((o) => o.nouveau);
     const prodsMoment = prods.filter((p) => p.bonMomentDecor && !p.masquee && (p.manuelle || productionDansPerimetre(p, reglages)));
@@ -43,12 +45,11 @@ export function useIndicateurs() {
       .filter((x): x is { c: Candidature; a: NonNullable<typeof x.a> } => !!x.a && !x.a.deduite && x.a.echue)
       .sort((x, y) => (x.a.date ?? "").localeCompare(y.a.date ?? ""));
 
-    const seuil = addMonths(today(), -reglages.delai_contact_mois);
     const suivis: ContactSuivi[] = data.contacts.map((c) => {
       const dernier = dernierEchange(c.id, data.echanges);
-      return { c, dernier, jours: dernier ? diffDays(today(), dernier) : null, oublie: !dernier || dernier < seuil };
+      return { c, dernier, jours: dernier ? diffDays(today(), dernier) : null, oublie: aRecontacter(dernier, reglages.delai_contact_mois) };
     });
-    const contactsARecontacter = suivis.filter((x) => x.oublie).sort((a, b) => (b.jours ?? 99999) - (a.jours ?? 99999));
+    const contactsARecontacter = suivis.filter((x) => x.oublie).sort((a, b) => (b.jours ?? 0) - (a.jours ?? 0));
 
     const actionsContacts: { e: Echange; c: Contact }[] = data.echanges
       .filter((e) => e.prochaine_action && e.prochaine_date && e.prochaine_date <= today())
@@ -57,7 +58,7 @@ export function useIndicateurs() {
       .sort((a, b) => (a.e.prochaine_date ?? "").localeCompare(b.e.prochaine_date ?? ""));
 
     return {
-      offres, prods, offresPerimetre, nouvellesOffres, prodsMoment, prodsSurveillees,
+      offres, prods, metiersChoisis, offresPerimetre, nouvellesOffres, prodsMoment, prodsSurveillees,
       relancesDues, actionsCandidatures, suivis, contactsARecontacter, actionsContacts,
       compteurs: {
         veille: nouvellesOffres.length,
@@ -81,4 +82,4 @@ export function envoyeesParSemaine(candidatures: Candidature[], n = 8) {
   });
 }
 
-export const REPONDUES = ["entretien", "refus", "acceptee"];
+export const REPONDUES = ["entretien", "peut_etre", "refus", "acceptee"];

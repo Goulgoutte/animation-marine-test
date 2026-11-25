@@ -25,7 +25,7 @@
   "studiosParis": ["Xilam", "Ellipse", "Folivari", "TAT", "Superprod", "Caribara", "Blue Spirit", "Miyu", "Sacrebleu", "Autour de Minuit", "Fortiche", "Bobbypills", "Mikros", "Illumination", "Je Suis Bien Content", "Les Films du Cygne", "Gaumont", "Mediawan", "Zagtoon", "ZAG", "Dandelooo", "Millimages", "Mist", "Fost", "TeamTO", "Maybe Movies", "Les Armateurs", "Lardux"],
   "diffuseurs": ["France Télévisions", "Canal+", "Arte", "TF1", "M6", "Okoo", "Gulli", "Netflix", "Disney", "Piwi+", "Prime Video", "Amazon"],
   "indicesAnimation": ["animation", "animé", "animée", "animated", "cartoon", "dessin", "anime"],
-  "titresMetiers": ["décor", "background", "layout", "animateur", "animatrice", "animator", "artist", "artiste", "storyboard", "compositing", "graphiste", "dessinat", "coloriste", "assistant", "directeur", "directrice", "director", "supervis", "stagiaire", "intern", "coordinat", "production manager", "chargé", "designer", "peintre", "painter", "rigger", "cleanup", "inbetween", "intervalliste"],
+  "titresMetiers": ["décor", "background", "layout", "animateur", "animatrice", "animator", "artist", "artiste", "storyboard", "compositing", "graphiste", "dessinat", "coloriste", "assistant", "directeur", "directrice", "director", "supervis", "stagiaire", "intern", "coordinat", "production manager", "chargé", "designer", "peintre", "painter", "rigger", "cleanup", "inbetween", "intervalliste", "concept", "visdev", "visual dev", "environment", "character design", "color", "colour", "couleur", "clean", "story"],
   "residence": {
     "paysAcces": ["france"],
     "pays": {

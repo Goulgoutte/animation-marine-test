@@ -1,4 +1,5 @@
 import robotsParser from "robots-parser";
+import { domaineDe } from "../../shared/charge.ts";
 
 export const USER_AGENT = "veille-animation/1.0 (usage personnel)";
 const INTERVALLE_MS = 3000;
@@ -10,8 +11,24 @@ const pageCache = new Map<string, string>();
 
 const dormir = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-/** Une requête toutes les 3 s par domaine. */
+// Compteur de requêtes de cette session par domaine (sans « www. »), robots.txt compris, et garde-fou optionnel.
+const requetesSession = new Map<string, number>();
+let garde: ((domaine: string) => boolean) | null = null;
+
+/** Requêtes faites depuis le début du processus, par domaine. */
+export const requetesDeLaSession = (): Record<string, number> => Object.fromEntries(requetesSession);
+export const totalRequetesSession = (): number => [...requetesSession.values()].reduce((a, b) => a + b, 0);
+export function remettreCompteurs(): void { requetesSession.clear(); }
+/** Installe (ou retire, avec null) la fonction qui dit si un domaine peut encore recevoir une requête. */
+export function installerGarde(f: ((domaine: string) => boolean) | null): void { garde = f; }
+
+/** Une requête toutes les 3 s par domaine ; refusée si le plafond quotidien du domaine est atteint. */
 export async function attendreTour(url: string): Promise<void> {
+  const domaine = domaineDe(url);
+  if (domaine) {
+    if (garde && !garde(domaine)) throw new Error(`plafond quotidien de requêtes atteint pour ${domaine}`);
+    requetesSession.set(domaine, (requetesSession.get(domaine) ?? 0) + 1);
+  }
   const hote = new URL(url).host;
   const prochain = (dernierAppel.get(hote) ?? 0) + INTERVALLE_MS;
   const attente = prochain - Date.now();

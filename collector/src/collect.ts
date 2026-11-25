@@ -3,7 +3,11 @@ import { fileURLToPath } from "node:url";
 import { classerOffre, classerProduction, motsParDefaut, normaliser } from "./classify.ts";
 import { connuesEnProductions, lireConnues } from "./connues.ts";
 import { fermerNavigateur, recuperer } from "./fetchers.ts";
+import { installerGarde, requetesDeLaSession, totalRequetesSession } from "./http.ts";
 import { estEchue } from "../../shared/sources.ts";
+import {
+  ajouterHistorique, collecteTropRecente, compteurDuJour, domaineDe, limitesDepuis, plafondAtteint, plafondDe, type Limites,
+} from "../../shared/charge.ts";
 import { chargerSources } from "./remote.ts";
 import { enrichirImages } from "./images.ts";
 import { fusionnerOffres, fusionnerProductions, idOffre, idProduction } from "./merge.ts";
@@ -24,13 +28,18 @@ export function ecrire(nom: string, contenu: unknown): void {
   writeFileSync(DATA_DIR + nom, JSON.stringify(contenu, null, 2) + "\n");
 }
 
+/** Garde-fous : collector/config/limites.json (plafond par domaine et par jour, délai minimal entre deux collectes). */
+export function lireLimites(): Limites {
+  try { return limitesDepuis(JSON.parse(readFileSync(new URL("../config/limites.json", import.meta.url), "utf8"))); } catch { return limitesDepuis(null); }
+}
+
 const dateIso = (s: string | null): string | null => {
   if (!s) return null;
   const t = Date.parse(s);
   return Number.isNaN(t) ? null : new Date(t).toISOString();
 };
 
-function filtreTitre(src: SourceConfig): ((titre: string) => boolean) | null {
+export function filtreTitre(src: SourceConfig): ((titre: string) => boolean) | null {
   if (src.filtre) { const re = new RegExp(src.filtre, "i"); return (t) => re.test(t); }
   // pages HTML d'emploi ou de carrière : ne garder que ce qui ressemble à un intitulé de poste
   // (les API d'ATS ne renvoient que des offres : pas de filtre)
@@ -101,9 +110,24 @@ async function main() {
   const forcer = process.argv.includes("--force") || process.env.FORCER === "1" || process.env.FORCER === "true";
   const maintenant = new Date();
   const iso = maintenant.toISOString();
+  const limites = lireLimites();
+  const prevFichier = lire<FichierSources>("sources.json");
+  // Délai minimal entre deux collectes complètes (sauf --force) : on sort sans rien écrire.
+  if (!seulement) {
+    const v = collecteTropRecente(prevFichier?.derniereCollecteComplete, maintenant, limites, forcer);
+    if (v.refuse) {
+      console.log(`Collecte refusée : la précédente date de moins de ${limites.delaiMinCollecteMinutes} min (reprise possible dans ${v.attendreMinutes} min). --force passe outre.`);
+      return;
+    }
+  }
+  const compteur = compteurDuJour(prevFichier?.requetesJour, maintenant);
+  const sessionDe = (d: string) => requetesDeLaSession()[d] ?? 0;
+  installerGarde((d) => !plafondAtteint({ [d]: (compteur.parDomaine[d] ?? 0) + sessionDe(d) }, d, limites));
+  const sautees: string[] = [];
+  let sourcesLues = 0;
   const { configs, origine } = await chargerSources();
   console.log(`Sources : ${configs.length} (${origine === "supabase" ? "table Supabase" : "repli sur config/sources.json"})${forcer ? ", passage forcé" : ""}`);
-  const prevSources = new Map((lire<FichierSources>("sources.json")?.sources ?? []).map((s) => [s.id, s]));
+  const prevSources = new Map((prevFichier?.sources ?? []).map((s) => [s.id, s]));
   const offres: Offre[] = [];
   const prods: Production[] = [];
   const statuts: SourceStatut[] = [];
@@ -120,6 +144,7 @@ async function main() {
       derniersTitres: prev?.derniersTitres ?? [],
       ajouteeParUtilisatrice: src.ajouteeParUtilisatrice ?? false,
       notes: src.note ?? null,
+      sautee: null,
     };
     statuts.push(statut);
     if (!src.actif || src.methode === "manuel") continue;
@@ -128,6 +153,15 @@ async function main() {
       console.log(`SKIP ${src.id}: pas encore échue (${statut.frequence}, dernier passage ${statut.dernierPassage})`);
       continue;
     }
+    // Plafond de requêtes du domaine atteint aujourd'hui : on saute la source, elle reste due et repart demain.
+    const domaine = domaineDe(src.url);
+    if (domaine && plafondAtteint({ [domaine]: (compteur.parDomaine[domaine] ?? 0) + sessionDe(domaine) }, domaine, limites)) {
+      statut.sautee = "plafond";
+      sautees.push(src.id);
+      console.log(`SKIP ${src.id}: plafond de ${plafondDe(domaine, limites)} requêtes par jour atteint pour ${domaine}`);
+      continue;
+    }
+    sourcesLues++;
     statut.dernierPassage = iso;
     try {
       let items = await recuperer(src);
@@ -170,7 +204,19 @@ async function main() {
   const prodsFinales = fusionnerProductions(prods, prevProds, maintenant);
   ecrire("offres.json", { genereLe: iso, offres: offresFinales } satisfies FichierOffres);
   ecrire("productions.json", { genereLe: iso, productions: prodsFinales } satisfies FichierProductions);
-  ecrire("sources.json", { genereLe: iso, sources: statuts } satisfies FichierSources);
+  const parDomaine = { ...compteur.parDomaine };
+  for (const [d, n] of Object.entries(requetesDeLaSession())) parDomaine[d] = (parDomaine[d] ?? 0) + n;
+  installerGarde(null);
+  ecrire("sources.json", {
+    genereLe: iso,
+    sources: statuts,
+    limites,
+    requetesJour: { jour: compteur.jour, parDomaine },
+    derniereCollecteComplete: seulement ? (prevFichier?.derniereCollecteComplete ?? null) : iso,
+    historique: ajouterHistorique(prevFichier?.historique, {
+      date: iso, requetes: totalRequetesSession(), sources: sourcesLues, sautees: sautees, ...(seulement ? { partielle: true } : {}),
+    }),
+  } satisfies FichierSources);
   console.log(`Écrit : ${offresFinales.length} offres, ${prodsFinales.length} productions, ${statuts.length} sources.`);
 }
 

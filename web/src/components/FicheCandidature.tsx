@@ -11,7 +11,8 @@ import { changementStatut, estCloturee, prochaineAction } from "@/lib/actions";
 import { fmt, ilYa, diffDays, today } from "@/lib/dates";
 import { prochaineRelance, relancesDe } from "@/lib/relances";
 import { useStore } from "@/lib/store";
-import { CANAUX, STATUTS, labelCanal, labelStatut, type Candidature, type Canal, type Statut } from "@/lib/types";
+import { IconeCanal } from "@/components/IconeCanal";
+import { CANAUX, STATUTS, canauxPour, labelCanal, labelStatut, type Candidature, type Canal, type Statut } from "@/lib/types";
 import { productionsVues } from "@/lib/veille";
 
 export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () => void }) {
@@ -19,7 +20,7 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
   const rs = relancesDe(c, s.data.relances);
   const prochaine = prochaineRelance(c, s.data.relances, s.reglages);
   const [rDate, setRDate] = useState(today());
-  const [rCanal, setRCanal] = useState<Canal>("mail");
+  const [rCanal, setRCanal] = useState<Canal>("mail_pro");
   const [rNote, setRNote] = useState("");
   const [mail, setMail] = useState(false);
   const contact = s.data.contacts.find((k) => k.id === c.contact_id);
@@ -118,7 +119,7 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
         <li>
           <span className="point" style={{ ["--c" as string]: "var(--info)" }} />
           <p className="text-[13px] font-semibold">{c.date_envoi ? `Candidature envoyée · ${fmt(c.date_envoi)}` : "Candidature à préparer"}</p>
-          <p className="micro">{c.date_envoi ? `${labelCanal(c.canal)} · ${ilYa(diffDays(today(), c.date_envoi))}` : "Passe-la en « Envoyée » une fois partie."}</p>
+          <p className="micro">{c.date_envoi ? <><IconeCanal canal={c.canal} /> {labelCanal(c.canal)} · {ilYa(diffDays(today(), c.date_envoi))}</> : "Passe-la en « Envoyée » une fois partie."}</p>
         </li>
         {rs.map((r, i) => (
           <li key={r.id}>
@@ -126,7 +127,7 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0">
                 <p className="text-[13px] font-semibold">Relance {i + 1} · {fmt(r.date)}</p>
-                <p className="micro">{labelCanal(r.canal)} · {ilYa(diffDays(today(), r.date))}</p>
+                <p className="micro"><IconeCanal canal={r.canal} /> {labelCanal(r.canal)} · {ilYa(diffDays(today(), r.date))}</p>
                 {r.note && <p className="mt-0.5 text-[13px] text-muted">{r.note}</p>}
               </div>
               <button className="bouton bouton-petit bouton-texte flex-none" onClick={() => s.remove("relances", r.id)}>Retirer</button>
@@ -138,6 +139,13 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
             <span className="point" style={{ ["--c" as string]: "#8a52d9" }} />
             <p className="text-[13px] font-semibold">Entretien{c.prochaine_action_date ? ` · ${fmt(c.prochaine_action_date)}` : " fixé"}</p>
             {c.prochaine_action && <p className="micro">{c.prochaine_action}</p>}
+          </li>
+        )}
+        {c.statut === "peut_etre" && (
+          <li>
+            <span className="point" style={{ ["--c" as string]: "#0e8fa3" }} />
+            <p className="text-[13px] font-semibold">Peut-être{c.date_statut ? ` · ${fmt(c.date_statut)}` : ""}</p>
+            {c.prochaine_action && <p className="micro">{c.prochaine_action}{c.prochaine_action_date ? ` · ${fmt(c.prochaine_action_date)}` : ""}</p>}
           </li>
         )}
         {cloturee && (
@@ -191,7 +199,7 @@ export function FicheCandidature({ c, onClose }: { c: Candidature; onClose: () =
         <Champ label="Date d’envoi"><input type="date" className="champ" value={c.date_envoi ?? ""} onChange={(e) => maj({ date_envoi: e.target.value || null })} /></Champ>
         <Champ label="Canal">
           <select className="champ" value={c.canal} onChange={(e) => maj({ canal: e.target.value as Canal })}>
-            {CANAUX.map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}
+            {canauxPour(c.canal).map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}
           </select>
         </Champ>
         <Champ label="Catégorie">

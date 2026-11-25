@@ -1,10 +1,12 @@
 import type { Offre, Production } from "@shared/types";
+import { metiersOffre, metiersProduction } from "@shared/metiers";
 import type { Collecte } from "./store";
 import type { Donnees, Reglages } from "./types";
 import { lieuDansZones, normaliser, zonesActives } from "./zones";
 
-export type OffreVue = Offre & { manuelle: boolean; corrigee: boolean; masquee: boolean; nouveau: boolean };
-export type ProductionVue = Production & { manuelle: boolean; corrigee: boolean; masquee: boolean; nouveau: boolean };
+/** `metiers` : ids de shared/metiers.ts, classés côté site (titre, extrait, studio) à chaque affichage. */
+export type OffreVue = Offre & { manuelle: boolean; corrigee: boolean; masquee: boolean; nouveau: boolean; metiers: string[] };
+export type ProductionVue = Production & { manuelle: boolean; corrigee: boolean; masquee: boolean; nouveau: boolean; metiers: string[] };
 
 const idManuel = (id: string) => `m:${id}`;
 
@@ -21,7 +23,7 @@ export function offresVues(c: Collecte, d: Donnees, ref: string | null): OffreVu
   return [...collectees, ...manuelles].map(({ o, manuelle }) => {
     const champs = corr.get(o.id);
     const f = champs ? ({ ...o, ...champs } as Offre) : o;
-    return { ...f, manuelle, corrigee: !!champs, masquee: masques.has(o.id), nouveau: estNouveau(f.premiereVue, ref) };
+    return { ...f, manuelle, corrigee: !!champs, masquee: masques.has(o.id), nouveau: estNouveau(f.premiereVue, ref), metiers: metiersOffre(f) };
   });
 }
 
@@ -33,7 +35,7 @@ export function productionsVues(c: Collecte, d: Donnees, ref: string | null): Pr
   return [...collectees, ...manuelles].map(({ o, manuelle }) => {
     const champs = corr.get(o.id);
     const f = champs ? ({ ...o, ...champs } as Production) : o;
-    return { ...f, manuelle, corrigee: !!champs, masquee: masques.has(o.id), nouveau: estNouveau(f.premiereVue, ref) };
+    return { ...f, manuelle, corrigee: !!champs, masquee: masques.has(o.id), nouveau: estNouveau(f.premiereVue, ref), metiers: metiersProduction(f) };
   });
 }
 

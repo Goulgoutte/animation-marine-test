@@ -1,0 +1,5 @@
+{
+  "plafondRequetesParDomaineParJour": 200,
+  "plafondsParDomaine": {},
+  "delaiMinCollecteMinutes": 10
+}

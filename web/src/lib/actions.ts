@@ -1,8 +1,12 @@
-import { diffDays, today } from "./dates";
+import { addDays, diffDays, today } from "./dates";
 import { prochaineRelance, relancesDe } from "./relances";
 import type { Candidature, Relance, Reglages, Statut } from "./types";
 
 export const CLOTUREES: Statut[] = ["acceptee", "refus", "sans_reponse"];
+/** « Peut-être » : retour tiède (« pas besoin sur mon projet, mais je transmets »). On relance dans trois semaines. */
+export const DELAI_PEUT_ETRE_JOURS = 21;
+export const TEXTE_PEUT_ETRE = "Relancer dans 3 semaines";
+
 export const estCloturee = (c: Candidature) => CLOTUREES.includes(c.statut);
 
 export type Section = "faire" | "attente" | "cours" | "cloturee";
@@ -25,6 +29,11 @@ export function prochaineAction(c: Candidature, rs: Relance[], reg: Reglages): A
     return { texte, date, deduite: false, echue: !!date && date <= t };
   }
   if (c.statut === "a_preparer") return { texte: "Préparer et envoyer", date: null, deduite: true, echue: true };
+  if (c.statut === "peut_etre") {
+    // Filet de sécurité : `changementStatut` pose déjà cette action, mais elle peut avoir été effacée.
+    const date = addDays(c.date_statut ?? t, DELAI_PEUT_ETRE_JOURS);
+    return { texte: TEXTE_PEUT_ETRE, date, deduite: true, echue: date <= t };
+  }
   if (c.statut === "entretien") return { texte: "Attendre le retour après l’entretien", date: null, deduite: true, echue: false };
   const n = relancesDe(c, rs).length;
   const p = prochaineRelance(c, rs, reg);
@@ -37,7 +46,7 @@ export function sectionDe(c: Candidature, rs: Relance[], reg: Reglages): Section
   if (estCloturee(c)) return "cloturee";
   if (c.statut === "a_preparer") return "faire";
   if (prochaineAction(c, rs, reg)?.echue) return "faire";
-  return c.statut === "entretien" ? "cours" : "attente";
+  return c.statut === "entretien" || c.statut === "peut_etre" ? "cours" : "attente";
 }
 
 /** Date de la dernière activité connue (envoi, relance, changement de statut), ou null. */
@@ -55,13 +64,14 @@ export function stagne(c: Candidature, rs: Relance[], jours = SEUIL_STAGNE): boo
   return !!d && diffDays(today(), d) >= jours;
 }
 
-/** Index de l’étape courante dans la frise Préparée, Envoyée, Relancée, Entretien, Réponse. */
+/** Index de l’étape courante dans la frise Préparée, Envoyée, Relancée, Entretien, Réponse. « Peut-être » occupe l’étape du retour en cours. */
 export const ETAPES = ["Préparée", "Envoyée", "Relancée", "Entretien", "Réponse"] as const;
 export function etapeCourante(c: Candidature, rs: Relance[]): number {
   switch (c.statut) {
     case "a_preparer": return 0;
     case "envoyee": return 1;
     case "relancee": return 2;
+    case "peut_etre":
     case "entretien": return 3;
     case "acceptee":
     case "refus": return 4;
@@ -78,6 +88,10 @@ export function changementStatut(c: Candidature, statut: Statut, extra: Partial<
   if (CLOTUREES.includes(statut) || statut === "a_preparer") {
     p.prochaine_action = null;
     p.prochaine_action_date = null;
+  }
+  if (statut === "peut_etre") {
+    p.prochaine_action = TEXTE_PEUT_ETRE;
+    p.prochaine_action_date = addDays(today(), DELAI_PEUT_ETRE_JOURS);
   }
   return { ...p, ...extra };
 }
