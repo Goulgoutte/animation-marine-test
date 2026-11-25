@@ -2,8 +2,8 @@
 
 import { Building2, Plus } from "lucide-react";
 import { useMemo, useState } from "react";
-import { ChampTexte } from "@/components/studios/Edition";
-import { Champ } from "@/components/ui";
+import { Pastille } from "@/components/studios/Pastilles";
+import { Champ, Vignette } from "@/components/ui";
 import { useStore } from "@/lib/store";
 import { ROLES, normStudio, studioVide } from "@/lib/studios";
 import type { Contact, RoleStudio } from "@/lib/types";
@@ -65,25 +65,24 @@ export function StudiosDuContact({ c, onOuvrirStudio }: { c: Contact; onOuvrirSt
       {liens.length === 0 ? (
         <p className="micro">Aucun studio lié. Note ici où cette personne travaille, ou de quel studio elle est une habituée.</p>
       ) : (
-        <ul className="space-y-2">
-          {liens.map((l) => {
-            const x = s.data.studios.find((k) => k.id === l.studio_id);
-            if (!x) return null;
+        <div className="space-y-3">
+          {([["ami", "Amie ou ami de"], ["contact", "Contact chez"]] as [RoleStudio, string][]).map(([r, titre]) => {
+            const liste = liens.filter((l) => l.role === r);
+            if (liste.length === 0) return null;
             return (
-              <li key={l.id} className="rounded-xl border border-line p-2.5">
-                <div className="flex min-w-0 items-center gap-3">
-                  <Building2 className="h-4 w-4 flex-none text-muted" />
-                  <button type="button" className="min-w-0 flex-1 text-left" onClick={() => onOuvrirStudio(x.id)} aria-label={`Ouvrir la fiche de ${x.nom}`}>
-                    <strong className="block truncate text-[13.5px] underline-offset-2 hover:underline">{x.nom}</strong>
-                    <span className="micro block truncate">{l.role === "ami" ? "Amie ou ami" : "Contact"}{x.ville ? ` · ${x.ville}` : ""}</span>
-                  </button>
-                  <button type="button" className="bouton bouton-petit bouton-texte flex-none" onClick={() => s.remove("contact_studios", l.id)}>Retirer</button>
+              <div key={r}>
+                <p className="meta mb-1.5">{titre}</p>
+                <div className="flex flex-wrap gap-2">
+                  {liste.map((l) => {
+                    const x = s.data.studios.find((k) => k.id === l.studio_id);
+                    if (!x) return null;
+                    return <Pastille key={l.id} role={r} nom={x.nom} sous={x.ville} detail={l.detail} avatar={<Vignette image={x.logo} nom={x.nom} taille={26} />} onOuvrir={() => onOuvrirStudio(x.id)} onRetirer={() => s.remove("contact_studios", l.id)} />;
+                  })}
                 </div>
-                <div className="mt-1.5 pl-7"><ChampTexte aria-label={`Détail pour ${x.nom}`} valeur={l.detail} onSave={(v) => s.patch("contact_studios", l.id, { detail: v })} placeholder="Détail" /></div>
-              </li>
+              </div>
             );
           })}
-        </ul>
+        </div>
       )}
     </>
   );

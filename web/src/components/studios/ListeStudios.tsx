@@ -1,17 +1,14 @@
 "use client";
 
-import { Building2, Heart, MapPin, Plus, Search, Users } from "lucide-react";
+import { Building2, MapPin, Plus, Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Sheet, Vide, Vignette } from "@/components/ui";
 import { NouveauStudio } from "@/components/studios/NouveauStudio";
 import { FicheStudio } from "@/components/studios/FicheStudio";
+import { PastilleMode, PileAvatars } from "@/components/studios/Pastilles";
 import { useStore } from "@/lib/store";
-import { MODES_STUDIO, TON_MODE, labelMode, liensDe, nbRole, normStudio } from "@/lib/studios";
-import type { ModeStudio } from "@/lib/types";
-
-export function PastilleMode({ mode }: { mode: ModeStudio }) {
-  return <span className={`c-${TON_MODE[mode]} inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-[color-mix(in_srgb,var(--c)_14%,transparent)] px-2 py-0.5 text-[11.5px] font-semibold text-[var(--c)]`}><span className="h-1.5 w-1.5 rounded-full bg-[var(--c)]" />{labelMode(mode)}</span>;
-}
+import { MODES_STUDIO, liensDe, nbRole, normStudio } from "@/lib/studios";
+import type { ModeStudio, RoleStudio } from "@/lib/types";
 
 export function ListeStudios({ ouvert, setOuvert }: { ouvert: string | null; setOuvert: (id: string | null) => void }) {
   const s = useStore();
@@ -58,6 +55,8 @@ export function ListeStudios({ ouvert, setOuvert }: { ouvert: string | null; set
         <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {liste.map((x) => {
             const liens = liensDe(s.data, x.id);
+            const noms = (r: RoleStudio) => Array.from(new Set(liens.filter((l) => l.role === r).map((l) => l.contact_id)))
+              .map((id) => s.data.contacts.find((c) => c.id === id)).filter((c): c is NonNullable<typeof c> => !!c).map((c) => `${c.prenom} ${c.nom}`.trim() || "Contact");
             return (
               <li key={x.id} className="min-w-0">
                 <button type="button" onClick={() => setOuvert(x.id)} className="carte carte-lien flex h-full w-full min-w-0 flex-col gap-3 p-4 text-left">
@@ -68,10 +67,11 @@ export function ListeStudios({ ouvert, setOuvert }: { ouvert: string | null; set
                       <span className="micro flex items-center gap-1 truncate"><MapPin className="h-3 w-3 flex-none" />{x.ville || "Ville inconnue"}</span>
                     </span>
                   </span>
-                  <span className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-                    <PastilleMode mode={x.mode_travail} />
-                    <span className="micro inline-flex items-center gap-1"><Users className="h-3.5 w-3.5" />{nbRole(liens, "contact")} contact{nbRole(liens, "contact") > 1 ? "s" : ""}</span>
-                    <span className="micro inline-flex items-center gap-1"><Heart className="h-3.5 w-3.5" />{nbRole(liens, "ami")} ami{nbRole(liens, "ami") > 1 ? "s" : ""}</span>
+                  <span className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                    {x.mode_travail !== "inconnu" && <PastilleMode mode={x.mode_travail} />}
+                    <PileAvatars role="ami" noms={noms("ami")} total={nbRole(liens, "ami")} mot="ami" />
+                    <PileAvatars role="contact" noms={noms("contact")} total={nbRole(liens, "contact")} mot="contact" />
+                    {nbRole(liens, "ami") + nbRole(liens, "contact") === 0 && <span className="micro">Personne de lié</span>}
                   </span>
                 </button>
               </li>
