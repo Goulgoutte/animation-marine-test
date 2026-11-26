@@ -1,5 +1,5 @@
 {
-  "genereLe": "2026-11-26T08:50:10.190Z",
+  "genereLe": "2026-11-26T11:46:59.309Z",
   "sources": [
     {
       "id": "2minutes",
@@ -1822,8 +1822,8 @@
       "jobotropo.com": 4,
       "careers.werecruit.io": 4,
       "variety.com": 4,
-      "cnc.fr": 8,
-      "news.google.com": 3,
+      "cnc.fr": 12,
+      "news.google.com": 5,
       "2minutes.tv": 2,
       "afca.asso.fr": 2,
       "animationireland.com": 3,
@@ -1865,8 +1865,14 @@
       "zerply.com": 2
     }
   },
-  "derniereCollecteComplete": "2026-11-26T08:50:10.190Z",
+  "derniereCollecteComplete": "2026-11-26T11:46:59.309Z",
   "historique": [
+    {
+      "date": "2026-11-26T11:46:59.309Z",
+      "requetes": 6,
+      "sources": 0,
+      "sautees": []
+    },
     {
       "date": "2026-11-26T08:50:10.190Z",
       "requetes": 165,
