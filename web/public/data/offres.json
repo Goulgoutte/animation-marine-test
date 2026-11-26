@@ -1,37 +1,6 @@
 {
-  "genereLe": "2026-11-25T18:10:37.943Z",
+  "genereLe": "2026-11-26T01:25:49.654Z",
   "offres": [
-    {
-      "id": "02d65d21eec3",
-      "titre": "CREATIVE PRODUCER – ANIME",
-      "studio": "Ellipse Animation",
-      "production": null,
-      "lieu": "Paris",
-      "pays": "France",
-      "categorie": "autre",
-      "technique": "2D",
-      "modeTravail": "paris-sur-place",
-      "residenceExigee": null,
-      "contrat": "inconnu",
-      "niveau": "inconnu",
-      "langue": "fr",
-      "dansPerimetre": true,
-      "aVerifier": false,
-      "dateDebut": null,
-      "dateLimite": null,
-      "datePublication": null,
-      "premiereVue": "2026-11-25T17:42:06.599Z",
-      "extrait": "CREATIVE PRODUCER – ANIME Paris learn more and applySEE LESS Ellipse Animation recrute un Producteur Artistique Anime Média-Participations est l’un des principaux acteurs de divertissement européens. Le Groupe compte plus de 60 sociétés dans les domaines de l’édition, de l’audiovisuel, du jeu vidéo, des parcs à thème et des plateformes numériques et rassemble notamment Kana, Vega, ADN, Microïds, ainsi que de nombreuses maisons d’édition et sociétés de production reconnues. Ellipse Animation, label de production d’animation du Groupe, développe et produit depuis plus de vingt ans des séries et…",
-      "image": "https://www.ellipseanimation.com/wp-content/uploads/2022/06/Logo_Dreamland.svg",
-      "probablementExpiree": false,
-      "sources": [
-        {
-          "sourceId": "ellipse",
-          "url": "https://www.ellipseanimation.com/careers/#CREATIVE%20PRODUCER%20%E2%80%93%20ANIME",
-          "vuLe": "2026-11-25T17:42:06.599Z"
-        }
-      ]
-    },
     {
       "id": "c5b1640070c7",
       "titre": "Technicien.ne Support IT (CDD)",
@@ -59,7 +28,7 @@
         {
           "sourceId": "superprod",
           "url": "https://careers.werecruit.io/fr/superprod/offres/technicienne-support-it-cdd-6a79c3",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T01:25:49.654Z"
         }
       ]
     },
@@ -90,7 +59,7 @@
         {
           "sourceId": "superprod",
           "url": "https://careers.werecruit.io/fr/superprod/offres/production-designer-adult-animated-series-899bac",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T01:25:49.654Z"
         }
       ]
     },
@@ -121,6 +90,37 @@
         {
           "sourceId": "superprod",
           "url": "https://careers.werecruit.io/fr/superprod/offres/chargee-de-production-animation-midsenior-093cec",
+          "vuLe": "2026-11-26T01:25:49.654Z"
+        }
+      ]
+    },
+    {
+      "id": "02d65d21eec3",
+      "titre": "CREATIVE PRODUCER – ANIME",
+      "studio": "Ellipse Animation",
+      "production": null,
+      "lieu": "Paris",
+      "pays": "France",
+      "categorie": "autre",
+      "technique": "2D",
+      "modeTravail": "paris-sur-place",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "fr",
+      "dansPerimetre": true,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "CREATIVE PRODUCER – ANIME Paris learn more and applySEE LESS Ellipse Animation recrute un Producteur Artistique Anime Média-Participations est l’un des principaux acteurs de divertissement européens. Le Groupe compte plus de 60 sociétés dans les domaines de l’édition, de l’audiovisuel, du jeu vidéo, des parcs à thème et des plateformes numériques et rassemble notamment Kana, Vega, ADN, Microïds, ainsi que de nombreuses maisons d’édition et sociétés de production reconnues. Ellipse Animation, label de production d’animation du Groupe, développe et produit depuis plus de vingt ans des séries et…",
+      "image": "https://www.ellipseanimation.com/wp-content/uploads/2022/06/Logo_Dreamland.svg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "ellipse",
+          "url": "https://www.ellipseanimation.com/careers/#CREATIVE%20PRODUCER%20%E2%80%93%20ANIME",
           "vuLe": "2026-11-25T17:42:06.599Z"
         }
       ]
@@ -498,316 +498,6 @@
       ]
     },
     {
-      "id": "0f9a39f5511e",
-      "titre": "Superviseur.euse Rig (3D)(3D Rigging Supervisor)",
-      "studio": "Fortiche Production",
-      "production": null,
-      "lieu": "Paris 13e / Montpellier",
-      "pays": "France",
-      "categorie": "autre",
-      "technique": "3D",
-      "modeTravail": "paris-sur-place",
-      "residenceExigee": null,
-      "contrat": "inconnu",
-      "niveau": "lead",
-      "langue": "fr",
-      "dansPerimetre": false,
-      "aVerifier": false,
-      "dateDebut": null,
-      "dateLimite": null,
-      "datePublication": null,
-      "premiereVue": "2026-11-25T16:36:07.911Z",
-      "extrait": "Fortiche Production Mercredi 25 novembre 2026 à 16:07✦✧✦✧✦✧✦✧NEWSuperviseur.euse Rig (3D)(3D Rigging Supervisor)3DParis 13eMontpellierHybrideCDDU - IntermittentAutodesk - MayaLangage - Python📢 𝐉𝐎𝐁 𝐀𝐋𝐄𝐑𝐓𝐄 : 𝐒𝐔𝐏𝐄𝐑𝐕𝐈𝐒𝐄𝐔𝐑(𝐒𝐄) 𝐑𝐈𝐆𝐆𝐈𝐍𝐆 (𝐅/𝐇/𝐍𝐁)Nous recrutons notre futur(e) Superviseur(se) Rig Chara & Props ! Rattaché(e) au Head of Assets, tu piloteras la stratégie technique du département (workflows, R&D), garantiras la qualité et l'ergonomie de nos rigs auprès de l'Animation et de la direction artistique, tout en accompagnant l'équipe au quotidien.𝐂𝐞 𝐪𝐮𝐞 𝐧𝐨…",
-      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/organizations/76/f128d8dc-95ec-4569-b98b-934b0da695e1.png",
-      "probablementExpiree": false,
-      "sources": [
-        {
-          "sourceId": "jobotropo",
-          "url": "https://www.jobotropo.com/jobs#1736",
-          "vuLe": "2026-11-25T17:42:06.599Z"
-        }
-      ]
-    },
-    {
-      "id": "a07f5b3466a7",
-      "titre": "Monteur·euse(Editor)",
-      "studio": "nWave Studios",
-      "production": null,
-      "lieu": "Bruxelles / Belgique",
-      "pays": null,
-      "categorie": "autre",
-      "technique": "inconnue",
-      "modeTravail": "teletravail-complet",
-      "residenceExigee": null,
-      "contrat": "freelance",
-      "niveau": "inconnu",
-      "langue": "en",
-      "dansPerimetre": true,
-      "aVerifier": true,
-      "dateDebut": null,
-      "dateLimite": null,
-      "datePublication": null,
-      "premiereVue": "2026-11-25T16:36:07.911Z",
-      "extrait": "nWave Studios Mercredi 25 novembre 2026 à 13:39✦✧✦✧✦✧✦✧NEWMonteur·euse(Editor)MontageBruxellesBelgiquePrésentielFreelanceAdobe - Premier proJuniorMiddleMiddle +SeniorSenior +Project: YES CHEF Location: Brussels, Belgium, 3 days on site and 2 days remote Start Date: Immediate start Duration: 18 monthsnWave Studios is looking for a highly organised, proactive Assistant Director / Assistant Editor to support two directors on an animated feature film for an 18-month period.The role combines day-to-day directing support with technical editing assistance, including footage preparation, media organi…",
-      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/users/133/2e7d94b0-59dc-434c-9316-42eb4f06d2cd.png",
-      "probablementExpiree": false,
-      "sources": [
-        {
-          "sourceId": "jobotropo",
-          "url": "https://www.jobotropo.com/jobs#1735",
-          "vuLe": "2026-11-25T17:42:06.599Z"
-        }
-      ]
-    },
-    {
-      "id": "3df581989af8",
-      "titre": "Chef·fe Compositing (2D)(Lead 2D Compositing)",
-      "studio": "Fabrique d'Images",
-      "production": null,
-      "lieu": "Luxembourg",
-      "pays": null,
-      "categorie": "autre",
-      "technique": "2D",
-      "modeTravail": "sur-place-ailleurs",
-      "residenceExigee": null,
-      "contrat": "inconnu",
-      "niveau": "lead",
-      "langue": "fr",
-      "dansPerimetre": false,
-      "aVerifier": false,
-      "dateDebut": null,
-      "dateLimite": null,
-      "datePublication": null,
-      "premiereVue": "2026-11-25T16:36:07.911Z",
-      "extrait": "Fabrique d'Images Mercredi 25 novembre 2026 à 10:10✦✧✦✧✦✧✦✧NEWChef·fe Compositing (2D)(Lead 2D Compositing)2DLuxembourgPrésentielToon Boom - HarmonySeniorNous recrutons pour notre studio luxembourgeois un Artiste Lead/Senior Compositing 2DJob description complète et candidature sur notre site✦✧✦✧✦✧✦✧Coordonnées de contact✦✧✦✧✦✧✦✧Coordonnées de contact",
-      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/legacy/logos/643c559de90f2.jpg",
-      "probablementExpiree": false,
-      "sources": [
-        {
-          "sourceId": "jobotropo",
-          "url": "https://www.jobotropo.com/jobs#1734",
-          "vuLe": "2026-11-25T17:42:06.599Z"
-        }
-      ]
-    },
-    {
-      "id": "7914dfa8e05b",
-      "titre": "Directeur·rice Artistique(Art Director)",
-      "studio": "nWave Studios",
-      "production": null,
-      "lieu": "Bruxelles / Belgique",
-      "pays": null,
-      "categorie": "autre",
-      "technique": "3D",
-      "modeTravail": "teletravail-complet",
-      "residenceExigee": null,
-      "contrat": "freelance",
-      "niveau": "lead",
-      "langue": "en",
-      "dansPerimetre": false,
-      "aVerifier": false,
-      "dateDebut": null,
-      "dateLimite": null,
-      "datePublication": null,
-      "premiereVue": "2026-11-25T16:36:07.911Z",
-      "extrait": "nWave Studios Mardi 24 novembre 2026 à 14:17Directeur·rice Artistique(Art Director)2DBruxellesBelgiquePrésentielFreelanceMiddleMiddle +SeniorSenior +Project: YES CHEF Location: Brussels, Belgium, 3 days on site and 2 days remote Start Date: Now Duration: Until July 2028About the ProjectnWave Studios is looking for an experienced Artistic Director to join us in Brussels for the production of YES CHEF, our upcoming 3D animated feature film.Set in the world of a baking competition, YES CHEF features charming anthropomorphic animal characters and a stylised, colourful and vibrant visual universe.…",
-      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/users/133/2e7d94b0-59dc-434c-9316-42eb4f06d2cd.png",
-      "probablementExpiree": false,
-      "sources": [
-        {
-          "sourceId": "jobotropo",
-          "url": "https://www.jobotropo.com/jobs#1733",
-          "vuLe": "2026-11-25T17:42:06.599Z"
-        }
-      ]
-    },
-    {
-      "id": "574285f72ac2",
-      "titre": "Concept Artist(Concept Artist)",
-      "studio": "Stim Studio",
-      "production": null,
-      "lieu": "Montpellier",
-      "pays": null,
-      "categorie": "autre",
-      "technique": "inconnue",
-      "modeTravail": "sur-place-ailleurs",
-      "residenceExigee": null,
-      "contrat": "inconnu",
-      "niveau": "inconnu",
-      "langue": "en",
-      "dansPerimetre": false,
-      "aVerifier": true,
-      "dateDebut": null,
-      "dateLimite": null,
-      "datePublication": null,
-      "premiereVue": "2026-11-25T16:36:07.911Z",
-      "extrait": "Stim Studio Mardi 24 novembre 2026 à 12:30Concept Artist(Concept Artist)2DMontpellierPrésentielJuniorWE ARE HIRING! We are looking for a junior concept artist - set & props 👩🏼‍🎨📍Location: Montpellier🗓️ Length: 6 months🔜 Start date: December 1st📩 Apply here: ✦✧✦✧✦✧✦✧Coordonnées de contact✦✧✦✧✦✧✦✧Coordonnées de contact",
-      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/legacy/logos/6527b921eaf30.jpg",
-      "probablementExpiree": false,
-      "sources": [
-        {
-          "sourceId": "jobotropo",
-          "url": "https://www.jobotropo.com/jobs#1732",
-          "vuLe": "2026-11-25T17:42:06.599Z"
-        }
-      ]
-    },
-    {
-      "id": "0ed23d62c3d1",
-      "titre": "Développeur·euse Pipeline(Pipeline Developer)",
-      "studio": "nWave Studios",
-      "production": null,
-      "lieu": "Bruxelles / Belgique",
-      "pays": null,
-      "categorie": "autre",
-      "technique": "inconnue",
-      "modeTravail": "teletravail-complet",
-      "residenceExigee": null,
-      "contrat": "freelance",
-      "niveau": "inconnu",
-      "langue": "en",
-      "dansPerimetre": true,
-      "aVerifier": true,
-      "dateDebut": null,
-      "dateLimite": null,
-      "datePublication": null,
-      "premiereVue": "2026-11-25T16:36:07.911Z",
-      "extrait": "nWave Studios Dimanche 22 novembre 2026 à 16:48Développeur·euse Pipeline(Pipeline Developer)DéveloppementBruxellesBelgiquePrésentielFreelanceLangage - PythonGithubGitlabLangage - C++JuniorMiddleMiddle +SeniorSenior +We're on the lookout for a Pipeline developer to help us on our current two features films in production! Join us if programming code, challenges, get rid of technical debt and USD centric pipeline is your thing!Project: YES CHEF + Unannounced one Location: Brussels, Belgium, 3 days on site and 2 days remote Start Date: Immediate startPosition summaryThis position focuses primaril…",
-      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/users/133/2e7d94b0-59dc-434c-9316-42eb4f06d2cd.png",
-      "probablementExpiree": false,
-      "sources": [
-        {
-          "sourceId": "jobotropo",
-          "url": "https://www.jobotropo.com/jobs#1731",
-          "vuLe": "2026-11-25T17:42:06.599Z"
-        }
-      ]
-    },
-    {
-      "id": "cd1815f70a61",
-      "titre": "Artiste VFX (3D)(3D VFX Artist)",
-      "studio": "Walking the Dog",
-      "production": null,
-      "lieu": "Bruxelles",
-      "pays": null,
-      "categorie": "autre",
-      "technique": "3D",
-      "modeTravail": "sur-place-ailleurs",
-      "residenceExigee": null,
-      "contrat": "inconnu",
-      "niveau": "inconnu",
-      "langue": "en",
-      "dansPerimetre": false,
-      "aVerifier": false,
-      "dateDebut": null,
-      "dateLimite": null,
-      "datePublication": null,
-      "premiereVue": "2026-11-25T16:36:07.911Z",
-      "extrait": "Walking the Dog Samedi 21 novembre 2026 à 16:40Artiste VFX (3D)(3D VFX Artist)3DBruxellesPrésentielSideFX - HoudiniJuniorMiddleMiddle +🦊 🌧️ ☂️ 3D FX ARTISTS BASED IN BRUSSELS!We are looking for a 3D FX artist, junior or mid, to join us in Outfoxed! - Full-time, on site in Brussels- To start in January 2027- Proven experience in Houdini- Based in the Brussels Region- Short term (4-6 weeks)✦✧✦✧✦✧✦✧Coordonnées de contact",
-      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/legacy/logos/643c6196e9122.png",
-      "probablementExpiree": false,
-      "sources": [
-        {
-          "sourceId": "jobotropo",
-          "url": "https://www.jobotropo.com/jobs#1730",
-          "vuLe": "2026-11-25T17:42:06.599Z"
-        }
-      ]
-    },
-    {
-      "id": "08529ec2a32f",
-      "titre": "Artiste Éclairage(Lighting Artist)",
-      "studio": "Stim Studio",
-      "production": null,
-      "lieu": "Angoulême",
-      "pays": null,
-      "categorie": "autre",
-      "technique": "3D",
-      "modeTravail": "sur-place-ailleurs",
-      "residenceExigee": null,
-      "contrat": "inconnu",
-      "niveau": "inconnu",
-      "langue": "en",
-      "dansPerimetre": false,
-      "aVerifier": false,
-      "dateDebut": null,
-      "dateLimite": null,
-      "datePublication": null,
-      "premiereVue": "2026-11-25T16:36:07.911Z",
-      "extrait": "Stim Studio Jeudi 19 novembre 2026 à 17:09Artiste Éclairage(Lighting Artist)3DAngoulêmePrésentielSeniorWE ARE HIRING! We are looking for a senior lighting artist 💡📍Location: Angoulême🗓️ Length: 8 months🔜 Start date: January📩 Apply here: ✦✧✦✧✦✧✦✧Coordonnées de contact✦✧✦✧✦✧✦✧Coordonnées de contact",
-      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/legacy/logos/6527b921eaf30.jpg",
-      "probablementExpiree": false,
-      "sources": [
-        {
-          "sourceId": "jobotropo",
-          "url": "https://www.jobotropo.com/jobs#1729",
-          "vuLe": "2026-11-25T17:42:06.599Z"
-        }
-      ]
-    },
-    {
-      "id": "230afb051d49",
-      "titre": "Producteur·rice Délégué·e(Line Producer)",
-      "studio": "TheYard VFX",
-      "production": null,
-      "lieu": "Vanves",
-      "pays": null,
-      "categorie": "autre",
-      "technique": "inconnue",
-      "modeTravail": "sur-place-ailleurs",
-      "residenceExigee": null,
-      "contrat": "inconnu",
-      "niveau": "inconnu",
-      "langue": "fr",
-      "dansPerimetre": false,
-      "aVerifier": true,
-      "dateDebut": null,
-      "dateLimite": null,
-      "datePublication": null,
-      "premiereVue": "2026-11-25T16:36:07.911Z",
-      "extrait": "TheYard VFX Jeudi 19 novembre 2026 à 15:18Producteur·rice Délégué·e(Line Producer)ProductionVanvesPrésentiel📣 𝗕𝗘 𝗣𝗔𝗥𝗧 𝗢𝗙 𝗦𝗢𝗠𝗘𝗧𝗛𝗜𝗡𝗚 𝗚𝗥𝗘𝗔𝗧!Vous souhaitez rejoindre notre studio en pleine croissance ? Nous sommes à la recherche d'un·e 𝗟𝗶𝗻𝗲 𝗣𝗿𝗼𝗱𝘂𝗰𝗲𝗿 pour notre studio parisien (Vanves) et contribuer à des projets ambitieux.Au cœur de notre département production, vous travaillerez en étroite collaboration avec le/la producteur·rice ainsi que les coordinateur·rices de production. Vous garantirez l’organisation globale de nos projets, le pilotage de leur planning e…",
-      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/legacy/logos/654bf3859e4f0.jpg",
-      "probablementExpiree": false,
-      "sources": [
-        {
-          "sourceId": "jobotropo",
-          "url": "https://www.jobotropo.com/jobs#1728",
-          "vuLe": "2026-11-25T17:42:06.599Z"
-        }
-      ]
-    },
-    {
-      "id": "4b3223c013af",
-      "titre": "Producteur·rice VFX(VFX Producer)",
-      "studio": "Mathematic",
-      "production": null,
-      "lieu": "Paris 11e",
-      "pays": "France",
-      "categorie": "autre",
-      "technique": "inconnue",
-      "modeTravail": "paris-sur-place",
-      "residenceExigee": null,
-      "contrat": "inconnu",
-      "niveau": "inconnu",
-      "langue": "en",
-      "dansPerimetre": true,
-      "aVerifier": true,
-      "dateDebut": null,
-      "dateLimite": null,
-      "datePublication": null,
-      "premiereVue": "2026-11-25T16:36:07.911Z",
-      "extrait": "Mathematic Jeudi 19 novembre 2026 à 15:14Producteur·rice VFX(VFX Producer)ProductionParis 11ePrésentielMiddle +SeniorWe are looking for a VFX Producer in Paris, for Film & Episodic 🔥 Job Title: VFX Producer Episodic & Film International marketLocation: Paris, France Contract: Full-Time About UsMathematic Studio is a Visual Effects Studio specialising in feature films and episodic streaming content with offices in Paris, Montpellier, Montreal, LA and London. The company also has a long history of delivering high-end advertising commercials, music video and other key creative installations acr…",
-      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/legacy/logos/643c58ca6c5c8.jpg",
-      "probablementExpiree": false,
-      "sources": [
-        {
-          "sourceId": "jobotropo",
-          "url": "https://www.jobotropo.com/jobs#1727",
-          "vuLe": "2026-11-25T17:42:06.599Z"
-        }
-      ]
-    },
-    {
       "id": "49b5a3534e5c",
       "titre": "Game Artist 2D H/F/NB",
       "studio": null,
@@ -834,7 +524,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/SINF1069-29206",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T01:25:49.654Z"
         }
       ]
     },
@@ -865,7 +555,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/EINF1034-29200",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T01:25:49.654Z"
         }
       ]
     },
@@ -896,7 +586,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/EINF2297-29189",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T01:25:49.654Z"
         }
       ]
     },
@@ -927,7 +617,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/ECOM183-29177",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T01:25:49.654Z"
         }
       ]
     },
@@ -958,7 +648,317 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/SINF147-29136",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T01:25:49.654Z"
+        }
+      ]
+    },
+    {
+      "id": "0f9a39f5511e",
+      "titre": "Superviseur.euse Rig (3D)(3D Rigging Supervisor)",
+      "studio": "Fortiche Production",
+      "production": null,
+      "lieu": "Paris 13e / Montpellier",
+      "pays": "France",
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "paris-sur-place",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "fr",
+      "dansPerimetre": false,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T16:36:07.911Z",
+      "extrait": "Fortiche Production Mercredi 25 novembre 2026 à 15:07✦✧✦✧✦✧✦✧NEWSuperviseur.euse Rig (3D)(3D Rigging Supervisor)3DParis 13eMontpellierHybrideCDDU - IntermittentAutodesk - MayaLangage - Python📢 𝐉𝐎𝐁 𝐀𝐋𝐄𝐑𝐓𝐄 : 𝐒𝐔𝐏𝐄𝐑𝐕𝐈𝐒𝐄𝐔𝐑(𝐒𝐄) 𝐑𝐈𝐆𝐆𝐈𝐍𝐆 (𝐅/𝐇/𝐍𝐁)Nous recrutons notre futur(e) Superviseur(se) Rig Chara & Props ! Rattaché(e) au Head of Assets, tu piloteras la stratégie technique du département (workflows, R&D), garantiras la qualité et l'ergonomie de nos rigs auprès de l'Animation et de la direction artistique, tout en accompagnant l'équipe au quotidien.𝐂𝐞 𝐪𝐮𝐞 𝐧𝐨…",
+      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/organizations/76/f128d8dc-95ec-4569-b98b-934b0da695e1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "jobotropo",
+          "url": "https://www.jobotropo.com/jobs#1736",
+          "vuLe": "2026-11-26T01:25:49.654Z"
+        }
+      ]
+    },
+    {
+      "id": "a07f5b3466a7",
+      "titre": "Monteur·euse(Editor)",
+      "studio": "nWave Studios",
+      "production": null,
+      "lieu": "Bruxelles / Belgique",
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "teletravail-complet",
+      "residenceExigee": null,
+      "contrat": "freelance",
+      "niveau": "inconnu",
+      "langue": "en",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T16:36:07.911Z",
+      "extrait": "nWave Studios Mercredi 25 novembre 2026 à 12:39✦✧✦✧✦✧✦✧NEWMonteur·euse(Editor)MontageBruxellesBelgiquePrésentielFreelanceAdobe - Premier proJuniorMiddleMiddle +SeniorSenior +Project: YES CHEF Location: Brussels, Belgium, 3 days on site and 2 days remote Start Date: Immediate start Duration: 18 monthsnWave Studios is looking for a highly organised, proactive Assistant Director / Assistant Editor to support two directors on an animated feature film for an 18-month period.The role combines day-to-day directing support with technical editing assistance, including footage preparation, media organi…",
+      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/users/133/2e7d94b0-59dc-434c-9316-42eb4f06d2cd.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "jobotropo",
+          "url": "https://www.jobotropo.com/jobs#1735",
+          "vuLe": "2026-11-26T01:25:49.654Z"
+        }
+      ]
+    },
+    {
+      "id": "3df581989af8",
+      "titre": "Chef·fe Compositing (2D)(Lead 2D Compositing)",
+      "studio": "Fabrique d'Images",
+      "production": null,
+      "lieu": "Luxembourg",
+      "pays": null,
+      "categorie": "autre",
+      "technique": "2D",
+      "modeTravail": "sur-place-ailleurs",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "fr",
+      "dansPerimetre": false,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T16:36:07.911Z",
+      "extrait": "Fabrique d'Images Mercredi 25 novembre 2026 à 09:10✦✧✦✧✦✧✦✧NEWChef·fe Compositing (2D)(Lead 2D Compositing)2DLuxembourgPrésentielToon Boom - HarmonySeniorNous recrutons pour notre studio luxembourgeois un Artiste Lead/Senior Compositing 2DJob description complète et candidature sur notre site✦✧✦✧✦✧✦✧Coordonnées de contact✦✧✦✧✦✧✦✧Coordonnées de contact",
+      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/legacy/logos/643c559de90f2.jpg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "jobotropo",
+          "url": "https://www.jobotropo.com/jobs#1734",
+          "vuLe": "2026-11-26T01:25:49.654Z"
+        }
+      ]
+    },
+    {
+      "id": "7914dfa8e05b",
+      "titre": "Directeur·rice Artistique(Art Director)",
+      "studio": "nWave Studios",
+      "production": null,
+      "lieu": "Bruxelles / Belgique",
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "teletravail-complet",
+      "residenceExigee": null,
+      "contrat": "freelance",
+      "niveau": "lead",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T16:36:07.911Z",
+      "extrait": "nWave Studios Mardi 24 novembre 2026 à 13:17Directeur·rice Artistique(Art Director)2DBruxellesBelgiquePrésentielFreelanceMiddleMiddle +SeniorSenior +Project: YES CHEF Location: Brussels, Belgium, 3 days on site and 2 days remote Start Date: Now Duration: Until July 2028About the ProjectnWave Studios is looking for an experienced Artistic Director to join us in Brussels for the production of YES CHEF, our upcoming 3D animated feature film.Set in the world of a baking competition, YES CHEF features charming anthropomorphic animal characters and a stylised, colourful and vibrant visual universe.…",
+      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/users/133/2e7d94b0-59dc-434c-9316-42eb4f06d2cd.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "jobotropo",
+          "url": "https://www.jobotropo.com/jobs#1733",
+          "vuLe": "2026-11-26T01:25:49.654Z"
+        }
+      ]
+    },
+    {
+      "id": "574285f72ac2",
+      "titre": "Concept Artist(Concept Artist)",
+      "studio": "Stim Studio",
+      "production": null,
+      "lieu": "Montpellier",
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "sur-place-ailleurs",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T16:36:07.911Z",
+      "extrait": "Stim Studio Mardi 24 novembre 2026 à 11:30Concept Artist(Concept Artist)2DMontpellierPrésentielJuniorWE ARE HIRING! We are looking for a junior concept artist - set & props 👩🏼‍🎨📍Location: Montpellier🗓️ Length: 6 months🔜 Start date: December 1st📩 Apply here: ✦✧✦✧✦✧✦✧Coordonnées de contact✦✧✦✧✦✧✦✧Coordonnées de contact",
+      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/legacy/logos/6527b921eaf30.jpg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "jobotropo",
+          "url": "https://www.jobotropo.com/jobs#1732",
+          "vuLe": "2026-11-26T01:25:49.654Z"
+        }
+      ]
+    },
+    {
+      "id": "0ed23d62c3d1",
+      "titre": "Développeur·euse Pipeline(Pipeline Developer)",
+      "studio": "nWave Studios",
+      "production": null,
+      "lieu": "Bruxelles / Belgique",
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "teletravail-complet",
+      "residenceExigee": null,
+      "contrat": "freelance",
+      "niveau": "inconnu",
+      "langue": "en",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T16:36:07.911Z",
+      "extrait": "nWave Studios Dimanche 22 novembre 2026 à 15:48Développeur·euse Pipeline(Pipeline Developer)DéveloppementBruxellesBelgiquePrésentielFreelanceLangage - PythonGithubGitlabLangage - C++JuniorMiddleMiddle +SeniorSenior +We're on the lookout for a Pipeline developer to help us on our current two features films in production! Join us if programming code, challenges, get rid of technical debt and USD centric pipeline is your thing!Project: YES CHEF + Unannounced one Location: Brussels, Belgium, 3 days on site and 2 days remote Start Date: Immediate startPosition summaryThis position focuses primaril…",
+      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/users/133/2e7d94b0-59dc-434c-9316-42eb4f06d2cd.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "jobotropo",
+          "url": "https://www.jobotropo.com/jobs#1731",
+          "vuLe": "2026-11-26T01:25:49.654Z"
+        }
+      ]
+    },
+    {
+      "id": "cd1815f70a61",
+      "titre": "Artiste VFX (3D)(3D VFX Artist)",
+      "studio": "Walking the Dog",
+      "production": null,
+      "lieu": "Bruxelles",
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "sur-place-ailleurs",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T16:36:07.911Z",
+      "extrait": "Walking the Dog Samedi 21 novembre 2026 à 15:40Artiste VFX (3D)(3D VFX Artist)3DBruxellesPrésentielSideFX - HoudiniJuniorMiddleMiddle +🦊 🌧️ ☂️ 3D FX ARTISTS BASED IN BRUSSELS!We are looking for a 3D FX artist, junior or mid, to join us in Outfoxed! - Full-time, on site in Brussels- To start in January 2027- Proven experience in Houdini- Based in the Brussels Region- Short term (4-6 weeks)✦✧✦✧✦✧✦✧Coordonnées de contact",
+      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/legacy/logos/643c6196e9122.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "jobotropo",
+          "url": "https://www.jobotropo.com/jobs#1730",
+          "vuLe": "2026-11-26T01:25:49.654Z"
+        }
+      ]
+    },
+    {
+      "id": "08529ec2a32f",
+      "titre": "Artiste Éclairage(Lighting Artist)",
+      "studio": "Stim Studio",
+      "production": null,
+      "lieu": "Angoulême",
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "sur-place-ailleurs",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "en",
+      "dansPerimetre": false,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T16:36:07.911Z",
+      "extrait": "Stim Studio Jeudi 19 novembre 2026 à 16:09Artiste Éclairage(Lighting Artist)3DAngoulêmePrésentielSeniorWE ARE HIRING! We are looking for a senior lighting artist 💡📍Location: Angoulême🗓️ Length: 8 months🔜 Start date: January📩 Apply here: ✦✧✦✧✦✧✦✧Coordonnées de contact✦✧✦✧✦✧✦✧Coordonnées de contact",
+      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/legacy/logos/6527b921eaf30.jpg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "jobotropo",
+          "url": "https://www.jobotropo.com/jobs#1729",
+          "vuLe": "2026-11-26T01:25:49.654Z"
+        }
+      ]
+    },
+    {
+      "id": "230afb051d49",
+      "titre": "Producteur·rice Délégué·e(Line Producer)",
+      "studio": "TheYard VFX",
+      "production": null,
+      "lieu": "Vanves",
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "sur-place-ailleurs",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "fr",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T16:36:07.911Z",
+      "extrait": "TheYard VFX Jeudi 19 novembre 2026 à 14:18Producteur·rice Délégué·e(Line Producer)ProductionVanvesPrésentiel📣 𝗕𝗘 𝗣𝗔𝗥𝗧 𝗢𝗙 𝗦𝗢𝗠𝗘𝗧𝗛𝗜𝗡𝗚 𝗚𝗥𝗘𝗔𝗧!Vous souhaitez rejoindre notre studio en pleine croissance ? Nous sommes à la recherche d'un·e 𝗟𝗶𝗻𝗲 𝗣𝗿𝗼𝗱𝘂𝗰𝗲𝗿 pour notre studio parisien (Vanves) et contribuer à des projets ambitieux.Au cœur de notre département production, vous travaillerez en étroite collaboration avec le/la producteur·rice ainsi que les coordinateur·rices de production. Vous garantirez l’organisation globale de nos projets, le pilotage de leur planning e…",
+      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/legacy/logos/654bf3859e4f0.jpg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "jobotropo",
+          "url": "https://www.jobotropo.com/jobs#1728",
+          "vuLe": "2026-11-26T01:25:49.654Z"
+        }
+      ]
+    },
+    {
+      "id": "4b3223c013af",
+      "titre": "Producteur·rice VFX(VFX Producer)",
+      "studio": "Mathematic",
+      "production": null,
+      "lieu": "Paris 11e",
+      "pays": "France",
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "paris-sur-place",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "en",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-25T16:36:07.911Z",
+      "extrait": "Mathematic Jeudi 19 novembre 2026 à 14:14Producteur·rice VFX(VFX Producer)ProductionParis 11ePrésentielMiddle +SeniorWe are looking for a VFX Producer in Paris, for Film & Episodic 🔥 Job Title: VFX Producer Episodic & Film International marketLocation: Paris, France Contract: Full-Time About UsMathematic Studio is a Visual Effects Studio specialising in feature films and episodic streaming content with offices in Paris, Montpellier, Montreal, LA and London. The company also has a long history of delivering high-end advertising commercials, music video and other key creative installations acr…",
+      "image": "https://cdn.jobotropo.com/cdn-cgi/image/fit=scale-down,width=250,format=auto,background=transparent/https://cdn.jobotropo.com/legacy/logos/643c58ca6c5c8.jpg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "jobotropo",
+          "url": "https://www.jobotropo.com/jobs#1727",
+          "vuLe": "2026-11-26T01:25:49.654Z"
         }
       ]
     },

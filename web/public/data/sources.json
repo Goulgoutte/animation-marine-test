@@ -1,5 +1,5 @@
 {
-  "genereLe": "2026-11-25T18:10:37.943Z",
+  "genereLe": "2026-11-26T01:25:49.654Z",
   "sources": [
     {
       "id": "2minutes",
@@ -15,7 +15,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Site injoignable (timeout) le 25/11/2026."
+      "notes": "Site injoignable (timeout) le 25/11/2026.",
+      "sautee": null
     },
     {
       "id": "3dvf-actu",
@@ -24,16 +25,17 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "dernierSucces": "2026-11-26T01:25:49.654Z",
       "derniereErreur": null,
       "nbResultats": 1,
       "frequence": "6h",
-      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "dernierPassage": "2026-11-26T01:25:49.654Z",
       "derniersTitres": [
         "Gaussian Splatting, l’avenir du scan 3D ? Comprendre les bases et débuter"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "3dvf-emploi",
@@ -49,7 +51,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Flux valide mais vide : 3DVF affiche « 0 dernières offres d'emploi » (vérifié le 25/11/2026)."
+      "notes": "Flux valide mais vide : 3DVF affiche « 0 dernières offres d'emploi » (vérifié le 25/11/2026).",
+      "sautee": null
     },
     {
       "id": "afca",
@@ -65,7 +68,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Pas de flux (404) ; page d'accueil sans article exploitable."
+      "notes": "Pas de flux (404) ; page d'accueil sans article exploitable.",
+      "sautee": null
     },
     {
       "id": "afjv-emploi",
@@ -74,11 +78,11 @@
       "type": "emploi",
       "methode": "html",
       "actif": true,
-      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "dernierSucces": "2026-11-26T01:25:49.654Z",
       "derniereErreur": null,
       "nbResultats": 5,
       "frequence": "6h",
-      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "dernierPassage": "2026-11-26T01:25:49.654Z",
       "derniersTitres": [
         "Game Artist 2D H/F/NB",
         "Illustrator",
@@ -87,7 +91,8 @@
         "Graphiste 3D / Level Artist (F/H)"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Beaucoup de jeu vidéo : le filtre garde les intitulés liés à l'animation et au dessin."
+      "notes": "Beaucoup de jeu vidéo : le filtre garde les intitulés liés à l'animation et au dessin.",
+      "sautee": null
     },
     {
       "id": "andarta",
@@ -103,7 +108,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page recrutement : « Aucune offre actuellement » le 25/11/2026 (formulaires Google par métier)."
+      "notes": "Page recrutement : « Aucune offre actuellement » le 25/11/2026 (formulaires Google par métier).",
+      "sautee": null
     },
     {
       "id": "angel",
@@ -119,7 +125,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Angel Studios (distribution/streaming), hors animation 2D : sans objet."
+      "notes": "Angel Studios (distribution/streaming), hors animation 2D : sans objet.",
+      "sautee": null
     },
     {
       "id": "animation-ireland-emploi",
@@ -135,7 +142,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Flux job_feed valide mais vide le 25/11/2026. Beaucoup d'offres avec résidence irlandaise exigée quand il se remplit."
+      "notes": "Flux job_feed valide mais vide le 25/11/2026. Beaucoup d'offres avec résidence irlandaise exigée quand il se remplit.",
+      "sautee": null
     },
     {
       "id": "animation-ireland-rss",
@@ -151,7 +159,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "animationcareerreview",
@@ -167,7 +176,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Flux d'actualités sur les carrières en animation (pas des offres)."
+      "notes": "Flux d'actualités sur les carrières en animation (pas des offres).",
+      "sautee": null
     },
     {
       "id": "animationmagazine",
@@ -183,7 +193,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "HTTP 403 (protection anti-robot) sur tous les flux : non contourné. Alternative : Google Actualités RSS site:animationmagazine.net (voir les sources Google Actualités, en attente)."
+      "notes": "HTTP 403 (protection anti-robot) sur tous les flux : non contourné. Alternative : Google Actualités RSS site:animationmagazine.net (voir les sources Google Actualités, en attente).",
+      "sautee": null
     },
     {
       "id": "animationxpress",
@@ -199,7 +210,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "animfrance",
@@ -215,7 +227,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Pas de flux (404) ; page d'accueil sans article exploitable."
+      "notes": "Pas de flux (404) ; page d'accueil sans article exploitable.",
+      "sautee": null
     },
     {
       "id": "animworks-studiowatch",
@@ -231,7 +244,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Liste rendue en JavaScript, logos et compteurs sans lien exploitable : pas de flux ni d'API publique. Ajout manuel."
+      "notes": "Liste rendue en JavaScript, logos et compteurs sans lien exploitable : pas de flux ni d'API publique. Ajout manuel.",
+      "sautee": null
     },
     {
       "id": "annecy-mifa",
@@ -247,7 +261,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Pas de flux (404) ; page d'accueil sans article exploitable. Les résultats du festival sont de toute façon des palmarès, exclus du classement."
+      "notes": "Pas de flux (404) ; page d'accueil sans article exploitable. Les résultats du festival sont de toute façon des palmarès, exclus du classement.",
+      "sautee": null
     },
     {
       "id": "aura-cinema",
@@ -263,7 +278,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Pas de flux ; page d'accueil sans article exploitable."
+      "notes": "Pas de flux ; page d'accueil sans article exploitable.",
+      "sautee": null
     },
     {
       "id": "awn-rss",
@@ -272,14 +288,15 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "dernierSucces": "2026-11-26T01:25:49.654Z",
       "derniereErreur": null,
       "nbResultats": 0,
       "frequence": "6h",
-      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "dernierPassage": "2026-11-26T01:25:49.654Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "bluespirit",
@@ -295,7 +312,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "HTTP 403 (protection anti-robot) : non contourné. Pas de flux public."
+      "notes": "HTTP 403 (protection anti-robot) : non contourné. Pas de flux public.",
+      "sautee": null
     },
     {
       "id": "bobbypills",
@@ -311,7 +329,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Aucune page recrutement sur le site (candidature par e-mail)."
+      "notes": "Aucune page recrutement sur le site (candidature par e-mail).",
+      "sautee": null
     },
     {
       "id": "broadcast",
@@ -327,7 +346,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Flux RSS introuvable ; contenu en partie payant."
+      "notes": "Flux RSS introuvable ; contenu en partie payant.",
+      "sautee": null
     },
     {
       "id": "c21media",
@@ -343,7 +363,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Presse économique de la fiction TV : annonces de séries et coproductions."
+      "notes": "Presse économique de la fiction TV : annonces de séries et coproductions.",
+      "sautee": null
     },
     {
       "id": "caribara",
@@ -359,7 +380,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "caribara.com n'est pas le studio : le site est caribara-animation.com, dont la page Contact renvoie vers les réseaux sociaux (non collectés) pour les offres. Actualités suivies par le flux caribara-actus."
+      "notes": "caribara.com n'est pas le studio : le site est caribara-animation.com, dont la page Contact renvoie vers les réseaux sociaux (non collectés) pour les offres. Actualités suivies par le flux caribara-actus.",
+      "sautee": null
     },
     {
       "id": "caribara-actus",
@@ -375,7 +397,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "cartoon-media",
@@ -391,7 +414,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Pas de flux (404) et page d'accueil sans article exploitable."
+      "notes": "Pas de flux (404) et page d'accueil sans article exploitable.",
+      "sautee": null
     },
     {
       "id": "cartoon-movie",
@@ -407,7 +431,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Même domaine que Cartoon Media : désactivé tant que l'URL n'est pas confirmée."
+      "notes": "Même domaine que Cartoon Media : désactivé tant que l'URL n'est pas confirmée.",
+      "sautee": null
     },
     {
       "id": "cartoonbrew",
@@ -416,14 +441,15 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "dernierSucces": "2026-11-26T01:25:49.654Z",
       "derniereErreur": null,
       "nbResultats": 0,
       "frequence": "6h",
-      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "dernierPassage": "2026-11-26T01:25:49.654Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "cartoonsaloon",
@@ -439,7 +465,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Offres dans un iframe Occupop (api.occupop.com) : aucune vacance ouverte le 25/11/2026. Collecteur Occupop à écrire si le studio recrute."
+      "notes": "Offres dans un iframe Occupop (api.occupop.com) : aucune vacance ouverte le 25/11/2026. Collecteur Occupop à écrire si le studio recrute.",
+      "sautee": null
     },
     {
       "id": "catsuka",
@@ -448,17 +475,18 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "dernierSucces": "2026-11-26T01:25:49.654Z",
       "derniereErreur": null,
       "nbResultats": 2,
       "frequence": "6h",
-      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "dernierPassage": "2026-11-26T01:25:49.654Z",
       "derniersTitres": [
         "... [English] : Image Comics",
         "Grendel"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "cineuropa",
@@ -474,7 +502,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "403 lors des tests."
+      "notes": "403 lors des tests.",
+      "sautee": null
     },
     {
       "id": "cnc",
@@ -490,7 +519,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "« /rss » du CNC renvoie une page HTML, pas un flux. Remplacée par les pages de résultats des commissions (aide aux techniques d'animation)."
+      "notes": "« /rss » du CNC renvoie une page HTML, pas un flux. Remplacée par les pages de résultats des commissions (aide aux techniques d'animation).",
+      "sautee": null
     },
     {
       "id": "cnc-animation-2025-03",
@@ -512,7 +542,8 @@
         "Mon chien, Dieu et les pokétrucs"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté).",
+      "sautee": null
     },
     {
       "id": "cnc-animation-2025-06",
@@ -534,7 +565,8 @@
         "L’Etat sauvage"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté).",
+      "sautee": null
     },
     {
       "id": "cnc-animation-2025-09",
@@ -556,7 +588,8 @@
         "Mijoté de brebis"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté).",
+      "sautee": null
     },
     {
       "id": "cnc-animation-2025-12",
@@ -578,7 +611,8 @@
         "Prudence"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté).",
+      "sautee": null
     },
     {
       "id": "cnc-animation-2026",
@@ -600,7 +634,8 @@
         "La marche des tournesols"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté)."
+      "notes": "Page de résultats : titre, producteur, format et montant de chaque projet aidé (cnc.fr, robots.txt respecté).",
+      "sautee": null
     },
     {
       "id": "cojob",
@@ -616,7 +651,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Bloque la récupération automatique (redirige vers okapijob.com). Pas de flux public : ajout manuel."
+      "notes": "Bloque la récupération automatique (redirige vers okapijob.com). Pas de flux public : ajout manuel.",
+      "sautee": null
     },
     {
       "id": "deadline-animation",
@@ -625,14 +661,15 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "dernierSucces": "2026-11-26T01:25:49.654Z",
       "derniereErreur": null,
       "nbResultats": 0,
       "frequence": "6h",
-      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "dernierPassage": "2026-11-26T01:25:49.654Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "dwarf",
@@ -648,7 +685,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Studio 3D : page careers « no position available » le 25/11/2026."
+      "notes": "Studio 3D : page careers « no position available » le 25/11/2026.",
+      "sautee": null
     },
     {
       "id": "ecran-total",
@@ -664,7 +702,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Flux /feed/ redirigé puis HTTP 403 (anti-robot) : non contourné."
+      "notes": "Flux /feed/ redirigé puis HTTP 403 (anti-robot) : non contourné.",
+      "sautee": null
     },
     {
       "id": "ellipse",
@@ -682,7 +721,8 @@
         "CREATIVE PRODUCER – ANIME"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Offres déroulées en accordéon sur la page careers (nouvelle ligne anime : Creative Producer – Anime)."
+      "notes": "Offres déroulées en accordéon sur la page careers (nouvelle ligne anime : Creative Producer – Anime).",
+      "sautee": null
     },
     {
       "id": "ellipse-actus",
@@ -701,7 +741,8 @@
         "Komodo No Chill, our new kids’ project presented at Cartoon Forum"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "enclume",
@@ -717,7 +758,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page « Jobs & stages » : aucune offre le 25/11/2026 (candidature spontanée par formulaire Jotform). Bruxelles : télétravail jamais à temps plein."
+      "notes": "Page « Jobs & stages » : aucune offre le 25/11/2026 (candidature spontanée par formulaire Jotform). Bruxelles : télétravail jamais à temps plein.",
+      "sautee": null
     },
     {
       "id": "fargo",
@@ -733,7 +775,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "fargo-animation.com injoignable."
+      "notes": "fargo-animation.com injoignable.",
+      "sautee": null
     },
     {
       "id": "filmfrance-annuaire",
@@ -749,7 +792,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Annuaire de studios, pas une source d'offres : sert à trouver de nouveaux studios, jamais collecté."
+      "notes": "Annuaire de studios, pas une source d'offres : sert à trouver de nouveaux studios, jamais collecté.",
+      "sautee": null
     },
     {
       "id": "folimage",
@@ -765,7 +809,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Aucune page recrutement exposée."
+      "notes": "Aucune page recrutement exposée.",
+      "sautee": null
     },
     {
       "id": "folivari",
@@ -781,7 +826,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Aucune page recrutement ni offre sur le site ; flux WordPress vide."
+      "notes": "Aucune page recrutement ni offre sur le site ; flux WordPress vide.",
+      "sautee": null
     },
     {
       "id": "fortiche",
@@ -799,7 +845,8 @@
         "RIGGING SUPERVISOR (M/F/NB)"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page jobs de forticheprod.com (cartes Elementor). Studio Paris 2D/3D (Arcane)."
+      "notes": "Page jobs de forticheprod.com (cartes Elementor). Studio Paris 2D/3D (Arcane).",
+      "sautee": null
     },
     {
       "id": "fortiche-actus",
@@ -815,7 +862,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Le robots.txt de forticheprod.com interdit /feed/ : non collecté."
+      "notes": "Le robots.txt de forticheprod.com interdit /feed/ : non collecté.",
+      "sautee": null
     },
     {
       "id": "fost",
@@ -831,7 +879,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page recrutement : candidature par formulaire Tally, aucune offre publiée (stages et alternances sur LinkedIn/Instagram, non collectés)."
+      "notes": "Page recrutement : candidature par formulaire Tally, aucune offre publiée (stages et alternances sur LinkedIn/Instagram, non collectés).",
+      "sautee": null
     },
     {
       "id": "fost-actus",
@@ -847,7 +896,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "francetravail",
@@ -863,7 +913,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "L'API officielle « Offres d'emploi » exige une clé OAuth (compte développeur) et le robots.txt du site interdit la recherche : ajout manuel."
+      "notes": "L'API officielle « Offres d'emploi » exige une clé OAuth (compte développeur) et le robots.txt du site interdit la recherche : ajout manuel.",
+      "sautee": null
     },
     {
       "id": "gn-en-features",
@@ -879,7 +930,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête.",
+      "sautee": null
     },
     {
       "id": "gn-en-french",
@@ -895,7 +947,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête.",
+      "sautee": null
     },
     {
       "id": "gn-en-series",
@@ -911,7 +964,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête.",
+      "sautee": null
     },
     {
       "id": "gn-fr-cnc",
@@ -927,7 +981,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête.",
+      "sautee": null
     },
     {
       "id": "gn-fr-decors",
@@ -943,7 +998,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête.",
+      "sautee": null
     },
     {
       "id": "gn-fr-longs",
@@ -959,7 +1015,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête.",
+      "sautee": null
     },
     {
       "id": "gn-fr-series-2d",
@@ -975,7 +1032,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête.",
+      "sautee": null
     },
     {
       "id": "gn-fr-studios",
@@ -991,7 +1049,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête."
+      "notes": "Désactivée : le robots.txt de news.google.com interdit tout (Disallow: /) et ne mentionne pas /rss. En attente d'une décision (voir compte rendu) ; prête à activer. Pour un site bloqué, ajouter « site:domaine » à la requête.",
+      "sautee": null
     },
     {
       "id": "illumination-paris",
@@ -1000,14 +1059,15 @@
       "type": "carriere-studio",
       "methode": "lever",
       "actif": true,
-      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "dernierSucces": "2026-11-26T01:25:49.654Z",
       "derniereErreur": null,
       "nbResultats": 0,
       "frequence": "6h",
-      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "dernierPassage": "2026-11-26T01:25:49.654Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "API publique Lever (api.lever.co/v0/postings/illumination) : 0 offre publiée le 25/11/2026. Studio majoritairement 3D, mais storyboard/design 2D possibles : le classement décide."
+      "notes": "API publique Lever (api.lever.co/v0/postings/illumination) : 0 offre publiée le 25/11/2026. Studio majoritairement 3D, mais storyboard/design 2D possibles : le classement décide.",
+      "sautee": null
     },
     {
       "id": "indeed",
@@ -1023,7 +1083,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Scraping interdit : ajout manuel."
+      "notes": "Scraping interdit : ajout manuel.",
+      "sautee": null
     },
     {
       "id": "indiewire-animation",
@@ -1039,7 +1100,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "instagram",
@@ -1055,7 +1117,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "JAMAIS de collecte automatique : ajout manuel seulement."
+      "notes": "JAMAIS de collecte automatique : ajout manuel seulement.",
+      "sautee": null
     },
     {
       "id": "jammedia",
@@ -1071,7 +1134,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "jam-media.com est en vente (hugedomains) : studio sans site."
+      "notes": "jam-media.com est en vente (hugedomains) : studio sans site.",
+      "sautee": null
     },
     {
       "id": "jobotropo",
@@ -1080,11 +1144,11 @@
       "type": "emploi",
       "methode": "playwright",
       "actif": true,
-      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "dernierSucces": "2026-11-26T01:25:49.654Z",
       "derniereErreur": null,
       "nbResultats": 10,
       "frequence": "6h",
-      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "dernierPassage": "2026-11-26T01:25:49.654Z",
       "derniersTitres": [
         "Superviseur.euse Rig (3D)(3D Rigging Supervisor)",
         "Monteur·euse(Editor)",
@@ -1093,7 +1157,8 @@
         "Concept Artist(Concept Artist)"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Contenu chargé en JavaScript (10 premières offres, cartes sans lien : ancre sur la page). Beaucoup de 3D : le filtre périmètre trie."
+      "notes": "Contenu chargé en JavaScript (10 premières offres, cartes sans lien : ancre sur la page). Beaucoup de 3D : le filtre périmètre trie.",
+      "sautee": null
     },
     {
       "id": "jobvfx",
@@ -1109,7 +1174,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page de catégories (VFX/3D/jeu), pas d'offres : sans intérêt pour la 2D."
+      "notes": "Page de catégories (VFX/3D/jeu), pas d'offres : sans intérêt pour la 2D.",
+      "sautee": null
     },
     {
       "id": "jpl",
@@ -1125,7 +1191,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Aucune page recrutement exposée."
+      "notes": "Aucune page recrutement exposée.",
+      "sautee": null
     },
     {
       "id": "kavaleer",
@@ -1141,7 +1208,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page Jobs : « Nothing Found » le 25/11/2026 (Dublin)."
+      "notes": "Page Jobs : « Nothing Found » le 25/11/2026 (Dublin).",
+      "sautee": null
     },
     {
       "id": "kavaleer-actus",
@@ -1159,7 +1227,8 @@
         "ADAM"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "kidscreen",
@@ -1175,7 +1244,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Flux protégé par un défi anti-robot (HTTP 202 vide) : non contourné."
+      "notes": "Flux protégé par un défi anti-robot (HTTP 202 vide) : non contourné.",
+      "sautee": null
     },
     {
       "id": "lacachette",
@@ -1191,7 +1261,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "lacachette.fr est une librairie, pas le studio : domaine erroné, studio non retrouvé."
+      "notes": "lacachette.fr est une librairie, pas le studio : domaine erroné, studio non retrouvé.",
+      "sautee": null
     },
     {
       "id": "lefilmfrancais",
@@ -1207,7 +1278,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Payant : titres publics uniquement, sinon saisie manuelle."
+      "notes": "Payant : titres publics uniquement, sinon saisie manuelle.",
+      "sautee": null
     },
     {
       "id": "linkedin",
@@ -1223,7 +1295,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "JAMAIS de collecte automatique : ajout manuel seulement."
+      "notes": "JAMAIS de collecte automatique : ajout manuel seulement.",
+      "sautee": null
     },
     {
       "id": "magelis",
@@ -1239,7 +1312,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "magic-design",
@@ -1258,7 +1332,8 @@
         "Level Artist"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page JOBS (Wix) : un h1 par offre. Jeu vidéo 2D (Spine), télétravail partiel possible."
+      "notes": "Page JOBS (Wix) : un h1 par offre. Jeu vidéo 2D (Spine), télétravail partiel possible.",
+      "sautee": null
     },
     {
       "id": "malil",
@@ -1274,7 +1349,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Aucune page recrutement ni lien carrière sur le site (Angoulême) : candidature par e-mail, ajout manuel."
+      "notes": "Aucune page recrutement ni lien carrière sur le site (Angoulême) : candidature par e-mail, ajout manuel.",
+      "sautee": null
     },
     {
       "id": "mist",
@@ -1290,7 +1366,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page « Recrutements » : « annonces en cours » vide le 25/11/2026."
+      "notes": "Page « Recrutements » : « annonces en cours » vide le 25/11/2026.",
+      "sautee": null
     },
     {
       "id": "mist-actus",
@@ -1306,7 +1383,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "miyu",
@@ -1322,7 +1400,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Domaine miyu-productions.com introuvable (DNS) : à retrouver."
+      "notes": "Domaine miyu-productions.com introuvable (DNS) : à retrouver.",
+      "sautee": null
     },
     {
       "id": "normaal",
@@ -1338,7 +1417,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Aucune page recrutement exposée ; flux vide."
+      "notes": "Aucune page recrutement exposée ; flux vide.",
+      "sautee": null
     },
     {
       "id": "ooolala",
@@ -1354,7 +1434,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Application web sans page recrutement exposée (/lander)."
+      "notes": "Application web sans page recrutement exposée (/lander).",
+      "sautee": null
     },
     {
       "id": "productions-connues",
@@ -1370,7 +1451,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Fichier collector/config/productions-connues.json : toujours intégré à la collecte."
+      "notes": "Fichier collector/config/productions-connues.json : toujours intégré à la collecte.",
+      "sautee": null
     },
     {
       "id": "sacrebleu",
@@ -1386,7 +1468,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "sacrebleuprod.com injoignable (connexion réinitialisée) : domaine à retrouver."
+      "notes": "sacrebleuprod.com injoignable (connexion réinitialisée) : domaine à retrouver.",
+      "sautee": null
     },
     {
       "id": "satellifax",
@@ -1402,7 +1485,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Payant : titres publics uniquement, sinon saisie manuelle."
+      "notes": "Payant : titres publics uniquement, sinon saisie manuelle.",
+      "sautee": null
     },
     {
       "id": "screendaily",
@@ -1418,7 +1502,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Flux RSS introuvable : à tester en HTML."
+      "notes": "Flux RSS introuvable : à tester en HTML.",
+      "sautee": null
     },
     {
       "id": "scriptoclap",
@@ -1434,7 +1519,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Injoignable lors des tests : très utile, à réessayer."
+      "notes": "Injoignable lors des tests : très utile, à réessayer.",
+      "sautee": null
     },
     {
       "id": "skwigly",
@@ -1452,7 +1538,8 @@
         "CALM: An animated feature based on Cuentos de amor de locura y de muerte"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "stim",
@@ -1468,7 +1555,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Studio 3D : désactivé par défaut. La page /fr/recrutement est lisible (liste de liens) si besoin."
+      "notes": "Studio 3D : désactivé par défaut. La page /fr/recrutement est lisible (liste de liens) si besoin.",
+      "sautee": null
     },
     {
       "id": "studiosouza",
@@ -1484,7 +1572,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Aucune page recrutement exposée."
+      "notes": "Aucune page recrutement exposée.",
+      "sautee": null
     },
     {
       "id": "suncreature",
@@ -1500,7 +1589,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Aucune page recrutement exposée."
+      "notes": "Aucune page recrutement exposée.",
+      "sautee": null
     },
     {
       "id": "superprod",
@@ -1509,18 +1599,19 @@
       "type": "carriere-studio",
       "methode": "werecruit",
       "actif": true,
-      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "dernierSucces": "2026-11-26T01:25:49.654Z",
       "derniereErreur": null,
       "nbResultats": 3,
       "frequence": "6h",
-      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "dernierPassage": "2026-11-26T01:25:49.654Z",
       "derniersTitres": [
         "Technicien.ne Support IT (CDD)",
         "Production Designer, Adult Animated Series",
         "Chargé·e de production Animation (Mid/Senior)"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Page careers.werecruit.io : liste d'offres embarquée dans la page (window.allOffers). Inclut Production Designer, Adult Animated Series (Paris)."
+      "notes": "Page careers.werecruit.io : liste d'offres embarquée dans la page (window.allOffers). Inclut Production Designer, Adult Animated Series (Paris).",
+      "sautee": null
     },
     {
       "id": "teamto",
@@ -1536,7 +1627,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Site rendu en JavaScript, aucune page recrutement exposée."
+      "notes": "Site rendu en JavaScript, aucune page recrutement exposée.",
+      "sautee": null
     },
     {
       "id": "unifrance",
@@ -1552,7 +1644,8 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Cloudflare (« Just a moment ») sur tout le site : non contourné."
+      "notes": "Cloudflare (« Just a moment ») sur tout le site : non contourné.",
+      "sautee": null
     },
     {
       "id": "variety-animation",
@@ -1561,14 +1654,15 @@
       "type": "actualite",
       "methode": "rss",
       "actif": true,
-      "dernierSucces": "2026-11-25T17:42:06.599Z",
+      "dernierSucces": "2026-11-26T01:25:49.654Z",
       "derniereErreur": null,
       "nbResultats": 0,
       "frequence": "6h",
-      "dernierPassage": "2026-11-25T17:42:06.599Z",
+      "dernierPassage": "2026-11-26T01:25:49.654Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": null
+      "notes": null,
+      "sautee": null
     },
     {
       "id": "waooh",
@@ -1584,7 +1678,8 @@
       "dernierPassage": "2026-11-25T17:42:06.599Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Seule offre publiée : candidature spontanée (exclue). Liège : télétravail ?"
+      "notes": "Seule offre publiée : candidature spontanée (exclue). Liège : télétravail ?",
+      "sautee": null
     },
     {
       "id": "waooh-actus",
@@ -1602,7 +1697,8 @@
         "Congratulations to Bobby Prod, Distributor of the year !"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Flux WordPress du studio de Liège."
+      "notes": "Flux WordPress du studio de Liège.",
+      "sautee": null
     },
     {
       "id": "weworkremotely-design",
@@ -1624,7 +1720,8 @@
         "Lightbox Animation: Senior Sets&Props Model Artist"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Flux RSS officiel de la catégorie design : tout est en télétravail, le filtre ne garde que les intitulés d'animation et d'illustration. Résidence exigée détectée par le classement."
+      "notes": "Flux RSS officiel de la catégorie design : tout est en télétravail, le filtre ne garde que les intitulés d'animation et d'illustration. Résidence exigée détectée par le classement.",
+      "sautee": null
     },
     {
       "id": "xilam",
@@ -1642,7 +1739,8 @@
         "Stage Assistant.e YouTube & Réseaux sociaux"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Flux WordPress de la catégorie « offres d'emploi » de xilam.com/rejoignez-nous/ (la page elle-même est rendue en JavaScript)."
+      "notes": "Flux WordPress de la catégorie « offres d'emploi » de xilam.com/rejoignez-nous/ (la page elle-même est rendue en JavaScript).",
+      "sautee": null
     },
     {
       "id": "xilam-actus",
@@ -1660,7 +1758,8 @@
         "Le Loup"
       ],
       "ajouteeParUtilisatrice": false,
-      "notes": "Annonces de mise en production (ex. Chickies)."
+      "notes": "Annonces de mise en production (ex. Chickies).",
+      "sautee": null
     },
     {
       "id": "zag",
@@ -1676,7 +1775,8 @@
       "dernierPassage": "2026-11-25T16:36:07.911Z",
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "Site rendu en JavaScript, aucune page recrutement exposée (zagtoon.com : pas de flux)."
+      "notes": "Site rendu en JavaScript, aucune page recrutement exposée (zagtoon.com : pas de flux).",
+      "sautee": null
     },
     {
       "id": "zerply",
@@ -1692,7 +1792,39 @@
       "dernierPassage": null,
       "derniersTitres": [],
       "ajouteeParUtilisatrice": false,
-      "notes": "L'URL /industry-jobs renvoie 404 (25/11/2026) : site probablement fermé."
+      "notes": "L'URL /industry-jobs renvoie 404 (25/11/2026) : site probablement fermé.",
+      "sautee": null
+    }
+  ],
+  "limites": {
+    "plafondRequetesParDomaineParJour": 200,
+    "plafondsParDomaine": {},
+    "delaiMinCollecteMinutes": 10
+  },
+  "requetesJour": {
+    "jour": "2026-11-26",
+    "parDomaine": {
+      "3dvf.com": 2,
+      "emploi.afjv.com": 2,
+      "awn.com": 2,
+      "cartoonbrew.com": 2,
+      "catsuka.com": 2,
+      "deadline.com": 2,
+      "api.lever.co": 2,
+      "jobotropo.com": 2,
+      "careers.werecruit.io": 2,
+      "variety.com": 2,
+      "cnc.fr": 4,
+      "news.google.com": 2
+    }
+  },
+  "derniereCollecteComplete": "2026-11-26T01:25:49.654Z",
+  "historique": [
+    {
+      "date": "2026-11-26T01:25:49.654Z",
+      "requetes": 26,
+      "sources": 10,
+      "sautees": []
     }
   ]
 }
