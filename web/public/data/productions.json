@@ -1,5 +1,5 @@
 {
-  "genereLe": "2026-11-26T11:46:59.309Z",
+  "genereLe": "2026-11-26T20:48:15.383Z",
   "productions": [
     {
       "id": "cbce1d44acd3",
@@ -27,12 +27,12 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
-          "vuLe": "2026-11-26T11:46:59.309Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         },
         {
           "sourceId": "xilam-actus",
           "url": "https://xilam.com/2026/06/22/le-loup-production/",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         },
         {
           "sourceId": "cnc-animation-2026",
@@ -67,7 +67,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
-          "vuLe": "2026-11-26T11:46:59.309Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         },
         {
           "sourceId": "cnc-animation-2026",
@@ -102,7 +102,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
-          "vuLe": "2026-11-26T11:46:59.309Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         },
         {
           "sourceId": "cnc-animation-2026",
@@ -137,12 +137,12 @@
         {
           "sourceId": "productions-connues",
           "url": "https://xilam.com/2025/10/02/xilam-annonce-la-mise-en-production-de-chickies/",
-          "vuLe": "2026-11-26T11:46:59.309Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         },
         {
           "sourceId": "productions-connues",
           "url": "https://xilam.com/media/chickies/",
-          "vuLe": "2026-11-26T11:46:59.309Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         }
       ]
     },
@@ -172,7 +172,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxISVNPWUZYYlVOZUU5UjBOUjhZVEM2Y1ZDaVgzdFd5U3huM3dQVDI0eVFhbHpBUTZzSk0tUWZUa2JYR3B4V2dBa0tZQVcyNm80enhYZm90cFE5MUxwQURKUkNjUDJudnB4Q01PYjAzbkJkRm5faTJiNTZzOERwSzREN1RzODJfeUlPd1ZmWG9R?oc=5",
-          "vuLe": "2026-11-26T11:46:59.309Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         }
       ]
     },
@@ -202,7 +202,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORi1wXzItRWNKOXh1amdnQy12Z1BHaWgzZmJXQTRjRDlIY0U1cWlVT2RMQlE2LXFVcHZCbjRZRk9mbmdiUGV5Qm9Tc1oxUVQ3T0hrNTZ3a1BpY0NmdmFBZDByLUtJU1BGRzRoRWs5SHRldWdDTkdNQmJfT1QxNnczSngxbnhpRDFHeDVwY01qbXdyVk40TnVJdl9CU2RlZHZBWWpqMlptVkVmbmc?oc=5",
-          "vuLe": "2026-11-26T11:46:59.309Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         }
       ]
     },
@@ -232,7 +232,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.ellipseanimation.com/careers/",
-          "vuLe": "2026-11-26T11:46:59.309Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         }
       ]
     },
@@ -262,7 +262,7 @@
         {
           "sourceId": "catsuka",
           "url": "https://www.catsuka.com/news/2026-11-23/fireborn-le-comics-adapte-en-serie-d-animation-par-titmouse",
-          "vuLe": "2026-11-26T08:50:10.190Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         }
       ]
     },
@@ -292,68 +292,7 @@
         {
           "sourceId": "catsuka",
           "url": "https://www.catsuka.com/news/2026-11-18/grendel-nouvelle-serie-netflix-animee-chez-bobbypills",
-          "vuLe": "2026-11-26T08:50:10.190Z"
-        }
-      ]
-    },
-    {
-      "id": "2f65c77d0779",
-      "titre": "CALM: An animated feature based on Cuentos de amor de locura y de muerte",
-      "format": "court",
-      "technique": "inconnue",
-      "producteurs": [
-        "La Mola Studio"
-      ],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": null,
-      "statut": "developpement",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "La Mola Studio is developing a feature film that brings together different animation techniques and artistic perspectives, with collaborations from Ibero- American studios and the life of Uruguayan writer Horacio Quiroga as its connecting thread. After exploring the universe of Horacio Quiroga in the short film CALM, the Last Tale of Horacio Quiroga, filmmakers Álvaro […] The post CALM: An animat…",
-      "image": "https://www.skwigly.co.uk/wp-content/uploads/2026/11/calm_feat.jpg",
-      "premiereVue": "2026-11-25T17:42:06.599Z",
-      "misEnAvant": false,
-      "bonMomentDecor": false,
-      "sources": [
-        {
-          "sourceId": "skwigly",
-          "url": "https://www.skwigly.co.uk/la-mola-studio-calm/",
-          "vuLe": "2026-11-26T08:50:10.190Z"
-        }
-      ]
-    },
-    {
-      "id": "635d010a9e41",
-      "titre": "Congratulations to Bobby Prod, Distributor of the year !",
-      "format": "long-metrage",
-      "technique": "inconnue",
-      "producteurs": [
-        "Waooh",
-        "Bobby Prod"
-      ],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": null,
-      "statut": "developpement",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "During the 2026 edition of Cartoon Forum, Bobby Prod was named Distributor of the Year! We at Waooh! were delighted to contribute to several stages of their latest feature film, Jim Queen, and it’s a pleasure to see their work recognised with this award. A big congratulations from the entire Waooh! team to Bobby Prod! The post Congratulations to Bobby Prod, Distributor of the year ! appeared firs…",
-      "image": "https://www.waooh.be/wp-content/uploads/2026/09/Jim-queen-grande_image.png",
-      "premiereVue": "2026-11-25T17:42:06.599Z",
-      "misEnAvant": false,
-      "bonMomentDecor": false,
-      "sources": [
-        {
-          "sourceId": "waooh-actus",
-          "url": "https://www.waooh.be/bobby_prod_distributor_of_the_year/",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         }
       ]
     },
@@ -383,7 +322,7 @@
         {
           "sourceId": "ellipse-actus",
           "url": "https://www.ellipseanimation.com/animal-jack-an-adaptation-in-development-with-tf1/",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         }
       ]
     },
@@ -414,7 +353,7 @@
         {
           "sourceId": "ellipse-actus",
           "url": "https://www.ellipseanimation.com/komodo-no-chill-the-new-kidss-project-from-ellipse-animation-presented-at-cartoon-forum/",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         }
       ]
     },
@@ -444,7 +383,68 @@
         {
           "sourceId": "kavaleer-actus",
           "url": "https://kavaleer.com/adam-king-and-irish-animation-studio-kavaleer-team-up-for-new-series-adam-%e2%9d%a4-adventure/",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
+        }
+      ]
+    },
+    {
+      "id": "2f65c77d0779",
+      "titre": "CALM: An animated feature based on Cuentos de amor de locura y de muerte",
+      "format": "court",
+      "technique": "inconnue",
+      "producteurs": [
+        "La Mola Studio"
+      ],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "developpement",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "La Mola Studio is developing a feature film that brings together different animation techniques and artistic perspectives, with collaborations from Ibero- American studios and the life of Uruguayan writer Horacio Quiroga as its connecting thread. After exploring the universe of Horacio Quiroga in the short film CALM, the Last Tale of Horacio Quiroga, filmmakers Álvaro […] The post CALM: An animat…",
+      "image": "https://www.skwigly.co.uk/wp-content/uploads/2026/11/calm_feat.jpg",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "skwigly",
+          "url": "https://www.skwigly.co.uk/la-mola-studio-calm/",
+          "vuLe": "2026-11-26T20:48:15.383Z"
+        }
+      ]
+    },
+    {
+      "id": "635d010a9e41",
+      "titre": "Congratulations to Bobby Prod, Distributor of the year !",
+      "format": "long-metrage",
+      "technique": "inconnue",
+      "producteurs": [
+        "Waooh",
+        "Bobby Prod"
+      ],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "developpement",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "During the 2026 edition of Cartoon Forum, Bobby Prod was named Distributor of the Year! We at Waooh! were delighted to contribute to several stages of their latest feature film, Jim Queen, and it’s a pleasure to see their work recognised with this award. A big congratulations from the entire Waooh! team to Bobby Prod! The post Congratulations to Bobby Prod, Distributor of the year ! appeared firs…",
+      "image": "https://www.waooh.be/wp-content/uploads/2026/09/Jim-queen-grande_image.png",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "waooh-actus",
+          "url": "https://www.waooh.be/bobby_prod_distributor_of_the_year/",
+          "vuLe": "2026-11-26T20:48:15.383Z"
         }
       ]
     },
@@ -3304,7 +3304,7 @@
         {
           "sourceId": "3dvf-actu",
           "url": "https://3dvf.com/gaussian-splatting-lavenir-du-scan-3d-comprendre-les-bases-et-debuter/",
-          "vuLe": "2026-11-26T08:50:10.190Z"
+          "vuLe": "2026-11-26T20:48:15.383Z"
         }
       ]
     },
