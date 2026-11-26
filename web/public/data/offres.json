@@ -1,96 +1,2612 @@
 {
-  "genereLe": "2026-11-26T01:25:49.654Z",
+  "genereLe": "2026-11-26T08:50:10.190Z",
   "offres": [
     {
-      "id": "c5b1640070c7",
-      "titre": "Technicien.ne Support IT (CDD)",
-      "studio": "Superprod",
+      "id": "d3987f99ac4d",
+      "titre": "STUDIO WATCH 93 OPEN ROLES 19 NEW THIS WEEK NEWEST: TECHNICAL ANIMATOR",
+      "studio": null,
       "production": null,
-      "lieu": "Paris, FR",
-      "pays": "France",
+      "lieu": null,
+      "pays": null,
       "categorie": "autre",
-      "technique": "2D",
-      "modeTravail": "paris-sur-place",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
       "residenceExigee": null,
-      "contrat": "CDD",
+      "contrat": "inconnu",
       "niveau": "inconnu",
       "langue": "inconnue",
       "dansPerimetre": true,
-      "aVerifier": false,
+      "aVerifier": true,
       "dateDebut": null,
       "dateLimite": null,
-      "datePublication": "2026-10-07T08:50:26.167Z",
-      "premiereVue": "2026-11-25T17:42:06.599Z",
-      "extrait": "CDD - 12 mois Temps plein",
-      "image": "https://wio.blob.core.windows.net/gallery/superprod/ribbon/27e4eca5-87d3-4865-bbf3-bf597e4bcd28/bannierewerecruit2024.png",
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": null,
       "probablementExpiree": false,
       "sources": [
         {
-          "sourceId": "superprod",
-          "url": "https://careers.werecruit.io/fr/superprod/offres/technicienne-support-it-cdd-6a79c3",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
     {
-      "id": "a9fd818b99b6",
-      "titre": "Production Designer, Adult Animated Series",
-      "studio": "Superprod",
+      "id": "fff3db722080",
+      "titre": "Acting for Animators by Ed Hooks",
+      "studio": null,
       "production": null,
-      "lieu": "Paris, FR",
-      "pays": "France",
-      "categorie": "decor",
-      "technique": "2D",
-      "modeTravail": "paris-sur-place",
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
       "residenceExigee": null,
-      "contrat": "CDD",
+      "contrat": "inconnu",
       "niveau": "inconnu",
       "langue": "inconnue",
       "dansPerimetre": true,
-      "aVerifier": false,
+      "aVerifier": true,
       "dateDebut": null,
       "dateLimite": null,
-      "datePublication": "2026-09-04T08:11:52.974Z",
-      "premiereVue": "2026-11-25T17:42:06.599Z",
-      "extrait": "CDD - 3 mois Temps plein",
-      "image": "https://wio.blob.core.windows.net/werecruit/27f66bea-dddb-4cbb-8d81-498b297f9ab8.png",
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-share/22347-22356-1776090143.jpg",
       "probablementExpiree": false,
       "sources": [
         {
-          "sourceId": "superprod",
-          "url": "https://careers.werecruit.io/fr/superprod/offres/production-designer-adult-animated-series-899bac",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/product/acting-for-animators-by-ed-hooks/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
     {
-      "id": "e0d211f0206e",
-      "titre": "Chargé·e de production Animation (Mid/Senior)",
-      "studio": "Melusine Studio",
+      "id": "30a2e13d55af",
+      "titre": "Cinematics Director New Epic Games · posted 1 day ago 0",
+      "studio": null,
       "production": null,
-      "lieu": "Contern, LU",
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/epic-games.svg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/epic-games/cinematics-director/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "f5cdceebf28c",
+      "titre": "Lead Technical Animator New Epic Games · posted 1 day ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/epic-games.svg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/epic-games/lead-technical-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "c761e401f962",
+      "titre": "Principal Animator New Epic Games · posted 1 day ago 1",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/epic-games.svg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/epic-games/principal-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "705734f0695f",
+      "titre": "Technical Designer in Animation New Epic Games · posted 1 day ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/epic-games.svg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/epic-games/technical-designer-in-animation/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "957e045b22e2",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/naughty-dog.png\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Senior Gameplay Animator - IGC/ Gameplay (Contingent) New Naughty Dog · …",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/naughty-dog/senior-gameplay-animator-igc-gameplay-contingent/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "89c9cd05ab04",
+      "titre": "Senior Cinematic Designer New CD Projekt Red · posted 2 weeks ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/cd-projekt-red.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/cd-projekt-red/senior-cinematic-designer/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "99439bc9780d",
+      "titre": "2K Senior Technical Animator New 2K · posted 2 weeks ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/2k/senior-technical-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "247e129b9c2b",
+      "titre": "GEI Pixelart Animator New Gilgamesh Enterprises Inc · posted 4 weeks ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/gilgamesh-enterprises-inc/pixelart-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "cfcd4c508a84",
+      "titre": "F Sr Rigger TD FuseFX · posted 4 years ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/fusefx/sr-rigger-td/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "f81d9cd56091",
+      "titre": "S Middle 2D Animator Stepico 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
       "pays": null,
       "categorie": "autre",
       "technique": "2D",
-      "modeTravail": "sur-place-ailleurs",
+      "modeTravail": "inconnu",
       "residenceExigee": null,
-      "contrat": "CDD",
-      "niveau": "senior",
+      "contrat": "inconnu",
+      "niveau": "inconnu",
       "langue": "inconnue",
-      "dansPerimetre": false,
-      "aVerifier": false,
+      "dansPerimetre": true,
+      "aVerifier": true,
       "dateDebut": null,
       "dateLimite": null,
-      "datePublication": "2025-06-09T14:44:52.219Z",
-      "premiereVue": "2026-11-25T17:42:06.599Z",
-      "extrait": "CDD - 3 mois Temps plein",
-      "image": "https://wio.blob.core.windows.net/gallery/superprod/ribbon/a9d76e59-f7d0-4cff-a8a1-579d96ae2cda/bannermelu.png",
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
       "probablementExpiree": false,
       "sources": [
         {
-          "sourceId": "superprod",
-          "url": "https://careers.werecruit.io/fr/superprod/offres/chargee-de-production-animation-midsenior-093cec",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/stepico/middle-2d-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "efd8a865510e",
+      "titre": "DTA Production Coordinator - Disney Television Animation Disney Television Animation 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/disney-television-animation/production-coordinator-disney-television-animation/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "5f3a63fdb077",
+      "titre": "DTA Script Coordinator - Disney Television Animation Disney Television Animation 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/disney-television-animation/script-coordinator-disney-television-animation/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "3715d4b26fb3",
+      "titre": "DTA Storyboard Revisionist - Disney Television Animation Disney Television Animation 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/disney-television-animation/storyboard-revisionist-disney-television-animation/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "d4866955e94c",
+      "titre": "Senior Technical Animator - [Splinter Cell] New Ubisoft · posted 6 hours ago 1",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/ubisoft.svg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/ubisoft/senior-technical-animator-splinter-cell/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "f0193ddf4c34",
+      "titre": "TS Lead Animator New Tripledot Studios · posted 5 days ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/tripledot-studios/lead-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "b381fffa8bd5",
+      "titre": "Lead Animation Technical Artist New NetEase Games · posted 3 weeks ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/netease-games.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/netease-games/lead-animation-technical-artist/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "c892c3c1f0bb",
+      "titre": "Principal / Senior Animator - 3C/Gameplay New NetEase Games · posted 3 weeks ago 1",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/netease-games.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/netease-games/principal-senior-animator-3c-gameplay/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "41c522c0b277",
+      "titre": "Lead Animator - Gameplay New DreamWorks Animation / NBCUniversal · posted 3 weeks ago 1",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/dreamworks-animation-nbcuniversal.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/dreamworks-animation-nbcuniversal/lead-animator-gameplay/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "291f3062fc54",
+      "titre": "Technical Animator - Rigging New DreamWorks Animation / NBCUniversal · posted 3 weeks ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/dreamworks-animation-nbcuniversal.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/dreamworks-animation-nbcuniversal/technical-animator-rigging/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        },
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/dreamworks-animation-nbcuniversal/technical-animator-rigging-bce185/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "3d0180508b4e",
+      "titre": "2K Gameplay Animator 2K · posted 1 month ago 7",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/2k/gameplay-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "3bbddb8d124b",
+      "titre": "Senior Animator - Gameplay DreamWorks Animation / NBCUniversal · posted 2 months ago 8",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/dreamworks-animation-nbcuniversal.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/dreamworks-animation-nbcuniversal/senior-animator-gameplay/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "549ae12723b5",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/sony-pictures-imageworks.png\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Animator Sony Pictures Imageworks · posted 2 months ago 10",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/sony-pictures-imageworks/animator-899ad4/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "295642292dcc",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/sony-pictures-imageworks.png\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Associé(e) directeur(trice) technique en animation (ATD Ani…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/sony-pictures-imageworks/associee-directeurtrice-technique-en-animation-atd-animation/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "bd017eb47139",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/sony-pictures-imageworks.png\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Experienced Animator Sony Pictures Imageworks · posted 2 mo…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/sony-pictures-imageworks/experienced-animator-5c516d/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "7b750a80dd0a",
+      "titre": "Principal Animator (Gameplay, Conversations & Scripted Events) DreamWorks Animation / NBCUniversal · posted 5 months ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/dreamworks-animation-nbcuniversal.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/dreamworks-animation-nbcuniversal/principal-animator-gameplay-conversations-scripted-events/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "d09390ea1454",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/sony-pictures-imageworks.png\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Animator Sony Pictures Imageworks · posted 6 months ago 1",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/sony-pictures-imageworks/animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "b981821e363a",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/sony-pictures-imageworks.png\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Experienced Animator Sony Pictures Imageworks · posted 6 mo…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/sony-pictures-imageworks/experienced-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "8139b62a469d",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/sony-pictures-imageworks.png\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Experienced Rigger Sony Pictures Imageworks · posted 6 mont…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/sony-pictures-imageworks/experienced-rigger/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "a32c9cc2a907",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/sony-pictures-imageworks.png\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Rigger Sony Pictures Imageworks · posted 6 months ago 1",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/sony-pictures-imageworks/rigger/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "3daf2dfa4bc5",
+      "titre": "Cinematic Designer (contract) New CD Projekt Red · posted 1 day ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/cd-projekt-red.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/cd-projekt-red/cinematic-designer-contract/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "d6a44e6ce6d7",
+      "titre": "Senior Technical Animator (contract) New CD Projekt Red · posted 4 weeks ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/cd-projekt-red.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/cd-projekt-red/senior-technical-animator-contract/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "c2dd65b920a1",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/skydance-animation.png\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Senior Rigging Artist Skydance Animation · posted 1 month ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/skydance-animation/senior-rigging-artist/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "b0061f89d5e4",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/skydance-animation.png\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Animator Skydance Animation · posted 7 months ago 5",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/skydance-animation/animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "4a4b88b33053",
+      "titre": "BBS Senior / Lead Technical Animator Black Banner Studios 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/black-banner-studios/senior-lead-technical-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "b705bca0a8c1",
+      "titre": "BBS Senior Real-Time Cinematic Artist Black Banner Studios 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/black-banner-studios/senior-real-time-cinematic-artist/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "54d6e8104bee",
+      "titre": "D Compositing Lead (DNEG Animation) New DNEG · posted 2 days ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/dneg/compositing-lead-dneg-animation/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "49811633c1e8",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/framestore.svg\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Animator New Framestore · posted 3 weeks ago 4",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/framestore/animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "a600f9b548ce",
+      "titre": "2K Principal Technical Animator 2K · posted 1 month ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/2k/principal-technical-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "079e02a46328",
+      "titre": "Rigging Yard Supervisor (6 month fixed-term contract) DreamWorks Animation / NBCUniversal · posted 1 month ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "CDD",
+      "niveau": "lead",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/dreamworks-animation-nbcuniversal.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/dreamworks-animation-nbcuniversal/rigging-yard-supervisor-6-month-fixed-term-contract/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "ca56fe3b13bd",
+      "titre": "PG Cinematic Director Playground Games 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/playground-games/cinematic-director/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "491f778a19e8",
+      "titre": "Z Senior Animator(Spine + Unity) New Zynga · posted 4 days ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/zynga/senior-animatorspine-unity/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "4b608ed0a523",
+      "titre": "LW Senior Associate Game Animator New Light & Wonder · posted 4 days ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/light-wonder/senior-associate-game-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "90c5355e9e85",
+      "titre": "Animation Artist - Senior New Rodeo FX · posted 1 week ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/rodeo-fx.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/rodeo-fx/animation-artist-senior/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "3de399720069",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/industrial-light-magic.png\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Sr Facial Animator Industrial Light & Magic 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/industrial-light-magic/sr-facial-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "5cef0954e539",
+      "titre": "L Sr Facial Animator Lucasfilm 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/lucasfilm/sr-facial-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "d49f3e43c204",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/riot-games.svg\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Principal Animation Artist - Unpublished R&D Product New Riot Games · pos…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/riot-games/principal-animation-artist-unpublished-rd-product/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "9470aa9aee2e",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/riot-games.svg\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Senior Technical Artist, Animation - Unpublished R&D Product New Riot Gam…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/riot-games/senior-technical-artist-animation-unpublished-rd-product/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "f9ce8d424ff9",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/electronic-arts.png\" alt=\"\" loading=\"lazy\" width=\"28\" height=\"28\"> Animator Electronic Arts 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/electronic-arts/animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "f520dad23704",
+      "titre": "V Unity Animator - Beach Bum New Voodoo · posted 1 day ago 1",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/voodoo/unity-animator-beach-bum/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "b486372ead43",
+      "titre": "Senior/Lead Gameplay Animator - 3C & FPS New NetEase Games · posted 3 days ago 8",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/netease-games.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/netease-games/senior-lead-gameplay-animator-3c-fps/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "29c5be8b5dd2",
+      "titre": "TP Experienced 2D Character Animator New Topdeck Productions · posted 1 week ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "2D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/topdeck-productions/experienced-2d-character-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "6e9cb023074e",
+      "titre": "GP Senior Animator New Grim Prophecy · posted 1 week ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/grim-prophecy/senior-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "4c609f34dcf6",
+      "titre": "HM Senior Gameplay Animator New Half Mermaid · posted 2 weeks ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/half-mermaid/senior-gameplay-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "6846ffa80e03",
+      "titre": "HMP Senior Gameplay Animator New Half Mermaid Productions · posted 2 weeks ago 4",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/half-mermaid-productions/senior-gameplay-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "389514df0fb8",
+      "titre": "UD 2D Animator New Uni Dreams · posted 3 weeks ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "2D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/uni-dreams/2d-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "68759966d264",
+      "titre": "Character Performance Animator New NetEase Games · posted 3 weeks ago 15",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/netease-games.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/netease-games/character-performance-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "2569fed7ec66",
+      "titre": "FPS 1P View Gameplay Animator New NetEase Games · posted 3 weeks ago 4",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/netease-games.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/netease-games/fps-1p-view-gameplay-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "2d50d7365c06",
+      "titre": "CMG 3D Character Artist & Animator New Coffee Moth Games · posted 3 weeks ago 6",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/coffee-moth-games/3d-character-artist-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "1bc8bf8d4095",
+      "titre": "SSS Experienced 3D Games Animator – Permanent – UK New Super Spline Studios · posted 4 weeks ago 2",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/super-spline-studios/experienced-3d-games-animator-permanent-uk/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "f58acffbc7d3",
+      "titre": "SSS Experienced Gameplay Animator – 3+ Month Freelance Contract New Super Spline Studios · posted 4 weeks ago 5",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "freelance",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/super-spline-studios/experienced-gameplay-animator-3-month-freelance-contract/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "403df190bdf1",
+      "titre": "SSS Junior 3D Games Animator – Permanent – UK ONLY New Super Spline Studios · posted 4 weeks ago 2",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "junior",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/super-spline-studios/junior-3d-games-animator-permanent-uk-only/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "c6403bc32ae6",
+      "titre": "SSS Lead 3D Games Animator – Permanent New Super Spline Studios · posted 4 weeks ago 4",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/super-spline-studios/lead-3d-games-animator-permanent/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "e1bf050d62a0",
+      "titre": "S 3D Creature Modeler & Animator (Blender) Seedbound · posted 1 month ago 3",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/seedbound/3d-creature-modeler-animator-blender/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "40b8ee1664a1",
+      "titre": "DM Pixel Art Animator Dead Mage · posted 1 month ago 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/dead-mage/pixel-art-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "99f57c13896b",
+      "titre": "MSU Unreal Cinematic Designer Mysteria Studio UG · posted 1 month ago 1",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/mysteria-studio-ug/unreal-cinematic-designer/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "15209a2dcd1f",
+      "titre": "MS Unreal Cinematic Designer Mysteria Studio · posted 1 month ago 1",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/mysteria-studio/unreal-cinematic-designer/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "e77e986a25d5",
+      "titre": "EC 3D Animator (Blender) Eleon Co · posted 1 month ago 11",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/eleon-co/3d-animator-blender/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "4f954eca68e6",
+      "titre": "TB Gameplay / technical Animator Thera Bytes 0",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/thera-bytes/gameplay-technical-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "5a913342795e",
+      "titre": "New Jobs index Posted 6 hours ago Technical Animator Ubisoft Sofia, Sofia City Province - No reviews yet Pay to expect£45k to £65kinthe UK Games Technical animation",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "en",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/ubisoft.svg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/ubisoft/technical-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "decb785e0b6a",
+      "titre": "New Jobs index Posted 6 hours ago 3D Animator Ubisoft Sofia, Sofia City Province - No reviews yet Games Character acting and performance",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/ubisoft.svg",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/ubisoft/3d-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "8c1fc27aaae4",
+      "titre": "PS New Jobs index Posted 2 days ago [PUBG STUDIOS] Technical Artist - Animation (5년 이상) PUBG Studios Seoul; Seoul, South Korea - No reviews yet Pay to expect£45k to £65kinthe UK Games Technical anima…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "en",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": null,
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/pubg-studios/pubg-studios-technical-artist-animation-5%25eb%2585%2584-%25ec%259d%25b4%25ec%2583%2581/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "eb38631a5727",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/gameloft.png\" alt=\"\" loading=\"lazy\" width=\"52\" height=\"52\"> New Posted 1 week ago 3D Gameplay Animator Gameloft Lviv, UA - No reviews y…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/gameloft/3d-gameplay-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "2dca82a3ea0f",
+      "titre": "New Posted 3 weeks ago Principal / Senior Animator NetEase Games Singapore - No reviews yet Pay to expect£55k to £80kinthe UK Games Character acting and performance Lead",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "en",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/netease-games.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/netease-games/principal-senior-animator/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "add5273d5312",
+      "titre": "New Posted 3 weeks ago Lead Animation Technical Artist NetEase Games Singapore - No reviews yet Pay to expect£55k to £80kinthe UK Games Character acting and performance Lead",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "en",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/aw-studio-logos/netease-games.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/netease-games/lead-animation-technical-artist-ae7628/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "cebebfc61013",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/gameloft.png\" alt=\"\" loading=\"lazy\" width=\"52\" height=\"52\"> New Posted 4 weeks ago 3D Animator (Middle/Senior) Gameloft Ho Chi Minh Cit…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "3D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/gameloft/3d-animator-middle-senior/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "6a5e15a411e9",
+      "titre": "<img src=\"https://anim.works/wp-content/uploads/aw-studio-logos/industrial-light-magic.png\" alt=\"\" loading=\"lazy\" width=\"52\" height=\"52\"> Posted date not stated Senior Animator - ILM Sydney Industria…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/industrial-light-magic/senior-animator-ilm-sydney/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "774e66c2b976",
+      "titre": "I Jobs index Posted date not stated 2D Slot Animator (Middle+ / Senior) iLogos Tallinn, Estonia - No reviews yet Pay to expect£40k to £60kinthe UK Games Character acting and performance Senior",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "2D",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "senior",
+      "langue": "en",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/ilogos/2d-slot-animator-middle-senior/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "2020b018c235",
+      "titre": "LS Re-checking Posted 2 months ago Associate Lead Cinematic Artist Larian Studios Kuala Lumpur - No reviews yet Pay to expect£55k to £80kinthe UK Games Cinematics Lead",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "lead",
+      "langue": "en",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/larian-studios/associate-lead-cinematic-artist/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "63641c1d59eb",
+      "titre": "LS Re-checking Posted 2 years ago Technical Animator or Rigger – Open Application Posted as \"Technical Animator or Rigger – Open Application | Animateur technique ou de squelettage - candidature ouve…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/larian-studios/technical-animator-or-rigger-open-application/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "45d709d6e101",
+      "titre": "LS Re-checking Posted 2 years ago Cinematic Artist – Open Application Posted as \"Cinematic Artist – Open Application | Artiste cinématique - candidature libre\" Larian Studios Any/Tous les studios - N…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "fr",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/larian-studios/cinematic-artist-open-application/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "49f353fcb7a4",
+      "titre": "LS Re-checking Posted 2 years ago Animator – Open Application Posted as \"Animator – Open Application | Animateur - candidature libre\" Larian Studios Any/Tous les studios - No reviews yet Games Charac…",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "fr",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": "https://anim.works/wp-content/uploads/2026/10/studiowatch-og-v1.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "animworks-studiowatch",
+          "url": "https://anim.works/studiowatch/larian-studios/animator-open-application/",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "0a072c991564",
+      "titre": "Internet - Ecommerce",
+      "studio": null,
+      "production": null,
+      "lieu": null,
+      "pays": null,
+      "categorie": "autre",
+      "technique": "inconnue",
+      "modeTravail": "inconnu",
+      "residenceExigee": null,
+      "contrat": "inconnu",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": true,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": null,
+      "premiereVue": "2026-11-26T08:50:10.190Z",
+      "extrait": "",
+      "image": null,
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "francetravail",
+          "url": "https://candidat.francetravail.fr/rechercheoffre/emploi/internet-ecommerce/s29",
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -121,7 +2637,7 @@
         {
           "sourceId": "ellipse",
           "url": "https://www.ellipseanimation.com/careers/#CREATIVE%20PRODUCER%20%E2%80%93%20ANIME",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -152,7 +2668,7 @@
         {
           "sourceId": "fortiche",
           "url": "https://forticheprod.com/job-offers/rigging-supervisor-m-f-nb/",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -183,7 +2699,7 @@
         {
           "sourceId": "magic-design",
           "url": "https://www.magicdesignstudios.com/jobs-alert#Animateur%2Ftrice%202D%20confirm%C3%A9.e",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -214,7 +2730,100 @@
         {
           "sourceId": "magic-design",
           "url": "https://www.magicdesignstudios.com/jobs-alert#Level%20Artist",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "c5b1640070c7",
+      "titre": "Technicien.ne Support IT (CDD)",
+      "studio": "Superprod",
+      "production": null,
+      "lieu": "Paris, FR",
+      "pays": "France",
+      "categorie": "autre",
+      "technique": "2D",
+      "modeTravail": "paris-sur-place",
+      "residenceExigee": null,
+      "contrat": "CDD",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-10-07T08:50:26.167Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "CDD - 12 mois Temps plein",
+      "image": "https://wio.blob.core.windows.net/gallery/superprod/ribbon/27e4eca5-87d3-4865-bbf3-bf597e4bcd28/bannierewerecruit2024.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "superprod",
+          "url": "https://careers.werecruit.io/fr/superprod/offres/technicienne-support-it-cdd-6a79c3",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "a9fd818b99b6",
+      "titre": "Production Designer, Adult Animated Series",
+      "studio": "Superprod",
+      "production": null,
+      "lieu": "Paris, FR",
+      "pays": "France",
+      "categorie": "decor",
+      "technique": "2D",
+      "modeTravail": "paris-sur-place",
+      "residenceExigee": null,
+      "contrat": "CDD",
+      "niveau": "inconnu",
+      "langue": "inconnue",
+      "dansPerimetre": true,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2026-09-04T08:11:52.974Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "CDD - 3 mois Temps plein",
+      "image": "https://wio.blob.core.windows.net/werecruit/27f66bea-dddb-4cbb-8d81-498b297f9ab8.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "superprod",
+          "url": "https://careers.werecruit.io/fr/superprod/offres/production-designer-adult-animated-series-899bac",
+          "vuLe": "2026-11-26T08:50:10.190Z"
+        }
+      ]
+    },
+    {
+      "id": "e0d211f0206e",
+      "titre": "Chargé·e de production Animation (Mid/Senior)",
+      "studio": "Melusine Studio",
+      "production": null,
+      "lieu": "Contern, LU",
+      "pays": null,
+      "categorie": "autre",
+      "technique": "2D",
+      "modeTravail": "sur-place-ailleurs",
+      "residenceExigee": null,
+      "contrat": "CDD",
+      "niveau": "senior",
+      "langue": "inconnue",
+      "dansPerimetre": false,
+      "aVerifier": false,
+      "dateDebut": null,
+      "dateLimite": null,
+      "datePublication": "2025-06-09T14:44:52.219Z",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "extrait": "CDD - 3 mois Temps plein",
+      "image": "https://wio.blob.core.windows.net/gallery/superprod/ribbon/a9d76e59-f7d0-4cff-a8a1-579d96ae2cda/bannermelu.png",
+      "probablementExpiree": false,
+      "sources": [
+        {
+          "sourceId": "superprod",
+          "url": "https://careers.werecruit.io/fr/superprod/offres/chargee-de-production-animation-midsenior-093cec",
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -245,7 +2854,7 @@
         {
           "sourceId": "weworkremotely-design",
           "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-sets-props-concept-artist-internship",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -276,7 +2885,7 @@
         {
           "sourceId": "weworkremotely-design",
           "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-storyboard-artist",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -307,7 +2916,7 @@
         {
           "sourceId": "weworkremotely-design",
           "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-sets-props-concept-art-supervisor",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -318,7 +2927,7 @@
       "production": null,
       "lieu": null,
       "pays": null,
-      "categorie": "autre",
+      "categorie": "decor",
       "technique": "3D",
       "modeTravail": "inconnu",
       "residenceExigee": null,
@@ -338,7 +2947,7 @@
         {
           "sourceId": "weworkremotely-design",
           "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-matte-painter",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -369,7 +2978,7 @@
         {
           "sourceId": "weworkremotely-design",
           "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-sets-props-model-artist",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -400,7 +3009,7 @@
         {
           "sourceId": "weworkremotely-design",
           "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-vfx-artist",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -431,7 +3040,7 @@
         {
           "sourceId": "weworkremotely-design",
           "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-rigger-artist",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -462,7 +3071,7 @@
         {
           "sourceId": "weworkremotely-design",
           "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-sets-props-surface-artist",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -493,7 +3102,7 @@
         {
           "sourceId": "weworkremotely-design",
           "url": "https://weworkremotely.com/remote-jobs/lightbox-animation-senior-sets-props-concept-artist",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -524,7 +3133,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/SINF1069-29206",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -555,7 +3164,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/EINF1034-29200",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -586,7 +3195,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/EINF2297-29189",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -617,7 +3226,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/ECOM183-29177",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -648,7 +3257,7 @@
         {
           "sourceId": "afjv-emploi",
           "url": "https://emploi.afjv.com/emploi-jeux-video/SINF147-29136",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -679,7 +3288,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1736",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -710,7 +3319,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1735",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -741,7 +3350,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1734",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -772,7 +3381,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1733",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -803,7 +3412,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1732",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -834,7 +3443,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1731",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -865,7 +3474,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1730",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -896,7 +3505,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1729",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -927,7 +3536,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1728",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -958,7 +3567,7 @@
         {
           "sourceId": "jobotropo",
           "url": "https://www.jobotropo.com/jobs#1727",
-          "vuLe": "2026-11-26T01:25:49.654Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     },
@@ -989,7 +3598,7 @@
         {
           "sourceId": "xilam",
           "url": "https://xilam.com/2026/11/05/stage-assistant-e-youtube-reseaux-sociaux/",
-          "vuLe": "2026-11-25T17:42:06.599Z"
+          "vuLe": "2026-11-26T08:50:10.190Z"
         }
       ]
     }
