@@ -1,6 +1,94 @@
 {
-  "genereLe": "2026-11-27T03:26:17.525Z",
+  "genereLe": "2026-11-27T15:57:23.617Z",
   "productions": [
+    {
+      "id": "47ec066c4ecd",
+      "titre": "Green Gold Animation’s ‘Khel Khel Mein’ to premiere on Doordarshan National on 29 November",
+      "format": "serie",
+      "technique": "inconnue",
+      "producteurs": [
+        "November. Green Gold Animation"
+      ],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "inconnu",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "Green Gold Animation is set to bring a new animated series, Khel Khel Mein, to Doordarshan National on 29 November 2026. Featuring the popular character Chhota Bheem alongside three young… The post Green Gold Animation’s ‘Khel Khel Mein’ to premiere on Doordarshan National on 29 November appeared first on .",
+      "image": "https://www.animationxpress.com/wp-content/uploads/2026/11/Khel-Khel-Mein.jpg",
+      "premiereVue": "2026-11-27T15:57:23.617Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "animationxpress",
+          "url": "https://www.animationxpress.com/latest-news/green-gold-animations-khel-khel-mein-to-premiere-on-doordarshan-national-on-29-november/",
+          "vuLe": "2026-11-27T15:57:23.617Z"
+        }
+      ]
+    },
+    {
+      "id": "ec3780d22b16",
+      "titre": "Daisy's Life",
+      "format": "long-metrage",
+      "technique": "inconnue",
+      "producteurs": [
+        "Sachiko Tanaka Animation"
+      ],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "inconnu",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "Voici le premier extrait de \"Daisy's Life\", le nouveau long métrage de Masaaki Yuasa, et la première production de son nouveau stu... [English] : First look at new Masaaki Yuasa's feature film \"Daisy's Life\", based on the novel by Banana Yoshimoto & Yoshitomo Nara. Script : Sachiko Tanaka Animation director : Shotaro Imai Character design : Izumi Murakami Art director : Tomotaka Kubo Visual devel…",
+      "image": "https://www.catsuka.com/interf/vignettes_news/big/daisyslife_preview.jpg",
+      "premiereVue": "2026-11-27T15:57:23.617Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "catsuka",
+          "url": "https://www.catsuka.com/news/2026-11-27/daisy-s-life-premier-extrait-du-nouveau-film-de-masaaki-yuasa",
+          "vuLe": "2026-11-27T15:57:23.617Z"
+        }
+      ]
+    },
+    {
+      "id": "6d28048c484b",
+      "titre": "Wildwood",
+      "format": "long-metrage",
+      "technique": "hybride",
+      "producteurs": [],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "inconnu",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "Juste pour le plaisir de partager une étape de travail assez spécifique (et peu relayée) sur le nouveau long métrage d'animation s... [English] : Digisculpt Designs by Valentin Lucas on \"Wildwood\". Mission: Draw the expressions in 3 angles to be sure the 2D design translate well as it passes to the 3D, then printing. Based on original designs by Thibault Leclercq & sculpt by Michael Defeo.",
+      "image": "https://www.catsuka.com/interf/vignettes_news/big/wildwood_digisculptdesigns_valentinlucas.jpg",
+      "premiereVue": "2026-11-27T15:57:23.617Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "catsuka",
+          "url": "https://www.catsuka.com/news/2026-11-26/digisculpt-designs-de-valentin-lucas-sur-wildwood",
+          "vuLe": "2026-11-27T15:57:23.617Z"
+        }
+      ]
+    },
     {
       "id": "cbce1d44acd3",
       "titre": "Le Loup",
@@ -27,7 +115,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
-          "vuLe": "2026-11-27T03:26:17.525Z"
+          "vuLe": "2026-11-27T15:57:23.617Z"
         },
         {
           "sourceId": "xilam-actus",
@@ -67,7 +155,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
-          "vuLe": "2026-11-27T03:26:17.525Z"
+          "vuLe": "2026-11-27T15:57:23.617Z"
         },
         {
           "sourceId": "cnc-animation-2026",
@@ -102,7 +190,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
-          "vuLe": "2026-11-27T03:26:17.525Z"
+          "vuLe": "2026-11-27T15:57:23.617Z"
         },
         {
           "sourceId": "cnc-animation-2026",
@@ -137,12 +225,12 @@
         {
           "sourceId": "productions-connues",
           "url": "https://xilam.com/2025/10/02/xilam-annonce-la-mise-en-production-de-chickies/",
-          "vuLe": "2026-11-27T03:26:17.525Z"
+          "vuLe": "2026-11-27T15:57:23.617Z"
         },
         {
           "sourceId": "productions-connues",
           "url": "https://xilam.com/media/chickies/",
-          "vuLe": "2026-11-27T03:26:17.525Z"
+          "vuLe": "2026-11-27T15:57:23.617Z"
         }
       ]
     },
@@ -172,7 +260,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxISVNPWUZYYlVOZUU5UjBOUjhZVEM2Y1ZDaVgzdFd5U3huM3dQVDI0eVFhbHpBUTZzSk0tUWZUa2JYR3B4V2dBa0tZQVcyNm80enhYZm90cFE5MUxwQURKUkNjUDJudnB4Q01PYjAzbkJkRm5faTJiNTZzOERwSzREN1RzODJfeUlPd1ZmWG9R?oc=5",
-          "vuLe": "2026-11-27T03:26:17.525Z"
+          "vuLe": "2026-11-27T15:57:23.617Z"
         }
       ]
     },
@@ -202,7 +290,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORi1wXzItRWNKOXh1amdnQy12Z1BHaWgzZmJXQTRjRDlIY0U1cWlVT2RMQlE2LXFVcHZCbjRZRk9mbmdiUGV5Qm9Tc1oxUVQ3T0hrNTZ3a1BpY0NmdmFBZDByLUtJU1BGRzRoRWs5SHRldWdDTkdNQmJfT1QxNnczSngxbnhpRDFHeDVwY01qbXdyVk40TnVJdl9CU2RlZHZBWWpqMlptVkVmbmc?oc=5",
-          "vuLe": "2026-11-27T03:26:17.525Z"
+          "vuLe": "2026-11-27T15:57:23.617Z"
         }
       ]
     },
@@ -232,7 +320,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.ellipseanimation.com/careers/",
-          "vuLe": "2026-11-27T03:26:17.525Z"
+          "vuLe": "2026-11-27T15:57:23.617Z"
         }
       ]
     },
@@ -262,7 +350,37 @@
         {
           "sourceId": "catsuka",
           "url": "https://www.catsuka.com/news/2026-11-23/fireborn-le-comics-adapte-en-serie-d-animation-par-titmouse",
-          "vuLe": "2026-11-27T03:26:17.525Z"
+          "vuLe": "2026-11-27T15:57:23.617Z"
+        }
+      ]
+    },
+    {
+      "id": "2f65c77d0779",
+      "titre": "CALM: An animated feature based on Cuentos de amor de locura y de muerte",
+      "format": "court",
+      "technique": "inconnue",
+      "producteurs": [
+        "La Mola Studio"
+      ],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "developpement",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "La Mola Studio is developing a feature film that brings together different animation techniques and artistic perspectives, with collaborations from Ibero- American studios and the life of Uruguayan writer Horacio Quiroga as its connecting thread. After exploring the universe of Horacio Quiroga in the short film CALM, the Last Tale of Horacio Quiroga, filmmakers Álvaro […] The post CALM: An animat…",
+      "image": "https://www.skwigly.co.uk/wp-content/uploads/2026/11/calm_feat.jpg",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "skwigly",
+          "url": "https://www.skwigly.co.uk/la-mola-studio-calm/",
+          "vuLe": "2026-11-27T15:57:23.617Z"
         }
       ]
     },
@@ -383,36 +501,6 @@
         {
           "sourceId": "kavaleer-actus",
           "url": "https://kavaleer.com/adam-king-and-irish-animation-studio-kavaleer-team-up-for-new-series-adam-%e2%9d%a4-adventure/",
-          "vuLe": "2026-11-26T20:48:15.383Z"
-        }
-      ]
-    },
-    {
-      "id": "2f65c77d0779",
-      "titre": "CALM: An animated feature based on Cuentos de amor de locura y de muerte",
-      "format": "court",
-      "technique": "inconnue",
-      "producteurs": [
-        "La Mola Studio"
-      ],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": null,
-      "statut": "developpement",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "La Mola Studio is developing a feature film that brings together different animation techniques and artistic perspectives, with collaborations from Ibero- American studios and the life of Uruguayan writer Horacio Quiroga as its connecting thread. After exploring the universe of Horacio Quiroga in the short film CALM, the Last Tale of Horacio Quiroga, filmmakers Álvaro […] The post CALM: An animat…",
-      "image": "https://www.skwigly.co.uk/wp-content/uploads/2026/11/calm_feat.jpg",
-      "premiereVue": "2026-11-25T17:42:06.599Z",
-      "misEnAvant": false,
-      "bonMomentDecor": false,
-      "sources": [
-        {
-          "sourceId": "skwigly",
-          "url": "https://www.skwigly.co.uk/la-mola-studio-calm/",
           "vuLe": "2026-11-26T20:48:15.383Z"
         }
       ]
