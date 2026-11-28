@@ -1,6 +1,36 @@
 {
-  "genereLe": "2026-11-28T00:56:21.682Z",
+  "genereLe": "2026-11-28T11:14:49.842Z",
   "productions": [
+    {
+      "id": "47ec066c4ecd",
+      "titre": "Green Gold Animation’s ‘Khel Khel Mein’ to premiere on Doordarshan National on 29 November",
+      "format": "serie",
+      "technique": "inconnue",
+      "producteurs": [
+        "November. Green Gold Animation"
+      ],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "inconnu",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "Green Gold Animation is set to bring a new animated series, Khel Khel Mein, to Doordarshan National on 29 November 2026. Featuring the popular character Chhota Bheem alongside three young… The post Green Gold Animation’s ‘Khel Khel Mein’ to premiere on Doordarshan National on 29 November appeared first on .",
+      "image": "https://www.animationxpress.com/wp-content/uploads/2026/11/Khel-Khel-Mein.jpg",
+      "premiereVue": "2026-11-27T15:57:23.617Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "animationxpress",
+          "url": "https://www.animationxpress.com/latest-news/green-gold-animations-khel-khel-mein-to-premiere-on-doordarshan-national-on-29-november/",
+          "vuLe": "2026-11-28T11:14:49.842Z"
+        }
+      ]
+    },
     {
       "id": "ec3780d22b16",
       "titre": "Daisy's Life",
@@ -27,7 +57,7 @@
         {
           "sourceId": "catsuka",
           "url": "https://www.catsuka.com/news/2026-11-27/daisy-s-life-premier-extrait-du-nouveau-film-de-masaaki-yuasa",
-          "vuLe": "2026-11-28T00:56:21.682Z"
+          "vuLe": "2026-11-28T11:14:49.842Z"
         }
       ]
     },
@@ -55,37 +85,7 @@
         {
           "sourceId": "catsuka",
           "url": "https://www.catsuka.com/news/2026-11-26/digisculpt-designs-de-valentin-lucas-sur-wildwood",
-          "vuLe": "2026-11-28T00:56:21.682Z"
-        }
-      ]
-    },
-    {
-      "id": "47ec066c4ecd",
-      "titre": "Green Gold Animation’s ‘Khel Khel Mein’ to premiere on Doordarshan National on 29 November",
-      "format": "serie",
-      "technique": "inconnue",
-      "producteurs": [
-        "November. Green Gold Animation"
-      ],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": null,
-      "statut": "inconnu",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "Green Gold Animation is set to bring a new animated series, Khel Khel Mein, to Doordarshan National on 29 November 2026. Featuring the popular character Chhota Bheem alongside three young… The post Green Gold Animation’s ‘Khel Khel Mein’ to premiere on Doordarshan National on 29 November appeared first on .",
-      "image": "https://www.animationxpress.com/wp-content/uploads/2026/11/Khel-Khel-Mein.jpg",
-      "premiereVue": "2026-11-27T15:57:23.617Z",
-      "misEnAvant": false,
-      "bonMomentDecor": false,
-      "sources": [
-        {
-          "sourceId": "animationxpress",
-          "url": "https://www.animationxpress.com/latest-news/green-gold-animations-khel-khel-mein-to-premiere-on-doordarshan-national-on-29-november/",
-          "vuLe": "2026-11-27T15:57:23.617Z"
+          "vuLe": "2026-11-28T11:14:49.842Z"
         }
       ]
     },
@@ -115,7 +115,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
-          "vuLe": "2026-11-28T00:56:21.682Z"
+          "vuLe": "2026-11-28T11:14:49.842Z"
         },
         {
           "sourceId": "xilam-actus",
@@ -155,7 +155,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
-          "vuLe": "2026-11-28T00:56:21.682Z"
+          "vuLe": "2026-11-28T11:14:49.842Z"
         },
         {
           "sourceId": "cnc-animation-2026",
@@ -190,7 +190,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
-          "vuLe": "2026-11-28T00:56:21.682Z"
+          "vuLe": "2026-11-28T11:14:49.842Z"
         },
         {
           "sourceId": "cnc-animation-2026",
@@ -225,12 +225,12 @@
         {
           "sourceId": "productions-connues",
           "url": "https://xilam.com/2025/10/02/xilam-annonce-la-mise-en-production-de-chickies/",
-          "vuLe": "2026-11-28T00:56:21.682Z"
+          "vuLe": "2026-11-28T11:14:49.842Z"
         },
         {
           "sourceId": "productions-connues",
           "url": "https://xilam.com/media/chickies/",
-          "vuLe": "2026-11-28T00:56:21.682Z"
+          "vuLe": "2026-11-28T11:14:49.842Z"
         }
       ]
     },
@@ -260,7 +260,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxISVNPWUZYYlVOZUU5UjBOUjhZVEM2Y1ZDaVgzdFd5U3huM3dQVDI0eVFhbHpBUTZzSk0tUWZUa2JYR3B4V2dBa0tZQVcyNm80enhYZm90cFE5MUxwQURKUkNjUDJudnB4Q01PYjAzbkJkRm5faTJiNTZzOERwSzREN1RzODJfeUlPd1ZmWG9R?oc=5",
-          "vuLe": "2026-11-28T00:56:21.682Z"
+          "vuLe": "2026-11-28T11:14:49.842Z"
         }
       ]
     },
@@ -290,7 +290,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORi1wXzItRWNKOXh1amdnQy12Z1BHaWgzZmJXQTRjRDlIY0U1cWlVT2RMQlE2LXFVcHZCbjRZRk9mbmdiUGV5Qm9Tc1oxUVQ3T0hrNTZ3a1BpY0NmdmFBZDByLUtJU1BGRzRoRWs5SHRldWdDTkdNQmJfT1QxNnczSngxbnhpRDFHeDVwY01qbXdyVk40TnVJdl9CU2RlZHZBWWpqMlptVkVmbmc?oc=5",
-          "vuLe": "2026-11-28T00:56:21.682Z"
+          "vuLe": "2026-11-28T11:14:49.842Z"
         }
       ]
     },
@@ -320,7 +320,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.ellipseanimation.com/careers/",
-          "vuLe": "2026-11-28T00:56:21.682Z"
+          "vuLe": "2026-11-28T11:14:49.842Z"
         }
       ]
     },
@@ -350,7 +350,37 @@
         {
           "sourceId": "catsuka",
           "url": "https://www.catsuka.com/news/2026-11-23/fireborn-le-comics-adapte-en-serie-d-animation-par-titmouse",
-          "vuLe": "2026-11-28T00:56:21.682Z"
+          "vuLe": "2026-11-28T11:14:49.842Z"
+        }
+      ]
+    },
+    {
+      "id": "2f65c77d0779",
+      "titre": "CALM: An animated feature based on Cuentos de amor de locura y de muerte",
+      "format": "court",
+      "technique": "inconnue",
+      "producteurs": [
+        "La Mola Studio"
+      ],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "developpement",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "La Mola Studio is developing a feature film that brings together different animation techniques and artistic perspectives, with collaborations from Ibero- American studios and the life of Uruguayan writer Horacio Quiroga as its connecting thread. After exploring the universe of Horacio Quiroga in the short film CALM, the Last Tale of Horacio Quiroga, filmmakers Álvaro […] The post CALM: An animat…",
+      "image": "https://www.skwigly.co.uk/wp-content/uploads/2026/11/calm_feat.jpg",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "skwigly",
+          "url": "https://www.skwigly.co.uk/la-mola-studio-calm/",
+          "vuLe": "2026-11-28T11:14:49.842Z"
         }
       ]
     },
@@ -473,36 +503,6 @@
           "sourceId": "waooh-actus",
           "url": "https://www.waooh.be/bobby_prod_distributor_of_the_year/",
           "vuLe": "2026-11-28T00:56:21.682Z"
-        }
-      ]
-    },
-    {
-      "id": "2f65c77d0779",
-      "titre": "CALM: An animated feature based on Cuentos de amor de locura y de muerte",
-      "format": "court",
-      "technique": "inconnue",
-      "producteurs": [
-        "La Mola Studio"
-      ],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": null,
-      "statut": "developpement",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "La Mola Studio is developing a feature film that brings together different animation techniques and artistic perspectives, with collaborations from Ibero- American studios and the life of Uruguayan writer Horacio Quiroga as its connecting thread. After exploring the universe of Horacio Quiroga in the short film CALM, the Last Tale of Horacio Quiroga, filmmakers Álvaro […] The post CALM: An animat…",
-      "image": "https://www.skwigly.co.uk/wp-content/uploads/2026/11/calm_feat.jpg",
-      "premiereVue": "2026-11-25T17:42:06.599Z",
-      "misEnAvant": false,
-      "bonMomentDecor": false,
-      "sources": [
-        {
-          "sourceId": "skwigly",
-          "url": "https://www.skwigly.co.uk/la-mola-studio-calm/",
-          "vuLe": "2026-11-27T15:57:23.617Z"
         }
       ]
     },
@@ -3392,7 +3392,7 @@
         {
           "sourceId": "3dvf-actu",
           "url": "https://3dvf.com/gaussian-splatting-lavenir-du-scan-3d-comprendre-les-bases-et-debuter/",
-          "vuLe": "2026-11-26T20:48:15.383Z"
+          "vuLe": "2026-11-28T11:14:49.842Z"
         }
       ]
     },
