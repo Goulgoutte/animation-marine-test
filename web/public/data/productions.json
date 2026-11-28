@@ -1,6 +1,64 @@
 {
-  "genereLe": "2026-11-27T15:57:23.617Z",
+  "genereLe": "2026-11-28T00:56:21.682Z",
   "productions": [
+    {
+      "id": "ec3780d22b16",
+      "titre": "Daisy's Life",
+      "format": "long-metrage",
+      "technique": "inconnue",
+      "producteurs": [
+        "Sachiko Tanaka Animation"
+      ],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "inconnu",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "Voici le premier extrait de \"Daisy's Life\", le nouveau long métrage de Masaaki Yuasa, et la première production de son nouveau stu... [English] : First look at new Masaaki Yuasa's feature film \"Daisy's Life\", based on the novel by Banana Yoshimoto & Yoshitomo Nara. Script : Sachiko Tanaka Animation director : Shotaro Imai Character design : Izumi Murakami Art director : Tomotaka Kubo Visual devel…",
+      "image": "https://www.catsuka.com/interf/vignettes_news/big/daisyslife_preview.jpg",
+      "premiereVue": "2026-11-27T15:57:23.617Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "catsuka",
+          "url": "https://www.catsuka.com/news/2026-11-27/daisy-s-life-premier-extrait-du-nouveau-film-de-masaaki-yuasa",
+          "vuLe": "2026-11-28T00:56:21.682Z"
+        }
+      ]
+    },
+    {
+      "id": "6d28048c484b",
+      "titre": "Wildwood",
+      "format": "long-metrage",
+      "technique": "hybride",
+      "producteurs": [],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "inconnu",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "Juste pour le plaisir de partager une étape de travail assez spécifique (et peu relayée) sur le nouveau long métrage d'animation s... [English] : Digisculpt Designs by Valentin Lucas on \"Wildwood\". Mission: Draw the expressions in 3 angles to be sure the 2D design translate well as it passes to the 3D, then printing. Based on original designs by Thibault Leclercq & sculpt by Michael Defeo.",
+      "image": "https://www.catsuka.com/interf/vignettes_news/big/wildwood_digisculptdesigns_valentinlucas.jpg",
+      "premiereVue": "2026-11-27T15:57:23.617Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "catsuka",
+          "url": "https://www.catsuka.com/news/2026-11-26/digisculpt-designs-de-valentin-lucas-sur-wildwood",
+          "vuLe": "2026-11-28T00:56:21.682Z"
+        }
+      ]
+    },
     {
       "id": "47ec066c4ecd",
       "titre": "Green Gold Animation’s ‘Khel Khel Mein’ to premiere on Doordarshan National on 29 November",
@@ -32,64 +90,6 @@
       ]
     },
     {
-      "id": "ec3780d22b16",
-      "titre": "Daisy's Life",
-      "format": "long-metrage",
-      "technique": "inconnue",
-      "producteurs": [
-        "Sachiko Tanaka Animation"
-      ],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": null,
-      "statut": "inconnu",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "Voici le premier extrait de \"Daisy's Life\", le nouveau long métrage de Masaaki Yuasa, et la première production de son nouveau stu... [English] : First look at new Masaaki Yuasa's feature film \"Daisy's Life\", based on the novel by Banana Yoshimoto & Yoshitomo Nara. Script : Sachiko Tanaka Animation director : Shotaro Imai Character design : Izumi Murakami Art director : Tomotaka Kubo Visual devel…",
-      "image": "https://www.catsuka.com/interf/vignettes_news/big/daisyslife_preview.jpg",
-      "premiereVue": "2026-11-27T15:57:23.617Z",
-      "misEnAvant": false,
-      "bonMomentDecor": false,
-      "sources": [
-        {
-          "sourceId": "catsuka",
-          "url": "https://www.catsuka.com/news/2026-11-27/daisy-s-life-premier-extrait-du-nouveau-film-de-masaaki-yuasa",
-          "vuLe": "2026-11-27T15:57:23.617Z"
-        }
-      ]
-    },
-    {
-      "id": "6d28048c484b",
-      "titre": "Wildwood",
-      "format": "long-metrage",
-      "technique": "hybride",
-      "producteurs": [],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": null,
-      "statut": "inconnu",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "Juste pour le plaisir de partager une étape de travail assez spécifique (et peu relayée) sur le nouveau long métrage d'animation s... [English] : Digisculpt Designs by Valentin Lucas on \"Wildwood\". Mission: Draw the expressions in 3 angles to be sure the 2D design translate well as it passes to the 3D, then printing. Based on original designs by Thibault Leclercq & sculpt by Michael Defeo.",
-      "image": "https://www.catsuka.com/interf/vignettes_news/big/wildwood_digisculptdesigns_valentinlucas.jpg",
-      "premiereVue": "2026-11-27T15:57:23.617Z",
-      "misEnAvant": false,
-      "bonMomentDecor": false,
-      "sources": [
-        {
-          "sourceId": "catsuka",
-          "url": "https://www.catsuka.com/news/2026-11-26/digisculpt-designs-de-valentin-lucas-sur-wildwood",
-          "vuLe": "2026-11-27T15:57:23.617Z"
-        }
-      ]
-    },
-    {
       "id": "cbce1d44acd3",
       "titre": "Le Loup",
       "format": "long-metrage",
@@ -115,12 +115,12 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
-          "vuLe": "2026-11-27T15:57:23.617Z"
+          "vuLe": "2026-11-28T00:56:21.682Z"
         },
         {
           "sourceId": "xilam-actus",
           "url": "https://xilam.com/2026/06/22/le-loup-production/",
-          "vuLe": "2026-11-26T20:48:15.383Z"
+          "vuLe": "2026-11-28T00:56:21.682Z"
         },
         {
           "sourceId": "cnc-animation-2026",
@@ -155,7 +155,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
-          "vuLe": "2026-11-27T15:57:23.617Z"
+          "vuLe": "2026-11-28T00:56:21.682Z"
         },
         {
           "sourceId": "cnc-animation-2026",
@@ -190,7 +190,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.cnc.fr/professionnels/aides-et-financements/resultats-commissions/aide-aux-techniques-danimation--resultats-de-la-commission-en-2026_2585167",
-          "vuLe": "2026-11-27T15:57:23.617Z"
+          "vuLe": "2026-11-28T00:56:21.682Z"
         },
         {
           "sourceId": "cnc-animation-2026",
@@ -225,12 +225,12 @@
         {
           "sourceId": "productions-connues",
           "url": "https://xilam.com/2025/10/02/xilam-annonce-la-mise-en-production-de-chickies/",
-          "vuLe": "2026-11-27T15:57:23.617Z"
+          "vuLe": "2026-11-28T00:56:21.682Z"
         },
         {
           "sourceId": "productions-connues",
           "url": "https://xilam.com/media/chickies/",
-          "vuLe": "2026-11-27T15:57:23.617Z"
+          "vuLe": "2026-11-28T00:56:21.682Z"
         }
       ]
     },
@@ -260,7 +260,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxISVNPWUZYYlVOZUU5UjBOUjhZVEM2Y1ZDaVgzdFd5U3huM3dQVDI0eVFhbHpBUTZzSk0tUWZUa2JYR3B4V2dBa0tZQVcyNm80enhYZm90cFE5MUxwQURKUkNjUDJudnB4Q01PYjAzbkJkRm5faTJiNTZzOERwSzREN1RzODJfeUlPd1ZmWG9R?oc=5",
-          "vuLe": "2026-11-27T15:57:23.617Z"
+          "vuLe": "2026-11-28T00:56:21.682Z"
         }
       ]
     },
@@ -290,7 +290,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORi1wXzItRWNKOXh1amdnQy12Z1BHaWgzZmJXQTRjRDlIY0U1cWlVT2RMQlE2LXFVcHZCbjRZRk9mbmdiUGV5Qm9Tc1oxUVQ3T0hrNTZ3a1BpY0NmdmFBZDByLUtJU1BGRzRoRWs5SHRldWdDTkdNQmJfT1QxNnczSngxbnhpRDFHeDVwY01qbXdyVk40TnVJdl9CU2RlZHZBWWpqMlptVkVmbmc?oc=5",
-          "vuLe": "2026-11-27T15:57:23.617Z"
+          "vuLe": "2026-11-28T00:56:21.682Z"
         }
       ]
     },
@@ -320,7 +320,7 @@
         {
           "sourceId": "productions-connues",
           "url": "https://www.ellipseanimation.com/careers/",
-          "vuLe": "2026-11-27T15:57:23.617Z"
+          "vuLe": "2026-11-28T00:56:21.682Z"
         }
       ]
     },
@@ -350,7 +350,129 @@
         {
           "sourceId": "catsuka",
           "url": "https://www.catsuka.com/news/2026-11-23/fireborn-le-comics-adapte-en-serie-d-animation-par-titmouse",
-          "vuLe": "2026-11-27T15:57:23.617Z"
+          "vuLe": "2026-11-28T00:56:21.682Z"
+        }
+      ]
+    },
+    {
+      "id": "29b50cfc4dbc",
+      "titre": "ANIMAL JACK: An adaptation in development with TF1",
+      "format": "serie",
+      "technique": "inconnue",
+      "producteurs": [
+        "Ellipse Animation"
+      ],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": "TF1",
+      "realisateur": null,
+      "statut": "developpement",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "TFOU, the TF1 group’s children’s slot, and Ellipse Animation announce the development of a new animated series, ‘Animal Jack’. This series is adapted fromthe popular comic book by Belgian writer Kid Toussaint and illustrator Miss Prickly,published by Dupuis and with over 1 million copies sold. Animal Jack is poised tocapture the hearts of children aged 5 to 8 through a collection of 52 engaging 1…",
+      "image": "https://www.ellipseanimation.com/wp-content/uploads/2026/03/KEY_VISUAL_ANIMAL-JACK-1024x576.png",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "ellipse-actus",
+          "url": "https://www.ellipseanimation.com/animal-jack-an-adaptation-in-development-with-tf1/",
+          "vuLe": "2026-11-28T00:56:21.682Z"
+        }
+      ]
+    },
+    {
+      "id": "3bb4217ea000",
+      "titre": "Komodo No Chill, our new kids’ project presented at Cartoon Forum",
+      "format": "serie",
+      "technique": "2D",
+      "producteurs": [
+        "Gaëlle Guiny. This",
+        "22 September Ellipse Animation"
+      ],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": "Emmanuel Klotz",
+      "statut": "developpement",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "Cartoon Forum 202319 to 22 September Ellipse Animation is developing Komodo No Chill, a series for 6 – 9-year-olds directed by Emmanuel Klotz and Louis Musso and produced by Gaëlle Guiny. This new 2D slapstick series is an original creation and will be presented at the Cartoon Forum on Wednesday 20 September at 9.45 a.m. […] L’article Komodo No Chill, our new kids’ project presented at Cartoon Fo…",
+      "image": "https://www.ellipseanimation.com/wp-content/uploads/2023/08/komodo_promo_cartoon-1024x613.jpg",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "ellipse-actus",
+          "url": "https://www.ellipseanimation.com/komodo-no-chill-the-new-kidss-project-from-ellipse-animation-presented-at-cartoon-forum/",
+          "vuLe": "2026-11-28T00:56:21.682Z"
+        }
+      ]
+    },
+    {
+      "id": "0e18f44c1fec",
+      "titre": "ADAM",
+      "format": "serie",
+      "technique": "inconnue",
+      "producteurs": [
+        "Kavaleer Productions"
+      ],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "inconnu",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "The post ADAM KING and Irish animation studio KAVALEER team up for new series ADAM ❤ ADVENTURE! appeared first on Kavaleer Productions.",
+      "image": "https://s.w.org/images/core/emoji/15.0.3/72x72/2764.png",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "kavaleer-actus",
+          "url": "https://kavaleer.com/adam-king-and-irish-animation-studio-kavaleer-team-up-for-new-series-adam-%e2%9d%a4-adventure/",
+          "vuLe": "2026-11-28T00:56:21.682Z"
+        }
+      ]
+    },
+    {
+      "id": "635d010a9e41",
+      "titre": "Congratulations to Bobby Prod, Distributor of the year !",
+      "format": "long-metrage",
+      "technique": "inconnue",
+      "producteurs": [
+        "Waooh",
+        "Bobby Prod"
+      ],
+      "studiosFabrication": [],
+      "paysCoproducteurs": [],
+      "paysDecors": null,
+      "diffuseur": null,
+      "realisateur": null,
+      "statut": "developpement",
+      "dateDemarrage": null,
+      "villeFabrication": null,
+      "contactRecrutement": null,
+      "extrait": "During the 2026 edition of Cartoon Forum, Bobby Prod was named Distributor of the Year! We at Waooh! were delighted to contribute to several stages of their latest feature film, Jim Queen, and it’s a pleasure to see their work recognised with this award. A big congratulations from the entire Waooh! team to Bobby Prod! The post Congratulations to Bobby Prod, Distributor of the year ! appeared firs…",
+      "image": "https://www.waooh.be/wp-content/uploads/2026/09/Jim-queen-grande_image.png",
+      "premiereVue": "2026-11-25T17:42:06.599Z",
+      "misEnAvant": false,
+      "bonMomentDecor": false,
+      "sources": [
+        {
+          "sourceId": "waooh-actus",
+          "url": "https://www.waooh.be/bobby_prod_distributor_of_the_year/",
+          "vuLe": "2026-11-28T00:56:21.682Z"
         }
       ]
     },
@@ -411,128 +533,6 @@
           "sourceId": "catsuka",
           "url": "https://www.catsuka.com/news/2026-11-18/grendel-nouvelle-serie-netflix-animee-chez-bobbypills",
           "vuLe": "2026-11-27T03:26:17.525Z"
-        }
-      ]
-    },
-    {
-      "id": "29b50cfc4dbc",
-      "titre": "ANIMAL JACK: An adaptation in development with TF1",
-      "format": "serie",
-      "technique": "inconnue",
-      "producteurs": [
-        "Ellipse Animation"
-      ],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": "TF1",
-      "realisateur": null,
-      "statut": "developpement",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "TFOU, the TF1 group’s children’s slot, and Ellipse Animation announce the development of a new animated series, ‘Animal Jack’. This series is adapted fromthe popular comic book by Belgian writer Kid Toussaint and illustrator Miss Prickly,published by Dupuis and with over 1 million copies sold. Animal Jack is poised tocapture the hearts of children aged 5 to 8 through a collection of 52 engaging 1…",
-      "image": "https://www.ellipseanimation.com/wp-content/uploads/2026/03/KEY_VISUAL_ANIMAL-JACK-1024x576.png",
-      "premiereVue": "2026-11-25T17:42:06.599Z",
-      "misEnAvant": false,
-      "bonMomentDecor": false,
-      "sources": [
-        {
-          "sourceId": "ellipse-actus",
-          "url": "https://www.ellipseanimation.com/animal-jack-an-adaptation-in-development-with-tf1/",
-          "vuLe": "2026-11-26T20:48:15.383Z"
-        }
-      ]
-    },
-    {
-      "id": "3bb4217ea000",
-      "titre": "Komodo No Chill, our new kids’ project presented at Cartoon Forum",
-      "format": "serie",
-      "technique": "2D",
-      "producteurs": [
-        "Gaëlle Guiny. This",
-        "22 September Ellipse Animation"
-      ],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": "Emmanuel Klotz",
-      "statut": "developpement",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "Cartoon Forum 202319 to 22 September Ellipse Animation is developing Komodo No Chill, a series for 6 – 9-year-olds directed by Emmanuel Klotz and Louis Musso and produced by Gaëlle Guiny. This new 2D slapstick series is an original creation and will be presented at the Cartoon Forum on Wednesday 20 September at 9.45 a.m. […] L’article Komodo No Chill, our new kids’ project presented at Cartoon Fo…",
-      "image": "https://www.ellipseanimation.com/wp-content/uploads/2023/08/komodo_promo_cartoon-1024x613.jpg",
-      "premiereVue": "2026-11-25T17:42:06.599Z",
-      "misEnAvant": false,
-      "bonMomentDecor": false,
-      "sources": [
-        {
-          "sourceId": "ellipse-actus",
-          "url": "https://www.ellipseanimation.com/komodo-no-chill-the-new-kidss-project-from-ellipse-animation-presented-at-cartoon-forum/",
-          "vuLe": "2026-11-26T20:48:15.383Z"
-        }
-      ]
-    },
-    {
-      "id": "0e18f44c1fec",
-      "titre": "ADAM",
-      "format": "serie",
-      "technique": "inconnue",
-      "producteurs": [
-        "Kavaleer Productions"
-      ],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": null,
-      "statut": "inconnu",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "The post ADAM KING and Irish animation studio KAVALEER team up for new series ADAM ❤ ADVENTURE! appeared first on Kavaleer Productions.",
-      "image": "https://s.w.org/images/core/emoji/15.0.3/72x72/2764.png",
-      "premiereVue": "2026-11-25T17:42:06.599Z",
-      "misEnAvant": false,
-      "bonMomentDecor": false,
-      "sources": [
-        {
-          "sourceId": "kavaleer-actus",
-          "url": "https://kavaleer.com/adam-king-and-irish-animation-studio-kavaleer-team-up-for-new-series-adam-%e2%9d%a4-adventure/",
-          "vuLe": "2026-11-26T20:48:15.383Z"
-        }
-      ]
-    },
-    {
-      "id": "635d010a9e41",
-      "titre": "Congratulations to Bobby Prod, Distributor of the year !",
-      "format": "long-metrage",
-      "technique": "inconnue",
-      "producteurs": [
-        "Waooh",
-        "Bobby Prod"
-      ],
-      "studiosFabrication": [],
-      "paysCoproducteurs": [],
-      "paysDecors": null,
-      "diffuseur": null,
-      "realisateur": null,
-      "statut": "developpement",
-      "dateDemarrage": null,
-      "villeFabrication": null,
-      "contactRecrutement": null,
-      "extrait": "During the 2026 edition of Cartoon Forum, Bobby Prod was named Distributor of the Year! We at Waooh! were delighted to contribute to several stages of their latest feature film, Jim Queen, and it’s a pleasure to see their work recognised with this award. A big congratulations from the entire Waooh! team to Bobby Prod! The post Congratulations to Bobby Prod, Distributor of the year ! appeared firs…",
-      "image": "https://www.waooh.be/wp-content/uploads/2026/09/Jim-queen-grande_image.png",
-      "premiereVue": "2026-11-25T17:42:06.599Z",
-      "misEnAvant": false,
-      "bonMomentDecor": false,
-      "sources": [
-        {
-          "sourceId": "waooh-actus",
-          "url": "https://www.waooh.be/bobby_prod_distributor_of_the_year/",
-          "vuLe": "2026-11-26T20:48:15.383Z"
         }
       ]
     },
